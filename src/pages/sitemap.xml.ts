@@ -13,10 +13,10 @@ export const GET: APIRoute = ({ site }) => {
 
   const urls = pages
     .map((page) => {
-      const loc = page ? `${base}/${page}` : `${base}/`;
+      const loc = page ? `${base}/${page}/` : `${base}/`;
       const alternates =
         page === "" || page === "espanol"
-          ? `\n    <xhtml:link rel="alternate" hreflang="en" href="${base}/" />\n    <xhtml:link rel="alternate" hreflang="es" href="${base}/espanol" />`
+          ? `\n    <xhtml:link rel="alternate" hreflang="en" href="${base}/" />\n    <xhtml:link rel="alternate" hreflang="es" href="${base}/espanol/" />`
           : "";
       return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${today}</lastmod>${alternates}\n  </url>`;
     })

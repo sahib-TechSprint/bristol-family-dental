@@ -78,7 +78,7 @@ export default function HeroSection({ content, srHeading }: { content: HeroConte
           aria-hidden="true"
         />
 
-        <p className="absolute left-4 top-4 z-10 max-w-[300px] text-xs font-semibold leading-snug text-white md:left-6 md:top-6 md:text-sm">
+        <p className="absolute left-4 top-4 z-10 max-w-[300px] text-xs font-semibold leading-snug text-white md:left-6 md:top-6 md:text-sm [@media(min-width:768px)_and_(max-height:760px)]:hidden">
           {content.supporting}
         </p>
 
