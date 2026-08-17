@@ -1,0 +1,147 @@
+---
+import Base from "../layouts/Base.astro";
+import Icon from "../components/Icon.astro";
+import { espanol } from "../content/espanol";
+import { practice } from "../content/practice";
+import { seo } from "../content/seo";
+---
+
+<Base
+  title={seo.espanol.title}
+  description={seo.espanol.description}
+  lang="es"
+  hreflangPair
+>
+  <section class="px-3 pb-1.5 pt-28 md:px-5 md:pb-2 md:pt-36" aria-label="Bienvenida" data-reveal-group>
+    <div class="rounded-xl bg-stone-50 px-6 py-10 md:rounded-2xl md:px-12 md:py-16">
+      <p class="text-xs font-semibold uppercase tracking-[0.16em] text-black/60" data-reveal>
+        {espanol.label}
+      </p>
+      <h1
+        class="font-display mt-3 max-w-4xl text-[clamp(2.4rem,6vw,4.5rem)] font-bold leading-[1.02] tracking-tight"
+        data-reveal
+      >
+        {espanol.heading}
+      </h1>
+      <p class="mt-5 max-w-2xl text-base leading-relaxed text-black/70 md:text-lg" data-reveal>
+        {espanol.intro}
+      </p>
+    </div>
+  </section>
+
+  <section
+    class="grid grid-cols-1 gap-1.5 px-3 pb-1.5 pt-1.5 md:grid-cols-2 md:gap-2 md:px-5 md:pb-2 md:pt-2"
+    aria-label="Servicios y seguro dental"
+    data-reveal-group
+  >
+    <div class="rounded-xl bg-black px-5 py-9 text-white md:rounded-2xl md:px-8 md:py-12" data-reveal>
+      <div class="flex items-center gap-3">
+        <Icon name="tooth" class="h-5 w-5 text-white/70" />
+        <h2 class="font-display text-2xl font-bold tracking-tight md:text-3xl">
+          {espanol.serviciosHeading}
+        </h2>
+      </div>
+      <p class="mt-4 text-sm leading-relaxed text-white/80 md:text-base">{espanol.servicios}</p>
+    </div>
+
+    <div class="rounded-xl bg-zinc-200 px-5 py-9 md:rounded-2xl md:px-8 md:py-12" data-reveal>
+      <div class="flex items-center gap-3">
+        <Icon name="coin" class="h-5 w-5 text-black/60" />
+        <h2 class="font-display text-2xl font-bold tracking-tight md:text-3xl">
+          {espanol.seguroHeading}
+        </h2>
+      </div>
+      <p class="mt-4 text-sm leading-relaxed text-black/75 md:text-base">{espanol.seguro}</p>
+      <ul class="mt-5 flex flex-wrap gap-2.5" aria-label="Coberturas aceptadas">
+        {
+          ["PPO", "HMO", "Denti-Cal", "CareCredit"].map((badge) => (
+            <li class="rounded-full border border-black/25 bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.1em]">
+              {badge}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section
+    class="grid grid-cols-1 gap-1.5 px-3 pb-1.5 pt-1.5 md:grid-cols-2 md:gap-2 md:px-5 md:pb-2 md:pt-2"
+    aria-label="Horario y ubicación"
+    data-reveal-group
+  >
+    <div class="flex flex-col rounded-xl bg-zinc-200 px-5 py-9 md:rounded-2xl md:px-8 md:py-12" data-reveal>
+      <div class="flex items-center gap-3">
+        <Icon name="clock" class="h-5 w-5 text-black/60" />
+        <h2 class="font-display text-2xl font-bold tracking-tight md:text-3xl">
+          {espanol.horarioHeading}
+        </h2>
+      </div>
+      <dl class="mt-6 flex-1">
+        {
+          espanol.horario.map((row) => (
+            <div class="flex items-baseline justify-between gap-4 border-b border-black/10 py-3.5">
+              <dt class="text-sm font-semibold">{row.label}</dt>
+              <dd class="text-right text-sm text-black/70">{row.value}</dd>
+            </div>
+          ))
+        }
+      </dl>
+      <a
+        href={`tel:${practice.phone.tel}`}
+        class="font-display mt-6 inline-flex min-h-11 items-center text-2xl font-bold tracking-tight md:text-3xl"
+      >
+        {practice.phone.display}
+      </a>
+    </div>
+
+    <div class="rounded-xl bg-stone-50 px-5 py-9 md:rounded-2xl md:px-8 md:py-12" data-reveal>
+      <div class="flex items-center gap-3">
+        <Icon name="pin" class="h-5 w-5 text-black/60" />
+        <h2 class="font-display text-2xl font-bold tracking-tight md:text-3xl">
+          {espanol.ubicacionHeading}
+        </h2>
+      </div>
+      <p class="font-display mt-5 text-xl font-bold leading-snug md:text-2xl">
+        {practice.address.street}<br />
+        {practice.address.city}, {practice.address.state}
+        {practice.address.zip}
+      </p>
+      <p class="mt-4 text-sm leading-relaxed text-black/70 md:text-base">{espanol.ubicacion}</p>
+      <a
+        href={practice.mapsUrl}
+        target="_blank"
+        rel="noopener"
+        class="mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-semibold underline underline-offset-4"
+      >
+        {espanol.direccionesCta}
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="px-3 pb-1.5 pt-1.5 md:px-5 md:pb-2 md:pt-2" aria-label="Haga su cita" data-reveal-group>
+    <div
+      class="flex flex-col items-center rounded-xl bg-black px-5 py-14 text-center text-white md:rounded-2xl md:px-10 md:py-20"
+      data-reveal
+    >
+      <h2 class="font-display max-w-3xl text-[clamp(2.2rem,6vw,4.5rem)] font-bold leading-[0.98] tracking-tight">
+        {espanol.citaHeading}
+      </h2>
+      <p class="mt-4 max-w-xl text-sm leading-relaxed text-white/75 md:text-base">{espanol.cita}</p>
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-3 md:gap-4">
+        <a
+          href="/book"
+          class="inline-flex items-center rounded-full bg-white px-6 py-3.5 text-sm font-bold text-black motion-safe:hover:scale-105 motion-safe:transition-transform md:px-8 md:py-4 md:text-base"
+        >
+          {espanol.citaCta}
+        </a>
+        <a
+          href={`tel:${practice.phone.tel}`}
+          class="inline-flex min-h-11 items-center text-sm font-semibold underline underline-offset-4 md:text-base"
+        >
+          {espanol.llamarCta}: {practice.phone.display}
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>
