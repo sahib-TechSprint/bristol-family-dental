@@ -1,0 +1,110 @@
+import { useRef } from "react";
+import MaskedCard from "../masked/MaskedCard";
+import {
+  useImageWidth,
+  useIsMobile,
+  useMaskPositions,
+  useStaggeredReveal,
+} from "../masked/hooks";
+
+interface HeroContent {
+  featureBars: readonly string[];
+  supporting: string;
+  label: string;
+  displayLines: readonly string[];
+  corner: string;
+}
+
+const BG = "/images/hero.webp";
+
+/**
+ * Full screen hero mosaic. Three feature bars and the main display card all
+ * window the same photograph, so the section reads as one image seen through
+ * four openings.
+ */
+export default function HeroSection({ content, srHeading }: { content: HeroContent; srHeading: string }) {
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const cardRefs = useRef<(HTMLElement | null)[]>([]);
+  const positions = useMaskPositions(sectionRef, cardRefs);
+  const sectionHeight = positions[0]?.sh ?? 0;
+  const imageWidth = useImageWidth(BG, sectionHeight);
+  const isMobile = useIsMobile();
+  const focalX = isMobile ? 0.7 : 0.8;
+  const { sectionRef: revealRef, getAnimStyle } = useStaggeredReveal(4);
+
+  const setSectionRef = (el: HTMLElement | null) => {
+    sectionRef.current = el;
+    revealRef.current = el;
+  };
+  const setCardRef = (index: number) => (el: HTMLDivElement | null) => {
+    cardRefs.current[index] = el;
+  };
+
+  return (
+    <section
+      ref={setSectionRef}
+      className="flex h-[100svh] flex-col gap-1.5 px-3 pb-1.5 pt-24 md:h-screen md:gap-2 md:px-5 md:pb-2"
+      aria-label="Welcome"
+    >
+      {content.featureBars.map((bar, index) => (
+        <MaskedCard
+          key={bar}
+          bgImage={BG}
+          position={positions[index]}
+          imageWidth={imageWidth}
+          focalX={focalX}
+          cardRef={setCardRef(index)}
+          className="relative flex h-14 shrink-0 items-center justify-center overflow-hidden rounded-xl md:h-20 md:rounded-2xl"
+          style={getAnimStyle(index)}
+        >
+          <span className="absolute inset-0 bg-black/35" aria-hidden="true" />
+          <span className="font-display relative z-10 px-4 text-center text-lg font-bold text-white md:text-3xl">
+            {bar}
+          </span>
+        </MaskedCard>
+      ))}
+
+      <MaskedCard
+        bgImage={BG}
+        position={positions[3]}
+        imageWidth={imageWidth}
+        focalX={focalX}
+        cardRef={setCardRef(3)}
+        className="relative flex-1 overflow-hidden rounded-xl md:rounded-2xl"
+        style={getAnimStyle(3)}
+      >
+        <span
+          className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-black/30"
+          aria-hidden="true"
+        />
+
+        <p className="absolute left-4 top-4 z-10 max-w-[300px] text-xs font-semibold leading-snug text-white md:left-6 md:top-6 md:text-sm">
+          {content.supporting}
+        </p>
+
+        <p className="absolute bottom-4 right-4 z-10 text-sm font-semibold text-white md:bottom-6 md:right-6 md:text-base">
+          {content.corner}
+        </p>
+
+        <div className="absolute bottom-3 left-4 z-10 md:bottom-4 md:left-6">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-white md:text-sm">
+            {content.label}
+          </p>
+          <h1 className="text-white">
+            <span className="sr-only">{srHeading}</span>
+            <span aria-hidden="true" className="font-display block">
+              {content.displayLines.map((line) => (
+                <span
+                  key={line}
+                  className="block text-[clamp(3rem,11vw,11rem)] font-bold leading-[0.79] tracking-tight"
+                >
+                  {line}
+                </span>
+              ))}
+            </span>
+          </h1>
+        </div>
+      </MaskedCard>
+    </section>
+  );
+}

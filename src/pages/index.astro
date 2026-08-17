@@ -1,0 +1,31 @@
+---
+import Base from "../layouts/Base.astro";
+import HeroSection from "../components/home/HeroSection.tsx";
+import GallerySection from "../components/home/GallerySection.tsx";
+import ImplantSection from "../components/home/ImplantSection.astro";
+import WhyBristol from "../components/home/WhyBristol.astro";
+import LocationHours from "../components/home/LocationHours.astro";
+import FinalCta from "../components/home/FinalCta.astro";
+import { hero, gallery } from "../content/home";
+import { seo } from "../content/seo";
+import { bookHref, bookLabel } from "../content/nav";
+---
+
+<Base
+  title={seo.home.title}
+  description={seo.home.description}
+  isHome
+  hreflangPair
+  preloadImages={["/images/hero.webp"]}
+>
+  <HeroSection
+    client:load
+    content={hero}
+    srHeading="Bristol Family Dental Center, trusted dentist in Santa Ana"
+  />
+  <GallerySection client:visible content={gallery} bookHref={bookHref} bookLabel={bookLabel} />
+  <ImplantSection />
+  <WhyBristol />
+  <LocationHours />
+  <FinalCta />
+</Base>

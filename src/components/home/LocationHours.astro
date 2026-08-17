@@ -1,0 +1,80 @@
+---
+// Location and hours as a takeaway card: everything a patient needs to walk
+// in the door, plus the one action.
+
+import { practice } from "../../content/practice";
+import { location } from "../../content/home";
+import Cta from "../Cta.astro";
+import Icon from "../Icon.astro";
+---
+
+<section
+  class="grid grid-cols-1 gap-1.5 px-3 pb-1.5 pt-1.5 md:grid-cols-[1.2fr_1fr] md:gap-2 md:px-5 md:pb-2 md:pt-2"
+  aria-label="Location and hours"
+  data-reveal-group
+>
+  <div class="rounded-xl bg-black px-5 py-9 text-white md:rounded-2xl md:px-10 md:py-12" data-reveal>
+    <p class="text-xs font-semibold uppercase tracking-[0.16em] text-white/60">
+      {location.label}
+    </p>
+    <h2
+      class="font-display mt-3 text-[clamp(2rem,5vw,3.75rem)] font-bold leading-[1.02] tracking-tight"
+    >
+      {location.heading}
+    </h2>
+
+    <div class="mt-7 flex items-start gap-3">
+      <Icon name="pin" class="mt-1 h-5 w-5 shrink-0 text-white/70" />
+      <p class="font-display text-xl font-bold leading-snug md:text-2xl">
+        {practice.address.street}<br />
+        {practice.address.city}, {practice.address.state}
+        {practice.address.zip}
+      </p>
+    </div>
+
+    <p class="mt-4 max-w-xl text-sm leading-relaxed text-white/70">
+      {practice.landmarks}
+    </p>
+
+    <a
+      href={practice.mapsUrl}
+      target="_blank"
+      rel="noopener"
+      class="mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-semibold underline underline-offset-4 transition-colors hover:text-white/70"
+    >
+      {location.directionsCta}
+      <span aria-hidden="true">&rarr;</span>
+    </a>
+
+    <div class="mt-8">
+      <Cta variant="light" />
+    </div>
+  </div>
+
+  <div class="flex flex-col rounded-xl bg-zinc-200 px-5 py-9 md:rounded-2xl md:px-8 md:py-12" data-reveal>
+    <div class="flex items-center gap-3">
+      <Icon name="clock" class="h-5 w-5 text-black/60" />
+      <p class="text-xs font-semibold uppercase tracking-[0.16em] text-black/60">Office Hours</p>
+    </div>
+
+    <dl class="mt-6 flex-1">
+      {
+        practice.hours.map((row) => (
+          <div class="flex items-baseline justify-between gap-4 border-b border-black/10 py-3.5">
+            <dt class="text-sm font-semibold">{row.label}</dt>
+            <dd class="text-right text-sm text-black/70">{row.value}</dd>
+          </div>
+        ))
+      }
+    </dl>
+
+    <p class="mt-4 text-xs leading-relaxed text-black/60">{practice.hoursNote}</p>
+
+    <a
+      href={`tel:${practice.phone.tel}`}
+      class="font-display mt-6 inline-flex min-h-11 items-center text-2xl font-bold tracking-tight md:text-3xl"
+    >
+      {practice.phone.display}
+    </a>
+  </div>
+</section>
