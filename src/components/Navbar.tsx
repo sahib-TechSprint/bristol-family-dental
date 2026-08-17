@@ -110,13 +110,11 @@ export default function Navbar({
     >
       <div className="flex items-center justify-between px-4 md:px-6 py-2 md:py-3">
         <a href="/" className="block" aria-label="Bristol Family Dental Center, home">
-          <span className="block font-display text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-none">
+          <span className="block font-display text-lg md:text-xl font-extrabold uppercase leading-[1.02] tracking-tight">
             Bristol Family
+            <span className="block">Dental Center</span>
           </span>
-          <span className="block font-display text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-none -mt-1.5 md:-mt-2">
-            Dental Center
-          </span>
-          <span className="block text-[8px] md:text-[9px] font-medium mt-1.5 md:mt-2 uppercase tracking-[0.14em]">
+          <span className="mt-1 block text-[8px] md:text-[9px] font-semibold uppercase tracking-[0.22em] text-black/55">
             {tagline}
           </span>
         </a>

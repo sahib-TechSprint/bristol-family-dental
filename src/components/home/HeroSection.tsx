@@ -20,7 +20,8 @@ const BG = "/images/hero.webp";
 /**
  * Full screen hero mosaic. Three feature bars and the main display card all
  * window the same photograph, so the section reads as one image seen through
- * four openings.
+ * four openings. The photograph is bright, so type sits directly on it in
+ * black, with light glass surfaces where a little separation helps.
  */
 export default function HeroSection({ content, srHeading }: { content: HeroContent; srHeading: string }) {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -57,8 +58,8 @@ export default function HeroSection({ content, srHeading }: { content: HeroConte
           className="relative flex h-14 shrink-0 items-center justify-center overflow-hidden rounded-xl md:h-20 md:rounded-2xl"
           style={getAnimStyle(index)}
         >
-          <span className="absolute inset-0 bg-black/40" aria-hidden="true" />
-          <span className="font-display relative z-10 px-4 text-center text-lg font-bold text-white md:text-3xl">
+          <span className="absolute inset-0 bg-white/25 backdrop-blur-[2px]" aria-hidden="true" />
+          <span className="font-display relative z-10 px-4 text-center text-lg font-bold text-black md:text-2xl">
             {bar}
           </span>
         </MaskedCard>
@@ -73,24 +74,17 @@ export default function HeroSection({ content, srHeading }: { content: HeroConte
         className="relative flex-1 overflow-hidden rounded-xl md:rounded-2xl"
         style={getAnimStyle(3)}
       >
-        <span
-          className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/15 to-black/45"
-          aria-hidden="true"
-        />
-
-        <p className="absolute left-4 top-4 z-10 max-w-[300px] text-xs font-semibold leading-snug text-white md:left-6 md:top-6 md:text-sm [@media(min-width:768px)_and_(max-height:760px)]:hidden">
+        <p className="absolute left-4 top-4 z-10 max-w-[240px] rounded-lg bg-white/70 p-3 text-xs font-semibold leading-snug text-black/80 backdrop-blur-md md:left-7 md:top-7 md:max-w-[300px] md:bg-transparent md:p-0 md:text-sm md:text-black/75 md:backdrop-blur-none [@media(min-width:768px)_and_(max-height:760px)]:hidden">
           {content.supporting}
         </p>
 
-        <p className="absolute bottom-4 right-4 z-10 text-sm font-semibold text-white md:bottom-6 md:right-6 md:text-base">
-          {content.corner}
+        <p className="absolute bottom-7 right-7 z-10 hidden rounded-full bg-white/70 px-4 py-2 backdrop-blur-md md:block">
+          <span className="type-eyebrow text-black">{content.corner}</span>
         </p>
 
-        <div className="absolute bottom-3 left-4 z-10 md:bottom-4 md:left-6">
-          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-white md:text-sm">
-            {content.label}
-          </p>
-          <h1 className="text-white">
+        <div className="absolute bottom-3 left-3 right-3 z-10 rounded-xl bg-white/70 p-4 backdrop-blur-md md:bottom-6 md:left-7 md:right-auto md:rounded-none md:bg-transparent md:p-0 md:backdrop-blur-none">
+          <p className="type-eyebrow mb-3 text-black/60">{content.label}</p>
+          <h1 className="text-black">
             <span className="sr-only">{srHeading}</span>
             <span aria-hidden="true" className="font-display block">
               {content.displayLines.map((line) => (

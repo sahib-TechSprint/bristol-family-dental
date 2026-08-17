@@ -22,6 +22,68 @@ body {
   @apply bg-white text-black font-sans antialiased;
 }
 
+/* Strict type scale. Every heading and body size on the site maps to one of
+   these seven steps; components do not invent their own sizes.
+   The two spec fixed display moments (home hero, gallery display card) keep
+   their own clamp values and sit above this scale. */
+.type-display {
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 6vw, 4.75rem);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+.type-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3.6vw, 2.875rem);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  font-weight: 700;
+}
+.type-h3 {
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+}
+.type-eyebrow {
+  font-size: 0.6875rem;
+  line-height: 1.4;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.type-body-lg {
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+.type-body {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+.type-small {
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+@media (min-width: 768px) {
+  .type-h3 {
+    font-size: 1.625rem;
+  }
+  .type-eyebrow {
+    font-size: 0.75rem;
+  }
+  .type-body-lg {
+    font-size: 1.125rem;
+  }
+  .type-body {
+    font-size: 1rem;
+  }
+  .type-small {
+    font-size: 0.875rem;
+  }
+}
+
 ::selection {
   background: #000;
   color: #fff;

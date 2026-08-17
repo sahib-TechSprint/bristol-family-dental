@@ -33,8 +33,8 @@ const badges = ["PPO", "HMO", "Denti-Cal", "CareCredit"];
             <span class="self-start rounded-full bg-black px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.1em] text-white">
               {plan.badge}
             </span>
-            <h2 class="font-display mt-4 text-xl font-bold md:text-2xl">{plan.name}</h2>
-            <p class="mt-2.5 text-sm leading-relaxed text-black/70">{plan.text}</p>
+            <h2 class="type-h3 mt-5">{plan.name}</h2>
+            <p class="type-body mt-3 text-black/65">{plan.text}</p>
           </div>
         ))
       }
@@ -46,10 +46,10 @@ const badges = ["PPO", "HMO", "Denti-Cal", "CareCredit"];
     aria-labelledby="payment-heading"
     data-reveal-group
   >
-    <div class="rounded-xl bg-zinc-200 px-5 py-10 md:rounded-2xl md:px-10 md:py-14">
+    <div class="rounded-xl bg-zinc-200 px-6 py-14 md:rounded-2xl md:px-14 md:py-20">
       <h2
         id="payment-heading"
-        class="font-display max-w-2xl text-[clamp(1.8rem,4vw,3rem)] font-bold leading-[1.05] tracking-tight"
+        class="type-h2 max-w-2xl"
         data-reveal
       >
         {insurance.paymentHeading}
@@ -61,8 +61,8 @@ const badges = ["PPO", "HMO", "Denti-Cal", "CareCredit"];
               <span class="inline-block rounded-full border border-black/25 px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.1em]">
                 {option.badge}
               </span>
-              <h3 class="font-display mt-4 text-lg font-bold md:text-xl">{option.name}</h3>
-              <p class="mt-2.5 text-sm leading-relaxed text-black/70">{option.text}</p>
+              <h3 class="type-h3 mt-5">{option.name}</h3>
+              <p class="type-body mt-3 text-black/65">{option.text}</p>
             </div>
           ))
         }
@@ -75,13 +75,13 @@ const badges = ["PPO", "HMO", "Denti-Cal", "CareCredit"];
     aria-labelledby="promise-heading"
     data-reveal-group
   >
-    <div class="rounded-xl bg-black px-5 py-10 text-white md:rounded-2xl md:px-10 md:py-14" data-reveal>
-      <p class="text-xs font-semibold uppercase tracking-[0.16em] text-white/60">
+    <div class="rounded-xl bg-black px-6 py-14 text-white md:rounded-2xl md:px-14 md:py-20" data-reveal>
+      <p class="type-eyebrow text-white/55">
         {insurance.promiseHeading}
       </p>
       <h2
         id="promise-heading"
-        class="font-display mt-3 max-w-3xl text-[clamp(1.8rem,4.5vw,3.5rem)] font-bold leading-[1.05] tracking-tight"
+        class="type-h2 mt-4 max-w-3xl"
       >
         {insurance.promise}
       </h2>

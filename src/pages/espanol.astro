@@ -13,16 +13,16 @@ import { seo } from "../content/seo";
   hreflangPair
 >
   <section class="px-3 pb-1.5 pt-28 md:px-5 md:pb-2 md:pt-36" aria-label="Bienvenida">
-    <div class="rounded-xl bg-stone-50 px-6 py-10 md:rounded-2xl md:px-12 md:py-16">
-      <p class="text-xs font-semibold uppercase tracking-[0.16em] text-black/60">
+    <div class="rounded-xl bg-stone-50 px-6 py-14 md:rounded-2xl md:px-16 md:py-24">
+      <p class="type-eyebrow text-black/55">
         {espanol.label}
       </p>
       <h1
-        class="font-display mt-3 max-w-4xl text-[clamp(2.4rem,6vw,4.5rem)] font-bold leading-[1.02] tracking-tight"
+        class="type-display mt-4 max-w-4xl"
       >
         {espanol.heading}
       </h1>
-      <p class="mt-5 max-w-2xl text-base leading-relaxed text-black/70 md:text-lg">
+      <p class="type-body-lg mt-6 max-w-2xl text-black/70">
         {espanol.intro}
       </p>
     </div>
@@ -33,24 +33,24 @@ import { seo } from "../content/seo";
     aria-label="Servicios y seguro dental"
     data-reveal-group
   >
-    <div class="rounded-xl bg-black px-5 py-9 text-white md:rounded-2xl md:px-8 md:py-12" data-reveal>
+    <div class="rounded-xl bg-black px-6 py-12 text-white md:rounded-2xl md:px-10 md:py-16" data-reveal>
       <div class="flex items-center gap-3">
         <Icon name="tooth" class="h-5 w-5 text-white/70" />
-        <h2 class="font-display text-2xl font-bold tracking-tight md:text-3xl">
+        <h2 class="type-h3">
           {espanol.serviciosHeading}
         </h2>
       </div>
-      <p class="mt-4 text-sm leading-relaxed text-white/80 md:text-base">{espanol.servicios}</p>
+      <p class="mt-4 type-body text-white/75">{espanol.servicios}</p>
     </div>
 
-    <div class="rounded-xl bg-zinc-200 px-5 py-9 md:rounded-2xl md:px-8 md:py-12" data-reveal>
+    <div class="rounded-xl bg-zinc-200 px-6 py-12 md:rounded-2xl md:px-10 md:py-16" data-reveal>
       <div class="flex items-center gap-3">
         <Icon name="coin" class="h-5 w-5 text-black/60" />
-        <h2 class="font-display text-2xl font-bold tracking-tight md:text-3xl">
+        <h2 class="type-h3">
           {espanol.seguroHeading}
         </h2>
       </div>
-      <p class="mt-4 text-sm leading-relaxed text-black/75 md:text-base">{espanol.seguro}</p>
+      <p class="mt-4 type-body text-black/70">{espanol.seguro}</p>
       <ul class="mt-5 flex flex-wrap gap-2.5" aria-label="Coberturas aceptadas">
         {
           ["PPO", "HMO", "Denti-Cal", "CareCredit"].map((badge) => (
@@ -68,10 +68,10 @@ import { seo } from "../content/seo";
     aria-label="Horario y ubicación"
     data-reveal-group
   >
-    <div class="flex flex-col rounded-xl bg-zinc-200 px-5 py-9 md:rounded-2xl md:px-8 md:py-12" data-reveal>
+    <div class="flex flex-col rounded-xl bg-zinc-200 px-6 py-12 md:rounded-2xl md:px-10 md:py-16" data-reveal>
       <div class="flex items-center gap-3">
         <Icon name="clock" class="h-5 w-5 text-black/60" />
-        <h2 class="font-display text-2xl font-bold tracking-tight md:text-3xl">
+        <h2 class="type-h3">
           {espanol.horarioHeading}
         </h2>
       </div>
@@ -93,10 +93,10 @@ import { seo } from "../content/seo";
       </a>
     </div>
 
-    <div class="rounded-xl bg-stone-50 px-5 py-9 md:rounded-2xl md:px-8 md:py-12" data-reveal>
+    <div class="rounded-xl bg-stone-50 px-6 py-12 md:rounded-2xl md:px-10 md:py-16" data-reveal>
       <div class="flex items-center gap-3">
         <Icon name="pin" class="h-5 w-5 text-black/60" />
-        <h2 class="font-display text-2xl font-bold tracking-tight md:text-3xl">
+        <h2 class="type-h3">
           {espanol.ubicacionHeading}
         </h2>
       </div>
@@ -105,7 +105,7 @@ import { seo } from "../content/seo";
         {practice.address.city}, {practice.address.state}
         {practice.address.zip}
       </p>
-      <p class="mt-4 text-sm leading-relaxed text-black/70 md:text-base">{espanol.ubicacion}</p>
+      <p class="mt-4 type-body text-black/65">{espanol.ubicacion}</p>
       <a
         href={practice.mapsUrl}
         target="_blank"
@@ -120,13 +120,13 @@ import { seo } from "../content/seo";
 
   <section class="px-3 pb-1.5 pt-1.5 md:px-5 md:pb-2 md:pt-2" aria-label="Haga su cita" data-reveal-group>
     <div
-      class="flex flex-col items-center rounded-xl bg-black px-5 py-14 text-center text-white md:rounded-2xl md:px-10 md:py-20"
+      class="flex flex-col items-center rounded-xl bg-black px-6 py-20 text-center text-white md:rounded-2xl md:px-10 md:py-28"
       data-reveal
     >
-      <h2 class="font-display max-w-3xl text-[clamp(2.2rem,6vw,4.5rem)] font-bold leading-[0.98] tracking-tight">
+      <h2 class="type-display max-w-3xl">
         {espanol.citaHeading}
       </h2>
-      <p class="mt-4 max-w-xl text-sm leading-relaxed text-white/75 md:text-base">{espanol.cita}</p>
+      <p class="type-body-lg mt-6 max-w-xl text-white/70">{espanol.cita}</p>
       <div class="mt-8 flex flex-wrap items-center justify-center gap-3 md:gap-4">
         <a
           href="/book"

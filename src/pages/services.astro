@@ -21,15 +21,15 @@ import { seo } from "../content/seo";
         aria-labelledby={`group-${group.id}`}
         data-reveal-group
       >
-        <div class="rounded-xl bg-stone-50 px-5 py-9 md:rounded-2xl md:px-10 md:py-12">
+        <div class="rounded-xl bg-stone-50 px-6 py-12 md:rounded-2xl md:px-14 md:py-16">
           <div class="max-w-2xl" data-reveal>
             <h2
               id={`group-${group.id}`}
-              class="font-display text-[clamp(1.8rem,4vw,3rem)] font-bold leading-[1.05] tracking-tight"
+              class="type-h2"
             >
               {group.name}
             </h2>
-            <p class="mt-3 text-sm leading-relaxed text-black/70 md:text-base">{group.intro}</p>
+            <p class="mt-3 type-body text-black/65">{group.intro}</p>
           </div>
 
           <div class="mt-7 grid grid-cols-1 gap-1.5 md:mt-9 md:grid-cols-2 md:gap-2">
@@ -39,9 +39,9 @@ import { seo } from "../content/seo";
                 class="flex flex-col rounded-lg bg-white p-5 md:rounded-xl md:p-7"
                 data-reveal
               >
-                <h3 class="font-display text-xl font-bold md:text-2xl">{service.name}</h3>
+                <h3 class="type-h3">{service.name}</h3>
                 <p class="mt-2.5 flex-1 text-sm leading-relaxed text-black/70">{service.blurb}</p>
-                <p class="mt-4 text-xs font-semibold uppercase tracking-[0.12em] text-black/60">
+                <p class="mt-4 type-eyebrow text-black/55">
                   Who it helps
                 </p>
                 <p class="mt-1 text-sm text-black/70">{service.whoFor}</p>
@@ -67,16 +67,16 @@ import { seo } from "../content/seo";
   >
     <div
       id={specialistNetwork.id}
-      class="rounded-xl bg-black px-5 py-10 text-white md:rounded-2xl md:px-10 md:py-14"
+      class="rounded-xl bg-black px-6 py-14 text-white md:rounded-2xl md:px-14 md:py-20"
       data-reveal
     >
       <h2
         id="group-specialists"
-        class="font-display max-w-xl text-[clamp(1.8rem,4vw,3rem)] font-bold leading-[1.05] tracking-tight"
+        class="type-h2 max-w-xl"
       >
         {specialistNetwork.name}
       </h2>
-      <p class="mt-4 max-w-2xl text-sm leading-relaxed text-white/75 md:text-base">
+      <p class="mt-4 max-w-2xl type-body text-white/70">
         {specialistNetwork.blurb}
       </p>
       <div class="mt-8">

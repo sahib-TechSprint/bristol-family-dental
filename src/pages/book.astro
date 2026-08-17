@@ -14,15 +14,15 @@ const serviceOptions = allServices.map(({ id, name }) => ({ id, name }));
 ---
 
 <Base title={seo.book.title} description={seo.book.description}>
-  <section class="px-3 pb-1.5 pt-28 md:px-5 md:pb-2 md:pt-36" aria-label="Book an appointment">
-    <div class="rounded-xl bg-stone-50 px-5 py-9 md:rounded-2xl md:px-10 md:py-14">
-      <p class="text-xs font-semibold uppercase tracking-[0.16em] text-black/60">{book.label}</p>
+  <section class="px-3 pb-1.5 pt-28 md:px-5 md:pb-2 md:pt-40" aria-label="Book an appointment">
+    <div class="rounded-xl bg-stone-50 px-6 py-14 md:rounded-2xl md:px-14 md:py-20">
+      <p class="type-eyebrow text-black/55">{book.label}</p>
       <h1
-        class="font-display mt-3 max-w-3xl text-[clamp(2.4rem,6vw,4.5rem)] font-bold leading-[1.02] tracking-tight"
+        class="type-display mt-4 max-w-3xl"
       >
         {book.heading}
       </h1>
-      <p class="mt-4 max-w-2xl text-sm leading-relaxed text-black/70 md:text-base">{book.sub}</p>
+      <p class="type-body-lg mt-6 max-w-2xl text-black/70">{book.sub}</p>
 
       <div class="mt-8 grid grid-cols-1 gap-1.5 md:grid-cols-[1.5fr_1fr] md:gap-2">
         <BookingForm
@@ -39,7 +39,7 @@ const serviceOptions = allServices.map(({ id, name }) => ({ id, name }));
           <div class="rounded-lg bg-black p-6 text-white md:rounded-xl md:p-8">
             <div class="flex items-center gap-3">
               <Icon name="phone" class="h-5 w-5 text-white/70" />
-              <h2 class="font-display text-lg font-bold md:text-xl">Rather call?</h2>
+              <h2 class="type-h3">Rather call?</h2>
             </div>
             <p class="mt-3 text-sm leading-relaxed text-white/75">
               Most of our patients book by phone. Call during office hours and a real person
@@ -56,7 +56,7 @@ const serviceOptions = allServices.map(({ id, name }) => ({ id, name }));
           <div class="flex-1 rounded-lg bg-zinc-200 p-6 md:rounded-xl md:p-8">
             <div class="flex items-center gap-3">
               <Icon name="clock" class="h-5 w-5 text-black/60" />
-              <h2 class="font-display text-lg font-bold md:text-xl">Office hours</h2>
+              <h2 class="type-h3">Office hours</h2>
             </div>
             <dl class="mt-4">
               {

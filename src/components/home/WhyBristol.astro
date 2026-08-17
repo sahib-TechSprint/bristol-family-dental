@@ -7,26 +7,19 @@ import Icon from "../Icon.astro";
 ---
 
 <section class="px-3 pb-1.5 pt-1.5 md:px-5 md:pb-2 md:pt-2" aria-label="Why Bristol" data-reveal-group>
-  <div class="rounded-xl bg-stone-50 px-5 py-9 md:rounded-2xl md:px-10 md:py-14">
-    <p class="text-xs font-semibold uppercase tracking-[0.16em] text-black/60" data-reveal>
-      {why.label}
-    </p>
-    <h2
-      class="font-display mt-3 max-w-2xl text-[clamp(2rem,5vw,3.75rem)] font-bold leading-[1.02] tracking-tight"
-      data-reveal
-    >
-      {why.heading}
-    </h2>
+  <div class="rounded-xl bg-stone-50 px-6 py-14 md:rounded-2xl md:px-14 md:py-24">
+    <p class="type-eyebrow text-black/55" data-reveal>{why.label}</p>
+    <h2 class="type-h2 mt-4 max-w-2xl" data-reveal>{why.heading}</h2>
 
-    <div class="mt-8 grid grid-cols-1 gap-1.5 md:mt-10 md:grid-cols-3 md:gap-2">
+    <div class="mt-10 grid grid-cols-1 gap-1.5 md:mt-14 md:grid-cols-3 md:gap-2">
       {
         why.cards.map((card) => (
-          <div class="rounded-lg bg-white p-5 md:rounded-xl md:p-7" data-reveal>
+          <div class="rounded-lg bg-white p-6 md:rounded-xl md:p-9" data-reveal>
             <span class="flex h-11 w-11 items-center justify-center rounded-full border border-black/20">
               <Icon name={card.icon as "coin" | "globe" | "family"} class="h-5 w-5" />
             </span>
-            <h3 class="font-display mt-4 text-xl font-bold md:text-2xl">{card.title}</h3>
-            <p class="mt-2.5 text-sm leading-relaxed text-black/70">{card.text}</p>
+            <h3 class="type-h3 mt-6">{card.title}</h3>
+            <p class="type-body mt-3 text-black/65">{card.text}</p>
           </div>
         ))
       }

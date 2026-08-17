@@ -20,8 +20,8 @@ import { seo } from "../content/seo";
     aria-label="Contact details and hours"
     data-reveal-group
   >
-    <div class="rounded-xl bg-black px-5 py-9 text-white md:rounded-2xl md:px-8 md:py-12" data-reveal>
-      <h2 class="font-display text-2xl font-bold tracking-tight md:text-3xl">
+    <div class="rounded-xl bg-black px-6 py-12 text-white md:rounded-2xl md:px-10 md:py-16" data-reveal>
+      <h2 class="type-h3">
         {contact.findUsHeading}
       </h2>
 
@@ -40,7 +40,7 @@ import { seo } from "../content/seo";
           <p>
             <a
               href={`tel:${practice.phone.tel}`}
-              class="font-display text-lg font-bold md:text-xl transition-colors hover:text-white/75"
+              class="type-h3 transition-colors hover:text-white/75"
             >
               {practice.phone.display}
             </a>
@@ -74,10 +74,10 @@ import { seo } from "../content/seo";
       </div>
     </div>
 
-    <div class="flex flex-col rounded-xl bg-zinc-200 px-5 py-9 md:rounded-2xl md:px-8 md:py-12" data-reveal>
+    <div class="flex flex-col rounded-xl bg-zinc-200 px-6 py-12 md:rounded-2xl md:px-10 md:py-16" data-reveal>
       <div class="flex items-center gap-3">
         <Icon name="clock" class="h-5 w-5 text-black/60" />
-        <h2 class="font-display text-2xl font-bold tracking-tight md:text-3xl">
+        <h2 class="type-h3">
           {contact.hoursHeading}
         </h2>
       </div>
