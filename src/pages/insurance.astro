@@ -1,0 +1,93 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHero from "../components/PageHero.astro";
+import Cta from "../components/Cta.astro";
+import { insurance } from "../content/pages";
+import { seo } from "../content/seo";
+
+const badges = ["PPO", "HMO", "Denti-Cal", "CareCredit"];
+---
+
+<Base title={seo.insurance.title} description={seo.insurance.description}>
+  <PageHero label={insurance.label} heading={insurance.heading} intro={insurance.intro}>
+    <ul class="mt-7 flex flex-wrap gap-2.5" aria-label="Accepted coverage and financing">
+      {
+        badges.map((badge) => (
+          <li class="rounded-full border border-black/25 bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.1em] md:px-5 md:text-sm">
+            {badge}
+          </li>
+        ))
+      }
+    </ul>
+  </PageHero>
+
+  <section
+    class="px-3 pb-1.5 pt-1.5 md:px-5 md:pb-2 md:pt-2"
+    aria-label="Insurance plans"
+    data-reveal-group
+  >
+    <div class="grid grid-cols-1 gap-1.5 md:grid-cols-3 md:gap-2">
+      {
+        insurance.plans.map((plan) => (
+          <div class="flex flex-col rounded-xl bg-stone-50 p-6 md:rounded-2xl md:p-8" data-reveal>
+            <span class="self-start rounded-full bg-black px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.1em] text-white">
+              {plan.badge}
+            </span>
+            <h2 class="font-display mt-4 text-xl font-bold md:text-2xl">{plan.name}</h2>
+            <p class="mt-2.5 text-sm leading-relaxed text-black/70">{plan.text}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section
+    class="px-3 pb-1.5 pt-1.5 md:px-5 md:pb-2 md:pt-2"
+    aria-labelledby="payment-heading"
+    data-reveal-group
+  >
+    <div class="rounded-xl bg-zinc-200 px-5 py-10 md:rounded-2xl md:px-10 md:py-14">
+      <h2
+        id="payment-heading"
+        class="font-display max-w-2xl text-[clamp(1.8rem,4vw,3rem)] font-bold leading-[1.05] tracking-tight"
+        data-reveal
+      >
+        {insurance.paymentHeading}
+      </h2>
+      <div class="mt-8 grid grid-cols-1 gap-1.5 md:grid-cols-3 md:gap-2">
+        {
+          insurance.payment.map((option) => (
+            <div class="rounded-lg bg-white p-5 md:rounded-xl md:p-7" data-reveal>
+              <span class="inline-block rounded-full border border-black/25 px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.1em]">
+                {option.badge}
+              </span>
+              <h3 class="font-display mt-4 text-lg font-bold md:text-xl">{option.name}</h3>
+              <p class="mt-2.5 text-sm leading-relaxed text-black/70">{option.text}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="px-3 pb-1.5 pt-1.5 md:px-5 md:pb-2 md:pt-2"
+    aria-labelledby="promise-heading"
+    data-reveal-group
+  >
+    <div class="rounded-xl bg-black px-5 py-10 text-white md:rounded-2xl md:px-10 md:py-14" data-reveal>
+      <p class="text-xs font-semibold uppercase tracking-[0.16em] text-white/60">
+        {insurance.promiseHeading}
+      </p>
+      <h2
+        id="promise-heading"
+        class="font-display mt-3 max-w-3xl text-[clamp(1.8rem,4.5vw,3.5rem)] font-bold leading-[1.05] tracking-tight"
+      >
+        {insurance.promise}
+      </h2>
+      <div class="mt-8">
+        <Cta variant="light" />
+      </div>
+    </div>
+  </section>
+</Base>
