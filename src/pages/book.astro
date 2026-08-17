@@ -1,0 +1,77 @@
+---
+import Base from "../layouts/Base.astro";
+import BookingForm from "../components/BookingForm.tsx";
+import Icon from "../components/Icon.astro";
+import { practice } from "../content/practice";
+import { book } from "../content/pages";
+import { allServices } from "../content/services";
+import { seo } from "../content/seo";
+
+// Deliberately still: no reveal animations on this page. The visitor is here
+// to write, not to watch.
+
+const serviceOptions = allServices.map(({ id, name }) => ({ id, name }));
+---
+
+<Base title={seo.book.title} description={seo.book.description}>
+  <section class="px-3 pb-1.5 pt-28 md:px-5 md:pb-2 md:pt-36" aria-label="Book an appointment">
+    <div class="rounded-xl bg-stone-50 px-5 py-9 md:rounded-2xl md:px-10 md:py-14">
+      <p class="text-xs font-semibold uppercase tracking-[0.16em] text-black/60">{book.label}</p>
+      <h1
+        class="font-display mt-3 max-w-3xl text-[clamp(2.4rem,6vw,4.5rem)] font-bold leading-[1.02] tracking-tight"
+      >
+        {book.heading}
+      </h1>
+      <p class="mt-4 max-w-2xl text-sm leading-relaxed text-black/70 md:text-base">{book.sub}</p>
+
+      <div class="mt-8 grid grid-cols-1 gap-1.5 md:grid-cols-[1.5fr_1fr] md:gap-2">
+        <BookingForm
+          client:load
+          services={serviceOptions}
+          confirmHeading={book.confirmHeading}
+          confirmText={book.confirm}
+          phoneDisplay={practice.phone.display}
+          phoneTel={practice.phone.tel}
+          privacyNote={book.privacyNote}
+        />
+
+        <div class="flex flex-col gap-1.5 md:gap-2">
+          <div class="rounded-lg bg-black p-6 text-white md:rounded-xl md:p-8">
+            <div class="flex items-center gap-3">
+              <Icon name="phone" class="h-5 w-5 text-white/70" />
+              <h2 class="font-display text-lg font-bold md:text-xl">Rather call?</h2>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-white/75">
+              Most of our patients book by phone. Call during office hours and a real person
+              answers, in English or Spanish.
+            </p>
+            <a
+              href={`tel:${practice.phone.tel}`}
+              class="font-display mt-5 inline-flex min-h-11 items-center text-2xl font-bold tracking-tight"
+            >
+              {practice.phone.display}
+            </a>
+          </div>
+
+          <div class="flex-1 rounded-lg bg-zinc-200 p-6 md:rounded-xl md:p-8">
+            <div class="flex items-center gap-3">
+              <Icon name="clock" class="h-5 w-5 text-black/60" />
+              <h2 class="font-display text-lg font-bold md:text-xl">Office hours</h2>
+            </div>
+            <dl class="mt-4">
+              {
+                practice.hours.map((row) => (
+                  <div class="flex items-baseline justify-between gap-4 border-b border-black/10 py-3 last:border-b-0">
+                    <dt class="text-sm font-semibold">{row.label}</dt>
+                    <dd class="text-right text-sm text-black/70">{row.value}</dd>
+                  </div>
+                ))
+              }
+            </dl>
+            <p class="mt-3 text-xs leading-relaxed text-black/60">{practice.hoursNote}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
