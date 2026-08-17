@@ -97,12 +97,11 @@ import { seo } from "../content/seo";
   </section>
 
   <section class="px-3 pb-1.5 pt-1.5 md:px-5 md:pb-2 md:pt-2" aria-label="Map" data-reveal-group>
-    <div class="overflow-hidden rounded-xl md:rounded-2xl" data-reveal>
+    <div class="overflow-hidden rounded-xl bg-zinc-200 md:rounded-2xl" data-reveal>
       <iframe
         src={practice.mapsEmbedUrl}
         title={contact.mapTitle}
-        width="100%"
-        height="420"
+        class="block h-[420px] w-full"
         style="border:0"
         loading="lazy"
         allowfullscreen

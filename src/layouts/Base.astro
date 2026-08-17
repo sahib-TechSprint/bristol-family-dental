@@ -34,6 +34,55 @@ const canonical = new URL(Astro.url.pathname, site);
 const ogImage = new URL("/og/og-default.png", site);
 const ogLocale = lang === "es" ? "es_MX" : "en_US";
 const schemas = [dentistSchema(site.toString()), ...jsonLd];
+
+// Runs before first paint on the home page: covers the screen for the splash
+// counter unless this session has already seen it or the visitor prefers
+// reduced motion. A safety timeout clears the cover if hydration never comes.
+const splashScript = `(function () {
+  try {
+    if (
+      !sessionStorage.getItem("bfdc-splash-seen") &&
+      !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      document.documentElement.classList.add("splash-hold");
+      setTimeout(function () {
+        document.documentElement.classList.remove("splash-hold");
+      }, 4000);
+    }
+  } catch (e) {}
+})();`;
+
+// Staggered scroll reveal for the static sections.
+const revealScript = `(function () {
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var reveal = function (items) {
+    for (var i = 0; i < items.length; i++) items[i].classList.add("is-revealed");
+  };
+  var groups = document.querySelectorAll("[data-reveal-group]");
+  if (reduced || typeof IntersectionObserver === "undefined") {
+    reveal(document.querySelectorAll("[data-reveal]"));
+    return;
+  }
+  groups.forEach(function (group) {
+    var items = group.querySelectorAll("[data-reveal]");
+    items.forEach(function (el, i) {
+      el.style.setProperty("--reveal-delay", i * 120 + "ms");
+    });
+    var io = new IntersectionObserver(
+      function (entries) {
+        for (var i = 0; i < entries.length; i++) {
+          if (entries[i].isIntersecting) {
+            reveal(items);
+            io.disconnect();
+            break;
+          }
+        }
+      },
+      { threshold: 0.15 }
+    );
+    io.observe(group);
+  });
+})();`;
 ---
 
 <!doctype html>
@@ -86,25 +135,7 @@ const schemas = [dentistSchema(site.toString()), ...jsonLd];
 
     {preloadImages.map((src) => <link rel="preload" as="image" href={src} />)}
 
-    {
-      isHome && (
-        <script is:inline>
-          {`(function () {
-  try {
-    if (
-      !sessionStorage.getItem("bfdc-splash-seen") &&
-      !window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
-      document.documentElement.classList.add("splash-hold");
-      setTimeout(function () {
-        document.documentElement.classList.remove("splash-hold");
-      }, 4000);
-    }
-  } catch (e) {}
-})();`}
-        </script>
-      )
-    }
+    {isHome && <script is:inline set:html={splashScript} />}
 
     <noscript>
       <style>
@@ -142,43 +173,12 @@ const schemas = [dentistSchema(site.toString()), ...jsonLd];
       pathname={Astro.url.pathname}
     />
 
-    <main id="main">
+    <main id="main" tabindex="-1" class="outline-none">
       <slot />
     </main>
 
     <Footer />
 
-    <script is:inline>
-      {`(function () {
-  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var reveal = function (items) {
-    for (var i = 0; i < items.length; i++) items[i].classList.add("is-revealed");
-  };
-  var groups = document.querySelectorAll("[data-reveal-group]");
-  if (reduced || typeof IntersectionObserver === "undefined") {
-    reveal(document.querySelectorAll("[data-reveal]"));
-    return;
-  }
-  groups.forEach(function (group) {
-    var items = group.querySelectorAll("[data-reveal]");
-    items.forEach(function (el, i) {
-      el.style.setProperty("--reveal-delay", i * 120 + "ms");
-    });
-    var io = new IntersectionObserver(
-      function (entries) {
-        for (var i = 0; i < entries.length; i++) {
-          if (entries[i].isIntersecting) {
-            reveal(items);
-            io.disconnect();
-            break;
-          }
-        }
-      },
-      { threshold: 0.15 }
-    );
-    io.observe(group);
-  });
-})();`}
-    </script>
+    <script is:inline set:html={revealScript} />
   </body>
 </html>

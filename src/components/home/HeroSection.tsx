@@ -57,7 +57,7 @@ export default function HeroSection({ content, srHeading }: { content: HeroConte
           className="relative flex h-14 shrink-0 items-center justify-center overflow-hidden rounded-xl md:h-20 md:rounded-2xl"
           style={getAnimStyle(index)}
         >
-          <span className="absolute inset-0 bg-black/35" aria-hidden="true" />
+          <span className="absolute inset-0 bg-black/40" aria-hidden="true" />
           <span className="font-display relative z-10 px-4 text-center text-lg font-bold text-white md:text-3xl">
             {bar}
           </span>
@@ -74,7 +74,7 @@ export default function HeroSection({ content, srHeading }: { content: HeroConte
         style={getAnimStyle(3)}
       >
         <span
-          className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-black/30"
+          className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/15 to-black/45"
           aria-hidden="true"
         />
 

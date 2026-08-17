@@ -54,8 +54,17 @@ export default function GallerySection({
     cardRefs.current[index] = el;
   };
 
-  const scrim = (
-    <span className="absolute inset-0 bg-gradient-to-t from-black/50 to-black/15" aria-hidden="true" />
+  const scrimTopBottom = (
+    <span
+      className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/25 to-black/60"
+      aria-hidden="true"
+    />
+  );
+  const scrimBottom = (
+    <span
+      className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/25 to-black/25"
+      aria-hidden="true"
+    />
   );
 
   return (
@@ -73,7 +82,7 @@ export default function GallerySection({
         className="relative min-h-56 overflow-hidden rounded-xl md:min-h-0 md:rounded-2xl"
         style={getAnimStyle(0)}
       >
-        {scrim}
+        {scrimTopBottom}
         <h2 className="font-display absolute left-4 top-4 z-10 text-3xl font-bold text-white md:left-6 md:top-6 md:text-5xl">
           {content.heading}
         </h2>
@@ -91,7 +100,7 @@ export default function GallerySection({
         className="relative order-3 min-h-80 overflow-hidden rounded-xl md:order-none md:row-span-2 md:min-h-0 md:rounded-2xl"
         style={getAnimStyle(1)}
       >
-        {scrim}
+        {scrimBottom}
         <div className="absolute inset-x-4 bottom-4 z-10 md:inset-x-6 md:bottom-6">
           <p className="font-display max-w-md text-xl font-bold leading-tight text-white md:text-3xl">
             {content.tallCard}
@@ -114,7 +123,7 @@ export default function GallerySection({
         className="relative order-2 flex min-h-48 items-end overflow-hidden rounded-xl md:order-none md:min-h-0 md:rounded-2xl"
         style={getAnimStyle(2)}
       >
-        {scrim}
+        {scrimBottom}
         <p className="font-display relative z-10 p-4 text-[clamp(3rem,7vw,6rem)] font-bold leading-[0.9] tracking-tight text-white md:p-6">
           {content.display}
         </p>
@@ -129,7 +138,7 @@ export default function GallerySection({
         className="relative order-4 overflow-hidden rounded-xl md:order-none md:col-span-2 md:rounded-2xl"
         style={getAnimStyle(3)}
       >
-        <span className="absolute inset-0 bg-black/20" aria-hidden="true" />
+        <span className="absolute inset-0 bg-black/40" aria-hidden="true" />
         <ul className="relative z-10 grid h-full grid-cols-1 gap-1.5 p-1.5 md:grid-cols-4 md:gap-2 md:p-2">
           {content.cards.map((card) => (
             <li key={card.number} className="h-full">

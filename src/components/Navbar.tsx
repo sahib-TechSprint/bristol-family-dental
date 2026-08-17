@@ -67,9 +67,9 @@ export default function Navbar({
         return;
       }
       if (event.key !== "Tab" || !panelRef.current) return;
-      const focusable = panelRef.current.querySelectorAll<HTMLElement>(
-        'a[href], button:not([disabled])'
-      );
+      const focusable = Array.from(
+        panelRef.current.querySelectorAll<HTMLElement>('a[href], button:not([disabled])')
+      ).filter((el) => el.offsetParent !== null);
       if (focusable.length === 0) return;
       const first = focusable[0];
       const last = focusable[focusable.length - 1];
@@ -85,11 +85,14 @@ export default function Navbar({
     return () => document.removeEventListener("keydown", onKeyDown);
   }, [open, closeMenu]);
 
-  // Move focus into the panel once it is rendered.
+  // Move focus into the panel once it is rendered, skipping anything hidden
+  // at the current breakpoint.
   useEffect(() => {
     if (open) {
-      const first = panelRef.current?.querySelector<HTMLElement>("a[href], button");
-      first?.focus();
+      const candidates = Array.from(
+        panelRef.current?.querySelectorAll<HTMLElement>("a[href], button") ?? []
+      );
+      candidates.find((el) => el.offsetParent !== null)?.focus();
     }
   }, [open]);
 
@@ -97,7 +100,14 @@ export default function Navbar({
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 bg-white/80 backdrop-blur-md">
+    // While the menu is open the backdrop blur comes off: backdrop-filter on an
+    // ancestor would turn the fixed overlay's containing block into the header
+    // box instead of the viewport.
+    <header
+      className={`fixed top-0 inset-x-0 z-50 ${
+        open ? "bg-white" : "bg-white/80 backdrop-blur-md"
+      }`}
+    >
       <div className="flex items-center justify-between px-4 md:px-6 py-2 md:py-3">
         <a href="/" className="block" aria-label="Bristol Family Dental Center, home">
           <span className="block font-display text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-none">
@@ -225,7 +235,7 @@ export default function Navbar({
                     <a
                       href={link.href}
                       aria-current={isCurrent(link.href) ? "page" : undefined}
-                      className={`font-display inline-block py-1 text-4xl font-bold md:text-6xl lg:text-7xl transition-colors hover:text-neutral-500 ${
+                      className={`font-display inline-block py-1 text-4xl font-bold md:text-5xl lg:text-6xl transition-colors hover:text-neutral-500 ${
                         isCurrent(link.href) ? "text-neutral-400" : ""
                       }`}
                     >
