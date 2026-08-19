@@ -32,7 +32,9 @@ export default function HeroSection({ content, srHeading }: { content: HeroConte
   const sectionHeight = positions[0]?.sh ?? 0;
   const imageWidth = useImageWidth(BG, sectionHeight);
   const isMobile = useIsMobile();
-  const focalX = isMobile ? 0.7 : 0.8;
+  // Mobile focal sits a little left of the desktop one so the subject rides
+  // right of the bar labels and display type instead of directly behind them.
+  const focalX = isMobile ? 0.58 : 0.8;
   const { sectionRef: revealRef, getAnimStyle } = useStaggeredReveal(2);
 
   const setSectionRef = (el: HTMLElement | null) => {
