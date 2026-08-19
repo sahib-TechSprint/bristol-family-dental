@@ -18,10 +18,12 @@ interface HeroContent {
 const BG = "/images/hero.webp";
 
 /**
- * Full screen hero mosaic. Three feature bars and the main display card all
- * window the same photograph, so the section reads as one image seen through
- * four openings. The photograph is bright, so type sits directly on it in
- * black, with light glass surfaces where a little separation helps.
+ * Full screen hero mosaic. The feature bar block and the main display card
+ * both window the same photograph, so the section reads as one image seen
+ * through two openings. The bars sit flush inside a single rounded container,
+ * so the strip stays one continuous piece of the photo. The photograph is
+ * bright, so type sits directly on it in black, with light glass surfaces
+ * where a little separation helps.
  */
 export default function HeroSection({ content, srHeading }: { content: HeroContent; srHeading: string }) {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -31,7 +33,7 @@ export default function HeroSection({ content, srHeading }: { content: HeroConte
   const imageWidth = useImageWidth(BG, sectionHeight);
   const isMobile = useIsMobile();
   const focalX = isMobile ? 0.7 : 0.8;
-  const { sectionRef: revealRef, getAnimStyle } = useStaggeredReveal(4);
+  const { sectionRef: revealRef, getAnimStyle } = useStaggeredReveal(2);
 
   const setSectionRef = (el: HTMLElement | null) => {
     sectionRef.current = el;
@@ -47,23 +49,29 @@ export default function HeroSection({ content, srHeading }: { content: HeroConte
       className="flex h-[100svh] flex-col gap-1.5 px-3 pb-1.5 pt-24 md:h-screen md:gap-2 md:px-5 md:pb-2"
       aria-label="Welcome"
     >
-      {content.featureBars.map((bar, index) => (
-        <MaskedCard
-          key={bar}
-          bgImage={BG}
-          position={positions[index]}
-          imageWidth={imageWidth}
-          focalX={focalX}
-          cardRef={setCardRef(index)}
-          className="relative flex h-14 shrink-0 items-center justify-center overflow-hidden rounded-xl md:h-20 md:rounded-2xl"
-          style={getAnimStyle(index)}
-        >
-          <span className="absolute inset-0 bg-white/25 backdrop-blur-[2px]" aria-hidden="true" />
-          <span className="font-display relative z-10 px-4 text-center text-lg font-bold text-black md:text-2xl">
-            {bar}
-          </span>
-        </MaskedCard>
-      ))}
+      {/* One container owns the radius so the three bars read as a single
+          uninterrupted strip of the photograph, not three sliced chips. */}
+      <div
+        className="shrink-0 overflow-hidden rounded-xl md:rounded-2xl"
+        style={getAnimStyle(0)}
+      >
+        {content.featureBars.map((bar, index) => (
+          <MaskedCard
+            key={bar}
+            bgImage={BG}
+            position={positions[index]}
+            imageWidth={imageWidth}
+            focalX={focalX}
+            cardRef={setCardRef(index)}
+            className="relative flex h-14 items-center justify-center md:h-20"
+          >
+            <span className="absolute inset-0 bg-white/25 backdrop-blur-[2px]" aria-hidden="true" />
+            <span className="font-display relative z-10 px-4 text-center text-lg font-bold text-black md:text-2xl">
+              {bar}
+            </span>
+          </MaskedCard>
+        ))}
+      </div>
 
       <MaskedCard
         bgImage={BG}
@@ -72,7 +80,7 @@ export default function HeroSection({ content, srHeading }: { content: HeroConte
         focalX={focalX}
         cardRef={setCardRef(3)}
         className="relative flex-1 overflow-hidden rounded-xl md:rounded-2xl"
-        style={getAnimStyle(3)}
+        style={getAnimStyle(1)}
       >
         <p className="absolute left-4 top-4 z-10 max-w-[240px] rounded-lg bg-white/70 p-3 text-xs font-semibold leading-snug text-black/80 backdrop-blur-md md:left-7 md:top-7 md:max-w-[300px] md:bg-transparent md:p-0 md:text-sm md:text-black/75 md:backdrop-blur-none [@media(min-width:768px)_and_(max-height:760px)]:hidden">
           {content.supporting}
