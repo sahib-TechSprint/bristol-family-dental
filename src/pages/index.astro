@@ -5,10 +5,14 @@ import GallerySection from "../components/home/GallerySection.tsx";
 import ImplantSection from "../components/home/ImplantSection.astro";
 import WhyBristol from "../components/home/WhyBristol.astro";
 import TeamSection from "../components/home/TeamSection.astro";
+import ReviewsSection from "../components/home/ReviewsSection.astro";
+import HomeFaq from "../components/home/HomeFaq.astro";
 import LocationHours from "../components/home/LocationHours.astro";
 import FinalCta from "../components/home/FinalCta.astro";
 import { hero, gallery } from "../content/home";
 import { seo } from "../content/seo";
+import { homeFaq } from "../content/reviews";
+import { faqSchema } from "../lib/seo";
 import { bookHref, bookLabel } from "../content/nav";
 ---
 
@@ -17,6 +21,7 @@ import { bookHref, bookLabel } from "../content/nav";
   description={seo.home.description}
   isHome
   hreflangPair
+  jsonLd={[faqSchema(homeFaq)]}
   preloadImages={["/images/hero.webp"]}
 >
   <HeroSection
@@ -26,8 +31,10 @@ import { bookHref, bookLabel } from "../content/nav";
   />
   <GallerySection client:visible content={gallery} bookHref={bookHref} bookLabel={bookLabel} />
   <ImplantSection />
+  <ReviewsSection />
   <WhyBristol />
   <TeamSection />
+  <HomeFaq />
   <LocationHours />
   <FinalCta />
 </Base>

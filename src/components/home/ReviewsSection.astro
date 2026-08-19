@@ -1,0 +1,86 @@
+---
+// Patient reviews: live verified platform badges and verbatim excerpts.
+// Quiet by design: static cards, no carousel, nothing moves on its own.
+// Numbers and quotes live in content/reviews.ts with their verification date.
+
+import { reviewBadges, reviewExcerpts, reviewsSection } from "../../content/reviews";
+
+const s = reviewsSection;
+---
+
+<section class="px-3 pb-1.5 pt-1.5 md:px-5 md:pb-2 md:pt-2" aria-label="Patient reviews" data-reveal-group>
+  <div class="rounded-xl bg-sky px-6 py-14 md:rounded-2xl md:px-14 md:py-20">
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-[1.2fr_1fr] md:gap-12">
+      <div data-reveal>
+        <p class="type-eyebrow text-ink/60">{s.label}</p>
+        <h2 class="type-h2 mt-4 max-w-xl">{s.heading}</h2>
+        <p class="type-body-lg mt-5 max-w-lg text-ink/70">{s.body}</p>
+      </div>
+
+      <ul class="flex flex-col justify-center gap-1.5 md:gap-2" data-reveal>
+        {
+          reviewBadges.map((badge) => (
+            <li>
+              <a
+                href={badge.href}
+                target="_blank"
+                rel="noopener"
+                class="flex min-h-11 items-center justify-between gap-4 rounded-lg bg-white px-5 py-4 transition-colors hover:bg-paper md:rounded-xl"
+              >
+                <span class="flex items-baseline gap-2.5">
+                  <span class="font-display text-base font-bold md:text-lg">{badge.platform}</span>
+                  <span class="text-xs text-ink/65 md:text-sm">
+                    {badge.countLabel}
+                    {badge.note && <span> ({badge.note})</span>}
+                  </span>
+                </span>
+                {
+                  badge.rating && (
+                    <span class="flex items-center gap-1.5">
+                      <svg viewBox="0 0 20 20" class="h-4 w-4 text-cobalt" fill="currentColor" aria-hidden="true">
+                        <path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" />
+                      </svg>
+                      <span class="text-sm font-bold">{badge.rating}</span>
+                    </span>
+                  )
+                }
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <ul class="mt-10 grid grid-cols-1 gap-1.5 sm:grid-cols-2 md:mt-12 md:gap-2 lg:grid-cols-4">
+      {
+        reviewExcerpts.map((excerpt) => (
+          <li class="flex flex-col rounded-lg bg-white p-6 md:rounded-xl md:p-7" data-reveal>
+            {excerpt.stars ? (
+              <span class="flex gap-1 text-cobalt" role="img" aria-label={`${excerpt.stars} star review`}>
+                {Array.from({ length: excerpt.stars }).map(() => (
+                  <svg viewBox="0 0 20 20" class="h-3.5 w-3.5" fill="currentColor" aria-hidden="true">
+                    <path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" />
+                  </svg>
+                ))}
+              </span>
+            ) : (
+              <span class="type-eyebrow text-cobalt">Recommended</span>
+            )}
+            <blockquote
+              lang={excerpt.lang}
+              class="font-display mt-4 flex-1 text-base font-bold leading-snug md:text-lg"
+            >
+              &ldquo;{excerpt.quote}&rdquo;
+            </blockquote>
+            <p class="mt-4 text-xs text-ink/65 md:text-sm">
+              {excerpt.name} on{" "}
+              <a href={excerpt.href} target="_blank" rel="noopener" class="font-semibold text-cobalt underline-offset-4 hover:underline">
+                {excerpt.platform}
+              </a>
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
