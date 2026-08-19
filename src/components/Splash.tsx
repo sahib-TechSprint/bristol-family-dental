@@ -7,7 +7,7 @@ const FADE_MS = 700;
 const REMOVE_MS = 900;
 
 /**
- * First visit splash for the home page. A white overlay with a number counting
+ * First visit splash for the home page. A paper overlay with a navy number counting
  * 0 to 100 over two seconds, then a short hold and a fade. A session flag keeps
  * internal navigation from ever replaying it. The overlay never gates the page:
  * the hero renders beneath it immediately.
@@ -61,13 +61,13 @@ export default function Splash() {
   return (
     <div
       aria-hidden="true"
-      className="fixed inset-0 z-[100] flex items-end bg-white"
+      className="fixed inset-0 z-[100] flex items-end bg-paper"
       style={{
         opacity: fading ? 0 : 1,
         transition: `opacity ${FADE_MS}ms cubic-bezier(0.16, 1, 0.3, 1)`,
       }}
     >
-      <div className="p-6 md:p-10 font-display text-7xl md:text-9xl font-bold tabular-nums leading-none text-black">
+      <div className="p-6 md:p-10 font-display text-7xl md:text-9xl font-bold tabular-nums leading-none text-navy">
         {count}
       </div>
     </div>

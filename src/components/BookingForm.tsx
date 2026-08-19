@@ -114,7 +114,7 @@ export default function BookingForm({
         role="status"
         aria-live="polite"
       >
-        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-black text-white">
+        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-navy text-white">
           <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden="true">
             <path
               d="M4.5 12.5l4.6 4.6L19.5 6.5"
@@ -128,7 +128,7 @@ export default function BookingForm({
         <h2 className="font-display mt-5 text-2xl font-bold tracking-tight md:text-3xl">
           {confirmHeading}
         </h2>
-        <p className="mt-3 max-w-md text-sm leading-relaxed text-black/70 md:text-base">
+        <p className="mt-3 max-w-md text-sm leading-relaxed text-ink/70 md:text-base">
           {confirmText}
         </p>
         <a
@@ -142,8 +142,8 @@ export default function BookingForm({
   }
 
   const inputClass = (key: string) =>
-    `mt-1.5 w-full rounded-lg border bg-white px-4 py-3 text-base outline-none transition-colors focus:border-black ${
-      errors[key] ? "border-black" : "border-black/20"
+    `mt-1.5 w-full rounded-lg border bg-white px-4 py-3 text-base outline-none transition-colors focus:border-cobalt ${
+      errors[key] ? "border-navy" : "border-ink/25"
     }`;
 
   const errorText = (key: string) =>
@@ -162,7 +162,7 @@ export default function BookingForm({
     >
       <div ref={liveRef} tabIndex={-1} aria-live="assertive" className="outline-none">
         {(Object.keys(errors).length > 0 || serverError) && (
-          <p className="mb-4 rounded-lg bg-stone-100 px-4 py-3 text-sm font-semibold">
+          <p className="mb-4 rounded-lg bg-mist px-4 py-3 text-sm font-semibold">
             {serverError ?? "Please check the highlighted fields below."}
           </p>
         )}
@@ -268,12 +268,12 @@ export default function BookingForm({
         <fieldset>
           <legend className="text-sm font-semibold">{f.newPatient.label}</legend>
           <div className="mt-1.5 grid grid-cols-1 gap-2">
-            <label className="flex min-h-11 cursor-pointer items-center gap-3 rounded-lg border border-black/20 px-4 py-2.5 text-sm has-[:checked]:border-black">
-              <input type="radio" name="newPatient" value="yes" defaultChecked className="accent-black" />
+            <label className="flex min-h-11 cursor-pointer items-center gap-3 rounded-lg border border-ink/25 px-4 py-2.5 text-sm has-[:checked]:border-cobalt">
+              <input type="radio" name="newPatient" value="yes" defaultChecked className="accent-cobalt" />
               {f.newPatient.yes}
             </label>
-            <label className="flex min-h-11 cursor-pointer items-center gap-3 rounded-lg border border-black/20 px-4 py-2.5 text-sm has-[:checked]:border-black">
-              <input type="radio" name="newPatient" value="no" className="accent-black" />
+            <label className="flex min-h-11 cursor-pointer items-center gap-3 rounded-lg border border-ink/25 px-4 py-2.5 text-sm has-[:checked]:border-cobalt">
+              <input type="radio" name="newPatient" value="no" className="accent-cobalt" />
               {f.newPatient.no}
             </label>
           </div>
@@ -314,12 +314,12 @@ export default function BookingForm({
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-black px-8 py-4 text-base font-bold text-white disabled:opacity-60 motion-safe:hover:scale-[1.02] motion-safe:transition-transform md:w-auto"
+        className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-cobalt px-8 py-4 text-base font-bold text-white transition-colors hover:bg-cobalt-deep disabled:opacity-60 motion-safe:hover:scale-[1.02] motion-safe:transition-[transform,background-color] md:w-auto"
       >
         {status === "submitting" ? bookForm.submitting : bookForm.submit}
       </button>
 
-      <p id="form-note" className="mt-4 text-xs leading-relaxed text-black/60">
+      <p id="form-note" className="mt-4 text-xs leading-relaxed text-ink/65">
         {privacyNote}
       </p>
     </form>

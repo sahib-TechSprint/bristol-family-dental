@@ -19,7 +19,7 @@ const site = (Astro.site ?? new URL("https://bristol-family-dental.vercel.app"))
     aria-labelledby="education-heading"
     data-reveal-group
   >
-    <div class="rounded-xl bg-black px-6 py-14 text-white md:rounded-2xl md:px-14 md:py-20" id="dr-begino">
+    <div class="rounded-xl bg-navy px-6 py-14 text-white md:rounded-2xl md:px-14 md:py-20" id="dr-begino">
       <div class="grid gap-8 md:grid-cols-[1fr_1.1fr] md:gap-12">
         <div data-reveal>
           <p class="type-eyebrow text-white/55">
@@ -62,7 +62,7 @@ const site = (Astro.site ?? new URL("https://bristol-family-dental.vercel.app"))
     aria-labelledby="volunteer-heading"
     data-reveal-group
   >
-    <div class="rounded-xl bg-stone-50 px-6 py-14 md:rounded-2xl md:px-14 md:py-20">
+    <div class="rounded-xl bg-sky px-6 py-14 md:rounded-2xl md:px-14 md:py-20">
       <div class="grid gap-8 md:grid-cols-[1fr_1fr] md:gap-12">
         <div data-reveal>
           <h2
@@ -71,7 +71,7 @@ const site = (Astro.site ?? new URL("https://bristol-family-dental.vercel.app"))
           >
             {about.volunteerHeading}
           </h2>
-          <p class="mt-4 type-body text-black/65">
+          <p class="mt-4 type-body text-ink/65">
             {doctor.volunteerCopy}
           </p>
         </div>
@@ -99,7 +99,7 @@ const site = (Astro.site ?? new URL("https://bristol-family-dental.vercel.app"))
     aria-labelledby="team-heading"
     data-reveal-group
   >
-    <div class="rounded-xl bg-zinc-200 px-6 py-14 md:rounded-2xl md:px-14 md:py-20">
+    <div class="rounded-xl bg-mist px-6 py-14 md:rounded-2xl md:px-14 md:py-20">
       <h2
         id="team-heading"
         class="type-h2"
@@ -107,7 +107,7 @@ const site = (Astro.site ?? new URL("https://bristol-family-dental.vercel.app"))
       >
         {about.teamHeading}
       </h2>
-      <p class="mt-3 max-w-xl type-body text-black/65" data-reveal>
+      <p class="mt-3 max-w-xl type-body text-ink/65" data-reveal>
         {bilingualNote}
       </p>
 
@@ -116,10 +116,10 @@ const site = (Astro.site ?? new URL("https://bristol-family-dental.vercel.app"))
           team.map((member) => (
             <div class="rounded-lg bg-white p-5 md:rounded-xl md:p-6" data-reveal>
               <h3 class="font-display text-lg font-bold leading-tight">{member.name}</h3>
-              <p class="mt-1 type-eyebrow text-black/55">
+              <p class="mt-1 type-eyebrow text-ink/60">
                 {member.role}
               </p>
-              <p class="type-body mt-3 text-black/65">{member.note}</p>
+              <p class="type-body mt-3 text-ink/65">{member.note}</p>
             </div>
           ))
         }

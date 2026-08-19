@@ -21,7 +21,7 @@ import { seo } from "../content/seo";
         aria-labelledby={`group-${group.id}`}
         data-reveal-group
       >
-        <div class="rounded-xl bg-stone-50 px-6 py-12 md:rounded-2xl md:px-14 md:py-16">
+        <div class="rounded-xl bg-sky px-6 py-12 md:rounded-2xl md:px-14 md:py-16">
           <div class="max-w-2xl" data-reveal>
             <h2
               id={`group-${group.id}`}
@@ -29,7 +29,7 @@ import { seo } from "../content/seo";
             >
               {group.name}
             </h2>
-            <p class="mt-3 type-body text-black/65">{group.intro}</p>
+            <p class="mt-3 type-body text-ink/65">{group.intro}</p>
           </div>
 
           <div class="mt-7 grid grid-cols-1 gap-1.5 md:mt-9 md:grid-cols-2 md:gap-2">
@@ -40,11 +40,11 @@ import { seo } from "../content/seo";
                 data-reveal
               >
                 <h3 class="type-h3">{service.name}</h3>
-                <p class="mt-2.5 flex-1 text-sm leading-relaxed text-black/70">{service.blurb}</p>
-                <p class="mt-4 type-eyebrow text-black/55">
+                <p class="mt-2.5 flex-1 text-sm leading-relaxed text-ink/70">{service.blurb}</p>
+                <p class="mt-4 type-eyebrow text-ink/60">
                   Who it helps
                 </p>
-                <p class="mt-1 text-sm text-black/70">{service.whoFor}</p>
+                <p class="mt-1 text-sm text-ink/70">{service.whoFor}</p>
                 <a
                   href="/book"
                   class="mt-5 inline-flex min-h-11 items-center gap-2.5 text-sm font-bold underline-offset-4 hover:underline"
@@ -67,7 +67,7 @@ import { seo } from "../content/seo";
   >
     <div
       id={specialistNetwork.id}
-      class="rounded-xl bg-black px-6 py-14 text-white md:rounded-2xl md:px-14 md:py-20"
+      class="rounded-xl bg-navy px-6 py-14 text-white md:rounded-2xl md:px-14 md:py-20"
       data-reveal
     >
       <h2

@@ -13,8 +13,8 @@ import { seo } from "../content/seo";
   hreflangPair
 >
   <section class="px-3 pb-1.5 pt-28 md:px-5 md:pb-2 md:pt-36" aria-label="Bienvenida">
-    <div class="rounded-xl bg-stone-50 px-6 py-14 md:rounded-2xl md:px-16 md:py-24">
-      <p class="type-eyebrow text-black/55">
+    <div class="rounded-xl bg-sky px-6 py-14 md:rounded-2xl md:px-16 md:py-24">
+      <p class="type-eyebrow text-ink/60">
         {espanol.label}
       </p>
       <h1
@@ -22,7 +22,7 @@ import { seo } from "../content/seo";
       >
         {espanol.heading}
       </h1>
-      <p class="type-body-lg mt-6 max-w-2xl text-black/70">
+      <p class="type-body-lg mt-6 max-w-2xl text-ink/70">
         {espanol.intro}
       </p>
     </div>
@@ -33,7 +33,7 @@ import { seo } from "../content/seo";
     aria-label="Servicios y seguro dental"
     data-reveal-group
   >
-    <div class="rounded-xl bg-black px-6 py-12 text-white md:rounded-2xl md:px-10 md:py-16" data-reveal>
+    <div class="rounded-xl bg-navy px-6 py-12 text-white md:rounded-2xl md:px-10 md:py-16" data-reveal>
       <div class="flex items-center gap-3">
         <Icon name="tooth" class="h-5 w-5 text-white/70" />
         <h2 class="type-h3">
@@ -43,18 +43,18 @@ import { seo } from "../content/seo";
       <p class="mt-4 type-body text-white/75">{espanol.servicios}</p>
     </div>
 
-    <div class="rounded-xl bg-zinc-200 px-6 py-12 md:rounded-2xl md:px-10 md:py-16" data-reveal>
+    <div class="rounded-xl bg-mist px-6 py-12 md:rounded-2xl md:px-10 md:py-16" data-reveal>
       <div class="flex items-center gap-3">
-        <Icon name="coin" class="h-5 w-5 text-black/60" />
+        <Icon name="coin" class="h-5 w-5 text-ink/65" />
         <h2 class="type-h3">
           {espanol.seguroHeading}
         </h2>
       </div>
-      <p class="mt-4 type-body text-black/70">{espanol.seguro}</p>
+      <p class="mt-4 type-body text-ink/70">{espanol.seguro}</p>
       <ul class="mt-5 flex flex-wrap gap-2.5" aria-label="Coberturas aceptadas">
         {
           ["PPO", "HMO", "Denti-Cal", "CareCredit"].map((badge) => (
-            <li class="rounded-full border border-black/25 bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.1em]">
+            <li class="rounded-full border border-ink/25 bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.1em]">
               {badge}
             </li>
           ))
@@ -68,9 +68,9 @@ import { seo } from "../content/seo";
     aria-label="Horario y ubicación"
     data-reveal-group
   >
-    <div class="flex flex-col rounded-xl bg-zinc-200 px-6 py-12 md:rounded-2xl md:px-10 md:py-16" data-reveal>
+    <div class="flex flex-col rounded-xl bg-mist px-6 py-12 md:rounded-2xl md:px-10 md:py-16" data-reveal>
       <div class="flex items-center gap-3">
-        <Icon name="clock" class="h-5 w-5 text-black/60" />
+        <Icon name="clock" class="h-5 w-5 text-ink/65" />
         <h2 class="type-h3">
           {espanol.horarioHeading}
         </h2>
@@ -78,9 +78,9 @@ import { seo } from "../content/seo";
       <dl class="mt-6 flex-1">
         {
           espanol.horario.map((row) => (
-            <div class="flex items-baseline justify-between gap-4 border-b border-black/10 py-3.5">
+            <div class="flex items-baseline justify-between gap-4 border-b border-ink/10 py-3.5">
               <dt class="text-sm font-semibold">{row.label}</dt>
-              <dd class="text-right text-sm text-black/70">{row.value}</dd>
+              <dd class="text-right text-sm text-ink/70">{row.value}</dd>
             </div>
           ))
         }
@@ -93,9 +93,9 @@ import { seo } from "../content/seo";
       </a>
     </div>
 
-    <div class="rounded-xl bg-stone-50 px-6 py-12 md:rounded-2xl md:px-10 md:py-16" data-reveal>
+    <div class="rounded-xl bg-sky px-6 py-12 md:rounded-2xl md:px-10 md:py-16" data-reveal>
       <div class="flex items-center gap-3">
-        <Icon name="pin" class="h-5 w-5 text-black/60" />
+        <Icon name="pin" class="h-5 w-5 text-ink/65" />
         <h2 class="type-h3">
           {espanol.ubicacionHeading}
         </h2>
@@ -105,7 +105,7 @@ import { seo } from "../content/seo";
         {practice.address.city}, {practice.address.state}
         {practice.address.zip}
       </p>
-      <p class="mt-4 type-body text-black/65">{espanol.ubicacion}</p>
+      <p class="mt-4 type-body text-ink/65">{espanol.ubicacion}</p>
       <a
         href={practice.mapsUrl}
         target="_blank"
@@ -120,7 +120,7 @@ import { seo } from "../content/seo";
 
   <section class="px-3 pb-1.5 pt-1.5 md:px-5 md:pb-2 md:pt-2" aria-label="Haga su cita" data-reveal-group>
     <div
-      class="flex flex-col items-center rounded-xl bg-black px-6 py-20 text-center text-white md:rounded-2xl md:px-10 md:py-28"
+      class="flex flex-col items-center rounded-xl bg-navy px-6 py-20 text-center text-white md:rounded-2xl md:px-10 md:py-28"
       data-reveal
     >
       <h2 class="type-display max-w-3xl">
@@ -130,7 +130,7 @@ import { seo } from "../content/seo";
       <div class="mt-8 flex flex-wrap items-center justify-center gap-3 md:gap-4">
         <a
           href="/book"
-          class="inline-flex items-center rounded-full bg-white px-6 py-3.5 text-sm font-bold text-black motion-safe:hover:scale-105 motion-safe:transition-transform md:px-8 md:py-4 md:text-base"
+          class="inline-flex items-center rounded-full bg-white px-6 py-3.5 text-sm font-bold text-ink motion-safe:hover:scale-105 motion-safe:transition-transform md:px-8 md:py-4 md:text-base"
         >
           {espanol.citaCta}
         </a>

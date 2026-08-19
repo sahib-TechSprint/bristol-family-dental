@@ -22,8 +22,8 @@ const BG = "/images/hero.webp";
  * both window the same photograph, so the section reads as one image seen
  * through two openings. The bars sit flush inside a single rounded container,
  * so the strip stays one continuous piece of the photo. The photograph is
- * bright, so type sits directly on it in black, with light glass surfaces
- * where a little separation helps.
+ * bright, so ink type sits directly on it, with light glass surfaces where a
+ * little separation helps.
  */
 export default function HeroSection({ content, srHeading }: { content: HeroContent; srHeading: string }) {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -65,8 +65,8 @@ export default function HeroSection({ content, srHeading }: { content: HeroConte
             cardRef={setCardRef(index)}
             className="relative flex h-14 items-center justify-center md:h-20"
           >
-            <span className="absolute inset-0 bg-white/25 backdrop-blur-[2px]" aria-hidden="true" />
-            <span className="font-display relative z-10 px-4 text-center text-lg font-bold text-black md:text-2xl">
+            <span className="absolute inset-0 bg-navy/20 backdrop-blur-[2px]" aria-hidden="true" />
+            <span className="font-display relative z-10 px-4 text-center text-lg font-bold text-ink md:text-2xl">
               {bar}
             </span>
           </MaskedCard>
@@ -82,17 +82,17 @@ export default function HeroSection({ content, srHeading }: { content: HeroConte
         className="relative flex-1 overflow-hidden rounded-xl md:rounded-2xl"
         style={getAnimStyle(1)}
       >
-        <p className="absolute left-4 top-4 z-10 max-w-[240px] rounded-lg bg-white/70 p-3 text-xs font-semibold leading-snug text-black/80 backdrop-blur-md md:left-7 md:top-7 md:max-w-[300px] md:bg-transparent md:p-0 md:text-sm md:text-black/75 md:backdrop-blur-none [@media(min-width:768px)_and_(max-height:760px)]:hidden">
+        <p className="absolute left-4 top-4 z-10 max-w-[240px] rounded-lg bg-sky/85 p-3 text-xs font-semibold leading-snug text-ink/80 backdrop-blur-md md:left-7 md:top-7 md:max-w-[300px] md:bg-transparent md:p-0 md:text-sm md:text-ink/75 md:backdrop-blur-none [@media(min-width:768px)_and_(max-height:760px)]:hidden">
           {content.supporting}
         </p>
 
-        <p className="absolute bottom-7 right-7 z-10 hidden rounded-full bg-white/70 px-4 py-2 backdrop-blur-md md:block">
-          <span className="type-eyebrow text-black">{content.corner}</span>
+        <p className="absolute bottom-7 right-7 z-10 hidden rounded-full bg-sky/85 px-4 py-2 backdrop-blur-md md:block">
+          <span className="type-eyebrow text-ink">{content.corner}</span>
         </p>
 
-        <div className="absolute bottom-3 left-3 right-3 z-10 rounded-xl bg-white/70 p-4 backdrop-blur-md md:bottom-6 md:left-7 md:right-auto md:rounded-none md:bg-transparent md:p-0 md:backdrop-blur-none">
-          <p className="type-eyebrow mb-3 text-black/60">{content.label}</p>
-          <h1 className="text-black">
+        <div className="absolute bottom-3 left-3 right-3 z-10 rounded-xl bg-sky/85 p-4 backdrop-blur-md md:bottom-6 md:left-7 md:right-auto md:rounded-none md:bg-transparent md:p-0 md:backdrop-blur-none">
+          <p className="type-eyebrow mb-3 text-ink/65">{content.label}</p>
+          <h1 className="text-ink">
             <span className="sr-only">{srHeading}</span>
             <span aria-hidden="true" className="font-display block">
               {content.displayLines.map((line) => (

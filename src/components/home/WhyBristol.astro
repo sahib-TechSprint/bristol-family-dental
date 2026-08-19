@@ -7,19 +7,19 @@ import Icon from "../Icon.astro";
 ---
 
 <section class="px-3 pb-1.5 pt-1.5 md:px-5 md:pb-2 md:pt-2" aria-label="Why Bristol" data-reveal-group>
-  <div class="rounded-xl bg-stone-50 px-6 py-14 md:rounded-2xl md:px-14 md:py-24">
-    <p class="type-eyebrow text-black/55" data-reveal>{why.label}</p>
+  <div class="rounded-xl bg-sky px-6 py-14 md:rounded-2xl md:px-14 md:py-24">
+    <p class="type-eyebrow text-ink/60" data-reveal>{why.label}</p>
     <h2 class="type-h2 mt-4 max-w-2xl" data-reveal>{why.heading}</h2>
 
     <div class="mt-10 grid grid-cols-1 gap-1.5 md:mt-14 md:grid-cols-3 md:gap-2">
       {
         why.cards.map((card) => (
           <div class="rounded-lg bg-white p-6 md:rounded-xl md:p-9" data-reveal>
-            <span class="flex h-11 w-11 items-center justify-center rounded-full border border-black/20">
+            <span class="flex h-11 w-11 items-center justify-center rounded-full border border-ink/25">
               <Icon name={card.icon as "coin" | "globe" | "family"} class="h-5 w-5" />
             </span>
             <h3 class="type-h3 mt-6">{card.title}</h3>
-            <p class="type-body mt-3 text-black/65">{card.text}</p>
+            <p class="type-body mt-3 text-ink/65">{card.text}</p>
           </div>
         ))
       }

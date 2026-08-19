@@ -14,12 +14,12 @@ const { label, heading, intro } = Astro.props;
 ---
 
 <section class="px-3 md:px-5 pt-28 md:pt-40 pb-1.5 md:pb-2">
-  <div class="rounded-xl md:rounded-2xl bg-stone-50 px-6 py-14 md:px-16 md:py-24">
-    <p class="type-eyebrow text-black/55">{label}</p>
+  <div class="rounded-xl md:rounded-2xl bg-sky px-6 py-14 md:px-16 md:py-24">
+    <p class="type-eyebrow text-ink/60">{label}</p>
     <h1 class="type-display mt-4 max-w-4xl">{heading}</h1>
     {
       intro && (
-        <p class="type-body-lg mt-6 max-w-2xl text-black/70">
+        <p class="type-body-lg mt-6 max-w-2xl text-ink/70">
           {intro}
         </p>
       )

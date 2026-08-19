@@ -15,14 +15,14 @@ const serviceOptions = allServices.map(({ id, name }) => ({ id, name }));
 
 <Base title={seo.book.title} description={seo.book.description}>
   <section class="px-3 pb-1.5 pt-28 md:px-5 md:pb-2 md:pt-40" aria-label="Book an appointment">
-    <div class="rounded-xl bg-stone-50 px-6 py-14 md:rounded-2xl md:px-14 md:py-20">
-      <p class="type-eyebrow text-black/55">{book.label}</p>
+    <div class="rounded-xl bg-sky px-6 py-14 md:rounded-2xl md:px-14 md:py-20">
+      <p class="type-eyebrow text-ink/60">{book.label}</p>
       <h1
         class="type-display mt-4 max-w-3xl"
       >
         {book.heading}
       </h1>
-      <p class="type-body-lg mt-6 max-w-2xl text-black/70">{book.sub}</p>
+      <p class="type-body-lg mt-6 max-w-2xl text-ink/70">{book.sub}</p>
 
       <div class="mt-8 grid grid-cols-1 gap-1.5 md:grid-cols-[1.5fr_1fr] md:gap-2">
         <BookingForm
@@ -36,7 +36,7 @@ const serviceOptions = allServices.map(({ id, name }) => ({ id, name }));
         />
 
         <div class="flex flex-col gap-1.5 md:gap-2">
-          <div class="rounded-lg bg-black p-6 text-white md:rounded-xl md:p-8">
+          <div class="rounded-lg bg-navy p-6 text-white md:rounded-xl md:p-8">
             <div class="flex items-center gap-3">
               <Icon name="phone" class="h-5 w-5 text-white/70" />
               <h2 class="type-h3">Rather call?</h2>
@@ -53,22 +53,22 @@ const serviceOptions = allServices.map(({ id, name }) => ({ id, name }));
             </a>
           </div>
 
-          <div class="flex-1 rounded-lg bg-zinc-200 p-6 md:rounded-xl md:p-8">
+          <div class="flex-1 rounded-lg bg-mist p-6 md:rounded-xl md:p-8">
             <div class="flex items-center gap-3">
-              <Icon name="clock" class="h-5 w-5 text-black/60" />
+              <Icon name="clock" class="h-5 w-5 text-ink/65" />
               <h2 class="type-h3">Office hours</h2>
             </div>
             <dl class="mt-4">
               {
                 practice.hours.map((row) => (
-                  <div class="flex items-baseline justify-between gap-4 border-b border-black/10 py-3 last:border-b-0">
+                  <div class="flex items-baseline justify-between gap-4 border-b border-ink/10 py-3 last:border-b-0">
                     <dt class="text-sm font-semibold">{row.label}</dt>
-                    <dd class="text-right text-sm text-black/70">{row.value}</dd>
+                    <dd class="text-right text-sm text-ink/70">{row.value}</dd>
                   </div>
                 ))
               }
             </dl>
-            <p class="mt-3 text-xs leading-relaxed text-black/60">{practice.hoursNote}</p>
+            <p class="mt-3 text-xs leading-relaxed text-ink/65">{practice.hoursNote}</p>
           </div>
         </div>
       </div>

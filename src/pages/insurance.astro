@@ -13,7 +13,7 @@ const badges = ["PPO", "HMO", "Denti-Cal", "CareCredit"];
     <ul class="mt-7 flex flex-wrap gap-2.5" aria-label="Accepted coverage and financing">
       {
         badges.map((badge) => (
-          <li class="rounded-full border border-black/25 bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.1em] md:px-5 md:text-sm">
+          <li class="rounded-full border border-ink/25 bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.1em] md:px-5 md:text-sm">
             {badge}
           </li>
         ))
@@ -29,12 +29,12 @@ const badges = ["PPO", "HMO", "Denti-Cal", "CareCredit"];
     <div class="grid grid-cols-1 gap-1.5 md:grid-cols-3 md:gap-2">
       {
         insurance.plans.map((plan) => (
-          <div class="flex flex-col rounded-xl bg-stone-50 p-6 md:rounded-2xl md:p-8" data-reveal>
-            <span class="self-start rounded-full bg-black px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.1em] text-white">
+          <div class="flex flex-col rounded-xl bg-sky p-6 md:rounded-2xl md:p-8" data-reveal>
+            <span class="self-start rounded-full bg-navy px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.1em] text-white">
               {plan.badge}
             </span>
             <h2 class="type-h3 mt-5">{plan.name}</h2>
-            <p class="type-body mt-3 text-black/65">{plan.text}</p>
+            <p class="type-body mt-3 text-ink/65">{plan.text}</p>
           </div>
         ))
       }
@@ -46,7 +46,7 @@ const badges = ["PPO", "HMO", "Denti-Cal", "CareCredit"];
     aria-labelledby="payment-heading"
     data-reveal-group
   >
-    <div class="rounded-xl bg-zinc-200 px-6 py-14 md:rounded-2xl md:px-14 md:py-20">
+    <div class="rounded-xl bg-mist px-6 py-14 md:rounded-2xl md:px-14 md:py-20">
       <h2
         id="payment-heading"
         class="type-h2 max-w-2xl"
@@ -58,11 +58,11 @@ const badges = ["PPO", "HMO", "Denti-Cal", "CareCredit"];
         {
           insurance.payment.map((option) => (
             <div class="rounded-lg bg-white p-5 md:rounded-xl md:p-7" data-reveal>
-              <span class="inline-block rounded-full border border-black/25 px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.1em]">
+              <span class="inline-block rounded-full border border-ink/25 px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.1em]">
                 {option.badge}
               </span>
               <h3 class="type-h3 mt-5">{option.name}</h3>
-              <p class="type-body mt-3 text-black/65">{option.text}</p>
+              <p class="type-body mt-3 text-ink/65">{option.text}</p>
             </div>
           ))
         }
@@ -75,7 +75,7 @@ const badges = ["PPO", "HMO", "Denti-Cal", "CareCredit"];
     aria-labelledby="promise-heading"
     data-reveal-group
   >
-    <div class="rounded-xl bg-black px-6 py-14 text-white md:rounded-2xl md:px-14 md:py-20" data-reveal>
+    <div class="rounded-xl bg-navy px-6 py-14 text-white md:rounded-2xl md:px-14 md:py-20" data-reveal>
       <p class="type-eyebrow text-white/55">
         {insurance.promiseHeading}
       </p>

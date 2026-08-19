@@ -25,7 +25,7 @@ import { faqSchema } from "../lib/seo";
     aria-label="Prepare for your visit"
     data-reveal-group
   >
-    <div class="rounded-xl bg-zinc-200 px-6 py-12 md:rounded-2xl md:px-10 md:py-16" data-reveal>
+    <div class="rounded-xl bg-mist px-6 py-12 md:rounded-2xl md:px-10 md:py-16" data-reveal>
       <h2 class="type-h3">
         {newPatients.bringHeading}
       </h2>
@@ -41,7 +41,7 @@ import { faqSchema } from "../lib/seo";
       </ul>
     </div>
 
-    <div class="rounded-xl bg-black px-6 py-12 text-white md:rounded-2xl md:px-10 md:py-16" data-reveal>
+    <div class="rounded-xl bg-navy px-6 py-12 text-white md:rounded-2xl md:px-10 md:py-16" data-reveal>
       <h2 class="type-h3">
         {newPatients.formsHeading}
       </h2>
@@ -55,7 +55,7 @@ import { faqSchema } from "../lib/seo";
         <a
           href={newPatients.formEn.href}
           download
-          class="inline-flex items-center justify-center gap-2.5 rounded-full bg-white px-6 py-3.5 text-sm font-bold text-black motion-safe:hover:scale-105 motion-safe:transition-transform"
+          class="inline-flex items-center justify-center gap-2.5 rounded-full bg-white px-6 py-3.5 text-sm font-bold text-ink motion-safe:hover:scale-105 motion-safe:transition-transform"
         >
           <Icon name="download" class="h-4 w-4" />
           {newPatients.formEn.label}
@@ -63,7 +63,7 @@ import { faqSchema } from "../lib/seo";
         <a
           href={newPatients.formEs.href}
           download
-          class="inline-flex items-center justify-center gap-2.5 rounded-full border border-white/40 px-6 py-3.5 text-sm font-bold text-white transition-colors hover:bg-white hover:text-black"
+          class="inline-flex items-center justify-center gap-2.5 rounded-full border border-white/40 px-6 py-3.5 text-sm font-bold text-white transition-colors hover:bg-white hover:text-ink"
         >
           <Icon name="download" class="h-4 w-4" />
           {newPatients.formEs.label}
@@ -77,7 +77,7 @@ import { faqSchema } from "../lib/seo";
     aria-labelledby="faq-heading"
     data-reveal-group
   >
-    <div class="rounded-xl bg-stone-50 px-6 py-14 md:rounded-2xl md:px-14 md:py-20">
+    <div class="rounded-xl bg-sky px-6 py-14 md:rounded-2xl md:px-14 md:py-20">
       <h2
         id="faq-heading"
         class="type-h2 max-w-2xl"
@@ -89,13 +89,13 @@ import { faqSchema } from "../lib/seo";
       <div class="mt-8 overflow-hidden rounded-lg bg-white md:rounded-xl" data-reveal>
         {
           faq.map((item) => (
-            <details class="faq-item group border-b border-black/10 last:border-b-0">
+            <details class="faq-item group border-b border-ink/10 last:border-b-0">
               <summary class="flex min-h-11 items-center justify-between gap-4 px-5 py-4 md:px-7 md:py-5">
                 <span class="font-display text-base font-bold leading-snug md:text-lg">
                   {item.question}
                 </span>
                 <span
-                  class="faq-icon flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-black/25"
+                  class="faq-icon flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-ink/25"
                   aria-hidden="true"
                 >
                   <svg viewBox="0 0 14 14" class="h-3 w-3" fill="none">
@@ -107,7 +107,7 @@ import { faqSchema } from "../lib/seo";
                   </svg>
                 </span>
               </summary>
-              <p class="px-5 pb-5 text-sm leading-relaxed text-black/70 md:px-7 md:pb-6 md:text-base md:max-w-3xl">
+              <p class="px-5 pb-5 text-sm leading-relaxed text-ink/70 md:px-7 md:pb-6 md:text-base md:max-w-3xl">
                 {item.answer}
               </p>
             </details>

@@ -6,6 +6,17 @@
     sans-serif;
   --ease-reveal: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-menu: cubic-bezier(0.76, 0, 0.24, 1);
+
+  /* Bristol blue brand system. Single source of truth for site color; the
+     brand package in brand/ mirrors these values. Cobalt is reserved for
+     interactive elements only: buttons, links, focus, and rating stars. */
+  --color-navy: #0e2a47;
+  --color-cobalt: #1d5fc2;
+  --color-cobalt-deep: #164a99;
+  --color-sky: #eaf1fa;
+  --color-mist: #d7e3f4;
+  --color-paper: #fbfaf7;
+  --color-ink: #10161f;
 }
 
 html {
@@ -19,7 +30,7 @@ html {
 }
 
 body {
-  @apply bg-white text-black font-sans antialiased;
+  @apply bg-paper text-ink font-sans antialiased;
 }
 
 /* Strict type scale. Every heading and body size on the site maps to one of
@@ -85,12 +96,12 @@ body {
 }
 
 ::selection {
-  background: #000;
-  color: #fff;
+  background: #0e2a47;
+  color: #fbfaf7;
 }
 
 :focus-visible {
-  outline: 2px solid #000;
+  outline: 2px solid #1d5fc2;
   outline-offset: 2px;
   border-radius: 2px;
 }
@@ -114,7 +125,7 @@ html.splash-hold body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: #fff;
+  background: #fbfaf7;
   z-index: 99;
 }
 

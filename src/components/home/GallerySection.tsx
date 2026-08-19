@@ -70,10 +70,10 @@ export default function GallerySection({
         className="relative min-h-56 overflow-hidden rounded-xl md:min-h-0 md:rounded-2xl"
         style={getAnimStyle(0)}
       >
-        <h2 className="font-display absolute left-4 top-4 z-10 text-3xl font-bold text-black md:left-7 md:top-6 md:text-5xl">
+        <h2 className="font-display absolute left-4 top-4 z-10 text-3xl font-bold text-ink md:left-7 md:top-6 md:text-5xl">
           {content.heading}
         </h2>
-        <p className="type-eyebrow absolute bottom-4 left-4 z-10 text-black/60 md:bottom-6 md:left-7">
+        <p className="type-eyebrow absolute bottom-4 left-4 z-10 text-ink/65 md:bottom-6 md:left-7">
           {content.sub}
         </p>
       </MaskedCard>
@@ -87,13 +87,13 @@ export default function GallerySection({
         className="relative order-3 min-h-80 overflow-hidden rounded-xl md:order-none md:row-span-2 md:min-h-0 md:rounded-2xl"
         style={getAnimStyle(1)}
       >
-        <div className="absolute inset-x-3 bottom-3 z-10 rounded-xl bg-white/70 p-5 backdrop-blur-md md:inset-x-5 md:bottom-5 md:p-7">
-          <p className="font-display max-w-md text-xl font-bold leading-tight text-black md:text-2xl">
+        <div className="absolute inset-x-3 bottom-3 z-10 rounded-xl bg-sky/80 p-5 backdrop-blur-md md:inset-x-5 md:bottom-5 md:p-7">
+          <p className="font-display max-w-md text-xl font-bold leading-tight text-ink md:text-2xl">
             {content.tallCard}
           </p>
           <a
             href={bookHref}
-            className="mt-5 inline-flex items-center rounded-full bg-black px-5 py-3 text-base font-bold text-white motion-safe:hover:scale-105 motion-safe:transition-transform md:px-8 md:py-4 md:text-lg"
+            className="mt-5 inline-flex items-center rounded-full bg-cobalt px-5 py-3 text-base font-bold text-white transition-colors hover:bg-cobalt-deep motion-safe:hover:scale-105 motion-safe:transition-[transform,background-color] md:px-8 md:py-4 md:text-lg"
           >
             {bookLabel}
           </a>
@@ -109,7 +109,7 @@ export default function GallerySection({
         className="relative order-2 flex min-h-48 items-end overflow-hidden rounded-xl md:order-none md:min-h-0 md:rounded-2xl"
         style={getAnimStyle(2)}
       >
-        <p className="font-display relative z-10 p-4 text-[clamp(3rem,7vw,6rem)] font-bold leading-[0.9] tracking-tight text-black md:p-6">
+        <p className="font-display relative z-10 p-4 text-[clamp(3rem,7vw,6rem)] font-bold leading-[0.9] tracking-tight text-ink md:p-6">
           {content.display}
         </p>
       </MaskedCard>
@@ -128,12 +128,12 @@ export default function GallerySection({
             <li key={card.number} className="h-full">
               <a
                 href={card.href}
-                className={`flex h-full min-h-16 items-center justify-between gap-3 rounded-lg px-4 py-3 text-black md:min-h-0 md:rounded-xl md:px-5 ${
-                  card.active ? "bg-white/90 backdrop-blur-md" : "bg-white/40 backdrop-blur-xl"
+                className={`flex h-full min-h-16 items-center justify-between gap-3 rounded-lg px-4 py-3 text-ink md:min-h-0 md:rounded-xl md:px-5 ${
+                  card.active ? "bg-sky/90 backdrop-blur-md" : "bg-sky/50 backdrop-blur-xl"
                 } motion-safe:transition-transform motion-safe:hover:scale-[1.02]`}
               >
                 <span className="font-display text-base font-bold md:text-lg">{card.name}</span>
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-black/30 text-xs font-bold">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-ink/30 text-xs font-bold">
                   {card.number}
                 </span>
               </a>

@@ -105,7 +105,7 @@ export default function Navbar({
     // box instead of the viewport.
     <header
       className={`fixed top-0 inset-x-0 z-50 ${
-        open ? "bg-white" : "bg-white/80 backdrop-blur-md"
+        open ? "bg-paper" : "bg-paper/85 backdrop-blur-md"
       }`}
     >
       <div className="flex items-center justify-between px-4 md:px-6 py-2 md:py-3">
@@ -114,7 +114,7 @@ export default function Navbar({
             Bristol Family
             <span className="block">Dental Center</span>
           </span>
-          <span className="mt-1 block text-[8px] md:text-[9px] font-semibold uppercase tracking-[0.22em] text-black/55">
+          <span className="mt-1 block text-[8px] md:text-[9px] font-semibold uppercase tracking-[0.22em] text-ink/60">
             {tagline}
           </span>
         </a>
@@ -125,7 +125,7 @@ export default function Navbar({
           </a>
           <a
             href={bookHref}
-            className="hidden md:inline-flex items-center px-6 py-3 bg-black text-white rounded-full text-sm font-semibold motion-safe:hover:scale-105 motion-safe:transition-transform"
+            className="hidden md:inline-flex items-center px-6 py-3 bg-cobalt text-white rounded-full text-sm font-semibold transition-colors hover:bg-cobalt-deep motion-safe:hover:scale-105 motion-safe:transition-[transform,background-color]"
           >
             {bookLabel}
           </a>
@@ -135,14 +135,14 @@ export default function Navbar({
             onClick={() => openMenu(desktopTrigger.current)}
             aria-expanded={open}
             aria-controls="site-menu"
-            className="hidden md:inline-flex items-center px-6 py-3 bg-white rounded-full border border-black text-sm font-semibold hover:bg-black hover:text-white transition-colors"
+            className="hidden md:inline-flex items-center px-6 py-3 rounded-full border border-navy/40 text-sm font-semibold text-navy hover:bg-navy hover:text-white transition-colors"
           >
             Menu
           </button>
 
           <a
             href={bookHref}
-            className="md:hidden inline-flex items-center min-h-11 px-4 bg-black text-white rounded-full text-xs font-semibold"
+            className="md:hidden inline-flex items-center min-h-11 px-4 bg-cobalt text-white rounded-full text-xs font-semibold"
           >
             Book
           </a>
@@ -157,17 +157,17 @@ export default function Navbar({
           >
             <span className="relative block h-5 w-6">
               <span
-                className={`absolute left-0 top-0 h-0.5 w-6 rounded-full bg-black transition-all duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] ${
+                className={`absolute left-0 top-0 h-0.5 w-6 rounded-full bg-navy transition-all duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] ${
                   open ? "top-1/2 -translate-y-1/2 rotate-45" : ""
                 }`}
               />
               <span
-                className={`absolute left-0 top-1/2 h-0.5 w-6 -translate-y-1/2 rounded-full bg-black transition-all duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] ${
+                className={`absolute left-0 top-1/2 h-0.5 w-6 -translate-y-1/2 rounded-full bg-navy transition-all duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] ${
                   open ? "opacity-0 scale-x-0" : ""
                 }`}
               />
               <span
-                className={`absolute bottom-0 left-0 h-0.5 w-6 rounded-full bg-black transition-all duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] ${
+                className={`absolute bottom-0 left-0 h-0.5 w-6 rounded-full bg-navy transition-all duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] ${
                   open ? "bottom-auto top-1/2 -translate-y-1/2 -rotate-45" : ""
                 }`}
               />
@@ -183,7 +183,7 @@ export default function Navbar({
             tabIndex={-1}
             aria-label="Close menu"
             onClick={closeMenu}
-            className={`absolute inset-0 bg-black/20 backdrop-blur-sm transition-opacity duration-500 ${
+            className={`absolute inset-0 bg-navy/30 backdrop-blur-sm transition-opacity duration-500 ${
               visible ? "opacity-100" : "opacity-0"
             }`}
           />
@@ -192,7 +192,7 @@ export default function Navbar({
             role="dialog"
             aria-modal="true"
             aria-label="Site menu"
-            className={`absolute right-0 top-0 flex h-full w-[85%] max-w-sm flex-col bg-white shadow-2xl transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] md:w-full md:max-w-none md:shadow-none ${
+            className={`absolute right-0 top-0 flex h-full w-[85%] max-w-sm flex-col bg-paper shadow-2xl transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] md:w-full md:max-w-none md:shadow-none ${
               visible ? "translate-x-0" : "translate-x-full"
             }`}
           >
@@ -204,7 +204,7 @@ export default function Navbar({
                 type="button"
                 onClick={closeMenu}
                 aria-label="Close menu"
-                className="hidden h-11 w-11 items-center justify-center rounded-full border border-black/15 hover:border-black transition-colors md:flex"
+                className="hidden h-11 w-11 items-center justify-center rounded-full border border-ink/15 hover:border-navy transition-colors md:flex"
               >
                 <svg viewBox="0 0 14 14" className="h-3.5 w-3.5" aria-hidden="true">
                   <path
@@ -233,8 +233,8 @@ export default function Navbar({
                     <a
                       href={link.href}
                       aria-current={isCurrent(link.href) ? "page" : undefined}
-                      className={`font-display inline-block py-1 text-4xl font-bold md:text-5xl lg:text-6xl transition-colors hover:text-neutral-500 ${
-                        isCurrent(link.href) ? "text-neutral-400" : ""
+                      className={`font-display inline-block py-1 text-4xl font-bold md:text-5xl lg:text-6xl transition-colors hover:text-ink/60 ${
+                        isCurrent(link.href) ? "text-ink/50" : ""
                       }`}
                     >
                       {link.label}
@@ -244,13 +244,13 @@ export default function Navbar({
               </ul>
             </nav>
 
-            <div className="border-t border-black/10 px-6 py-6 md:px-10">
+            <div className="border-t border-ink/10 px-6 py-6 md:px-10">
               <a href={`tel:${phoneTel}`} className="block py-2 text-lg font-semibold md:text-xl">
                 {phoneDisplay}
               </a>
               <a
                 href={bookHref}
-                className="mt-3 block w-full rounded-full bg-black py-4 text-center text-base font-semibold text-white motion-safe:hover:scale-[1.02] motion-safe:transition-transform md:max-w-md"
+                className="mt-3 block w-full rounded-full bg-cobalt py-4 text-center text-base font-semibold text-white transition-colors hover:bg-cobalt-deep motion-safe:hover:scale-[1.02] motion-safe:transition-[transform,background-color] md:max-w-md"
               >
                 {bookLabel}
               </a>

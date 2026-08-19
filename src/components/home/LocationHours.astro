@@ -13,7 +13,7 @@ import Icon from "../Icon.astro";
   aria-label="Location and hours"
   data-reveal-group
 >
-  <div class="rounded-xl bg-black px-6 py-12 text-white md:rounded-2xl md:px-14 md:py-20" data-reveal>
+  <div class="rounded-xl bg-navy px-6 py-12 text-white md:rounded-2xl md:px-14 md:py-20" data-reveal>
     <p class="type-eyebrow text-white/55">{location.label}</p>
     <h2 class="type-h2 mt-4">{location.heading}</h2>
 
@@ -45,24 +45,24 @@ import Icon from "../Icon.astro";
     </div>
   </div>
 
-  <div class="flex flex-col rounded-xl bg-zinc-200 px-6 py-12 md:rounded-2xl md:px-10 md:py-20" data-reveal>
+  <div class="flex flex-col rounded-xl bg-mist px-6 py-12 md:rounded-2xl md:px-10 md:py-20" data-reveal>
     <div class="flex items-center gap-3">
-      <Icon name="clock" class="h-5 w-5 text-black/60" />
-      <p class="type-eyebrow text-black/65">Office Hours</p>
+      <Icon name="clock" class="h-5 w-5 text-ink/65" />
+      <p class="type-eyebrow text-ink/65">Office Hours</p>
     </div>
 
     <dl class="mt-8 flex-1">
       {
         practice.hours.map((row) => (
-          <div class="flex items-baseline justify-between gap-4 border-b border-black/10 py-4">
+          <div class="flex items-baseline justify-between gap-4 border-b border-ink/10 py-4">
             <dt class="type-small font-semibold">{row.label}</dt>
-            <dd class="type-small text-right text-black/65">{row.value}</dd>
+            <dd class="type-small text-right text-ink/65">{row.value}</dd>
           </div>
         ))
       }
     </dl>
 
-    <p class="type-small mt-5 text-black/65">{practice.hoursNote}</p>
+    <p class="type-small mt-5 text-ink/65">{practice.hoursNote}</p>
 
     <a
       href={`tel:${practice.phone.tel}`}

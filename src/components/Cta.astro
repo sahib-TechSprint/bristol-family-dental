@@ -24,11 +24,11 @@ const {
 
 const pill =
   variant === "dark"
-    ? "bg-black text-white"
-    : "bg-white text-black";
+    ? "bg-cobalt text-white hover:bg-cobalt-deep"
+    : "bg-white text-navy hover:bg-sky";
 
 const secondary =
-  variant === "dark" ? "text-black" : "text-white";
+  variant === "dark" ? "text-ink" : "text-white";
 
 const sizing =
   size === "lg"
@@ -39,7 +39,7 @@ const sizing =
 <div class={`flex flex-wrap items-center gap-3 md:gap-4 ${className}`}>
   <a
     href={bookHref}
-    class={`inline-flex items-center justify-center rounded-full font-bold motion-safe:hover:scale-105 motion-safe:transition-transform ${pill} ${sizing}`}
+    class={`inline-flex items-center justify-center rounded-full font-bold transition-colors motion-safe:hover:scale-105 motion-safe:transition-[transform,background-color] ${pill} ${sizing}`}
   >
     {label}
   </a>
