@@ -4,6 +4,7 @@ import HeroSection from "../components/home/HeroSection.tsx";
 import GallerySection from "../components/home/GallerySection.tsx";
 import ImplantSection from "../components/home/ImplantSection.astro";
 import WhyBristol from "../components/home/WhyBristol.astro";
+import TeamSection from "../components/home/TeamSection.astro";
 import LocationHours from "../components/home/LocationHours.astro";
 import FinalCta from "../components/home/FinalCta.astro";
 import { hero, gallery } from "../content/home";
@@ -26,6 +27,7 @@ import { bookHref, bookLabel } from "../content/nav";
   <GallerySection client:visible content={gallery} bookHref={bookHref} bookLabel={bookLabel} />
   <ImplantSection />
   <WhyBristol />
+  <TeamSection />
   <LocationHours />
   <FinalCta />
 </Base>

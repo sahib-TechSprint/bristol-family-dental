@@ -1,0 +1,64 @@
+---
+// The real people behind the practice. Photos are the practice's own,
+// enhanced for size and color only. This section is the homepage trust
+// centerpiece: the team patients will actually meet.
+
+import { bilingualNote, doctor, team, teamPhoto, teamSection } from "../../content/team";
+
+const t = teamSection;
+
+const chips = [
+  { name: doctor.name, role: "Lead Dentist", photo: doctor.photo, photoAlt: doctor.photoAlt },
+  ...team.map(({ name, role, photo, photoAlt }) => ({ name, role, photo, photoAlt })),
+];
+---
+
+<section class="px-3 pb-1.5 pt-1.5 md:px-5 md:pb-2 md:pt-2" aria-label="Meet the team" data-reveal-group>
+  <div class="grid grid-cols-1 gap-1.5 md:grid-cols-[1fr_1.05fr] md:gap-2">
+    <div class="flex flex-col rounded-xl bg-navy px-6 py-12 text-white md:rounded-2xl md:px-12 md:py-16" data-reveal>
+      <p class="type-eyebrow text-white/55">{t.label}</p>
+      <h2 class="type-h2 mt-4">{t.heading}</h2>
+      <p class="type-body-lg mt-6 max-w-xl text-white/70">{t.body}</p>
+      <p class="type-body mt-4 max-w-xl text-white/70">{bilingualNote}</p>
+      <a
+        href={t.ctaHref}
+        class="mt-8 inline-flex min-h-11 items-center gap-2 self-start text-sm font-semibold underline underline-offset-4 transition-colors hover:text-white/70"
+      >
+        {t.cta}
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+
+    <div class="relative min-h-[320px] overflow-hidden rounded-xl bg-mist md:min-h-0 md:rounded-2xl" data-reveal>
+      <img
+        src={teamPhoto.src}
+        alt={teamPhoto.alt}
+        class="absolute inset-0 h-full w-full object-cover object-top"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+  </div>
+
+  <div class="mt-1.5 grid grid-cols-1 gap-1.5 sm:grid-cols-2 md:mt-2 md:gap-2 lg:grid-cols-5">
+    {
+      chips.map((member) => (
+        <div class="flex items-center gap-3.5 rounded-lg bg-white p-4 md:rounded-xl" data-reveal>
+          <img
+            src={member.photo}
+            alt={member.photoAlt}
+            class="h-14 w-14 shrink-0 rounded-full object-cover"
+            width="56"
+            height="56"
+            loading="lazy"
+            decoding="async"
+          />
+          <span>
+            <span class="type-small block font-bold leading-snug">{member.name}</span>
+            <span class="mt-0.5 block text-xs text-ink/65">{member.role}</span>
+          </span>
+        </div>
+      ))
+    }
+  </div>
+</section>
