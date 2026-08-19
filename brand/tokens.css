@@ -1,0 +1,29 @@
+/* Bristol Family Dental Center brand tokens v1.0
+   Mirrors the @theme block in src/styles/global.css, which is what the site
+   compiles against. If a value changes there, change it here in the same
+   commit so the brand package never drifts from production. */
+
+:root {
+  /* Color */
+  --bfdc-navy: #0e2a47;         /* primary dark surface, wordmark on light */
+  --bfdc-cobalt: #1d5fc2;       /* interactive only: buttons, links, focus, stars */
+  --bfdc-cobalt-deep: #164a99;  /* hover and pressed states of cobalt */
+  --bfdc-sky: #eaf1fa;          /* light section surface */
+  --bfdc-mist: #d7e3f4;         /* secondary light surface */
+  --bfdc-paper: #fbfaf7;        /* page background */
+  --bfdc-ink: #10161f;          /* text on light surfaces */
+
+  /* Type */
+  --bfdc-font-sans: "Open Sauce One", -apple-system, BlinkMacSystemFont, sans-serif;
+  --bfdc-font-display: "Open Sauce One Bold", "Open Sauce One", -apple-system,
+    BlinkMacSystemFont, sans-serif;
+
+  /* Motion */
+  --bfdc-ease-reveal: cubic-bezier(0.16, 1, 0.3, 1);
+  --bfdc-ease-menu: cubic-bezier(0.76, 0, 0.24, 1);
+
+  /* Radius */
+  --bfdc-radius-card: 0.75rem;      /* rounded-xl, mobile cards */
+  --bfdc-radius-card-lg: 1rem;      /* rounded-2xl, desktop cards */
+  --bfdc-radius-pill: 9999px;       /* buttons */
+}
