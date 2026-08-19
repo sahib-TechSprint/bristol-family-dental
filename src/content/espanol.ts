@@ -27,4 +27,26 @@ export const espanol = {
     "Llame al (714) 540-7101 y con gusto le atendemos en español, o mande su solicitud en línea y nosotros le llamamos para confirmar su cita.",
   citaCta: "Hacer una Cita",
   llamarCta: "Llamar Ahora",
+  equipoLabel: "Nuestro Equipo",
+  equipoHeading: "Caras conocidas en cada visita",
+  equipo:
+    "Las personas que lo reciben, limpian sus dientes y responden sus preguntas son las mismas en cada visita. El Dr. Begino y el Dr. Lazaro dirigen un equipo pequeño y bilingüe que ha cuidado a las familias de Santa Ana por años.",
+  equipoFotoAlt: "El equipo de Bristol Family Dental Center reunido al aire libre",
+  equipoRoles: {
+    "Lead Dentist": "Dentista Principal",
+    "Dentist": "Dentista",
+    "Office Manager": "Gerente de Oficina",
+    "Front Office": "Recepción",
+    "Dental Assistant": "Asistente Dental",
+  } as Record<string, string>,
+  resenasLabel: "Reseñas de Pacientes",
+  resenasHeading: "Lo que dicen nuestros pacientes",
+  resenas:
+    "Reseñas reales de pacientes reales. Puede leerlas todas en la plataforma que prefiera.",
+  resenasCounts: {
+    Yelp: "51 reseñas",
+    Google: "38 reseñas",
+    Facebook: "29 reseñas (vía Birdeye)",
+  } as Record<string, string>,
+  recomendado: "Recomendado",
 };
