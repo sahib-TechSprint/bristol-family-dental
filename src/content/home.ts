@@ -1,17 +1,16 @@
 // Home page copy, section by section, top to bottom.
 
 export const hero = {
-  featureBars: ["Advanced Family Dentistry", "Se Habla Español", "Most Insurance Accepted"],
   supporting:
     "Complete care for every smile in the family, from first cleanings to full restorations",
   label: "Trusted Dentist in Santa Ana",
   displayLines: ["Bristol", "Smiles"],
-  corner: "Free Consultation",
+  corner: "Se Habla Español",
 };
 
 export const gallery = {
-  heading: "Smile Gallery",
-  sub: "Our cosmetic dental work",
+  heading: "Cosmetic Dentistry",
+  sub: "Four ways we transform smiles",
   tallCard: "If you want a gorgeous smile, ask about a smile makeover.",
   display: "Smile makeover",
   cards: [

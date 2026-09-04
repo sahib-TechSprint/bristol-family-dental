@@ -1,29 +1,48 @@
 ---
 // Shared opening block for inner pages: small label, display heading,
-// optional intro paragraph. Quiet by design; the home page owns the drama.
-// Deliberately static: this is the largest paint on inner pages, and
-// animating it would hold back LCP. Motion starts below the fold.
+// optional intro paragraph, and an optional photograph that sits beside the
+// text on desktop and below it on mobile. Deliberately static: this is the
+// largest paint on inner pages, and animating it would hold back LCP.
+// Motion starts below the fold.
 
 interface Props {
   label: string;
   heading: string;
   intro?: string;
+  image?: { src: string; alt: string };
 }
 
-const { label, heading, intro } = Astro.props;
+const { label, heading, intro, image } = Astro.props;
 ---
 
 <section class="px-3 md:px-5 pt-28 md:pt-40 pb-1.5 md:pb-2">
-  <div class="rounded-xl md:rounded-2xl bg-sky px-6 py-14 md:px-16 md:py-24">
-    <p class="type-eyebrow text-ink/60">{label}</p>
-    <h1 class="type-display mt-4 max-w-4xl">{heading}</h1>
+  <div class="overflow-hidden rounded-xl md:rounded-2xl bg-sky">
     {
-      intro && (
-        <p class="type-body-lg mt-6 max-w-2xl text-ink/70">
-          {intro}
-        </p>
+      image ? (
+        <div class="grid grid-cols-1 md:grid-cols-[1.35fr_1fr]">
+          <div class="px-6 py-14 md:px-16 md:py-24">
+            <p class="type-eyebrow text-ink/60">{label}</p>
+            <h1 class="type-display mt-4 max-w-4xl">{heading}</h1>
+            {intro && <p class="type-body-lg mt-6 max-w-2xl text-ink/70">{intro}</p>}
+            <slot />
+          </div>
+          <div class="relative min-h-[240px] md:min-h-0">
+            <img
+              src={image.src}
+              alt={image.alt}
+              class="absolute inset-0 h-full w-full object-cover"
+              decoding="async"
+            />
+          </div>
+        </div>
+      ) : (
+        <div class="px-6 py-14 md:px-16 md:py-24">
+          <p class="type-eyebrow text-ink/60">{label}</p>
+          <h1 class="type-display mt-4 max-w-4xl">{heading}</h1>
+          {intro && <p class="type-body-lg mt-6 max-w-2xl text-ink/70">{intro}</p>}
+          <slot />
+        </div>
       )
     }
-    <slot />
   </div>
 </section>

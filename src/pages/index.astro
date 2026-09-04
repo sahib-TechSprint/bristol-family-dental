@@ -1,15 +1,13 @@
 ---
 import Base from "../layouts/Base.astro";
-import HeroSection from "../components/home/HeroSection.tsx";
+import HeroSection from "../components/home/HeroSection.astro";
 import GallerySection from "../components/home/GallerySection.tsx";
 import ImplantSection from "../components/home/ImplantSection.astro";
 import WhyBristol from "../components/home/WhyBristol.astro";
-import TeamSection from "../components/home/TeamSection.astro";
 import ReviewsSection from "../components/home/ReviewsSection.astro";
 import HomeFaq from "../components/home/HomeFaq.astro";
-import LocationHours from "../components/home/LocationHours.astro";
 import FinalCta from "../components/home/FinalCta.astro";
-import { hero, gallery } from "../content/home";
+import { gallery } from "../content/home";
 import { seo } from "../content/seo";
 import { homeFaq } from "../content/reviews";
 import { faqSchema } from "../lib/seo";
@@ -24,17 +22,11 @@ import { bookHref, bookLabel } from "../content/nav";
   jsonLd={[faqSchema(homeFaq)]}
   preloadImages={["/images/hero.webp"]}
 >
-  <HeroSection
-    client:load
-    content={hero}
-    srHeading="Bristol Family Dental Center, trusted dentist in Santa Ana"
-  />
+  <HeroSection />
   <GallerySection client:visible content={gallery} bookHref={bookHref} bookLabel={bookLabel} />
   <ImplantSection />
   <ReviewsSection />
   <WhyBristol />
-  <TeamSection />
   <HomeFaq />
-  <LocationHours />
   <FinalCta />
 </Base>

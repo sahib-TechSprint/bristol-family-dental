@@ -1,0 +1,54 @@
+---
+// Full screen hero. One bright photograph of a modern treatment room fills a
+// single rounded card; ink type sits directly on the high key image, with a
+// small sky glass panel wherever text needs a guaranteed backing on mobile.
+// Static on purpose: the largest paint on the page ships as plain HTML.
+
+import { hero } from "../../content/home";
+
+const srHeading = "Bristol Family Dental Center, trusted dentist in Santa Ana";
+---
+
+<section
+  class="flex h-[100svh] flex-col px-3 pb-1.5 pt-24 md:h-screen md:px-5 md:pb-2"
+  aria-label="Welcome"
+  data-reveal-group
+>
+  <div class="relative flex-1 overflow-hidden rounded-xl md:rounded-2xl" data-reveal>
+    <img
+      src="/images/hero.webp"
+      alt=""
+      fetchpriority="high"
+      decoding="async"
+      class="absolute inset-0 h-full w-full object-cover object-[66%_center]"
+    />
+
+    <p
+      class="absolute left-4 top-4 z-10 max-w-[240px] rounded-lg bg-sky/85 p-3 text-xs font-semibold leading-snug text-ink/80 backdrop-blur-md md:left-7 md:top-7 md:max-w-[300px] md:bg-transparent md:p-0 md:text-sm md:text-ink/75 md:backdrop-blur-none [@media(min-width:768px)_and_(max-height:760px)]:hidden"
+    >
+      {hero.supporting}
+    </p>
+
+    <p class="absolute bottom-7 right-7 z-10 hidden rounded-full bg-sky/85 px-4 py-2 backdrop-blur-md md:block">
+      <span class="type-eyebrow text-ink">{hero.corner}</span>
+    </p>
+
+    <div
+      class="absolute bottom-3 left-3 right-3 z-10 rounded-xl bg-sky/85 p-4 backdrop-blur-md md:bottom-6 md:left-7 md:right-auto md:rounded-none md:bg-transparent md:p-0 md:backdrop-blur-none"
+    >
+      <p class="type-eyebrow mb-3 text-ink/65">{hero.label}</p>
+      <h1 class="text-ink">
+        <span class="sr-only">{srHeading}</span>
+        <span aria-hidden="true" class="font-display block">
+          {
+            hero.displayLines.map((line) => (
+              <span class="block text-[clamp(3rem,11vw,11rem)] font-bold leading-[0.79] tracking-tight">
+                {line}
+              </span>
+            ))
+          }
+        </span>
+      </h1>
+    </div>
+  </div>
+</section>

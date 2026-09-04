@@ -11,7 +11,6 @@ export const navLinks: NavLink[] = [
   { label: "About", href: "/about" },
   { label: "New Patients", href: "/new-patients" },
   { label: "Insurance", href: "/insurance" },
-  { label: "Español", href: "/espanol" },
   { label: "Contact", href: "/contact" },
 ];
 

@@ -59,7 +59,7 @@ export default function GallerySection({
     <section
       ref={setSectionRef}
       className="grid min-h-[100svh] grid-cols-1 gap-1.5 px-3 pb-1.5 pt-1.5 md:h-screen md:min-h-0 md:grid-cols-2 md:grid-rows-[1fr_1fr_0.8fr] md:gap-2 md:px-5 md:pb-2 md:pt-2"
-      aria-label="Smile gallery"
+      aria-label="Cosmetic dentistry"
     >
       <MaskedCard
         bgImage={BG}

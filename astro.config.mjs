@@ -10,6 +10,9 @@ const site =
   "https://bristol-family-dental.vercel.app";
 
 export default defineConfig({
+  redirects: {
+    "/espanol": "/es/",
+  },
   site,
   output: "static",
   adapter: vercel(),
