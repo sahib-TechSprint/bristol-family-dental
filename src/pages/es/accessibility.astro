@@ -1,0 +1,71 @@
+---
+import Base from "../../layouts/Base.astro";
+import PageHero from "../../components/PageHero.astro";
+import { practice } from "../../content/practice";
+
+const title = "Declaración de Accesibilidad | Bristol Family Dental Center";
+const description =
+  "Bristol Family Dental Center está comprometido con un sitio web que todos puedan usar. Conozca lo que hacemos para cumplir con WCAG 2.1 AA, las limitaciones actuales y cómo avisarnos si algo le cuesta trabajo.";
+
+const sections = [
+  {
+    heading: "Nuestro compromiso",
+    body: [
+      "Queremos que cada paciente y cada familiar pueda leer este sitio, hacer una cita y encontrar nuestra puerta, sin importar su capacidad o la tecnología que use. El sitio está construido para cumplir con las Pautas de Accesibilidad para el Contenido Web (WCAG) 2.1 en el nivel AA.",
+    ],
+  },
+  {
+    heading: "Lo que hace el sitio",
+    body: [
+      "Los colores del texto se verifican por contraste contra sus fondos. Cada página se puede navegar solo con el teclado, incluyendo el menú, el cambio de idioma y el formulario de citas, y un enlace directo salta al contenido. Los campos del formulario tienen etiquetas visibles, y los errores se anuncian a los lectores de pantalla. Las imágenes con significado tienen alternativas de texto, las decorativas se ocultan de la tecnología de asistencia, y el sitio respeta su preferencia de movimiento reducido apagando todas las animaciones. Las versiones en inglés y en español llevan etiquetas de idioma correctas para que los lectores de pantalla las pronuncien bien.",
+    ],
+  },
+  {
+    heading: "Cómo lo verificamos",
+    body: [
+      "Cada página se prueba con herramientas automáticas de accesibilidad contra el conjunto de reglas WCAG 2.1 AA en cinco tamaños de pantalla, junto con revisiones manuales de teclado y de zoom. La accesibilidad se vuelve a verificar cada vez que el sitio cambia de manera significativa.",
+    ],
+  },
+  {
+    heading: "Limitaciones conocidas",
+    body: [
+      "Los formularios descargables para pacientes nuevos son escaneos de los formularios de papel del consultorio, así que todavía no se pueden llenar en pantalla y no son amigables con los lectores de pantalla. Si los formularios le resultan difíciles, sáltelos: llámenos y tomamos su información por teléfono o le ayudamos en la recepción. El mapa de la página de contacto lo proporciona Google y sus controles son de Google.",
+    ],
+  },
+  {
+    heading: "Díganos si algo le cuesta trabajo",
+    body: [
+      "Si alguna parte de este sitio le resulta difícil, queremos saberlo para arreglarla. Llámenos al (714) 540-7101 o escriba a info@bristolfamilydentalcenter.com y cuéntenos qué pasó y qué intentaba hacer. Tomamos estos reportes en serio y respondemos lo más pronto posible.",
+    ],
+  },
+];
+---
+
+<Base title={title} description={description} lang="es" altPath="/accessibility">
+  <PageHero
+    label="Accesibilidad"
+    heading="Un sitio que todos puedan usar"
+    intro="Declaración revisada por última vez el 4 de septiembre de 2026. Si algo en este sitio le resulta difícil de leer o de usar, llámenos: le ayudamos directamente y lo corregimos para la siguiente persona."
+  />
+
+  <section class="px-3 pb-1.5 pt-1.5 md:px-5 md:pb-2 md:pt-2" aria-label="Detalles de la declaración de accesibilidad">
+    <div class="rounded-xl bg-white px-6 py-12 md:rounded-2xl md:px-14 md:py-16">
+      <div class="mx-auto max-w-3xl">
+        {
+          sections.map((section) => (
+            <div class="border-b border-ink/10 py-8 first:pt-0 last:border-b-0 last:pb-0">
+              <h2 class="type-h3">{section.heading}</h2>
+              {section.body.map((paragraph) => (
+                <p class="type-body mt-4 text-ink/70">{paragraph}</p>
+              ))}
+            </div>
+          ))
+        }
+        <p class="type-small mt-10 text-ink/60">
+          Bristol Family Dental Center, {practice.address.street}, {practice.address.city},{" "}
+          {practice.address.state} {practice.address.zip}. Teléfono {practice.phone.display}.
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>

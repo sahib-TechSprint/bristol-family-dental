@@ -1,8 +1,17 @@
 ---
 // The quiet closing band. Stillness on purpose: one heading, one line, one action.
 
-import { finalCta } from "../../content/home";
+import { finalCta as finalCtaEn } from "../../content/home";
 import Cta from "../Cta.astro";
+
+interface Props {
+  content?: typeof finalCtaEn;
+  ctaLabel?: string;
+  ctaCallLabel?: string;
+  ctaHref?: string;
+}
+
+const { content: finalCta = finalCtaEn, ctaLabel, ctaCallLabel, ctaHref } = Astro.props;
 ---
 
 <section class="px-3 pb-1.5 pt-1.5 md:px-5 md:pb-2 md:pt-2" aria-label="Book an appointment" data-reveal-group>
@@ -19,7 +28,7 @@ import Cta from "../Cta.astro";
       {finalCta.sub}
     </p>
     <div class="mt-10 flex justify-center" data-reveal>
-      <Cta size="lg" />
+      <Cta size="lg" label={ctaLabel} callLabel={ctaCallLabel} href={ctaHref} />
     </div>
   </div>
 </section>

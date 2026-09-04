@@ -1,38 +1,40 @@
 ---
-import Base from "../layouts/Base.astro";
-import PageHero from "../components/PageHero.astro";
-import Cta from "../components/Cta.astro";
-import Icon from "../components/Icon.astro";
-import { newPatients } from "../content/pages";
-import { faq } from "../content/faq";
-import { seo } from "../content/seo";
-import { faqSchema } from "../lib/seo";
+import Base from "../../layouts/Base.astro";
+import PageHero from "../../components/PageHero.astro";
+import Cta from "../../components/Cta.astro";
+import Icon from "../../components/Icon.astro";
+import { practice } from "../../content/practice";
+import { faqSchema } from "../../lib/seo";
+import { newPatientsEs, faqEs, seoEs, bookHrefEs, bookLabelEs } from "../../i18n/es";
+
+const callLabelEs = `Llame al ${practice.phone.display}`;
 ---
 
 <Base
-  title={seo.newPatients.title}
-  description={seo.newPatients.description}
-  jsonLd={[faqSchema(faq)]}
-  altPath="/es/new-patients"
+  title={seoEs.newPatients.title}
+  description={seoEs.newPatients.description}
+  lang="es"
+  jsonLd={[faqSchema(faqEs)]}
+  altPath="/new-patients"
 >
   <PageHero
-    label={newPatients.label}
-    heading="Welcome. Here is how your first visit works."
-    intro={newPatients.expect}
+    label={newPatientsEs.label}
+    heading="Bienvenido. Así funciona su primera visita."
+    intro={newPatientsEs.expect}
   />
 
   <section
     class="grid grid-cols-1 gap-1.5 px-3 pb-1.5 pt-1.5 md:grid-cols-2 md:gap-2 md:px-5 md:pb-2 md:pt-2"
-    aria-label="Prepare for your visit"
+    aria-label="Prepare su visita"
     data-reveal-group
   >
     <div class="rounded-xl bg-mist px-6 py-12 md:rounded-2xl md:px-10 md:py-16" data-reveal>
       <h2 class="type-h3">
-        {newPatients.bringHeading}
+        {newPatientsEs.bringHeading}
       </h2>
       <ul class="mt-6 space-y-3.5">
         {
-          newPatients.bring.map((item) => (
+          newPatientsEs.bring.map((item) => (
             <li class="flex items-start gap-3">
               <Icon name="check" class="mt-0.5 h-4 w-4 shrink-0" />
               <span class="text-sm leading-snug md:text-base">{item}</span>
@@ -44,29 +46,27 @@ import { faqSchema } from "../lib/seo";
 
     <div class="rounded-xl bg-navy px-6 py-12 text-white md:rounded-2xl md:px-10 md:py-16" data-reveal>
       <h2 class="type-h3">
-        {newPatients.formsHeading}
+        {newPatientsEs.formsHeading}
       </h2>
       <p class="mt-4 max-w-md type-body text-white/70">
-        {newPatients.formsCopy}
+        {newPatientsEs.formsCopy}
       </p>
-      <!-- The office supplied these registration forms. To update them later,
-           replace the two files in public/forms/ without renaming them. -->
       <div class="mt-7 flex flex-col gap-3 sm:flex-row">
         <a
-          href={newPatients.formEn.href}
+          href={newPatientsEs.formEs.href}
           download
           class="inline-flex items-center justify-center gap-2.5 rounded-full bg-white px-6 py-3.5 text-sm font-bold text-ink motion-safe:hover:scale-105 motion-safe:transition-transform"
         >
           <Icon name="download" class="h-4 w-4" />
-          {newPatients.formEn.label}
+          {newPatientsEs.formEs.label}
         </a>
         <a
-          href={newPatients.formEs.href}
+          href={newPatientsEs.formEn.href}
           download
           class="inline-flex items-center justify-center gap-2.5 rounded-full border border-white/40 px-6 py-3.5 text-sm font-bold text-white transition-colors hover:bg-white hover:text-ink"
         >
           <Icon name="download" class="h-4 w-4" />
-          {newPatients.formEs.label}
+          {newPatientsEs.formEn.label}
         </a>
       </div>
     </div>
@@ -77,18 +77,14 @@ import { faqSchema } from "../lib/seo";
     aria-labelledby="faq-heading"
     data-reveal-group
   >
-    <div class="rounded-xl bg-sky px-6 py-14 md:rounded-2xl md:px-14 md:py-20">
-      <h2
-        id="faq-heading"
-        class="type-h2 max-w-2xl"
-        data-reveal
-      >
-        {newPatients.faqHeading}
+    <div class="rounded-xl bg-sky px-6 py-12 md:rounded-2xl md:px-14 md:py-16">
+      <h2 id="faq-heading" class="type-h2 max-w-2xl" data-reveal>
+        {newPatientsEs.faqHeading}
       </h2>
 
-      <div class="mt-8 overflow-hidden rounded-lg bg-white md:rounded-xl" data-reveal>
+      <div class="mt-7 overflow-hidden rounded-lg bg-white md:mt-9 md:rounded-xl" data-reveal>
         {
-          faq.map((item) => (
+          faqEs.map((item) => (
             <details class="faq-item group border-b border-ink/10 last:border-b-0">
               <summary class="flex min-h-11 items-center justify-between gap-4 px-5 py-4 md:px-7 md:py-5">
                 <span class="font-display text-base font-bold leading-snug md:text-lg">
@@ -116,7 +112,7 @@ import { faqSchema } from "../lib/seo";
       </div>
 
       <div class="mt-9" data-reveal>
-        <Cta />
+        <Cta label={bookLabelEs} callLabel={callLabelEs} href={bookHrefEs} />
       </div>
     </div>
   </section>

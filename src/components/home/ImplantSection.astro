@@ -5,7 +5,23 @@
 import { implantSection } from "../../content/home";
 import ArrowCircle from "../ArrowCircle.astro";
 
-const c = implantSection;
+interface Props {
+  content?: typeof implantSection;
+  bookHref?: string;
+  alts?: { implant1: string; implant2: string; clinic: string };
+}
+
+const {
+  content: c = implantSection,
+  bookHref = "/book",
+  alts = {
+    implant1:
+      "Cross section render of a dental implant with titanium post, abutment, and crown beside a natural tooth",
+    implant2:
+      "Clear model of a lower jaw showing a dental implant replacing a molar between natural teeth",
+    clinic: "Bright modern dental treatment room with a chair and examination lamp",
+  },
+} = Astro.props;
 ---
 
 <section
@@ -28,7 +44,7 @@ const c = implantSection;
     <div class="grid grid-cols-2 gap-1.5 md:gap-2" data-reveal>
       <img
         src="/images/implant-1.webp"
-        alt="Cross section render of a dental implant with titanium post, abutment, and crown beside a natural tooth"
+        alt={alts.implant1}
         class="aspect-[4/3] w-full rounded-xl object-cover md:rounded-2xl"
         width="640"
         height="480"
@@ -37,7 +53,7 @@ const c = implantSection;
       />
       <img
         src="/images/implant-2.webp"
-        alt="Clear model of a lower jaw showing a dental implant replacing a molar between natural teeth"
+        alt={alts.implant2}
         class="aspect-[4/3] w-full rounded-xl object-cover md:rounded-2xl"
         width="640"
         height="480"
@@ -51,7 +67,7 @@ const c = implantSection;
       <div class="mt-3 flex flex-wrap items-center justify-between gap-5">
         <h3 class="type-h2 max-w-sm">{c.consultHeading}</h3>
         <a
-          href="/book"
+          href={bookHref}
           class="inline-flex items-center rounded-full bg-cobalt px-6 py-3.5 text-sm font-bold text-white transition-colors hover:bg-cobalt-deep motion-safe:hover:scale-105 motion-safe:transition-[transform,background-color] md:text-base"
         >
           {c.consultCta}
@@ -82,7 +98,7 @@ const c = implantSection;
   >
     <img
       src="/images/clinic-tall.webp"
-      alt="Bright modern dental treatment room with a chair and examination lamp"
+      alt={alts.clinic}
       class="absolute inset-0 h-full w-full object-cover"
       loading="lazy"
       decoding="async"

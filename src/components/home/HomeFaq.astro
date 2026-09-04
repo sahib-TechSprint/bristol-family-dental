@@ -4,9 +4,14 @@
 // The matching FAQPage JSON-LD for exactly these questions is emitted by
 // the home page.
 
-import { homeFaq, homeFaqSection } from "../../content/reviews";
+import { homeFaq as homeFaqEn, homeFaqSection as homeFaqSectionEn } from "../../content/reviews";
 
-const s = homeFaqSection;
+interface Props {
+  items?: typeof homeFaqEn;
+  section?: typeof homeFaqSectionEn;
+}
+
+const { items: homeFaq = homeFaqEn, section: s = homeFaqSectionEn } = Astro.props;
 ---
 
 <section class="px-3 pb-1.5 pt-1.5 md:px-5 md:pb-2 md:pt-2" aria-labelledby="home-faq-heading" data-reveal-group>

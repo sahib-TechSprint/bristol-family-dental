@@ -1,0 +1,104 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHero from "../components/PageHero.astro";
+import { practice } from "../content/practice";
+
+const title = "Privacy Policy and Disclaimer | Bristol Family Dental Center";
+const description =
+  "How Bristol Family Dental Center's website handles your information, what the booking form collects, your California privacy rights, and the terms that apply to this site.";
+
+const sections = [
+  {
+    heading: "Who we are",
+    body: [
+      "This website is operated for Bristol Family Dental Center, a dental practice located at 2618 S. Bristol St., Santa Ana, CA 92704. The site was designed and is maintained by Carbon Quill Media on the practice's behalf. This page explains what information the site handles and the terms that apply when you use it.",
+    ],
+  },
+  {
+    heading: "What this site collects",
+    body: [
+      "The only information this site collects from you is what you type into the appointment request form: your name, phone number, email address if you choose to share it, preferred days and times, the service you are interested in, whether you are a new patient, the name of your insurance carrier if you share it, and anything you write in the message box.",
+      "This site does not use advertising trackers, analytics cookies, or social media pixels, and it does not build profiles of visitors. Our hosting provider keeps standard technical logs, such as IP addresses and request times, to run and protect the service.",
+    ],
+  },
+  {
+    heading: "How your information is used",
+    body: [
+      "The information you submit is used for one purpose: contacting you to schedule and confirm your appointment. Form submissions are delivered to the practice as email through a transactional email service. We do not sell your personal information, and we do not share it with anyone for marketing.",
+    ],
+  },
+  {
+    heading: "Please keep health details for the office",
+    body: [
+      "The appointment form is for scheduling, not for medical records. Please do not include detailed health history, diagnoses, or other sensitive medical information in the form. Share those details with the team by phone or at your visit, where they are handled as part of your patient record under the practice's health privacy obligations, including HIPAA where it applies.",
+    ],
+  },
+  {
+    heading: "Your choices and your California rights",
+    body: [
+      "You can always call us instead of using the form. If you are a California resident, you may ask what personal information we hold about you from this website, ask us to correct it, or ask us to delete it. Call (714) 540-7101 or email info@bristolfamilydentalcenter.com and we will help. We do not sell or share personal information as those terms are defined by California privacy law, so there is nothing to opt out of.",
+    ],
+  },
+  {
+    heading: "Children",
+    body: [
+      "This website is meant for adults. Appointment requests for children should be made by a parent or guardian. We do not knowingly collect information from children through this site.",
+    ],
+  },
+  {
+    heading: "Links and embeds",
+    body: [
+      "The site links to outside services such as Google Maps, Yelp, Facebook, and the Birdeye reviews listing, and it embeds a Google map on the contact page. Those services have their own privacy practices, which we do not control. Review quotes shown on this site are excerpts of public reviews published on those platforms by their authors.",
+    ],
+  },
+  {
+    heading: "Security and retention",
+    body: [
+      "We use reasonable safeguards to protect the information the site handles, and appointment emails are kept only as long as they are useful for scheduling. No website or email system can be guaranteed completely secure, so please use the phone for anything sensitive.",
+    ],
+  },
+  {
+    heading: "Website disclaimer",
+    body: [
+      "The content of this website is general information about our practice and about dentistry. It is not dental or medical advice, and it is not a substitute for an examination by a dentist. Reading this site or submitting the appointment form does not create a dentist and patient relationship. If you have a dental emergency, call our office during business hours, and if you believe you are experiencing a medical emergency, call 911.",
+      "The interior photographs and clinical illustrations on this site are representative renderings created for the site's design. They are not photographs of the practice's premises, equipment, staff, or patients. Office hours, services, and insurance participation can change; call the office to confirm anything your visit depends on.",
+      "This website is provided as is, without warranties of any kind. To the extent permitted by law, Bristol Family Dental Center and Carbon Quill Media are not liable for damages arising from the use of this website or from outside websites it links to.",
+    ],
+  },
+  {
+    heading: "Changes and contact",
+    body: [
+      "If this policy changes, the new version will be posted on this page with a new effective date. Questions about this policy or about your information can go to the practice at (714) 540-7101 or info@bristolfamilydentalcenter.com.",
+    ],
+  },
+];
+---
+
+<Base title={title} description={description} altPath="/es/privacy">
+  <PageHero
+    label="Legal"
+    heading="Privacy policy and disclaimer"
+    intro="Effective September 4, 2026. The short version: the only information this site collects is what you type into the appointment form, it is used only to contact you about your visit, and it is never sold."
+  />
+
+  <section class="px-3 pb-1.5 pt-1.5 md:px-5 md:pb-2 md:pt-2" aria-label="Privacy policy details">
+    <div class="rounded-xl bg-white px-6 py-12 md:rounded-2xl md:px-14 md:py-16">
+      <div class="mx-auto max-w-3xl">
+        {
+          sections.map((section) => (
+            <div class="border-b border-ink/10 py-8 first:pt-0 last:border-b-0 last:pb-0">
+              <h2 class="type-h3">{section.heading}</h2>
+              {section.body.map((paragraph) => (
+                <p class="type-body mt-4 text-ink/70">{paragraph}</p>
+              ))}
+            </div>
+          ))
+        }
+        <p class="type-small mt-10 text-ink/60">
+          Bristol Family Dental Center, {practice.address.street}, {practice.address.city},{" "}
+          {practice.address.state} {practice.address.zip}. Phone {practice.phone.display}.
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -14,11 +14,11 @@ interface Props {
   phoneDisplay: string;
   phoneTel: string;
   privacyNote: string;
+  content?: typeof bookForm;
+  checkFieldsText?: string;
 }
 
 type Status = "idle" | "submitting" | "success";
-
-const f = bookForm.fields;
 
 /**
  * Booking request form. Client side checks give instant feedback; the server
@@ -32,7 +32,10 @@ export default function BookingForm({
   phoneDisplay,
   phoneTel,
   privacyNote,
+  content = bookForm,
+  checkFieldsText = "Please check the highlighted fields below.",
 }: Props) {
+  const f = content.fields;
   const [status, setStatus] = useState<Status>("idle");
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [serverError, setServerError] = useState<string | null>(null);
@@ -95,15 +98,15 @@ export default function BookingForm({
       const body = (await response.json().catch(() => null)) as { error?: string } | null;
       setStatus("idle");
       if (response.status === 429) {
-        setServerError(bookForm.errorRate);
+        setServerError(content.errorRate);
       } else if (body?.error === "too_fast") {
-        setServerError(bookForm.errorTooFast);
+        setServerError(content.errorTooFast);
       } else {
-        setServerError(bookForm.errorGeneric);
+        setServerError(content.errorGeneric);
       }
     } catch {
       setStatus("idle");
-      setServerError(bookForm.errorGeneric);
+      setServerError(content.errorGeneric);
     }
   };
 
@@ -163,7 +166,7 @@ export default function BookingForm({
       <div ref={liveRef} tabIndex={-1} aria-live="assertive" className="outline-none">
         {(Object.keys(errors).length > 0 || serverError) && (
           <p className="mb-4 rounded-lg bg-mist px-4 py-3 text-sm font-semibold">
-            {serverError ?? "Please check the highlighted fields below."}
+            {serverError ?? checkFieldsText}
           </p>
         )}
       </div>
@@ -260,7 +263,7 @@ export default function BookingForm({
                 {service.name}
               </option>
             ))}
-            <option value={bookForm.notSure}>{bookForm.notSure}</option>
+            <option value={content.notSure}>{content.notSure}</option>
           </select>
           {errorText("service")}
         </div>
@@ -316,7 +319,7 @@ export default function BookingForm({
         disabled={status === "submitting"}
         className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-cobalt px-8 py-4 text-base font-bold text-white transition-colors hover:bg-cobalt-deep disabled:opacity-60 motion-safe:hover:scale-[1.02] motion-safe:transition-[transform,background-color] md:w-auto"
       >
-        {status === "submitting" ? bookForm.submitting : bookForm.submit}
+        {status === "submitting" ? content.submitting : content.submit}
       </button>
 
       <p id="form-note" className="mt-4 text-xs leading-relaxed text-ink/65">

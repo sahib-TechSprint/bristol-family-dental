@@ -12,6 +12,7 @@ interface Props {
   class?: string;
   label?: string;
   callLabel?: string;
+  href?: string;
 }
 
 const {
@@ -20,6 +21,7 @@ const {
   class: className = "",
   label = bookLabel,
   callLabel = `Call ${practice.phone.display}`,
+  href = bookHref,
 } = Astro.props;
 
 const pill =
@@ -38,7 +40,7 @@ const sizing =
 
 <div class={`flex flex-wrap items-center gap-3 md:gap-4 ${className}`}>
   <a
-    href={bookHref}
+    href={href}
     class={`inline-flex items-center justify-center rounded-full font-bold transition-colors motion-safe:hover:scale-105 motion-safe:transition-[transform,background-color] ${pill} ${sizing}`}
   >
     {label}

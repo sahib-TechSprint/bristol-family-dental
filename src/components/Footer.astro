@@ -1,6 +1,20 @@
 ---
 import { practice } from "../content/practice";
 import { navLinks, bookHref, bookLabel } from "../content/nav";
+import { navLinksEs, bookHrefEs, bookLabelEs, uiEs, uiEn } from "../i18n/es";
+
+interface Props {
+  lang?: "en" | "es";
+}
+
+const { lang = "en" } = Astro.props;
+const isEs = lang === "es";
+const ui = isEs ? uiEs : uiEn;
+const links = isEs ? navLinksEs : navLinks;
+const fBookLabel = isEs ? bookLabelEs : bookLabel;
+const fBookHref = isEs ? bookHrefEs : bookHref;
+const hoursRows = isEs ? uiEs.hours : practice.hours;
+const taglineText = isEs ? "Su cuidado es nuestra prioridad." : practice.tagline;
 
 const year = new Date().getFullYear();
 ---
@@ -12,20 +26,20 @@ const year = new Date().getFullYear();
         <p class="font-display text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-[1.05]">
           Bristol Family<br />Dental Center
         </p>
-        <p class="type-small mt-4 text-white/65">{practice.tagline}</p>
+        <p class="type-small mt-4 text-white/65">{taglineText}</p>
         <a
-          href={bookHref}
+          href={fBookHref}
           class="mt-6 inline-flex items-center rounded-full bg-white px-6 py-3.5 text-sm font-bold text-navy transition-colors hover:bg-sky motion-safe:hover:scale-105 motion-safe:transition-[transform,background-color]"
         >
-          {bookLabel}
+          {fBookLabel}
         </a>
       </div>
 
       <nav aria-label="Footer">
-        <p class="type-eyebrow text-white/50">Pages</p>
+        <p class="type-eyebrow text-white/50">{ui.footerPages}</p>
         <ul class="mt-4 space-y-2.5">
           {
-            navLinks.map((link) => (
+            links.map((link) => (
               <li>
                 <a href={link.href} class="text-sm text-white/85 transition-colors hover:text-white">
                   {link.label}
@@ -34,18 +48,18 @@ const year = new Date().getFullYear();
             ))
           }
           <li>
-            <a href={bookHref} class="text-sm text-white/85 transition-colors hover:text-white">
-              {bookLabel}
+            <a href={fBookHref} class="text-sm text-white/85 transition-colors hover:text-white">
+              {fBookLabel}
             </a>
           </li>
         </ul>
       </nav>
 
       <div>
-        <p class="type-eyebrow text-white/50">Hours</p>
+        <p class="type-eyebrow text-white/50">{ui.footerHours}</p>
         <ul class="mt-4 space-y-2.5 text-sm text-white/85">
           {
-            practice.hours.map((row) => (
+            hoursRows.map((row) => (
               <li>
                 <span class="block text-white/60">{row.label}</span>
                 <span>{row.value}</span>
@@ -56,7 +70,7 @@ const year = new Date().getFullYear();
       </div>
 
       <div>
-        <p class="type-eyebrow text-white/50">Contact</p>
+        <p class="type-eyebrow text-white/50">{ui.footerContact}</p>
         <address class="mt-4 space-y-2.5 text-sm not-italic text-white/85">
           <p>
             {practice.address.street}<br />
@@ -68,7 +82,7 @@ const year = new Date().getFullYear();
               {practice.phone.display}
             </a>
           </p>
-          <p class="text-white/60">Fax: {practice.fax.display}</p>
+          <p class="text-white/60">{ui.faxLabel}: {practice.fax.display}</p>
           <p>
             <a href={`mailto:${practice.email}`} class="transition-colors hover:text-white break-all">
               {practice.email}
@@ -81,8 +95,16 @@ const year = new Date().getFullYear();
     <div
       class="mt-14 flex flex-col gap-2 border-t border-white/15 pt-8 text-xs text-white/50 md:flex-row md:items-center md:justify-between"
     >
-      <p>&copy; {year} {practice.name}. All rights reserved.</p>
-      <p>Site by Carbon Quill Media</p>
+      <p>&copy; {year} {practice.name}. {ui.rights}</p>
+      <p class="flex flex-wrap gap-x-5 gap-y-1">
+        <a href={ui.privacyHref} class="underline-offset-4 transition-colors hover:text-white hover:underline">
+          {ui.privacyLabel}
+        </a>
+        <a href={ui.accessibilityHref} class="underline-offset-4 transition-colors hover:text-white hover:underline">
+          {ui.accessibilityLabel}
+        </a>
+      </p>
+      <p>{ui.siteBy}</p>
     </div>
   </div>
 </footer>

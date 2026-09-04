@@ -1,0 +1,63 @@
+---
+import Base from "../../layouts/Base.astro";
+import HeroSection from "../../components/home/HeroSection.astro";
+import GallerySection from "../../components/home/GallerySection.tsx";
+import ImplantSection from "../../components/home/ImplantSection.astro";
+import WhyBristol from "../../components/home/WhyBristol.astro";
+import ReviewsSection from "../../components/home/ReviewsSection.astro";
+import HomeFaq from "../../components/home/HomeFaq.astro";
+import FinalCta from "../../components/home/FinalCta.astro";
+import { faqSchema } from "../../lib/seo";
+import { practice } from "../../content/practice";
+import {
+  heroEs,
+  heroSrHeadingEs,
+  galleryEs,
+  implantEs,
+  implantAltsEs,
+  whyEs,
+  finalCtaEs,
+  reviewsSectionEs,
+  reviewCountLabelsEs,
+  reviewNoteEs,
+  recommendedEs,
+  starAriaEs,
+  onLabelEs,
+  homeFaqEs,
+  homeFaqSectionEs,
+  seoEs,
+  bookHrefEs,
+  bookLabelEs,
+} from "../../i18n/es";
+---
+
+<Base
+  title={seoEs.home.title}
+  description={seoEs.home.description}
+  lang="es"
+  isHome
+  altPath="/"
+  jsonLd={[faqSchema(homeFaqEs)]}
+  preloadImages={["/images/hero.webp"]}
+>
+  <HeroSection content={heroEs} srHeading={heroSrHeadingEs} />
+  <GallerySection client:visible content={galleryEs} bookHref={bookHrefEs} bookLabel={bookLabelEs} />
+  <ImplantSection content={implantEs} bookHref={bookHrefEs} alts={implantAltsEs} />
+  <ReviewsSection
+    section={reviewsSectionEs}
+    countLabels={reviewCountLabelsEs}
+    badgeNote={reviewNoteEs}
+    recommendedLabel={recommendedEs}
+    starAria={starAriaEs}
+    onLabel={onLabelEs}
+    quoteDefaultLang="es"
+  />
+  <WhyBristol content={whyEs} />
+  <HomeFaq items={homeFaqEs} section={homeFaqSectionEs} />
+  <FinalCta
+    content={finalCtaEs}
+    ctaLabel={bookLabelEs}
+    ctaHref={bookHrefEs}
+    ctaCallLabel={`Llame al ${practice.phone.display}`}
+  />
+</Base>

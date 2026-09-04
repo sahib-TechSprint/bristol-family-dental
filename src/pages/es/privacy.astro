@@ -1,0 +1,104 @@
+---
+import Base from "../../layouts/Base.astro";
+import PageHero from "../../components/PageHero.astro";
+import { practice } from "../../content/practice";
+
+const title = "Aviso de Privacidad y Deslinde | Bristol Family Dental Center";
+const description =
+  "Cómo maneja su información el sitio web de Bristol Family Dental Center, qué recopila el formulario de citas, sus derechos de privacidad en California y los términos que aplican a este sitio.";
+
+const sections = [
+  {
+    heading: "Quiénes somos",
+    body: [
+      "Este sitio web se opera para Bristol Family Dental Center, un consultorio dental ubicado en 2618 S. Bristol St., Santa Ana, CA 92704. El sitio fue diseñado y es mantenido por Carbon Quill Media en nombre del consultorio. Esta página explica qué información maneja el sitio y los términos que aplican cuando usted lo usa.",
+    ],
+  },
+  {
+    heading: "Qué recopila este sitio",
+    body: [
+      "La única información que este sitio recopila de usted es la que escribe en el formulario de solicitud de cita: su nombre, número de teléfono, correo electrónico si decide compartirlo, días y horarios preferidos, el servicio que le interesa, si es paciente nuevo, el nombre de su aseguradora si lo comparte, y lo que escriba en el cuadro de mensaje.",
+      "Este sitio no usa rastreadores de publicidad, cookies de analítica ni píxeles de redes sociales, y no crea perfiles de los visitantes. Nuestro proveedor de alojamiento guarda registros técnicos estándar, como direcciones IP y horas de las solicitudes, para operar y proteger el servicio.",
+    ],
+  },
+  {
+    heading: "Cómo se usa su información",
+    body: [
+      "La información que usted envía se usa para un solo propósito: contactarle para agendar y confirmar su cita. Los envíos del formulario llegan al consultorio como correo electrónico a través de un servicio de correo transaccional. No vendemos su información personal y no la compartimos con nadie para fines de mercadotecnia.",
+    ],
+  },
+  {
+    heading: "Los detalles de salud, mejor en el consultorio",
+    body: [
+      "El formulario de citas es para agendar, no para expedientes médicos. Por favor no incluya historial de salud detallado, diagnósticos ni otra información médica delicada en el formulario. Comparta esos detalles con el equipo por teléfono o en su visita, donde se manejan como parte de su expediente de paciente bajo las obligaciones de privacidad de salud del consultorio, incluyendo HIPAA donde aplica.",
+    ],
+  },
+  {
+    heading: "Sus opciones y sus derechos en California",
+    body: [
+      "Siempre puede llamarnos en lugar de usar el formulario. Si usted reside en California, puede preguntar qué información personal tenemos sobre usted proveniente de este sitio, pedir que la corrijamos o pedir que la borremos. Llame al (714) 540-7101 o escriba a info@bristolfamilydentalcenter.com y le ayudamos. No vendemos ni compartimos información personal según esos términos se definen en la ley de privacidad de California, así que no hay nada de qué darse de baja.",
+    ],
+  },
+  {
+    heading: "Menores de edad",
+    body: [
+      "Este sitio web está pensado para adultos. Las solicitudes de cita para niños deben hacerlas un padre o tutor. No recopilamos a sabiendas información de menores a través de este sitio.",
+    ],
+  },
+  {
+    heading: "Enlaces y contenido de terceros",
+    body: [
+      "El sitio enlaza a servicios externos como Google Maps, Yelp, Facebook y el listado de reseñas de Birdeye, e incluye un mapa de Google en la página de contacto. Esos servicios tienen sus propias prácticas de privacidad, que nosotros no controlamos. Las citas de reseñas que se muestran en este sitio son extractos de reseñas públicas publicadas en esas plataformas por sus autores.",
+    ],
+  },
+  {
+    heading: "Seguridad y retención",
+    body: [
+      "Usamos medidas razonables para proteger la información que maneja el sitio, y los correos de citas se conservan solo mientras son útiles para agendar. Ningún sitio web o sistema de correo puede garantizarse completamente seguro, así que use el teléfono para cualquier asunto delicado.",
+    ],
+  },
+  {
+    heading: "Deslinde de responsabilidad del sitio",
+    body: [
+      "El contenido de este sitio web es información general sobre nuestro consultorio y sobre odontología. No es consejo dental ni médico, y no sustituye un examen con un dentista. Leer este sitio o enviar el formulario de citas no crea una relación de dentista y paciente. Si tiene una emergencia dental, llame a nuestro consultorio en horario de oficina, y si cree estar viviendo una emergencia médica, llame al 911.",
+      "Las fotografías de interiores y las ilustraciones clínicas de este sitio son representaciones creadas para el diseño del sitio. No son fotografías de las instalaciones, el equipo, el personal ni los pacientes del consultorio. El horario, los servicios y la participación con aseguradoras pueden cambiar; llame al consultorio para confirmar cualquier dato del que dependa su visita.",
+      "Este sitio web se ofrece tal cual, sin garantías de ningún tipo. En la medida que la ley lo permita, Bristol Family Dental Center y Carbon Quill Media no son responsables por daños derivados del uso de este sitio o de sitios externos a los que enlaza.",
+    ],
+  },
+  {
+    heading: "Cambios y contacto",
+    body: [
+      "Si este aviso cambia, la nueva versión se publicará en esta página con una nueva fecha de vigencia. Las preguntas sobre este aviso o sobre su información pueden dirigirse al consultorio al (714) 540-7101 o a info@bristolfamilydentalcenter.com.",
+    ],
+  },
+];
+---
+
+<Base title={title} description={description} lang="es" altPath="/privacy">
+  <PageHero
+    label="Legal"
+    heading="Aviso de privacidad y deslinde"
+    intro="Vigente desde el 4 de septiembre de 2026. En resumen: la única información que este sitio recopila es la que usted escribe en el formulario de citas, se usa solo para contactarle sobre su visita, y nunca se vende."
+  />
+
+  <section class="px-3 pb-1.5 pt-1.5 md:px-5 md:pb-2 md:pt-2" aria-label="Detalles del aviso de privacidad">
+    <div class="rounded-xl bg-white px-6 py-12 md:rounded-2xl md:px-14 md:py-16">
+      <div class="mx-auto max-w-3xl">
+        {
+          sections.map((section) => (
+            <div class="border-b border-ink/10 py-8 first:pt-0 last:border-b-0 last:pb-0">
+              <h2 class="type-h3">{section.heading}</h2>
+              {section.body.map((paragraph) => (
+                <p class="type-body mt-4 text-ink/70">{paragraph}</p>
+              ))}
+            </div>
+          ))
+        }
+        <p class="type-small mt-10 text-ink/60">
+          Bristol Family Dental Center, {practice.address.street}, {practice.address.city},{" "}
+          {practice.address.state} {practice.address.zip}. Teléfono {practice.phone.display}.
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>

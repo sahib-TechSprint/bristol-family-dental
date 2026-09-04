@@ -2,8 +2,14 @@
 // Why families choose Bristol: whole family care, orthodontics in house,
 // and the bilingual team, told straight.
 
-import { why } from "../../content/home";
+import { why as whyEn } from "../../content/home";
 import Icon from "../Icon.astro";
+
+interface Props {
+  content?: typeof whyEn;
+}
+
+const { content: why = whyEn } = Astro.props;
 ---
 
 <section class="px-3 pb-1.5 pt-1.5 md:px-5 md:pb-2 md:pt-2" aria-label="Why Bristol" data-reveal-group>

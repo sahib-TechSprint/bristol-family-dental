@@ -5,7 +5,25 @@
 
 import { reviewBadges, reviewExcerpts, reviewsSection } from "../../content/reviews";
 
-const s = reviewsSection;
+interface Props {
+  section?: typeof reviewsSection;
+  countLabels?: Record<string, string>;
+  badgeNote?: string;
+  recommendedLabel?: string;
+  starAria?: string;
+  onLabel?: string;
+  quoteDefaultLang?: "en" | "es";
+}
+
+const {
+  section: s = reviewsSection,
+  countLabels,
+  badgeNote,
+  recommendedLabel = "Recommended",
+  starAria = "5 star review",
+  onLabel = "on",
+  quoteDefaultLang = "en",
+} = Astro.props;
 ---
 
 <section class="px-3 pb-1.5 pt-1.5 md:px-5 md:pb-2 md:pt-2" aria-label="Patient reviews" data-reveal-group>
@@ -30,8 +48,8 @@ const s = reviewsSection;
                 <span class="flex items-baseline gap-2.5">
                   <span class="font-display text-base font-bold md:text-lg">{badge.platform}</span>
                   <span class="text-xs text-ink/65 md:text-sm">
-                    {badge.countLabel}
-                    {badge.note && <span> ({badge.note})</span>}
+                    {countLabels?.[badge.platform] ?? badge.countLabel}
+                    {badge.note && <span> ({badgeNote ?? badge.note})</span>}
                   </span>
                 </span>
                 {
@@ -56,7 +74,7 @@ const s = reviewsSection;
         reviewExcerpts.map((excerpt) => (
           <li class="flex flex-col rounded-lg bg-white p-6 md:rounded-xl md:p-7" data-reveal>
             {excerpt.stars ? (
-              <span class="flex gap-1 text-cobalt" role="img" aria-label={`${excerpt.stars} star review`}>
+              <span class="flex gap-1 text-cobalt" role="img" aria-label={starAria}>
                 {Array.from({ length: excerpt.stars }).map(() => (
                   <svg viewBox="0 0 20 20" class="h-3.5 w-3.5" fill="currentColor" aria-hidden="true">
                     <path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" />
@@ -64,16 +82,16 @@ const s = reviewsSection;
                 ))}
               </span>
             ) : (
-              <span class="type-eyebrow text-cobalt">Recommended</span>
+              <span class="type-eyebrow text-cobalt">{recommendedLabel}</span>
             )}
             <blockquote
-              lang={excerpt.lang}
+              lang={excerpt.lang ?? (quoteDefaultLang === "es" ? "en" : undefined)}
               class="font-display mt-4 flex-1 text-base font-bold leading-snug md:text-lg"
             >
               &ldquo;{excerpt.quote}&rdquo;
             </blockquote>
             <p class="mt-4 text-xs text-ink/65 md:text-sm">
-              {excerpt.name} on{" "}
+              {excerpt.name} {onLabel}{" "}
               <a href={excerpt.href} target="_blank" rel="noopener" class="font-semibold text-cobalt underline-offset-4 hover:underline">
                 {excerpt.platform}
               </a>

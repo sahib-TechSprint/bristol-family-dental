@@ -1,49 +1,48 @@
 ---
-import Base from "../layouts/Base.astro";
-import BookingForm from "../components/BookingForm.tsx";
-import Icon from "../components/Icon.astro";
-import { practice } from "../content/practice";
-import { book } from "../content/pages";
-import { allServices } from "../content/services";
-import { seo } from "../content/seo";
+import Base from "../../layouts/Base.astro";
+import BookingForm from "../../components/BookingForm.tsx";
+import Icon from "../../components/Icon.astro";
+import { practice } from "../../content/practice";
+import { serviceGroupsEs, bookEs, bookFormEs, seoEs, uiEs } from "../../i18n/es";
 
-// Deliberately still: no reveal animations on this page. The visitor is here
-// to write, not to watch.
+// Quieto a propósito: sin animaciones en esta página. El visitante viene a
+// escribir, no a mirar.
 
-const serviceOptions = allServices.map(({ id, name }) => ({ id, name }));
+const serviceOptions = serviceGroupsEs
+  .flatMap((group) => group.services)
+  .map(({ id, name }) => ({ id, name }));
 ---
 
-<Base title={seo.book.title} description={seo.book.description} altPath="/es/book">
-  <section class="px-3 pb-1.5 pt-28 md:px-5 md:pb-2 md:pt-40" aria-label="Book an appointment">
+<Base title={seoEs.book.title} description={seoEs.book.description} lang="es" altPath="/book">
+  <section class="px-3 pb-1.5 pt-28 md:px-5 md:pb-2 md:pt-36" aria-label="Haga una cita">
     <div class="rounded-xl bg-sky px-6 py-14 md:rounded-2xl md:px-14 md:py-20">
-      <p class="type-eyebrow text-ink/60">{book.label}</p>
-      <h1
-        class="type-display mt-4 max-w-3xl"
-      >
-        {book.heading}
+      <p class="type-eyebrow text-ink/60">{bookEs.label}</p>
+      <h1 class="type-display mt-4 max-w-3xl">
+        {bookEs.heading}
       </h1>
-      <p class="type-body-lg mt-6 max-w-2xl text-ink/70">{book.sub}</p>
+      <p class="type-body-lg mt-6 max-w-2xl text-ink/70">{bookEs.sub}</p>
 
       <div class="mt-8 grid grid-cols-1 gap-1.5 md:grid-cols-[1.5fr_1fr] md:gap-2">
         <BookingForm
           client:load
           services={serviceOptions}
-          confirmHeading={book.confirmHeading}
-          confirmText={book.confirm}
+          confirmHeading={bookEs.confirmHeading}
+          confirmText={bookEs.confirm}
           phoneDisplay={practice.phone.display}
           phoneTel={practice.phone.tel}
-          privacyNote={book.privacyNote}
+          privacyNote={bookEs.privacyNote}
+          content={bookFormEs}
+          checkFieldsText={bookFormEs.checkFields}
         />
 
         <div class="flex flex-col gap-1.5 md:gap-2">
           <div class="rounded-lg bg-navy p-6 text-white md:rounded-xl md:p-8">
             <div class="flex items-center gap-3">
               <Icon name="phone" class="h-5 w-5 text-white/70" />
-              <h2 class="type-h3">Rather call?</h2>
+              <h2 class="type-h3">{bookEs.ratherCallHeading}</h2>
             </div>
             <p class="mt-3 text-sm leading-relaxed text-white/75">
-              Most of our patients book by phone. Call during office hours and a real person
-              answers, in English or Spanish.
+              {bookEs.ratherCallText}
             </p>
             <a
               href={`tel:${practice.phone.tel}`}
@@ -56,11 +55,11 @@ const serviceOptions = allServices.map(({ id, name }) => ({ id, name }));
           <div class="flex-1 rounded-lg bg-mist p-6 md:rounded-xl md:p-8">
             <div class="flex items-center gap-3">
               <Icon name="clock" class="h-5 w-5 text-ink/65" />
-              <h2 class="type-h3">Office hours</h2>
+              <h2 class="type-h3">{bookEs.officeHoursHeading}</h2>
             </div>
             <dl class="mt-4">
               {
-                practice.hours.map((row) => (
+                uiEs.hours.map((row) => (
                   <div class="flex items-baseline justify-between gap-4 border-b border-ink/10 py-3 last:border-b-0">
                     <dt class="text-sm font-semibold">{row.label}</dt>
                     <dd class="text-right text-sm text-ink/70">{row.value}</dd>
@@ -68,7 +67,7 @@ const serviceOptions = allServices.map(({ id, name }) => ({ id, name }));
                 ))
               }
             </dl>
-            <p class="mt-3 text-xs leading-relaxed text-ink/65">{practice.hoursNote}</p>
+            <p class="mt-3 text-xs leading-relaxed text-ink/65">{uiEs.hoursNote}</p>
           </div>
         </div>
       </div>

@@ -4,9 +4,17 @@
 // small sky glass panel wherever text needs a guaranteed backing on mobile.
 // Static on purpose: the largest paint on the page ships as plain HTML.
 
-import { hero } from "../../content/home";
+import { hero as heroEn } from "../../content/home";
 
-const srHeading = "Bristol Family Dental Center, trusted dentist in Santa Ana";
+interface Props {
+  content?: typeof heroEn;
+  srHeading?: string;
+}
+
+const {
+  content: hero = heroEn,
+  srHeading = "Bristol Family Dental Center, trusted dentist in Santa Ana",
+} = Astro.props;
 ---
 
 <section

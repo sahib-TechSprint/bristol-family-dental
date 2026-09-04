@@ -1,16 +1,17 @@
 ---
-import Base from "../layouts/Base.astro";
-import PageHero from "../components/PageHero.astro";
-import Cta from "../components/Cta.astro";
-import { insurance } from "../content/pages";
-import { seo } from "../content/seo";
+import Base from "../../layouts/Base.astro";
+import PageHero from "../../components/PageHero.astro";
+import Cta from "../../components/Cta.astro";
+import { practice } from "../../content/practice";
+import { insuranceEs, seoEs, bookHrefEs, bookLabelEs } from "../../i18n/es";
 
 const badges = ["PPO", "HMO", "Denti-Cal", "CareCredit"];
+const callLabelEs = `Llame al ${practice.phone.display}`;
 ---
 
-<Base title={seo.insurance.title} description={seo.insurance.description} altPath="/es/insurance">
-  <PageHero label={insurance.label} heading={insurance.heading} intro={insurance.intro}>
-    <ul class="mt-7 flex flex-wrap gap-2.5" aria-label="Accepted coverage and financing">
+<Base title={seoEs.insurance.title} description={seoEs.insurance.description} lang="es" altPath="/insurance">
+  <PageHero label={insuranceEs.label} heading={insuranceEs.heading} intro={insuranceEs.intro}>
+    <ul class="mt-7 flex flex-wrap gap-2.5" aria-label="Coberturas y financiamiento aceptados">
       {
         badges.map((badge) => (
           <li class="rounded-full border border-ink/25 bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.1em] md:px-5 md:text-sm">
@@ -23,12 +24,12 @@ const badges = ["PPO", "HMO", "Denti-Cal", "CareCredit"];
 
   <section
     class="px-3 pb-1.5 pt-1.5 md:px-5 md:pb-2 md:pt-2"
-    aria-label="Insurance plans"
+    aria-label="Planes de seguro"
     data-reveal-group
   >
     <div class="grid grid-cols-1 gap-1.5 md:grid-cols-3 md:gap-2">
       {
-        insurance.plans.map((plan) => (
+        insuranceEs.plans.map((plan) => (
           <div class="flex flex-col rounded-xl bg-sky p-6 md:rounded-2xl md:p-8" data-reveal>
             <span class="self-start rounded-full bg-navy px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.1em] text-white">
               {plan.badge}
@@ -47,18 +48,14 @@ const badges = ["PPO", "HMO", "Denti-Cal", "CareCredit"];
     data-reveal-group
   >
     <div class="rounded-xl bg-mist px-6 py-14 md:rounded-2xl md:px-14 md:py-20">
-      <h2
-        id="payment-heading"
-        class="type-h2 max-w-2xl"
-        data-reveal
-      >
-        {insurance.paymentHeading}
+      <h2 id="payment-heading" class="type-h2 max-w-2xl" data-reveal>
+        {insuranceEs.paymentHeading}
       </h2>
       <div class="mt-8 grid grid-cols-1 gap-1.5 md:grid-cols-3 md:gap-2">
         {
-          insurance.payment.map((option) => (
+          insuranceEs.payment.map((option) => (
             <div class="rounded-lg bg-white p-5 md:rounded-xl md:p-7" data-reveal>
-              <span class="inline-block rounded-full border border-ink/25 px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.1em]">
+              <span class="inline-flex rounded-full bg-sky px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.1em]">
                 {option.badge}
               </span>
               <h3 class="type-h3 mt-5">{option.name}</h3>
@@ -78,21 +75,21 @@ const badges = ["PPO", "HMO", "Denti-Cal", "CareCredit"];
     <div class="overflow-hidden rounded-xl bg-navy text-white md:rounded-2xl" data-reveal>
       <div class="grid grid-cols-1 md:grid-cols-[1.3fr_1fr]">
         <div class="px-6 py-14 md:px-14 md:py-20">
-          <p class="type-eyebrow text-white/55">Working With You</p>
+          <p class="type-eyebrow text-white/55">{insuranceEs.promiseEyebrow}</p>
           <h2 id="promise-heading" class="type-h2 mt-4 max-w-xl">
-            {insurance.promiseHeading}
+            {insuranceEs.promiseHeading}
           </h2>
           <p class="type-body-lg mt-5 max-w-2xl text-white/70">
-            {insurance.promise}
+            {insuranceEs.promise}
           </p>
           <div class="mt-8">
-            <Cta variant="light" />
+            <Cta variant="light" label={bookLabelEs} callLabel={callLabelEs} href={bookHrefEs} />
           </div>
         </div>
         <div class="relative min-h-[240px] md:min-h-0">
           <img
             src="/images/insurance.webp"
-            alt="Check in counter of a dental office with a folder and a small plant"
+            alt={insuranceEs.promiseAlt}
             class="absolute inset-0 h-full w-full object-cover"
             loading="lazy"
             decoding="async"

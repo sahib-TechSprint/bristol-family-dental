@@ -1,6 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
 import { notFound } from "../content/pages";
+import { notFoundEs } from "../i18n/es";
 import { practice } from "../content/practice";
 import { seo } from "../content/seo";
 ---
@@ -39,6 +40,12 @@ import { seo } from "../content/seo";
       >
         Or call us: {practice.phone.display}
       </a>
+      <p class="mt-8 max-w-md text-sm text-ink/65" lang="es">
+        {notFoundEs.heading} {notFoundEs.sub}
+        <a href="/es/" class="font-semibold text-cobalt underline-offset-4 hover:underline">
+          {notFoundEs.homeCta}
+        </a>
+      </p>
     </div>
   </section>
 </Base>

@@ -5,6 +5,7 @@ import Splash from "../components/Splash.tsx";
 import Footer from "../components/Footer.astro";
 import { practice } from "../content/practice";
 import { navLinks, bookHref, bookLabel } from "../content/nav";
+import { navLinksEs, bookHrefEs, bookLabelEs, uiEs, uiEn } from "../i18n/es";
 import { dentistSchema } from "../lib/seo";
 
 interface Props {
@@ -13,7 +14,8 @@ interface Props {
   lang?: "en" | "es";
   jsonLd?: object[];
   isHome?: boolean;
-  hreflangPair?: boolean;
+  /** Path of this page's counterpart in the other language, e.g. "/es/services". */
+  altPath?: string;
   noindex?: boolean;
   preloadImages?: string[];
 }
@@ -24,10 +26,19 @@ const {
   lang = "en",
   jsonLd = [],
   isHome = false,
-  hreflangPair = false,
+  altPath,
   noindex = false,
   preloadImages = [],
 } = Astro.props;
+
+const isEs = lang === "es";
+const ui = isEs ? uiEs : uiEn;
+const links = isEs ? navLinksEs : navLinks;
+const navBookLabel = isEs ? bookLabelEs : bookLabel;
+const navBookHref = isEs ? bookHrefEs : bookHref;
+const currentPath = Astro.url.pathname;
+const enUrl = isEs && altPath ? altPath : currentPath;
+const esUrl = isEs ? currentPath : altPath;
 
 const site = Astro.site ?? new URL("https://bristol-family-dental.vercel.app");
 const canonical = new URL(Astro.url.pathname, site);
@@ -95,11 +106,11 @@ const revealScript = `(function () {
     <link rel="canonical" href={canonical} />
     {noindex && <meta name="robots" content="noindex, follow" />}
     {
-      hreflangPair && (
+      altPath && esUrl && (
         <>
-          <link rel="alternate" hreflang="en" href={new URL("/", site)} />
-          <link rel="alternate" hreflang="es" href={new URL("/espanol/", site)} />
-          <link rel="alternate" hreflang="x-default" href={new URL("/", site)} />
+          <link rel="alternate" hreflang="en" href={new URL(enUrl, site)} />
+          <link rel="alternate" hreflang="es" href={new URL(esUrl, site)} />
+          <link rel="alternate" hreflang="x-default" href={new URL(enUrl, site)} />
         </>
       )
     }
@@ -157,27 +168,35 @@ const revealScript = `(function () {
       href="#main"
       class="skip-link rounded-full bg-navy px-5 py-3 text-sm font-semibold text-white"
     >
-      Skip to content
+      {ui.skipLabel}
     </a>
 
     {isHome && <Splash client:load />}
 
     <Navbar
       client:load
-      links={navLinks}
-      bookLabel={bookLabel}
-      bookHref={bookHref}
+      links={links}
+      bookLabel={navBookLabel}
+      bookHref={navBookHref}
       phoneDisplay={practice.phone.display}
       phoneTel={practice.phone.tel}
-      tagline="your care is our concern"
+      tagline={ui.tagline}
       pathname={Astro.url.pathname}
+      langHref={isEs ? enUrl : (altPath ?? "/es/")}
+      langLabel={ui.langLabel}
+      langAria={ui.langAria}
+      menuText={ui.menuText}
+      openMenuLabel={ui.openMenu}
+      closeMenuLabel={ui.closeMenu}
+      navAria={ui.navAria}
+      bookShort={isEs ? "Cita" : "Book"}
     />
 
     <main id="main" tabindex="-1" class="outline-none">
       <slot />
     </main>
 
-    <Footer />
+    <Footer lang={lang} />
 
     <script is:inline set:html={revealScript} />
   </body>

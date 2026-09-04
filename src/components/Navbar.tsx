@@ -9,6 +9,14 @@ interface Props {
   phoneTel: string;
   tagline: string;
   pathname: string;
+  langHref?: string;
+  langLabel?: string;
+  langAria?: string;
+  menuText?: string;
+  openMenuLabel?: string;
+  closeMenuLabel?: string;
+  navAria?: string;
+  bookShort?: string;
 }
 
 /**
@@ -25,6 +33,14 @@ export default function Navbar({
   phoneTel,
   tagline,
   pathname,
+  langHref = "/es/",
+  langLabel = "ES",
+  langAria = "Ver este sitio en español",
+  menuText = "Menu",
+  openMenuLabel = "Open menu",
+  closeMenuLabel = "Close menu",
+  navAria = "Site",
+  bookShort = "Book",
 }: Props) {
   const [open, setOpen] = useState(false);
   const [visible, setVisible] = useState(false);
@@ -120,6 +136,13 @@ export default function Navbar({
         </a>
 
         <div className="flex items-center gap-2.5 md:gap-4">
+          <a
+            href={langHref}
+            aria-label={langAria}
+            className="hidden h-11 min-w-11 items-center justify-center rounded-full border border-navy/40 px-3 text-xs font-bold tracking-[0.08em] text-navy transition-colors hover:bg-navy hover:text-white md:inline-flex"
+          >
+            {langLabel}
+          </a>
           <a href={`tel:${phoneTel}`} className="hidden md:inline text-sm font-semibold">
             {phoneDisplay}
           </a>
@@ -137,14 +160,21 @@ export default function Navbar({
             aria-controls="site-menu"
             className="hidden md:inline-flex items-center px-6 py-3 rounded-full border border-navy/40 text-sm font-semibold text-navy hover:bg-navy hover:text-white transition-colors"
           >
-            Menu
+            {menuText}
           </button>
 
+          <a
+            href={langHref}
+            aria-label={langAria}
+            className="md:hidden inline-flex min-h-11 min-w-11 items-center justify-center rounded-full border border-navy/40 px-2.5 text-xs font-bold tracking-[0.08em] text-navy"
+          >
+            {langLabel}
+          </a>
           <a
             href={bookHref}
             className="md:hidden inline-flex items-center min-h-11 px-4 bg-cobalt text-white rounded-full text-xs font-semibold"
           >
-            Book
+            {bookShort}
           </a>
           <button
             ref={mobileTrigger}
@@ -152,7 +182,7 @@ export default function Navbar({
             onClick={() => (open ? closeMenu() : openMenu(mobileTrigger.current))}
             aria-expanded={open}
             aria-controls="site-menu"
-            aria-label={open ? "Close menu" : "Open menu"}
+            aria-label={open ? closeMenuLabel : openMenuLabel}
             className="md:hidden relative z-[70] flex h-11 w-11 items-center justify-center"
           >
             <span className="relative block h-5 w-6">
@@ -191,19 +221,19 @@ export default function Navbar({
             ref={panelRef}
             role="dialog"
             aria-modal="true"
-            aria-label="Site menu"
+            aria-label={menuText}
             className={`absolute right-0 top-0 flex h-full w-[85%] max-w-sm flex-col bg-paper shadow-2xl transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] md:w-full md:max-w-none md:shadow-none ${
               visible ? "translate-x-0" : "translate-x-full"
             }`}
           >
             <div className="flex items-center justify-between px-6 py-4 md:px-10 md:py-6">
               <span className="font-display text-sm font-bold uppercase tracking-[0.14em]">
-                Menu
+                {menuText}
               </span>
               <button
                 type="button"
                 onClick={closeMenu}
-                aria-label="Close menu"
+                aria-label={closeMenuLabel}
                 className="hidden h-11 w-11 items-center justify-center rounded-full border border-ink/15 hover:border-navy transition-colors md:flex"
               >
                 <svg viewBox="0 0 14 14" className="h-3.5 w-3.5" aria-hidden="true">
@@ -217,7 +247,7 @@ export default function Navbar({
               </button>
             </div>
 
-            <nav aria-label="Site" className="flex-1 overflow-y-auto px-6 pt-4 md:px-10 md:pt-8">
+            <nav aria-label={navAria} className="flex-1 overflow-y-auto px-6 pt-4 md:px-10 md:pt-8">
               <ul className="flex flex-col gap-2 md:gap-3">
                 {links.map((link, index) => (
                   <li

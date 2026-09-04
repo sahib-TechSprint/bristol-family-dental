@@ -1,0 +1,71 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHero from "../components/PageHero.astro";
+import { practice } from "../content/practice";
+
+const title = "Accessibility Statement | Bristol Family Dental Center";
+const description =
+  "Bristol Family Dental Center is committed to a website everyone can use. Read what we do to meet WCAG 2.1 AA, current limitations, and how to reach us if something is hard to use.";
+
+const sections = [
+  {
+    heading: "Our commitment",
+    body: [
+      "We want every patient and family member to be able to read this site, book an appointment, and find our door, regardless of ability or the technology they use. The site is built to conform to the Web Content Accessibility Guidelines (WCAG) 2.1 at level AA.",
+    ],
+  },
+  {
+    heading: "What the site does",
+    body: [
+      "Text colors are checked for contrast against their backgrounds. Every page can be navigated with a keyboard alone, including the menu, the language switch, and the booking form, and a skip link jumps straight to the content. Form fields have visible labels, and errors are announced to screen readers. Images that carry meaning have text alternatives, decorative images are hidden from assistive technology, and the site respects your reduced motion preference by turning off every animation. Both the English and Spanish versions of the site carry correct language tags so screen readers pronounce them properly.",
+    ],
+  },
+  {
+    heading: "How we check",
+    body: [
+      "Every page is tested with automated accessibility tooling against the WCAG 2.1 AA rule set at five screen sizes, alongside manual keyboard and zoom checks. Accessibility is re-verified whenever the site changes in a meaningful way.",
+    ],
+  },
+  {
+    heading: "Known limitations",
+    body: [
+      "The downloadable new patient forms are scans of the practice's paper forms, so they are not fillable or screen reader friendly yet. If the forms are difficult for you, skip them: call us and we will take your information over the phone or help you at the front desk. The map on the contact page is provided by Google and its controls are Google's own.",
+    ],
+  },
+  {
+    heading: "Tell us if something is hard to use",
+    body: [
+      "If any part of this site is difficult for you, we want to know so we can fix it. Call us at (714) 540-7101 or email info@bristolfamilydentalcenter.com and tell us what happened and what you were trying to do. We take these reports seriously and respond as quickly as we can.",
+    ],
+  },
+];
+---
+
+<Base title={title} description={description} altPath="/es/accessibility">
+  <PageHero
+    label="Accessibility"
+    heading="A site everyone can use"
+    intro="Statement last reviewed September 4, 2026. If anything on this site is hard for you to read or use, call us and we will help directly and fix it for the next person."
+  />
+
+  <section class="px-3 pb-1.5 pt-1.5 md:px-5 md:pb-2 md:pt-2" aria-label="Accessibility statement details">
+    <div class="rounded-xl bg-white px-6 py-12 md:rounded-2xl md:px-14 md:py-16">
+      <div class="mx-auto max-w-3xl">
+        {
+          sections.map((section) => (
+            <div class="border-b border-ink/10 py-8 first:pt-0 last:border-b-0 last:pb-0">
+              <h2 class="type-h3">{section.heading}</h2>
+              {section.body.map((paragraph) => (
+                <p class="type-body mt-4 text-ink/70">{paragraph}</p>
+              ))}
+            </div>
+          ))
+        }
+        <p class="type-small mt-10 text-ink/60">
+          Bristol Family Dental Center, {practice.address.street}, {practice.address.city},{" "}
+          {practice.address.state} {practice.address.zip}. Phone {practice.phone.display}.
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>

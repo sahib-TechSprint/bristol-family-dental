@@ -1,22 +1,37 @@
 ---
-import Base from "../layouts/Base.astro";
-import PageHero from "../components/PageHero.astro";
-import Cta from "../components/Cta.astro";
-import Icon from "../components/Icon.astro";
-import { doctor, team, bilingualNote } from "../content/team";
-import { about } from "../content/pages";
-import { seo } from "../content/seo";
-import { personSchema } from "../lib/seo";
+import Base from "../../layouts/Base.astro";
+import PageHero from "../../components/PageHero.astro";
+import Cta from "../../components/Cta.astro";
+import Icon from "../../components/Icon.astro";
+import { doctor } from "../../content/team";
+import { practice } from "../../content/practice";
+import { personSchema } from "../../lib/seo";
+import {
+  aboutEs,
+  doctorEs,
+  teamEs,
+  bilingualNoteEs,
+  seoEs,
+  bookHrefEs,
+  bookLabelEs,
+} from "../../i18n/es";
 
 const site = (Astro.site ?? new URL("https://bristol-family-dental.vercel.app")).toString();
+const callLabelEs = `Llame al ${practice.phone.display}`;
 ---
 
-<Base title={seo.about.title} description={seo.about.description} jsonLd={[personSchema(site)]} altPath="/es/about">
+<Base
+  title={seoEs.about.title}
+  description={seoEs.about.description}
+  lang="es"
+  jsonLd={[personSchema(site)]}
+  altPath="/about"
+>
   <PageHero
-    label={about.label}
-    heading={about.heading}
-    intro={doctor.intro}
-    image={{ src: "/images/about-hero.webp", alt: "Sunlit waiting area of a modern dental clinic" }}
+    label={aboutEs.label}
+    heading={aboutEs.heading}
+    intro={doctorEs.intro}
+    image={{ src: "/images/about-hero.webp", alt: aboutEs.heroAlt }}
   />
 
   <section
@@ -26,13 +41,13 @@ const site = (Astro.site ?? new URL("https://bristol-family-dental.vercel.app"))
   >
     <div class="rounded-xl bg-navy px-6 py-14 text-white md:rounded-2xl md:px-14 md:py-20" id="dr-begino">
       <div class="max-w-3xl" data-reveal>
-        <p class="type-eyebrow text-white/55">{doctor.role}</p>
+        <p class="type-eyebrow text-white/55">{doctorEs.role}</p>
         <h2 id="doctor-heading" class="type-h2 mt-4">
           {doctor.name}
         </h2>
-        <h3 class="type-h3 mt-9 text-white/90">{about.educationHeading}</h3>
+        <h3 class="type-h3 mt-9 text-white/90">{aboutEs.educationHeading}</h3>
         <p class="type-body-lg mt-4 text-white/70">
-          {doctor.educationCopy}
+          {doctorEs.educationCopy}
         </p>
       </div>
     </div>
@@ -47,20 +62,15 @@ const site = (Astro.site ?? new URL("https://bristol-family-dental.vercel.app"))
       <div class="grid gap-8 md:grid-cols-[1fr_1fr] md:gap-12">
         <div data-reveal>
           <h2 id="volunteer-heading" class="type-h2">
-            {about.volunteerHeading}
+            {aboutEs.volunteerHeading}
           </h2>
           <p class="mt-4 type-body text-ink/65">
-            {doctor.volunteerCopy}
+            {doctorEs.volunteerCopy}
           </p>
         </div>
         <ul class="flex flex-col justify-center gap-3" data-reveal>
           {
-            [
-              "Free dental care trips to Mexico, Guatemala, and Belize",
-              "Service with Puente a la Salud and La Amistad",
-              "Pediatric dentistry advocacy across Orange County",
-              "Care for homeless patients and local health fairs",
-            ].map((item) => (
+            doctorEs.volunteerItems.map((item) => (
               <li class="flex items-start gap-3 rounded-lg bg-white p-4 md:rounded-xl md:p-5">
                 <Icon name="check" class="mt-0.5 h-4 w-4 shrink-0" />
                 <span class="text-sm leading-snug md:text-base">{item}</span>
@@ -79,17 +89,17 @@ const site = (Astro.site ?? new URL("https://bristol-family-dental.vercel.app"))
   >
     <div class="rounded-xl bg-mist px-6 py-14 md:rounded-2xl md:px-14 md:py-20">
       <h2 id="team-heading" class="type-h2 max-w-xl" data-reveal>
-        {about.teamHeading}
+        {aboutEs.teamHeading}
       </h2>
       <p class="mt-3 max-w-xl type-body text-ink/65" data-reveal>
-        {bilingualNote}
+        {bilingualNoteEs}
       </p>
 
       <div class="mt-8 grid grid-cols-1 items-stretch gap-1.5 md:grid-cols-[1fr_1.5fr] md:gap-2">
         <div class="relative min-h-[260px] overflow-hidden rounded-lg md:min-h-0 md:rounded-xl" data-reveal>
           <img
             src="/images/team-office.webp"
-            alt="Front desk of a modern dental office with a navy wall and warm wood counter"
+            alt={aboutEs.teamPhotoAlt}
             class="absolute inset-0 h-full w-full object-cover"
             loading="lazy"
             decoding="async"
@@ -98,7 +108,7 @@ const site = (Astro.site ?? new URL("https://bristol-family-dental.vercel.app"))
 
         <div class="grid grid-cols-1 gap-1.5 sm:grid-cols-2 md:gap-2">
           {
-            team.map((member) => (
+            teamEs.map((member) => (
               <div class="rounded-lg bg-white p-5 md:rounded-xl md:p-6" data-reveal>
                 <h3 class="font-display text-lg font-bold leading-tight">{member.name}</h3>
                 <p class="mt-1 type-eyebrow text-ink/60">
@@ -112,7 +122,7 @@ const site = (Astro.site ?? new URL("https://bristol-family-dental.vercel.app"))
       </div>
 
       <div class="mt-9" data-reveal>
-        <Cta />
+        <Cta label={bookLabelEs} callLabel={callLabelEs} href={bookHrefEs} />
       </div>
     </div>
   </section>
