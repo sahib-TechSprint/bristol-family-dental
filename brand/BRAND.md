@@ -1,4 +1,4 @@
-# Bristol Family Dental Center Brand v1.0
+# Bristol Family Dental Center Brand v1.1
 
 Working notes behind the brand system. The client facing walkthrough lives in
 `bristol-brand-guide.pdf`; the machine readable values live in `tokens.css`
@@ -51,8 +51,9 @@ verified programmatically; the matrix is in `tokens.json`.
 2. Recent reviews thank Dr. Jonathan Galvez, Leslie, and Lino, who are not on
    the published staff page. Confirm the current roster before print
    collateral uses team photography.
-3. The team photos on file are small. A professional photo shoot in brand
-   wardrobe (navy and cobalt) would let the team section lead the homepage.
+3. When the practice is ready, a professional shoot of the real office in
+   the brand's bright light would let true photography replace the
+   representative renderings.
 4. Is there an official Facebook page URL to link from the Facebook review
    badge? It currently links to the Birdeye listing where the count is
    verifiable.
