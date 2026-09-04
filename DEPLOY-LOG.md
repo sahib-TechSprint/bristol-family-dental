@@ -144,3 +144,48 @@ PageSpeed Insights was quota limited on deploy day; re run it at pagespeed.web.d
 3. The reviews block: real counts pulled live, real patient words, and the Spanish quote, every one linked to its platform.
 4. The team section: the actual Bristol team, by name, with the group photo. Then open the About page for Dr. Begino's story with his portrait.
 5. Open the site on a phone: tap the FAQ, tap Book, and send a test request. Then switch to Español and show the same care in Spanish.
+
+## Launch candidate revision, September 4, 2026
+
+Client review round applied in full. Eight commits, pushed to main and auto deployed by Vercel.
+
+### What the client asked for, and what shipped
+
+- Every photograph of a person removed, generated and enhanced originals alike. The site now photographs spaces and craft: bright empty clinic interiors and blue clinical renders, all newly generated at high resolution in the brand palette. The disclaimer states plainly that interiors are representative renderings.
+- Hero bar strip above the fold removed; the hero is now one bright treatment room photograph under the Bristol Smiles display type.
+- Smile Gallery reworked as Cosmetic Dentistry with a reception lounge image and the same four service links.
+- Visit Us and Office Hours cards removed from the homepage; that information lives in the footer and on Contact.
+- Hours corrected sitewide to Monday through Friday 9 to 6, weekends closed, including the structured data.
+- Every X-ray mention removed. Every pricing claim removed while keeping factual payment methods. Orthodontics promoted: homepage card, services page feature band with the aligner render, and an FAQ entry.
+- About rebuilt: the doctor's name is the heading with Training and recognition as the subheader over prose, no timeline, and the four team member cards sit as text beside an office photo.
+- Services, About, and Insurance heroes and sections carry the new imagery.
+- The practice's real intake forms (English and Spanish scans, compressed from 8 MB to about 330 KB each) replaced the placeholders at the same URLs.
+- The entire site now exists in Spanish under /es/ with a one button EN or ES switch in the top corner of the navbar on every page. The old /espanol page redirects to /es/. Every page pair carries reciprocal hreflang and both trees are in the sitemap.
+- New legal pages in both languages: Privacy Policy and Disclaimer, and an Accessibility Statement, linked from the footer.
+- Brand guide updated to v1.1 with the no people imagery direction.
+
+### Compliance and QC results for this revision
+
+- axe-core WCAG 2.1 AA: zero violations on all 19 pages (9 English, 9 Spanish, 404) at 360, 768, 1024, 1440, and 1920.
+- Zero horizontal overflow anywhere. All JSON-LD parses (Dentist, Person, FAQPage on home and new patients in both languages). Every internal link and anchor resolves.
+- Language toggle verified on every page in both directions, with correct hreflang pairs and html lang attributes.
+- Booking endpoint end to end: valid 200, honeypot quiet 200, too fast 400, rate limit 429. Spanish booking form submitted through the real UI to the confirmation state.
+- Splash, menu focus trap, Escape handling, and reduced motion behaviors all pass. Keyboard reaches the skip link first on a fresh load.
+- Local Lighthouse mobile: accessibility, best practices, and SEO all 100 on home, Spanish home, services, and book; performance 89 to 94 locally with the font CDN blocked (production has run 2 to 7 points higher; re-verify with PageSpeed Insights after deploy).
+- Integrity greps clean: no em or en dashes, no machine authorship references, no X-ray or Saturday or pricing leftovers, no stray palette classes.
+
+### Known judgment calls
+
+- "Orthopedics" in the client notes was confirmed with Sahib as orthodontics.
+- The corner chip that read Free Consultation now reads Se Habla Español (English site) and Atención Bilingüe (Spanish site); free offers read as pricing claims.
+- CareCredit copy says "manageable monthly payments" rather than repeating the zero interest claim.
+- Reviews section stays as approved in the prior round, pending the manager's excerpt sign off.
+
+### Client items before DNS cutover
+
+1. Approve the live preview in both languages.
+2. Sign off on the four review excerpts (listed in the prior section) and the Google badge at its current 3.8 rating.
+3. Confirm the current staff roster for the About page names.
+4. Have an attorney glance at the privacy, disclaimer, and accessibility pages; they are careful plain language drafts, not legal advice.
+5. Optional but recommended: set RESEND_API_KEY in Vercel so booking requests arrive by email.
+6. When approved, point the domain (steps in the launch guide and in the v1 section above).
