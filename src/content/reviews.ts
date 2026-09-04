@@ -104,14 +104,14 @@ export const homeFaq: HomeFaqItem[] = [
   {
     question: "What if I do not have insurance?",
     answer:
-      "You are still covered. We accept cash, checks, and all major credit cards, and CareCredit lets qualified patients split treatment into no interest monthly payments. You will always know the price before treatment starts.",
+      "Yes, we still welcome you. We accept cash, checks, and all major credit cards, and CareCredit financing is available for qualified patients. Our front office will walk you through every option.",
     linkLabel: "Book a visit",
     linkHref: "/book",
   },
   {
     question: "What should I bring to my first visit?",
     answer:
-      "A photo ID, your insurance card if you have one, a list of any medications you take, and any recent X-rays from a previous dentist. You can also download the new patient form and fill it out at home.",
+      "A photo ID, your insurance card if you have one, and a list of any medications you take. You can also download the new patient form and fill it out at home.",
     linkLabel: "Plan your first visit",
     linkHref: "/new-patients",
   },
@@ -123,9 +123,9 @@ export const homeFaq: HomeFaqItem[] = [
     linkHref: "/book",
   },
   {
-    question: "Can I come in on a Saturday?",
+    question: "Do you offer braces or clear aligners?",
     answer:
-      "We see patients every other Saturday from 8:00 a.m. to 4:00 p.m., by appointment. Saturdays alternate week to week, so call to check the next open Saturday or request one when you book.",
+      "Yes. We provide orthodontics for kids, teens, and adults, including traditional braces and clear aligners, with steady checkups along the way. Ask for an orthodontic consultation when you book.",
     linkLabel: "Book a visit",
     linkHref: "/book",
   },

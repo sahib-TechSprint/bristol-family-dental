@@ -35,7 +35,6 @@ export function dentistSchema(siteUrl: string) {
     },
     hasMap: practice.mapsUrl,
     openingHoursSpecification: practice.openingHoursSpecification,
-    priceRange: practice.priceRange,
     availableLanguage: practice.languages,
     sameAs: practice.sameAs,
   };

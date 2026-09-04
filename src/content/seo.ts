@@ -9,7 +9,7 @@ export const seo: Record<string, PageMeta> = {
   home: {
     title: "Dentist in Santa Ana, CA | Bristol Family Dental Center",
     description:
-      "Gentle, affordable family dentistry in Santa Ana, from cleanings and fillings to implants, veneers, and braces. Bilingual team, most insurance accepted, including Denti-Cal. Call (714) 540-7101.",
+      "Gentle family dentistry in Santa Ana, from cleanings and fillings to implants, veneers, braces, and clear aligners. Bilingual team, most insurance accepted, including Denti-Cal. Call (714) 540-7101.",
   },
   services: {
     title: "Dental Services in Santa Ana | Bristol Family Dental Center",
@@ -19,7 +19,7 @@ export const seo: Record<string, PageMeta> = {
   about: {
     title: "Meet Dr. Ruben Begino, D.D.S. | Bristol Family Dental Center",
     description:
-      "Dr. Ruben Begino, a UCSF trained dentist, has led Bristol Family Dental Center in Santa Ana since 2006. Meet the bilingual team behind our warm, affordable family care.",
+      "Dr. Ruben Begino, a UCSF trained dentist, has led Bristol Family Dental Center in Santa Ana since 2006. Meet the bilingual team behind our warm family care.",
   },
   newPatients: {
     title: "New Patients and FAQ | Bristol Family Dental Center",
@@ -29,7 +29,7 @@ export const seo: Record<string, PageMeta> = {
   insurance: {
     title: "Insurance and Payment Options | Bristol Family Dental Center",
     description:
-      "We accept virtually all dental insurance in Santa Ana: PPO, HMO, and Denti-Cal, plus CareCredit financing and cash, check, or card. Honest prices, explained before treatment.",
+      "We accept virtually all dental insurance in Santa Ana: PPO, HMO, and Denti-Cal, plus CareCredit financing and cash, check, or card. Coverage explained before treatment.",
   },
   book: {
     title: "Book an Appointment | Bristol Family Dental Center",

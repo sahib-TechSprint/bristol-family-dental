@@ -26,7 +26,7 @@ export const serviceGroups: ServiceGroup[] = [
         id: "exams",
         name: "Routine Exams",
         blurb:
-          "A routine exam is how we catch small problems while they are still small. Dr. Begino checks your teeth, gums, and bite, reviews X-rays when needed, and explains what he sees in plain language. You leave with a clear picture of your dental health and honest advice about what, if anything, comes next.",
+          "A routine exam is how we catch small problems while they are still small. Dr. Begino checks your teeth, gums, and bite, and explains what he sees in plain language. You leave with a clear picture of your dental health and honest advice about what, if anything, comes next.",
         whoFor: "For every member of the family, from kids to grandparents.",
       },
       {
@@ -133,7 +133,7 @@ export const serviceGroups: ServiceGroup[] = [
         id: "braces",
         name: "Braces",
         blurb:
-          "Braces straighten teeth and correct bite problems a little at a time, with steady checkups along the way. We treat both kids and adults, and we keep the process simple and affordable.",
+          "Braces straighten teeth and correct bite problems a little at a time, with steady checkups along the way. We treat both kids and adults, and we keep the process simple from the first visit to the last retainer check.",
         whoFor: "For crooked teeth or bite problems at any age.",
       },
       {

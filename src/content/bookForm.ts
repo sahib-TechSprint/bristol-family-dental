@@ -19,7 +19,7 @@ export const bookForm = {
     },
     preferred: {
       label: "Preferred days and times",
-      placeholder: "Weekday afternoons, or a Saturday morning",
+      placeholder: "Weekday mornings or afternoons",
       error: "Let us know what days or times generally work.",
     },
     service: {

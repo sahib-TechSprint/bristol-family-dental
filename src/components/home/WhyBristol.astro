@@ -1,6 +1,6 @@
 ---
-// Why families choose Bristol: the affordability positioning and the
-// bilingual team, told straight.
+// Why families choose Bristol: whole family care, orthodontics in house,
+// and the bilingual team, told straight.
 
 import { why } from "../../content/home";
 import Icon from "../Icon.astro";
@@ -16,7 +16,7 @@ import Icon from "../Icon.astro";
         why.cards.map((card) => (
           <div class="rounded-lg bg-white p-6 md:rounded-xl md:p-9" data-reveal>
             <span class="flex h-11 w-11 items-center justify-center rounded-full border border-ink/25">
-              <Icon name={card.icon as "coin" | "globe" | "family"} class="h-5 w-5" />
+              <Icon name={card.icon as "tooth" | "globe" | "family"} class="h-5 w-5" />
             </span>
             <h3 class="type-h3 mt-6">{card.title}</h3>
             <p class="type-body mt-3 text-ink/65">{card.text}</p>

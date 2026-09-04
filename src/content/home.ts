@@ -33,7 +33,7 @@ export const implantSection = {
     { title: "Caring for Dental Implants", href: "/services#implants", glass: true },
   ],
   processSteps: [
-    { number: "1", title: "Consultation", text: "An exam and X-rays to confirm an implant is right for you." },
+    { number: "1", title: "Consultation", text: "An exam and an honest conversation to confirm an implant is right for you." },
     { number: "2", title: "Placement", text: "The small titanium post is placed and left to bond with the bone." },
     { number: "3", title: "Restoration", text: "Your custom crown is attached, and your smile is whole again." },
   ],
@@ -41,12 +41,12 @@ export const implantSection = {
 
 export const why = {
   label: "Why Bristol",
-  heading: "Honest care at honest prices",
+  heading: "Care your whole family can count on",
   cards: [
     {
-      icon: "coin",
-      title: "Fair prices, on purpose",
-      text: "We skip the luxury extras that do nothing for your teeth, and we pass those savings straight to our patients. That is how quality care stays affordable for working families.",
+      icon: "tooth",
+      title: "Orthodontics under this roof",
+      text: "Braces and clear aligners for kids, teens, and adults, handled by the same team that cares for the rest of your smile. Straighter teeth without being sent across town.",
     },
     {
       icon: "globe",

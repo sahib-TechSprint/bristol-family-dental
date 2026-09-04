@@ -31,11 +31,9 @@ export const practice = {
   },
   hours: [
     { label: "Monday to Friday", value: "9:00 a.m. to 6:00 p.m." },
-    { label: "Every other Saturday", value: "8:00 a.m. to 4:00 p.m., by appointment" },
-    { label: "Sunday", value: "Closed" },
+    { label: "Saturday and Sunday", value: "Closed" },
   ],
-  hoursNote: "Saturday visits are by appointment and alternate week to week. Call to check the next open Saturday.",
-  // Schema.org opening hours. Saturday alternates, so it carries an honest note in the description.
+  hoursNote: "Same day visits are often available on weekdays. Call and we will do our best to fit you in.",
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
@@ -43,16 +41,8 @@ export const practice = {
       opens: "09:00",
       closes: "18:00",
     },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Saturday",
-      opens: "08:00",
-      closes: "16:00",
-      description: "Open every other Saturday, by appointment only.",
-    },
   ],
   languages: ["English", "Spanish"],
-  priceRange: "$$",
   sameAs: [
     "https://www.yelp.com/biz/bristol-family-dental-center-santa-ana",
     "https://www.instagram.com/bristol.family.dental.center/",
