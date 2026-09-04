@@ -2,13 +2,15 @@
 import Base from "../layouts/Base.astro";
 import PageHero from "../components/PageHero.astro";
 import Cta from "../components/Cta.astro";
+import Icon from "../components/Icon.astro";
 import ArrowCircle from "../components/ArrowCircle.astro";
-import { serviceGroups, specialistNetwork } from "../content/services";
+import { serviceGroups, specialistNetwork, orthoHighlight } from "../content/services";
 import { seo } from "../content/seo";
 ---
 
 <Base title={seo.services.title} description={seo.services.description}>
   <PageHero
+    image={{ src: "/images/services-hero.webp", alt: "Sterile dental instruments arranged on a steel tray in cool blue light" }}
     label="Services"
     heading="Every smile, every stage, one office"
     intro="From a child's first cleaning to a full restoration, we handle almost everything in house, and we coordinate trusted specialists for the rest. Every treatment starts with a plain language explanation of what we recommend and why."
@@ -62,25 +64,76 @@ import { seo } from "../content/seo";
 
   <section
     class="px-3 pb-1.5 pt-1.5 md:px-5 md:pb-2 md:pt-2"
+    aria-labelledby="ortho-highlight-heading"
+    data-reveal-group
+  >
+    <div class="grid grid-cols-1 gap-1.5 md:grid-cols-[1fr_1.2fr] md:gap-2">
+      <div class="relative min-h-[280px] overflow-hidden rounded-xl md:min-h-0 md:rounded-2xl" data-reveal>
+        <img
+          src="/images/ortho-aligner.webp"
+          alt="Clinical render of a transparent clear aligner tray in cool blue light"
+          class="absolute inset-0 h-full w-full object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <div class="rounded-xl bg-navy px-6 py-12 text-white md:rounded-2xl md:px-12 md:py-16" data-reveal>
+        <p class="type-eyebrow text-white/55">{orthoHighlight.label}</p>
+        <h2 id="ortho-highlight-heading" class="type-h2 mt-4 max-w-lg">
+          {orthoHighlight.heading}
+        </h2>
+        <p class="type-body-lg mt-5 max-w-xl text-white/70">{orthoHighlight.body}</p>
+        <ul class="mt-7 space-y-3">
+          {
+            orthoHighlight.points.map((point) => (
+              <li class="flex items-start gap-3 text-sm text-white/85 md:text-base">
+                <Icon name="check" class="mt-1 h-4 w-4 shrink-0 text-white/70" />
+                <span>{point}</span>
+              </li>
+            ))
+          }
+        </ul>
+        <div class="mt-9">
+          <Cta variant="light" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="px-3 pb-1.5 pt-1.5 md:px-5 md:pb-2 md:pt-2"
     aria-labelledby="group-specialists"
     data-reveal-group
   >
     <div
       id={specialistNetwork.id}
-      class="rounded-xl bg-navy px-6 py-14 text-white md:rounded-2xl md:px-14 md:py-20"
+      class="overflow-hidden rounded-xl bg-navy text-white md:rounded-2xl"
       data-reveal
     >
-      <h2
-        id="group-specialists"
-        class="type-h2 max-w-xl"
-      >
-        {specialistNetwork.name}
-      </h2>
-      <p class="mt-4 max-w-2xl type-body text-white/70">
-        {specialistNetwork.blurb}
-      </p>
-      <div class="mt-8">
-        <Cta variant="light" />
+      <div class="grid grid-cols-1 md:grid-cols-[1.3fr_1fr]">
+        <div class="px-6 py-14 md:px-14 md:py-20">
+          <h2
+            id="group-specialists"
+            class="type-h2 max-w-xl"
+          >
+            {specialistNetwork.name}
+          </h2>
+          <p class="mt-4 max-w-2xl type-body text-white/70">
+            {specialistNetwork.blurb}
+          </p>
+          <div class="mt-8">
+            <Cta variant="light" />
+          </div>
+        </div>
+        <div class="relative min-h-[240px] md:min-h-0">
+          <img
+            src="/images/specialists.webp"
+            alt="Bright consultation room with a round table and two chairs"
+            class="absolute inset-0 h-full w-full object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
       </div>
     </div>
   </section>

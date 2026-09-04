@@ -154,5 +154,17 @@ export const specialistNetwork = {
     "Some cases call for a specialist, and we have spent years building a network we trust. We coordinate endodontics for complicated root canals, periodontics for deep cleanings, pedodontics for children with special needs, and oral surgery for complex extractions such as wisdom teeth. We handle the referral, share your records, and stay involved in your care from start to finish.",
 };
 
+// Featured orthodontics band on the services page.
+export const orthoHighlight = {
+  label: "Orthodontics",
+  heading: "Straight teeth, under this roof",
+  body: "Braces and clear aligners are part of everyday care at Bristol Family Dental Center. The same team that handles your cleanings and checkups oversees your orthodontic treatment, so every adjustment happens with people who already know your smile.",
+  points: [
+    "Traditional braces for kids, teens, and adults",
+    "Nearly invisible clear aligners you can remove to eat and brush",
+    "Steady checkups with the same familiar team",
+  ],
+};
+
 // Flat list used by the booking form select and anywhere a simple list is needed.
 export const allServices: Service[] = serviceGroups.flatMap((g) => g.services);

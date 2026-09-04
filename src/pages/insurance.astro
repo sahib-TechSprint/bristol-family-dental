@@ -75,18 +75,29 @@ const badges = ["PPO", "HMO", "Denti-Cal", "CareCredit"];
     aria-labelledby="promise-heading"
     data-reveal-group
   >
-    <div class="rounded-xl bg-navy px-6 py-14 text-white md:rounded-2xl md:px-14 md:py-20" data-reveal>
-      <p class="type-eyebrow text-white/55">
-        {insurance.promiseHeading}
-      </p>
-      <h2
-        id="promise-heading"
-        class="type-h2 mt-4 max-w-3xl"
-      >
-        {insurance.promise}
-      </h2>
-      <div class="mt-8">
-        <Cta variant="light" />
+    <div class="overflow-hidden rounded-xl bg-navy text-white md:rounded-2xl" data-reveal>
+      <div class="grid grid-cols-1 md:grid-cols-[1.3fr_1fr]">
+        <div class="px-6 py-14 md:px-14 md:py-20">
+          <p class="type-eyebrow text-white/55">Working With You</p>
+          <h2 id="promise-heading" class="type-h2 mt-4 max-w-xl">
+            {insurance.promiseHeading}
+          </h2>
+          <p class="type-body-lg mt-5 max-w-2xl text-white/70">
+            {insurance.promise}
+          </p>
+          <div class="mt-8">
+            <Cta variant="light" />
+          </div>
+        </div>
+        <div class="relative min-h-[240px] md:min-h-0">
+          <img
+            src="/images/insurance.webp"
+            alt="Check in counter of a dental office with a folder and a small plant"
+            class="absolute inset-0 h-full w-full object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
       </div>
     </div>
   </section>
