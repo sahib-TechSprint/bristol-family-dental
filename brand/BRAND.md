@@ -1,4 +1,4 @@
-# Bristol Family Dental Center Brand v1.1
+# Bristol Family Dental Center Brand v1.2
 
 Working notes behind the brand system. The client facing walkthrough lives in
 `bristol-brand-guide.pdf`; the machine readable values live in `tokens.css`
@@ -32,11 +32,20 @@ One family, Open Sauce One, in two weights. A strict seven step scale
 
 ## Imagery
 
-Lifestyle photography reads as one shoot: warm soft daylight, a seamless warm
-backdrop with soft leaf shadows, subjects in navy and cobalt wardrobe, honest
-joyful smiles. Clinical illustrations are blue tinted renders on deep navy so
-they sit inside the palette instead of fighting it. Real staff photos are
-enhanced only (resample, sharpen, color) and never altered.
+The site carries no photography of people or premises. Until the practice
+supplies its own photographs with permission to publish, imagery is limited to
+clinical renders: teeth, veneers, crowns, implants, aligners, teaching models,
+and instruments, rendered in cool white and steel on deep navy with a soft
+floor reflection, so they sit inside the palette instead of fighting it. The
+home page opens without an image at all; type does the work. Interior or
+exterior views of a clinic that were generated rather than photographed are
+not used anywhere, because a room presented as the practice must be the
+practice. Every render ships as webp with metadata stripped and is checked
+for watermarks before it is committed.
+
+Text placed over a render sits on a navy glass panel (80 to 85 percent) or a
+white card, never directly on the picture, so contrast never depends on what
+is behind it.
 
 ## Accessibility floors
 
@@ -48,12 +57,11 @@ verified programmatically; the matrix is in `tokens.json`.
 
 1. Google currently shows 3.8 stars (38 reviews), lower than Yelp. Keep the
    Google badge on the homepage, or drop it until the rating recovers?
-2. Recent reviews thank Dr. Jonathan Galvez, Leslie, and Lino, who are not on
-   the published staff page. Confirm the current roster before print
-   collateral uses team photography.
+2. Recent reviews thank Dr. Jonathan Galvez, Dr. Shalaby, Leslie, and Lino,
+   who are not on the published staff page. Confirm the current roster.
 3. When the practice is ready, a professional shoot of the real office in
-   the brand's bright light would let true photography replace the
-   representative renderings.
+   the brand's bright light, with written permission from anyone who
+   appears, would let true photography join the renders.
 4. Is there an official Facebook page URL to link from the Facebook review
    badge? It currently links to the Birdeye listing where the count is
    verifiable.

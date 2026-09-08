@@ -40,7 +40,7 @@ export const serviceGroups: ServiceGroup[] = [
         id: "fillings",
         name: "Fillings",
         blurb:
-          "When a cavity forms, a filling stops the decay and rebuilds the tooth. We offer white composite fillings that match the natural color of your teeth, so the repair blends right in. The visit is quick and comfortable.",
+          "When a cavity forms, a filling stops the decay and rebuilds the tooth. We offer white composite fillings that match the natural color of your teeth, so the repair blends right in. Most fillings are completed in a single visit.",
         whoFor: "For teeth with cavities or small chips.",
       },
       {
@@ -97,8 +97,8 @@ export const serviceGroups: ServiceGroup[] = [
         id: "implants",
         name: "Dental Implants",
         blurb:
-          "A dental implant replaces a missing tooth from the root up. A small titanium post anchors a custom crown that looks, feels, and works like a natural tooth. Implants also protect the jawbone and never slip the way removable options can.",
-        whoFor: "For a permanent answer to a missing tooth.",
+          "A dental implant replaces a missing tooth from the root up. A small titanium post anchors a custom crown that looks, feels, and works like a natural tooth. Implants also help preserve the jawbone and, unlike removable options, stay fixed in place.",
+        whoFor: "For a long term answer to a missing tooth.",
       },
     ],
   },
@@ -119,7 +119,7 @@ export const serviceGroups: ServiceGroup[] = [
         id: "whitening",
         name: "Teeth Whitening",
         blurb:
-          "Professional whitening safely lifts years of coffee, tea, and everyday stains. It works better and more evenly than drugstore kits, and we keep your gums protected the whole time.",
+          "Professional whitening lifts years of coffee, tea, and everyday stains in a supervised setting, with your gums protected the whole time. Results vary from person to person, and we will tell you what to expect before you start.",
         whoFor: "For a brighter smile before a big event, or just because.",
       },
     ],

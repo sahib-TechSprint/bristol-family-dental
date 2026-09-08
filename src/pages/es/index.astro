@@ -8,7 +8,6 @@ import ReviewsSection from "../../components/home/ReviewsSection.astro";
 import HomeFaq from "../../components/home/HomeFaq.astro";
 import FinalCta from "../../components/home/FinalCta.astro";
 import { faqSchema } from "../../lib/seo";
-import { practice } from "../../content/practice";
 import {
   heroEs,
   heroSrHeadingEs,
@@ -20,15 +19,15 @@ import {
   reviewsSectionEs,
   reviewCountLabelsEs,
   reviewNoteEs,
-  recommendedEs,
-  starAriaEs,
-  onLabelEs,
+  readLabelEs,
   homeFaqEs,
   homeFaqSectionEs,
   seoEs,
-  bookHrefEs,
-  bookLabelEs,
+  callLabelEs,
+  secondaryLabelEs,
+  secondaryHrefEs,
 } from "../../i18n/es";
+import { callHref } from "../../content/nav";
 ---
 
 <Base
@@ -38,26 +37,23 @@ import {
   isHome
   altPath="/"
   jsonLd={[faqSchema(homeFaqEs)]}
-  preloadImages={["/images/hero.webp"]}
 >
-  <HeroSection content={heroEs} srHeading={heroSrHeadingEs} />
-  <GallerySection client:visible content={galleryEs} bookHref={bookHrefEs} bookLabel={bookLabelEs} />
-  <ImplantSection content={implantEs} bookHref={bookHrefEs} alts={implantAltsEs} />
+  <HeroSection content={heroEs} srHeading={heroSrHeadingEs} callLabel={callLabelEs} />
+  <GallerySection client:visible content={galleryEs} ctaHref={callHref} ctaLabel={callLabelEs} />
+  <ImplantSection content={implantEs} ctaLabel={callLabelEs} alts={implantAltsEs} />
   <ReviewsSection
     section={reviewsSectionEs}
     countLabels={reviewCountLabelsEs}
     badgeNote={reviewNoteEs}
-    recommendedLabel={recommendedEs}
-    starAria={starAriaEs}
-    onLabel={onLabelEs}
-    quoteDefaultLang="es"
+    readLabel={readLabelEs}
   />
   <WhyBristol content={whyEs} />
   <HomeFaq items={homeFaqEs} section={homeFaqSectionEs} />
   <FinalCta
     content={finalCtaEs}
-    ctaLabel={bookLabelEs}
-    ctaHref={bookHrefEs}
-    ctaCallLabel={`Llame al ${practice.phone.display}`}
+    ctaLabel={callLabelEs}
+    ctaHref={callHref}
+    secondaryText={secondaryLabelEs}
+    secondaryTo={secondaryHrefEs}
   />
 </Base>

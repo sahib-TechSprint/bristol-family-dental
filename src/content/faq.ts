@@ -50,7 +50,7 @@ export const faq: FaqItem[] = [
   {
     question: "What are porcelain veneers?",
     answer:
-      "Veneers are thin porcelain shells bonded to the front of your teeth. They cover stains, chips, gaps, and uneven edges, and they are shaped and shaded to look completely natural. With good care, they last for many years.",
+      "Veneers are thin porcelain shells bonded to the front of your teeth. They cover stains, chips, gaps, and uneven edges, and they are shaped and shaded to look completely natural. With good care, they can last many years.",
   },
   {
     question: "What can I do about stained teeth?",

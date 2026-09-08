@@ -1,7 +1,6 @@
 // JSON-LD builders. Each page passes the structures it needs to the base layout.
 
 import { practice } from "../content/practice";
-import { doctor } from "../content/team";
 import type { FaqItem } from "../content/faq";
 
 function absolute(siteUrl: string, path: string): string {
@@ -19,7 +18,7 @@ export function dentistSchema(siteUrl: string) {
     telephone: practice.phone.display,
     faxNumber: practice.fax.display,
     email: practice.email,
-    image: absolute(siteUrl, "/images/hero.webp"),
+    image: absolute(siteUrl, "/og/og-default.png"),
     address: {
       "@type": "PostalAddress",
       streetAddress: practice.address.street,

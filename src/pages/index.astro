@@ -11,19 +11,18 @@ import { gallery } from "../content/home";
 import { seo } from "../content/seo";
 import { homeFaq } from "../content/reviews";
 import { faqSchema } from "../lib/seo";
-import { bookHref, bookLabel } from "../content/nav";
+import { callHref, callLabel } from "../content/nav";
 ---
 
 <Base
   title={seo.home.title}
   description={seo.home.description}
   isHome
-  altPath="/es/"
+  altPath="/es"
   jsonLd={[faqSchema(homeFaq)]}
-  preloadImages={["/images/hero.webp"]}
 >
   <HeroSection />
-  <GallerySection client:visible content={gallery} bookHref={bookHref} bookLabel={bookLabel} />
+  <GallerySection client:visible content={gallery} ctaHref={callHref} ctaLabel={callLabel} />
   <ImplantSection />
   <ReviewsSection />
   <WhyBristol />

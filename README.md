@@ -2,11 +2,15 @@
 
 Marketing site for Bristol Family Dental Center, a bilingual family dental practice in Santa Ana, California. Designed and built by Carbon Quill Media.
 
-Live site: https://bristol-family-dental.vercel.app
+Production: https://bristol-family-dental.vercel.app (moves to the practice domain at launch)
+
+## What this site is
+
+A fully static, bilingual (English and Spanish) marketing site with no forms, no accounts, no analytics, and no third party scripts. Every primary action is a phone call to the front desk. That design is deliberate: the practice is a California healthcare provider, and a site that collects nothing has nothing to protect. Online intake or scheduling is a separate, HIPAA-scoped project if the practice ever wants it.
 
 ## Stack
 
-Astro 5, Tailwind CSS 4, TypeScript (strict), and React islands for the pieces that need client state: the splash counter, the navbar menu, the masked card home page sections, and the booking form. Every page ships as static HTML; the one server endpoint is `POST /api/book`, which handles booking requests.
+Astro 5, Tailwind CSS 4, TypeScript (strict), and two small React islands (the navbar menu and the masked card cosmetic section on the home page). Fonts are self hosted (Open Sauce One, SIL Open Font License, see `public/fonts/OFL.txt`). Hosting is Vercel, deploying from the `main` branch of this repository; production routing and security headers live in `vercel.json`.
 
 ## Getting started
 
@@ -15,52 +19,53 @@ npm install
 npm run dev
 ```
 
-The site runs at `http://localhost:4321`. The booking endpoint works out of the box: without a `RESEND_API_KEY` it logs requests to the console instead of sending email.
-
-## Editing content
-
-All practice content lives in typed modules under `src/content/`. Components contain no copy, so text changes never require touching markup.
-
-| File | What it holds |
-| --- | --- |
-| `practice.ts` | Name, phone, fax, email, address, hours, map links, social profiles |
-| `services.ts` | Every service, grouped, with descriptions and anchor ids |
-| `team.ts` | Dr. Begino's bio and the team roster |
-| `faq.ts` | The new patient FAQ |
-| `home.ts` | Home page copy, section by section |
-| `pages.ts` | About, new patients, insurance, contact, book, and 404 copy |
-| `espanol.ts` | The Spanish essentials page |
-| `seo.ts` | Per page titles and meta descriptions |
-| `nav.ts` | Navigation labels |
-| `bookForm.ts` | Booking form labels and messages |
-
-## Environment variables
-
-Copy `.env.example` to `.env` for local work. In production these are set in Vercel project settings.
-
-| Variable | Purpose |
-| --- | --- |
-| `PUBLIC_SITE_URL` | Canonical URL for links, sitemap, and structured data |
-| `RESEND_API_KEY` | Enables booking notification emails through Resend |
-| `BOOKING_NOTIFY_EMAIL` | Inbox that receives booking requests |
-
-## Scripts
+The site runs at `http://localhost:4321`. Node 20 or newer.
 
 | Command | Purpose |
 | --- | --- |
 | `npm run dev` | Local development server |
-| `npm run build` | Production build (static output plus the booking function) |
+| `npm run build` | Production build into `dist/` |
 | `npm run preview` | Preview the production build |
-| `npm run check` | Type checking |
+| `npm run check` | Type checking and Astro diagnostics |
 | `npm run generate:og` | Regenerate the Open Graph image and raster favicons |
 
-## Deploying
+## Where things live
 
-The repo deploys on Vercel with the `@astrojs/vercel` adapter. Pushing to `main` triggers a production build. See `DEPLOY-LOG.md` for the launch record, environment details, and the checklist for pointing the practice domain at Vercel.
+All practice content lives in typed modules under `src/content/` (English) and `src/i18n/` (Spanish). Components contain no copy, so text changes never require touching markup.
 
-## Replacing placeholder assets
+| File | What it holds |
+| --- | --- |
+| `src/content/practice.ts` | Name, phone, fax, email, address, hours, map links, social profiles. Structured data reads from here. |
+| `src/content/nav.ts` | Navigation labels and the one primary action (the call button). |
+| `src/content/home.ts` | Home page copy, section by section. |
+| `src/content/services.ts` | Every service, grouped, with anchor ids. |
+| `src/content/team.ts` | The doctor's bio and the team roster, with license lines. |
+| `src/content/faq.ts` | The new patient FAQ. |
+| `src/content/reviews.ts` | Review platform badges with the date they were verified, plus the home page FAQ. |
+| `src/content/pages.ts` | About, new patients, insurance, contact, and 404 copy. |
+| `src/content/legal.ts` | Privacy policy, terms of use, and accessibility statement. |
+| `src/content/seo.ts` | Per page titles and meta descriptions. |
+| `src/i18n/es.ts` | Everything above in Spanish, shape for shape. |
+| `src/i18n/legal-es.ts` | The legal pages in Spanish. |
+| `public/images/` | Clinical renders (webp). No photography of people or premises. |
+| `public/forms/` | The practice's real new patient forms (PDF, English and Spanish). Replace files, keep names. |
+| `brand/` | Brand guide PDF, tokens, and working notes. |
 
-Two things ship as placeholders and should be swapped when the practice provides finals, keeping the same file names:
+## Working on the site
 
-- `public/forms/new-patient-en.pdf` and `public/forms/new-patient-es.pdf` (registration forms)
-- The five launch photos in `public/images/` (replace with photography of Dr. Begino, the team, and the office)
+Read `AGENTS.md` before making changes. It holds the rules that keep the site compliant and on brand, the quality gates every change has to pass, and the deploy procedure. `CLAUDE.md` points there too.
+
+Short version: edit content in the files above, run `npm run check` and `npm run build`, open the preview in both languages, then commit on `main` and push. Vercel builds and deploys in about a minute.
+
+## Environment variables
+
+One variable, set in Vercel (Settings, Environment Variables) and in `.env` for local work if needed:
+
+| Variable | Purpose |
+| --- | --- |
+| `PUBLIC_SITE_URL` | Canonical URL for links, sitemap, hreflang, and structured data. Change it when the practice domain goes live. |
+
+## Records
+
+- `DEPLOY-LOG.md` is the build record: what shipped in each revision and the QC results.
+- `LAUNCH-GUIDE.md` is the path from approved preview to the practice domain.

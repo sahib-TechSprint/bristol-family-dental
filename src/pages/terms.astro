@@ -1,0 +1,16 @@
+---
+import Base from "../layouts/Base.astro";
+import LegalPage from "../components/LegalPage.astro";
+import { terms, termsSections } from "../content/legal";
+import { seo } from "../content/seo";
+---
+
+<Base title={seo.terms.title} description={seo.terms.description} altPath="/es/terms">
+  <LegalPage
+    label={terms.label}
+    heading={terms.heading}
+    intro={terms.intro}
+    sections={termsSections}
+    ariaLabel={terms.ariaLabel}
+  />
+</Base>

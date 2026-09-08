@@ -3,11 +3,10 @@ import Base from "../../layouts/Base.astro";
 import PageHero from "../../components/PageHero.astro";
 import Cta from "../../components/Cta.astro";
 import Icon from "../../components/Icon.astro";
-import { practice } from "../../content/practice";
+import { callHref } from "../../content/nav";
 import { faqSchema } from "../../lib/seo";
-import { newPatientsEs, faqEs, seoEs, bookHrefEs, bookLabelEs } from "../../i18n/es";
+import { newPatientsEs, faqEs, seoEs, callLabelEs, secondaryLabelEs, secondaryHrefEs } from "../../i18n/es";
 
-const callLabelEs = `Llame al ${practice.phone.display}`;
 ---
 
 <Base
@@ -112,7 +111,7 @@ const callLabelEs = `Llame al ${practice.phone.display}`;
       </div>
 
       <div class="mt-9" data-reveal>
-        <Cta label={bookLabelEs} callLabel={callLabelEs} href={bookHrefEs} />
+        <Cta label={callLabelEs} href={callHref} secondaryText={secondaryLabelEs} secondaryTo={secondaryHrefEs} />
       </div>
     </div>
   </section>

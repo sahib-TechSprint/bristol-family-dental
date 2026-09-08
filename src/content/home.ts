@@ -3,16 +3,20 @@
 export const hero = {
   supporting:
     "Complete care for every smile in the family, from first cleanings to full restorations",
-  label: "Trusted Dentist in Santa Ana",
+  label: "Family Dentist in Santa Ana",
   displayLines: ["Bristol", "Smiles"],
   corner: "Se Habla Español",
+  facts: ["Kids, teens, and adults", "Braces and clear aligners", "Most insurance, including Denti-Cal"],
+  secondaryLabel: "Explore services",
+  secondaryHref: "/services",
 };
 
 export const gallery = {
   heading: "Cosmetic Dentistry",
-  sub: "Four ways we transform smiles",
-  tallCard: "If you want a gorgeous smile, ask about a smile makeover.",
+  sub: "Four ways we improve smiles",
+  tallCard: "Chipped, stained, or uneven teeth can be corrected. Ask about a smile makeover.",
   display: "Smile makeover",
+  imageAlt: "Clinical render of porcelain veneers and a ceramic crown on a dark blue surface",
   cards: [
     { number: "01", name: "Dental Veneers", href: "/services#veneers", active: true },
     { number: "02", name: "Dental Crowns", href: "/services#crowns", active: false },
@@ -26,10 +30,9 @@ export const implantSection = {
   subtitle: "Restore Missing Teeth",
   consultLabel: "Consultation",
   consultHeading: "Dental Restoration Services",
-  consultCta: "Book Online",
   overlayCards: [
-    { title: "The Process of Installing Implants", href: "/services#implants", glass: false },
-    { title: "Caring for Dental Implants", href: "/services#implants", glass: true },
+    { title: "How implants are placed", href: "/services#implants", glass: false },
+    { title: "Caring for dental implants", href: "/services#implants", glass: true },
   ],
   processSteps: [
     { number: "1", title: "Consultation", text: "An exam and an honest conversation to confirm an implant is right for you." },
@@ -49,8 +52,8 @@ export const why = {
     },
     {
       icon: "globe",
-      title: "The whole team speaks Spanish",
-      text: "Every member of our team is bilingual. Ask your questions in English or Spanish and get answers in the language you think in.",
+      title: "We speak Spanish",
+      text: "Our team is bilingual. Ask your questions in English or Spanish and get answers in the language you think in.",
     },
     {
       icon: "family",
@@ -60,13 +63,7 @@ export const why = {
   ],
 };
 
-export const location = {
-  label: "Visit Us",
-  heading: "Easy to find, easy to book",
-  directionsCta: "Get Directions",
-};
-
 export const finalCta = {
   heading: "Ready when you are.",
-  sub: "Book online in two minutes, or call and talk to a real person. Se habla español.",
+  sub: "Call during office hours and a real person answers, in English or Spanish. We will find you a time that works.",
 };

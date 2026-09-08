@@ -1,27 +1,28 @@
 ---
-// The one call to action, used everywhere. On mobile it pairs the Book
-// Appointment pill with a click to call secondary, since most patients book
-// by phone today.
+// The one call to action, used everywhere. The primary pill dials the front
+// desk (the practice books by phone), and the secondary link goes to the
+// contact page for hours and directions.
 
-import { practice } from "../content/practice";
-import { bookHref, bookLabel } from "../content/nav";
+import { callHref, callLabel, secondaryHref, secondaryLabel } from "../content/nav";
 
 interface Props {
   variant?: "dark" | "light";
   size?: "base" | "lg";
   class?: string;
   label?: string;
-  callLabel?: string;
   href?: string;
+  secondaryText?: string;
+  secondaryTo?: string;
 }
 
 const {
   variant = "dark",
   size = "base",
   class: className = "",
-  label = bookLabel,
-  callLabel = `Call ${practice.phone.display}`,
-  href = bookHref,
+  label = callLabel,
+  href = callHref,
+  secondaryText = secondaryLabel,
+  secondaryTo = secondaryHref,
 } = Astro.props;
 
 const pill =
@@ -29,8 +30,7 @@ const pill =
     ? "bg-cobalt text-white hover:bg-cobalt-deep"
     : "bg-white text-navy hover:bg-sky";
 
-const secondary =
-  variant === "dark" ? "text-ink" : "text-white";
+const secondary = variant === "dark" ? "text-ink" : "text-white";
 
 const sizing =
   size === "lg"
@@ -46,9 +46,9 @@ const sizing =
     {label}
   </a>
   <a
-    href={`tel:${practice.phone.tel}`}
-    class={`md:hidden inline-flex min-h-11 items-center text-sm font-semibold underline underline-offset-4 ${secondary}`}
+    href={secondaryTo}
+    class={`inline-flex min-h-11 items-center text-sm font-semibold underline underline-offset-4 ${secondary}`}
   >
-    {callLabel}
+    {secondaryText}
   </a>
 </div>

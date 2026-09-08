@@ -16,7 +16,7 @@ const site = (Astro.site ?? new URL("https://bristol-family-dental.vercel.app"))
     label={about.label}
     heading={about.heading}
     intro={doctor.intro}
-    image={{ src: "/images/about-hero.webp", alt: "Sunlit waiting area of a modern dental clinic" }}
+    image={{ src: "/images/instruments-set.webp", alt: "Clinical render of five dental hand instruments fanned on a dark blue surface" }}
   />
 
   <section
@@ -30,6 +30,7 @@ const site = (Astro.site ?? new URL("https://bristol-family-dental.vercel.app"))
         <h2 id="doctor-heading" class="type-h2 mt-4">
           {doctor.name}
         </h2>
+        <p class="type-small mt-3 text-white/70">{doctor.licenseLine}</p>
         <h3 class="type-h3 mt-9 text-white/90">{about.educationHeading}</h3>
         <p class="type-body-lg mt-4 text-white/70">
           {doctor.educationCopy}
@@ -86,10 +87,12 @@ const site = (Astro.site ?? new URL("https://bristol-family-dental.vercel.app"))
       </p>
 
       <div class="mt-8 grid grid-cols-1 items-stretch gap-1.5 md:grid-cols-[1fr_1.5fr] md:gap-2">
-        <div class="relative min-h-[260px] overflow-hidden rounded-lg md:min-h-0 md:rounded-xl" data-reveal>
+        <div class="relative min-h-[260px] overflow-hidden rounded-lg bg-navy md:min-h-0 md:rounded-xl" data-reveal>
           <img
-            src="/images/team-office.webp"
-            alt="Front desk of a modern dental office with a navy wall and warm wood counter"
+            src="/images/ortho-braces.webp"
+            alt="Clinical render of a clear dental model wearing ceramic braces on a dark blue surface"
+            width="1600"
+            height="1205"
             class="absolute inset-0 h-full w-full object-cover"
             loading="lazy"
             decoding="async"

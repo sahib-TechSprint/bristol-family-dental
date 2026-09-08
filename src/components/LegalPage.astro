@@ -1,0 +1,71 @@
+---
+// Shared shell for the legal pages (privacy, terms, accessibility) in both
+// languages. Content arrives as an ordered list of headed sections so the
+// documents stay easy to update without touching markup.
+
+import PageHero from "./PageHero.astro";
+import { practice } from "../content/practice";
+
+export interface LegalSection {
+  heading: string;
+  body: string[];
+  /** Optional plain list rendered after the paragraphs. */
+  list?: string[];
+  /** Optional link rendered after the body. */
+  link?: { label: string; href: string; external?: boolean };
+}
+
+interface Props {
+  label: string;
+  heading: string;
+  intro: string;
+  sections: LegalSection[];
+  ariaLabel: string;
+  newTabLabel?: string;
+}
+
+const { label, heading, intro, sections, ariaLabel, newTabLabel = "opens in a new tab" } = Astro.props;
+---
+
+<PageHero label={label} heading={heading} intro={intro} />
+
+<section class="px-3 pb-1.5 pt-1.5 md:px-5 md:pb-2 md:pt-2" aria-label={ariaLabel}>
+  <div class="rounded-xl bg-white px-6 py-12 md:rounded-2xl md:px-14 md:py-16">
+    <div class="mx-auto max-w-3xl">
+      {
+        sections.map((section) => (
+          <div class="border-b border-ink/10 py-8 first:pt-0 last:border-b-0 last:pb-0">
+            <h2 class="type-h3">{section.heading}</h2>
+            {section.body.map((paragraph) => (
+              <p class="type-body mt-4 text-ink/70">{paragraph}</p>
+            ))}
+            {section.list && (
+              <ul class="type-body mt-4 list-disc space-y-2 pl-6 text-ink/70">
+                {section.list.map((item) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            )}
+            {section.link && (
+              <p class="type-body mt-4">
+                <a
+                  href={section.link.href}
+                  class="font-semibold text-cobalt underline-offset-4 hover:underline"
+                  target={section.link.external ? "_blank" : undefined}
+                  rel={section.link.external ? "noopener" : undefined}
+                >
+                  {section.link.label}
+                  {section.link.external && <span class="sr-only"> ({newTabLabel})</span>}
+                </a>
+              </p>
+            )}
+          </div>
+        ))
+      }
+      <p class="type-small mt-10 text-ink/60">
+        {practice.name}, {practice.address.street}, {practice.address.city},{" "}
+        {practice.address.state} {practice.address.zip}. {practice.phone.display}. {practice.email}.
+      </p>
+    </div>
+  </div>
+</section>

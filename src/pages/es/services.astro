@@ -4,18 +4,18 @@ import PageHero from "../../components/PageHero.astro";
 import Cta from "../../components/Cta.astro";
 import Icon from "../../components/Icon.astro";
 import ArrowCircle from "../../components/ArrowCircle.astro";
-import { practice } from "../../content/practice";
+import { callHref } from "../../content/nav";
 import {
   serviceGroupsEs,
   specialistNetworkEs,
   orthoHighlightEs,
   servicesAltsEs,
   seoEs,
-  bookHrefEs,
-  bookLabelEs,
+  callLabelEs,
+  secondaryLabelEs,
+  secondaryHrefEs,
 } from "../../i18n/es";
 
-const callLabelEs = `Llame al ${practice.phone.display}`;
 ---
 
 <Base title={seoEs.services.title} description={seoEs.services.description} lang="es" altPath="/services">
@@ -53,10 +53,10 @@ const callLabelEs = `Llame al ${practice.phone.display}`;
                 <p class="mt-4 type-eyebrow text-ink/60">Para quién es</p>
                 <p class="mt-1 text-sm text-ink/70">{service.whoFor}</p>
                 <a
-                  href={bookHrefEs}
+                  href={callHref}
                   class="mt-5 inline-flex min-h-11 items-center gap-2.5 text-sm font-bold underline-offset-4 hover:underline"
                 >
-                  {bookLabelEs}
+                  {callLabelEs}
                   <ArrowCircle class="h-8 w-8 md:h-8 md:w-8" />
                 </a>
               </article>
@@ -99,7 +99,7 @@ const callLabelEs = `Llame al ${practice.phone.display}`;
           }
         </ul>
         <div class="mt-9">
-          <Cta variant="light" label={bookLabelEs} callLabel={callLabelEs} href={bookHrefEs} />
+          <Cta variant="light" label={callLabelEs} href={callHref} secondaryText={secondaryLabelEs} secondaryTo={secondaryHrefEs} />
         </div>
       </div>
     </div>
@@ -124,13 +124,15 @@ const callLabelEs = `Llame al ${practice.phone.display}`;
             {specialistNetworkEs.blurb}
           </p>
           <div class="mt-8">
-            <Cta variant="light" label={bookLabelEs} callLabel={callLabelEs} href={bookHrefEs} />
+            <Cta variant="light" label={callLabelEs} href={callHref} secondaryText={secondaryLabelEs} secondaryTo={secondaryHrefEs} />
           </div>
         </div>
         <div class="relative min-h-[240px] md:min-h-0">
           <img
-            src="/images/specialists.webp"
+            src="/images/instruments-mirror.webp"
             alt={servicesAltsEs.specialists}
+            width="1600"
+            height="1205"
             class="absolute inset-0 h-full w-full object-cover"
             loading="lazy"
             decoding="async"

@@ -6,6 +6,9 @@ export const doctor = {
   name: "Ruben H. Begino, D.D.S.",
   shortName: "Dr. Begino",
   role: "Lead Dentist, Head of Dentistry since 2006",
+  // California Business and Professions Code 680.5 asks a practitioner's own
+  // website to show name, license type, and highest academic degree.
+  licenseLine: "Licensed dentist (D.D.S.), Dental Board of California",
   intro:
     "Dr. Ruben H. Begino has led the dentistry at Bristol Family Dental Center since 2006. Patients know him for gentle hands, straight answers, and a practice built around families rather than upsells. He is a fluent Spanish speaker, and he treats every patient the way he would want his own family treated.",
   educationCopy:
@@ -22,8 +25,8 @@ export interface TeamMember {
 
 export const team: TeamMember[] = [
   {
-    name: "Dr. Pablo Lazaro",
-    role: "Dentist",
+    name: "Pablo Lazaro, D.D.S.",
+    role: "Dentist, licensed by the Dental Board of California",
     note: "Provides the full range of general and restorative care alongside Dr. Begino.",
   },
   {
@@ -44,4 +47,4 @@ export const team: TeamMember[] = [
 ];
 
 export const bilingualNote =
-  "Every member of our team is bilingual. Ask your questions in English or Spanish and get answers in the language you think in.";
+  "Our team is bilingual. Ask your questions in English or Spanish and get answers in the language you think in.";

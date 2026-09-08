@@ -4,9 +4,9 @@ import PageHero from "../../components/PageHero.astro";
 import Cta from "../../components/Cta.astro";
 import Icon from "../../components/Icon.astro";
 import { practice } from "../../content/practice";
-import { contactEs, seoEs, uiEs, bookHrefEs, bookLabelEs } from "../../i18n/es";
+import { callHref } from "../../content/nav";
+import { contactEs, seoEs, uiEs, callLabelEs, secondaryLabelEs, secondaryHrefEs } from "../../i18n/es";
 
-const callLabelEs = `Llame al ${practice.phone.display}`;
 ---
 
 <Base title={seoEs.contact.title} description={seoEs.contact.description} lang="es" altPath="/contact">
@@ -67,11 +67,12 @@ const callLabelEs = `Llame al ${practice.phone.display}`;
         class="mt-7 inline-flex min-h-11 items-center gap-2 text-sm font-semibold underline underline-offset-4 transition-colors hover:text-white/70"
       >
         {contactEs.directionsCta}
+        <span class="sr-only">{contactEs.newTab}</span>
         <span aria-hidden="true">&rarr;</span>
       </a>
 
       <div class="mt-7">
-        <Cta variant="light" label={bookLabelEs} callLabel={callLabelEs} href={bookHrefEs} />
+        <Cta variant="light" label={callLabelEs} href={callHref} secondaryText={secondaryLabelEs} secondaryTo={secondaryHrefEs} />
       </div>
     </div>
 
@@ -106,7 +107,13 @@ const callLabelEs = `Llame al ${practice.phone.display}`;
         style="border:0"
         loading="lazy"
         allowfullscreen
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
+        referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      <p class="px-5 py-4 text-xs leading-relaxed text-ink/65 md:px-7">
+        {contactEs.mapNote}{" "}
+        <a href={contactEs.mapNoteHref} class="font-semibold text-cobalt underline-offset-4 hover:underline">
+          {contactEs.mapNoteLink}
+        </a>
+      </p>
     </div>
   </section>
 </Base>

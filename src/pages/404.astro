@@ -2,8 +2,8 @@
 import Base from "../layouts/Base.astro";
 import { notFound } from "../content/pages";
 import { notFoundEs } from "../i18n/es";
-import { practice } from "../content/practice";
 import { seo } from "../content/seo";
+import { callHref, callLabel } from "../content/nav";
 ---
 
 <Base title={seo.notFound.title} description={seo.notFound.description} noindex>
@@ -22,27 +22,21 @@ import { seo } from "../content/seo";
       </p>
       <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
         <a
-          href="/book"
-          class="inline-flex items-center rounded-full bg-cobalt px-6 py-3.5 text-sm font-bold text-white transition-colors hover:bg-cobalt-deep motion-safe:hover:scale-105 motion-safe:transition-[transform,background-color]"
-        >
-          {notFound.bookCta}
-        </a>
-        <a
           href="/"
-          class="inline-flex items-center rounded-full border border-ink/30 bg-white px-6 py-3.5 text-sm font-bold transition-colors hover:bg-navy hover:text-white"
+          class="inline-flex items-center rounded-full bg-cobalt px-6 py-3.5 text-sm font-bold text-white transition-colors hover:bg-cobalt-deep motion-safe:hover:scale-105 motion-safe:transition-[transform,background-color]"
         >
           {notFound.homeCta}
         </a>
+        <a
+          href={callHref}
+          class="inline-flex items-center rounded-full border border-ink/30 bg-white px-6 py-3.5 text-sm font-bold transition-colors hover:bg-navy hover:text-white"
+        >
+          {callLabel}
+        </a>
       </div>
-      <a
-        href={`tel:${practice.phone.tel}`}
-        class="mt-6 text-sm font-semibold text-ink/65 underline-offset-4 hover:underline"
-      >
-        Or call us: {practice.phone.display}
-      </a>
       <p class="mt-8 max-w-md text-sm text-ink/65" lang="es">
         {notFoundEs.heading} {notFoundEs.sub}
-        <a href="/es/" class="font-semibold text-cobalt underline-offset-4 hover:underline">
+        <a href="/es" class="font-semibold text-cobalt underline-offset-4 hover:underline">
           {notFoundEs.homeCta}
         </a>
       </p>

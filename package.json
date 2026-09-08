@@ -1,7 +1,7 @@
 {
   "name": "bristol-family-dental",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "private": true,
   "description": "Marketing site for Bristol Family Dental Center, Santa Ana, CA. Built by Carbon Quill Media.",
   "author": "Carbon Quill Media",
@@ -15,11 +15,9 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.4.0",
-    "@astrojs/vercel": "^8.2.0",
     "astro": "^5.13.0",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "zod": "^3.25.0"
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",

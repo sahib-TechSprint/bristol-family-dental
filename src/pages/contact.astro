@@ -65,7 +65,8 @@ import { seo } from "../content/seo";
         rel="noopener"
         class="mt-7 inline-flex min-h-11 items-center gap-2 text-sm font-semibold underline underline-offset-4 transition-colors hover:text-white/70"
       >
-        Get Directions
+        Get directions in Google Maps
+        <span class="sr-only">(opens in a new tab)</span>
         <span aria-hidden="true">&rarr;</span>
       </a>
 
@@ -105,7 +106,13 @@ import { seo } from "../content/seo";
         style="border:0"
         loading="lazy"
         allowfullscreen
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
+        referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      <p class="px-5 py-4 text-xs leading-relaxed text-ink/65 md:px-7">
+        {contact.mapNote}{" "}
+        <a href={contact.mapNoteHref} class="font-semibold text-cobalt underline-offset-4 hover:underline">
+          {contact.mapNoteLink}
+        </a>
+      </p>
     </div>
   </section>
 </Base>

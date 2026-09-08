@@ -1,0 +1,17 @@
+---
+import Base from "../../layouts/Base.astro";
+import LegalPage from "../../components/LegalPage.astro";
+import { termsEs, termsSectionsEs, privacyEs } from "../../i18n/legal-es";
+import { seoEs } from "../../i18n/es";
+---
+
+<Base title={seoEs.terms.title} description={seoEs.terms.description} lang="es" altPath="/terms">
+  <LegalPage
+    label={termsEs.label}
+    heading={termsEs.heading}
+    intro={termsEs.intro}
+    sections={termsSectionsEs}
+    ariaLabel={termsEs.ariaLabel}
+    newTabLabel={privacyEs.newTab}
+  />
+</Base>

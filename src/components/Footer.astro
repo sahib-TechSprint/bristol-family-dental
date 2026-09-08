@@ -1,7 +1,7 @@
 ---
 import { practice } from "../content/practice";
-import { navLinks, bookHref, bookLabel } from "../content/nav";
-import { navLinksEs, bookHrefEs, bookLabelEs, uiEs, uiEn } from "../i18n/es";
+import { navLinks, callHref, callLabel } from "../content/nav";
+import { navLinksEs, callLabelEs, uiEs, uiEn } from "../i18n/es";
 
 interface Props {
   lang?: "en" | "es";
@@ -11,8 +11,7 @@ const { lang = "en" } = Astro.props;
 const isEs = lang === "es";
 const ui = isEs ? uiEs : uiEn;
 const links = isEs ? navLinksEs : navLinks;
-const fBookLabel = isEs ? bookLabelEs : bookLabel;
-const fBookHref = isEs ? bookHrefEs : bookHref;
+const fCtaLabel = isEs ? callLabelEs : callLabel;
 const hoursRows = isEs ? uiEs.hours : practice.hours;
 const taglineText = isEs ? "Su cuidado es nuestra prioridad." : practice.tagline;
 
@@ -28,11 +27,12 @@ const year = new Date().getFullYear();
         </p>
         <p class="type-small mt-4 text-white/65">{taglineText}</p>
         <a
-          href={fBookHref}
+          href={callHref}
           class="mt-6 inline-flex items-center rounded-full bg-white px-6 py-3.5 text-sm font-bold text-navy transition-colors hover:bg-sky motion-safe:hover:scale-105 motion-safe:transition-[transform,background-color]"
         >
-          {fBookLabel}
+          {fCtaLabel}
         </a>
+        <p class="type-small mt-6 max-w-xs text-white/65">{ui.licenseLine}</p>
       </div>
 
       <nav aria-label="Footer">
@@ -47,11 +47,6 @@ const year = new Date().getFullYear();
               </li>
             ))
           }
-          <li>
-            <a href={fBookHref} class="text-sm text-white/85 transition-colors hover:text-white">
-              {fBookLabel}
-            </a>
-          </li>
         </ul>
       </nav>
 
@@ -92,13 +87,22 @@ const year = new Date().getFullYear();
       </div>
     </div>
 
+    <p class="mt-12 border-t border-white/15 pt-8 text-xs leading-relaxed text-white/60">
+      {ui.boardNotice}{" "}
+      <a href="https://www.dbc.ca.gov" target="_blank" rel="noopener" class="underline underline-offset-4 hover:text-white">www.dbc.ca.gov</a>
+      {" "}(877) 729-7789.
+    </p>
+
     <div
-      class="mt-14 flex flex-col gap-2 border-t border-white/15 pt-8 text-xs text-white/50 md:flex-row md:items-center md:justify-between"
+      class="mt-6 flex flex-col gap-2 text-xs text-white/50 md:flex-row md:items-center md:justify-between"
     >
       <p>&copy; {year} {practice.name}. {ui.rights}</p>
       <p class="flex flex-wrap gap-x-5 gap-y-1">
         <a href={ui.privacyHref} class="underline-offset-4 transition-colors hover:text-white hover:underline">
           {ui.privacyLabel}
+        </a>
+        <a href={ui.termsHref} class="underline-offset-4 transition-colors hover:text-white hover:underline">
+          {ui.termsLabel}
         </a>
         <a href={ui.accessibilityHref} class="underline-offset-4 transition-colors hover:text-white hover:underline">
           {ui.accessibilityLabel}

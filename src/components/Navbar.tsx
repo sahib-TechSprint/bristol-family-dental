@@ -3,10 +3,8 @@ import type { NavLink } from "../content/nav";
 
 interface Props {
   links: NavLink[];
-  bookLabel: string;
-  bookHref: string;
-  phoneDisplay: string;
-  phoneTel: string;
+  ctaLabel: string;
+  ctaHref: string;
   tagline: string;
   pathname: string;
   langHref?: string;
@@ -16,31 +14,30 @@ interface Props {
   openMenuLabel?: string;
   closeMenuLabel?: string;
   navAria?: string;
-  bookShort?: string;
+  ctaShort?: string;
 }
 
 /**
- * Fixed glass navbar with a two line wordmark, phone number, Book Appointment
- * pill, and a menu that opens as a right slide-in panel on mobile and a full
- * page nav on desktop. Keyboard complete: Escape closes, focus is trapped
- * while open, and focus returns to the trigger on close.
+ * Fixed glass navbar with a two line wordmark, the language switch, the Call
+ * pill (the site's one primary action), and a menu that opens as a right
+ * slide-in panel on mobile and a full page nav on desktop. Keyboard complete:
+ * Escape closes, focus is trapped while open, and focus returns to the
+ * trigger on close.
  */
 export default function Navbar({
   links,
-  bookLabel,
-  bookHref,
-  phoneDisplay,
-  phoneTel,
+  ctaLabel,
+  ctaHref,
   tagline,
   pathname,
-  langHref = "/es/",
+  langHref = "/es",
   langLabel = "ES",
   langAria = "Ver este sitio en español",
   menuText = "Menu",
   openMenuLabel = "Open menu",
   closeMenuLabel = "Close menu",
   navAria = "Site",
-  bookShort = "Book",
+  ctaShort = "Call",
 }: Props) {
   const [open, setOpen] = useState(false);
   const [visible, setVisible] = useState(false);
@@ -112,8 +109,10 @@ export default function Navbar({
     }
   }, [open]);
 
+  // Home links (/ and /es) match only their own path; section links match
+  // their subtree so the Spanish and English trees behave the same way.
   const isCurrent = (href: string) =>
-    href === "/" ? pathname === "/" : pathname.startsWith(href);
+    href === "/" || href === "/es" ? pathname === href : pathname.startsWith(href);
 
   return (
     // While the menu is open the backdrop blur comes off: backdrop-filter on an
@@ -143,14 +142,11 @@ export default function Navbar({
           >
             {langLabel}
           </a>
-          <a href={`tel:${phoneTel}`} className="hidden md:inline text-sm font-semibold">
-            {phoneDisplay}
-          </a>
           <a
-            href={bookHref}
+            href={ctaHref}
             className="hidden md:inline-flex items-center px-6 py-3 bg-cobalt text-white rounded-full text-sm font-semibold transition-colors hover:bg-cobalt-deep motion-safe:hover:scale-105 motion-safe:transition-[transform,background-color]"
           >
-            {bookLabel}
+            {ctaLabel}
           </a>
           <button
             ref={desktopTrigger}
@@ -171,10 +167,11 @@ export default function Navbar({
             {langLabel}
           </a>
           <a
-            href={bookHref}
+            href={ctaHref}
+            aria-label={ctaLabel}
             className="md:hidden inline-flex items-center min-h-11 px-4 bg-cobalt text-white rounded-full text-xs font-semibold"
           >
-            {bookShort}
+            {ctaShort}
           </a>
           <button
             ref={mobileTrigger}
@@ -211,7 +208,7 @@ export default function Navbar({
           <button
             type="button"
             tabIndex={-1}
-            aria-label="Close menu"
+            aria-label={closeMenuLabel}
             onClick={closeMenu}
             className={`absolute inset-0 bg-navy/30 backdrop-blur-sm transition-opacity duration-500 ${
               visible ? "opacity-100" : "opacity-0"
@@ -275,14 +272,11 @@ export default function Navbar({
             </nav>
 
             <div className="border-t border-ink/10 px-6 py-6 md:px-10">
-              <a href={`tel:${phoneTel}`} className="block py-2 text-lg font-semibold md:text-xl">
-                {phoneDisplay}
-              </a>
               <a
-                href={bookHref}
-                className="mt-3 block w-full rounded-full bg-cobalt py-4 text-center text-base font-semibold text-white transition-colors hover:bg-cobalt-deep motion-safe:hover:scale-[1.02] motion-safe:transition-[transform,background-color] md:max-w-md"
+                href={ctaHref}
+                className="block w-full rounded-full bg-cobalt py-4 text-center text-base font-semibold text-white transition-colors hover:bg-cobalt-deep motion-safe:hover:scale-[1.02] motion-safe:transition-[transform,background-color] md:max-w-md"
               >
-                {bookLabel}
+                {ctaLabel}
               </a>
             </div>
           </div>

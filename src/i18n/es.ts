@@ -3,11 +3,12 @@
 // content shape for shape so every page renders from the same components.
 
 import type { NavLink } from "../content/nav";
+import { practice } from "../content/practice";
 
 // ---------------------------------------------------------------- navigation
 
 export const navLinksEs: NavLink[] = [
-  { label: "Inicio", href: "/es/" },
+  { label: "Inicio", href: "/es" },
   { label: "Servicios", href: "/es/services" },
   { label: "Nosotros", href: "/es/about" },
   { label: "Pacientes Nuevos", href: "/es/new-patients" },
@@ -15,8 +16,11 @@ export const navLinksEs: NavLink[] = [
   { label: "Contacto", href: "/es/contact" },
 ];
 
-export const bookLabelEs = "Hacer una Cita";
-export const bookHrefEs = "/es/book";
+/** Primary action everywhere: a phone call to the front desk. */
+export const callLabelEs = `Llame al ${practice.phone.display}`;
+export const callShortEs = "Llamar";
+export const secondaryLabelEs = "Horario y cómo llegar";
+export const secondaryHrefEs = "/es/contact";
 
 // ------------------------------------------------------------------ site ui
 
@@ -45,8 +49,12 @@ export const uiEs = {
     "Con frecuencia hay citas disponibles el mismo día entre semana. Llame y haremos lo posible por atenderle.",
   privacyLabel: "Aviso de Privacidad",
   privacyHref: "/es/privacy",
+  termsLabel: "Términos de Uso",
+  termsHref: "/es/terms",
   accessibilityLabel: "Accesibilidad",
   accessibilityHref: "/es/accessibility",
+  licenseLine: "Ruben H. Begino, D.D.S., y Pablo Lazaro, D.D.S., dentistas con licencia del Dental Board of California.",
+  boardNotice: "Aviso para los consumidores: los dentistas tienen licencia y están regulados por el Dental Board of California,",
   landmarks:
     "Estamos en la esquina de Central y Bristol, entre Segerstrom y Warner, en la plaza comercial donde está el KFC, justo enfrente del hospital Coastal Community.",
 };
@@ -67,8 +75,12 @@ export const uiEn = {
   rights: "All rights reserved.",
   privacyLabel: "Privacy Policy",
   privacyHref: "/privacy",
+  termsLabel: "Terms of Use",
+  termsHref: "/terms",
   accessibilityLabel: "Accessibility",
   accessibilityHref: "/accessibility",
+  licenseLine: "Ruben H. Begino, D.D.S., and Pablo Lazaro, D.D.S., dentists licensed by the Dental Board of California.",
+  boardNotice: "Notice to consumers: dentists are licensed and regulated by the Dental Board of California,",
   siteBy: "Site by Carbon Quill Media",
   faxLabel: "Fax",
   callLabel: "Call",
@@ -79,19 +91,23 @@ export const uiEn = {
 export const heroEs = {
   supporting:
     "Cuidado completo para cada sonrisa de la familia, desde la primera limpieza hasta restauraciones completas",
-  label: "Su Dentista de Confianza en Santa Ana",
+  label: "Dentista Familiar en Santa Ana",
   displayLines: ["Sonrisas", "Bristol"],
   corner: "Atención Bilingüe",
+  facts: ["Niños, adolescentes y adultos", "Frenos y alineadores transparentes", "La mayoría de los seguros, incluyendo Denti-Cal"],
+  secondaryLabel: "Ver servicios",
+  secondaryHref: "/es/services",
 };
 
 export const heroSrHeadingEs =
-  "Bristol Family Dental Center, su dentista de confianza en Santa Ana";
+  "Bristol Family Dental Center, dentista familiar en Santa Ana";
 
 export const galleryEs = {
   heading: "Odontología Cosmética",
-  sub: "Cuatro maneras de transformar sonrisas",
-  tallCard: "Si quiere una sonrisa espectacular, pregunte por un cambio de sonrisa completo.",
+  sub: "Cuatro maneras de mejorar sonrisas",
+  tallCard: "Los dientes astillados, manchados o disparejos se pueden corregir. Pregunte por un cambio de sonrisa.",
   display: "Nueva sonrisa",
+  imageAlt: "Ilustración clínica de carillas de porcelana y una corona de cerámica sobre una superficie azul oscuro",
   cards: [
     { number: "01", name: "Carillas Dentales", href: "/es/services#veneers", active: true },
     { number: "02", name: "Coronas Dentales", href: "/es/services#crowns", active: false },
@@ -105,10 +121,9 @@ export const implantEs = {
   subtitle: "Recupere Sus Dientes",
   consultLabel: "Consulta",
   consultHeading: "Servicios de Restauración Dental",
-  consultCta: "Reserve en Línea",
   overlayCards: [
-    { title: "El Proceso de Colocar Implantes", href: "/es/services#implants", glass: false },
-    { title: "El Cuidado de los Implantes", href: "/es/services#implants", glass: true },
+    { title: "Cómo se colocan los implantes", href: "/es/services#implants", glass: false },
+    { title: "El cuidado de los implantes", href: "/es/services#implants", glass: true },
   ],
   processSteps: [
     {
@@ -134,7 +149,7 @@ export const implantAltsEs = {
     "Ilustración en corte de un implante dental con poste de titanio, pilar y corona junto a un diente natural",
   implant2:
     "Modelo transparente de una mandíbula que muestra un implante dental en lugar de una muela",
-  clinic: "Sala de tratamiento dental moderna y luminosa con sillón y lámpara de examen",
+  model: "Modelo dental transparente de enseñanza con las arcadas superior e inferior sobre un pequeño articulador",
 };
 
 export const whyEs = {
@@ -148,8 +163,8 @@ export const whyEs = {
     },
     {
       icon: "globe",
-      title: "Todo nuestro equipo habla español",
-      text: "Haga sus preguntas en inglés o en español y reciba las respuestas en el idioma en el que piensa.",
+      title: "Hablamos español",
+      text: "Nuestro equipo es bilingüe. Haga sus preguntas en inglés o en español y reciba las respuestas en el idioma en el que piensa.",
     },
     {
       icon: "family",
@@ -161,17 +176,20 @@ export const whyEs = {
 
 export const finalCtaEs = {
   heading: "Listos cuando usted lo esté.",
-  sub: "Reserve en línea en dos minutos, o llame y hable con una persona real. También hablamos inglés.",
+  sub: "Llame en horario de oficina y le contesta una persona real, en español o en inglés. Le encontramos un horario que le funcione.",
 };
 
 // ----------------------------------------------------------------- reviews
 
 export const reviewsSectionEs = {
   label: "Reseñas de Pacientes",
-  heading: "Lo que dicen nuestros pacientes",
-  body: "Reseñas reales de pacientes reales, en sus propias palabras. Puede leerlas todas en la plataforma que prefiera.",
+  heading: "Lea lo que dicen nuestros pacientes",
+  body: "Las reseñas las escriben los pacientes en plataformas independientes. Léalas todas, en sus propias palabras, en la plataforma que prefiera.",
+  ratingAria: "calificación",
+  outOf: "de 5",
 };
 
+// Keep these counts in step with src/content/reviews.ts.
 export const reviewCountLabelsEs: Record<string, string> = {
   Yelp: "51 reseñas",
   Google: "38 reseñas",
@@ -179,24 +197,22 @@ export const reviewCountLabelsEs: Record<string, string> = {
 };
 
 export const reviewNoteEs = "contadas vía Birdeye";
-export const recommendedEs = "Recomendado";
-export const starAriaEs = "reseña de 5 estrellas";
-export const onLabelEs = "en";
+export const readLabelEs = "Leer reseñas en";
 
 export const homeFaqEs = [
   {
     question: "¿Aceptan mi seguro dental?",
     answer:
-      "Aceptamos casi todos los planes de seguro dental, incluyendo la mayoría de los planes PPO, planes HMO y Denti-Cal. Díganos su aseguradora al hacer su cita y revisamos su cobertura antes de que se siente en el sillón.",
-    linkLabel: "Hacer una cita",
-    linkHref: "/es/book",
+      "Aceptamos la mayoría de los planes de seguro dental, incluyendo la mayoría de los planes PPO, planes HMO y Denti-Cal. Díganos su aseguradora al llamar y revisamos su cobertura antes de que se siente en el sillón.",
+    linkLabel: "Seguro y formas de pago",
+    linkHref: "/es/insurance",
   },
   {
     question: "¿Qué pasa si no tengo seguro?",
     answer:
       "Con gusto le atendemos. Aceptamos efectivo, cheques y todas las tarjetas principales, y el financiamiento CareCredit está disponible para pacientes que califican. Nuestra recepción le explica todas las opciones.",
-    linkLabel: "Hacer una cita",
-    linkHref: "/es/book",
+    linkLabel: "Seguro y formas de pago",
+    linkHref: "/es/insurance",
   },
   {
     question: "¿Qué debo traer a mi primera visita?",
@@ -209,21 +225,21 @@ export const homeFaqEs = [
     question: "¿Atienden a niños y adultos?",
     answer:
       "Sí. Cuidamos a niños, papás y abuelos bajo un mismo techo, desde las primeras limpiezas hasta frenos, implantes y dentaduras, y coordinamos especialistas de confianza cuando el caso lo requiere.",
-    linkLabel: "Hacer una cita",
-    linkHref: "/es/book",
+    linkLabel: "Ver todos los servicios",
+    linkHref: "/es/services",
   },
   {
     question: "¿Ofrecen frenos o alineadores transparentes?",
     answer:
-      "Sí. Ofrecemos ortodoncia para niños, adolescentes y adultos, incluyendo frenos tradicionales y alineadores transparentes, con revisiones constantes durante el tratamiento. Pida una consulta de ortodoncia al hacer su cita.",
-    linkLabel: "Hacer una cita",
-    linkHref: "/es/book",
+      "Sí. Ofrecemos ortodoncia para niños, adolescentes y adultos, incluyendo frenos tradicionales y alineadores transparentes, con revisiones constantes durante el tratamiento. Pida una consulta de ortodoncia al llamar.",
+    linkLabel: "Ortodoncia",
+    linkHref: "/es/services#group-orthodontics",
   },
 ];
 
 export const homeFaqSectionEs = {
   label: "Preguntas Comunes",
-  heading: "Antes de hacer su cita",
+  heading: "Antes de llamar",
   moreLabel: "Más preguntas que nos hacen los pacientes",
   moreHref: "/es/new-patients#faq-heading",
 };
@@ -255,7 +271,7 @@ export const serviceGroupsEs = [
         id: "fillings",
         name: "Resinas",
         blurb:
-          "Cuando se forma una caries, la resina detiene el daño y reconstruye el diente. Ofrecemos resinas blancas del color natural de sus dientes, para que la reparación no se note. La visita es rápida y cómoda.",
+          "Cuando se forma una caries, la resina detiene el daño y reconstruye el diente. Ofrecemos resinas blancas del color natural de sus dientes, para que la reparación no se note. La mayoría de las resinas se completan en una sola visita.",
         whoFor: "Para dientes con caries o pequeñas fracturas.",
       },
       {
@@ -312,8 +328,8 @@ export const serviceGroupsEs = [
         id: "implants",
         name: "Implantes Dentales",
         blurb:
-          "Un implante dental reemplaza un diente perdido desde la raíz. Un pequeño poste de titanio sostiene una corona a la medida que se ve, se siente y funciona como un diente natural. Los implantes también protegen el hueso y nunca se mueven como las opciones removibles.",
-        whoFor: "Para una solución permanente a un diente perdido.",
+          "Un implante dental reemplaza un diente perdido desde la raíz. Un pequeño poste de titanio sostiene una corona a la medida que se ve, se siente y funciona como un diente natural. Los implantes también ayudan a conservar el hueso y, a diferencia de las opciones removibles, quedan fijos en su lugar.",
+        whoFor: "Para una solución a largo plazo a un diente perdido.",
       },
     ],
   },
@@ -334,7 +350,7 @@ export const serviceGroupsEs = [
         id: "whitening",
         name: "Blanqueamiento Dental",
         blurb:
-          "El blanqueamiento profesional aclara de forma segura años de café, té y manchas del día a día. Funciona mejor y más parejo que los kits de farmacia, y protegemos sus encías durante todo el proceso.",
+          "El blanqueamiento profesional aclara años de café, té y manchas del día a día en un entorno supervisado, con sus encías protegidas durante todo el proceso. Los resultados varían de persona a persona, y le decimos qué esperar antes de comenzar.",
         whoFor: "Para una sonrisa más brillante antes de un evento, o simplemente porque sí.",
       },
     ],
@@ -381,25 +397,26 @@ export const orthoHighlightEs = {
 };
 
 export const servicesAltsEs = {
-  hero: "Instrumentos dentales estériles acomodados en una charola de acero con luz azul",
+  hero: "Instrumentos dentales acomodados en una charola de acero con luz azul",
   aligner: "Ilustración clínica de un alineador dental transparente con luz azul",
-  specialists: "Sala de consulta luminosa con una mesa redonda y dos sillas",
+  specialists: "Ilustración clínica de un espejo dental y un explorador sobre una superficie azul oscuro",
 };
 
 // -------------------------------------------------------------- inner pages
 
 export const aboutEs = {
   label: "Nosotros",
-  heading: "El dentista en el que confían las familias de Santa Ana",
+  heading: "Un consultorio dental familiar en Bristol Street",
   teamHeading: "El equipo que le va a atender",
   volunteerHeading: "Cuidado que viaja",
   educationHeading: "Formación y reconocimientos",
-  heroAlt: "Sala de espera soleada de una clínica dental moderna",
-  teamPhotoAlt: "Recepción de un consultorio dental moderno con pared azul marino y mostrador de madera",
+  heroAlt: "Ilustración clínica de cinco instrumentos dentales de mano sobre una superficie azul oscuro",
+  teamPhotoAlt: "Ilustración clínica de un modelo dental transparente con frenos de cerámica sobre una superficie azul oscuro",
 };
 
 export const doctorEs = {
   role: "Dentista Principal, Jefe de Odontología desde 2006",
+  licenseLine: "Dentista con licencia (D.D.S.), Dental Board of California",
   intro:
     "El Dr. Ruben H. Begino dirige la odontología de Bristol Family Dental Center desde 2006. Sus pacientes lo conocen por sus manos suaves, sus respuestas directas y una práctica construida alrededor de las familias, no de las ventas. Habla español con fluidez y trata a cada paciente como quisiera que trataran a su propia familia.",
   educationCopy:
@@ -416,8 +433,8 @@ export const doctorEs = {
 
 export const teamEs = [
   {
-    name: "Dr. Pablo Lazaro",
-    role: "Dentista",
+    name: "Pablo Lazaro, D.D.S.",
+    role: "Dentista con licencia del Dental Board of California",
     note: "Ofrece toda la gama de cuidado general y restaurador junto al Dr. Begino.",
   },
   {
@@ -438,7 +455,7 @@ export const teamEs = [
 ];
 
 export const bilingualNoteEs =
-  "Todo nuestro equipo es bilingüe. Haga sus preguntas en inglés o en español y reciba las respuestas en el idioma en el que piensa.";
+  "Nuestro equipo es bilingüe. Haga sus preguntas en inglés o en español y reciba las respuestas en el idioma en el que piensa.";
 
 export const newPatientsEs = {
   label: "Pacientes Nuevos",
@@ -465,7 +482,7 @@ export const insuranceEs = {
   label: "Seguro y Formas de Pago",
   heading: "Hacemos simple la parte del dinero",
   intro:
-    "Aceptamos casi todos los planes de seguro dental, y le ayudamos a entender el suyo. Traiga su tarjeta a su primera visita, o díganos su aseguradora al hacer su cita, y revisamos su cobertura antes de que se siente en el sillón.",
+    "Aceptamos la mayoría de los planes de seguro dental, y le ayudamos a entender el suyo. Traiga su tarjeta a su primera visita, o díganos su aseguradora al llamar, y revisamos su cobertura antes de que se siente en el sillón.",
   plans: [
     {
       id: "ppo",
@@ -498,7 +515,7 @@ export const insuranceEs = {
       id: "carecredit",
       badge: "CareCredit",
       name: "Financiamiento CareCredit",
-      text: "CareCredit permite a los pacientes que califican dividir su tratamiento en pagos mensuales manejables. La solicitud toma unos minutos y la aprobación suele ser inmediata.",
+      text: "CareCredit es una tarjeta de crédito para gastos de salud, de una empresa independiente, que permite a los pacientes que califican dividir su tratamiento en pagos mensuales. La solicitud toma unos minutos y nuestra recepción le ayuda a comenzar.",
     },
     {
       id: "in-house",
@@ -511,7 +528,7 @@ export const insuranceEs = {
   promiseHeading: "Nuestra promesa para usted",
   promise:
     "Antes de comenzar cualquier tratamiento, usted sabrá exactamente qué recomendamos, por qué lo recomendamos y cómo se aplica su cobertura. Le explicamos todo con palabras sencillas, y nunca le presionamos hacia un tratamiento que no necesita.",
-  promiseAlt: "Mostrador de recepción de un consultorio dental con un fólder y una plantita",
+  promiseAlt: "Ilustración clínica de un modelo transparente de mandíbula inferior con dientes blancos sobre una superficie azul oscuro",
 };
 
 export const contactEs = {
@@ -520,73 +537,12 @@ export const contactEs = {
   findUsHeading: "Cómo encontrarnos",
   hoursHeading: "Horario de oficina",
   mapTitle: "Mapa que muestra Bristol Family Dental Center en 2618 S Bristol St, Santa Ana, CA 92704",
-  directionsCta: "Cómo Llegar",
-};
-
-export const bookEs = {
-  label: "Haga una Cita",
-  heading: "Encontremos su horario",
-  sub: "Cuéntenos un poco de lo que necesita y qué días le funcionan mejor. Le llamaremos para confirmar su cita. ¿Prefiere hablar con una persona ahora mismo? Llámenos en horario de oficina.",
-  formHeading: "Solicite una cita",
-  confirmHeading: "¡Solicitud recibida!",
-  confirm:
-    "Gracias. Nuestra recepción le llamará para confirmar un horario que le funcione. Si nos necesita antes, llame al (714) 540-7101 en horario de oficina y con gusto le contestamos.",
-  privacyNote: "Solo usamos su información para contactarle sobre su cita.",
-  ratherCallHeading: "¿Prefiere llamar?",
-  ratherCallText:
-    "La mayoría de nuestros pacientes hacen su cita por teléfono. Llame en horario de oficina y le contesta una persona real, en español o en inglés.",
-  officeHoursHeading: "Horario de oficina",
-};
-
-export const bookFormEs = {
-  fields: {
-    name: {
-      label: "Nombre completo",
-      placeholder: "Su nombre completo",
-      error: "Por favor díganos su nombre.",
-    },
-    phone: {
-      label: "Número de teléfono",
-      placeholder: "(714) 555-0123",
-      error: "Necesitamos un número de teléfono para confirmar su cita.",
-    },
-    email: {
-      label: "Correo electrónico (opcional)",
-      placeholder: "usted@ejemplo.com",
-      error: "Ese correo no se ve bien.",
-    },
-    preferred: {
-      label: "Días y horarios preferidos",
-      placeholder: "Entre semana por la mañana o por la tarde",
-      error: "Díganos qué días u horarios le funcionan en general.",
-    },
-    service: {
-      label: "¿Qué necesita?",
-      error: "Por favor elija la opción más cercana.",
-    },
-    newPatient: {
-      label: "¿Es usted paciente nuevo?",
-      yes: "Sí, es mi primera visita",
-      no: "No, ya he venido antes",
-    },
-    insurance: {
-      label: "Aseguradora (opcional)",
-      placeholder: "Delta Dental, MetLife, Denti-Cal...",
-    },
-    message: {
-      label: "¿Algo más? (opcional)",
-      placeholder: "Dolor, preguntas o cualquier cosa que debamos saber antes de su visita.",
-    },
-  },
-  notSure: "Aún no estoy seguro",
-  submit: "Enviar Solicitud de Cita",
-  submitting: "Enviando...",
-  errorGeneric:
-    "Algo salió mal al enviar su solicitud. Inténtelo de nuevo en un momento, o llámenos al (714) 540-7101.",
-  errorTooFast: "¡Qué rapidez! Tómese un momento para revisar sus datos y envíelo de nuevo.",
-  errorRate:
-    "Hemos recibido varias solicitudes desde esta conexión. Llámenos al (714) 540-7101 y le ayudamos directamente.",
-  checkFields: "Por favor revise los campos marcados abajo.",
+  directionsCta: "Cómo llegar en Google Maps",
+  newTab: "(se abre en una pestaña nueva)",
+  mapNote:
+    "El mapa lo proporciona Google Maps. Google puede colocar sus propias cookies cuando el mapa se carga. Los detalles están en nuestro aviso de privacidad.",
+  mapNoteLink: "Aviso de privacidad",
+  mapNoteHref: "/es/privacy",
 };
 
 export const notFoundEs = {
@@ -601,7 +557,7 @@ export const seoEs: Record<string, { title: string; description: string }> = {
   home: {
     title: "Dentista en Santa Ana, CA | Bristol Family Dental Center",
     description:
-      "Odontología familiar en Santa Ana, desde limpiezas y resinas hasta implantes, carillas, frenos y alineadores transparentes. Equipo bilingüe y casi todos los seguros aceptados, incluyendo Denti-Cal. Llame al (714) 540-7101.",
+      "Dentista familiar en Santa Ana: limpiezas, resinas, implantes, carillas, frenos y alineadores. Equipo bilingüe, la mayoría de los seguros, incluyendo Denti-Cal. Llame al (714) 540-7101.",
   },
   services: {
     title: "Servicios Dentales en Santa Ana | Bristol Family Dental Center",
@@ -621,17 +577,27 @@ export const seoEs: Record<string, { title: string; description: string }> = {
   insurance: {
     title: "Seguro Dental y Formas de Pago | Bristol Family Dental Center",
     description:
-      "Aceptamos casi todos los seguros dentales en Santa Ana: PPO, HMO y Denti-Cal, además de financiamiento CareCredit y efectivo, cheque o tarjeta. Su cobertura explicada antes del tratamiento.",
-  },
-  book: {
-    title: "Haga una Cita | Bristol Family Dental Center",
-    description:
-      "Solicite una cita dental en Bristol Family Dental Center en Santa Ana. Cuéntenos qué necesita y cuándo le funciona, y nuestra recepción bilingüe le llamará para confirmar.",
+      "Bristol Family Dental Center en Santa Ana acepta la mayoría de los seguros dentales: PPO, HMO y Denti-Cal, además de CareCredit, efectivo, cheque o tarjeta. Su cobertura explicada antes del tratamiento.",
   },
   contact: {
     title: "Contacto en Santa Ana | Bristol Family Dental Center",
     description:
       "Encuentre Bristol Family Dental Center en 2618 S. Bristol St., Santa Ana, en la esquina de Central y Bristol. Horario, cómo llegar, teléfono y fax de nuestro consultorio dental familiar.",
+  },
+  privacy: {
+    title: "Aviso de Privacidad | Bristol Family Dental Center",
+    description:
+      "Cómo maneja la información el sitio web de Bristol Family Dental Center: sin formularios ni rastreo, qué recopilan el mapa de Google y el hosting, y sus derechos en California.",
+  },
+  terms: {
+    title: "Términos de Uso y Deslinde | Bristol Family Dental Center",
+    description:
+      "Los términos que aplican cuando usa el sitio web de Bristol Family Dental Center, incluyendo el deslinde médico, el aviso sobre las imágenes y la limitación de responsabilidad.",
+  },
+  accessibility: {
+    title: "Declaración de Accesibilidad | Bristol Family Dental Center",
+    description:
+      "Bristol Family Dental Center quiere un sitio web que todos puedan usar. Lea qué hacemos para cumplir con WCAG 2.1 AA, las limitaciones actuales y cómo avisarnos si algo es difícil de usar.",
   },
 };
 
@@ -681,7 +647,7 @@ export const faqEs = [
   {
     question: "¿Qué son las carillas de porcelana?",
     answer:
-      "Las carillas son láminas delgadas de porcelana que se adhieren al frente de los dientes. Cubren manchas, fracturas, espacios y bordes disparejos, y se moldean y matizan para verse completamente naturales. Con buen cuidado, duran muchos años.",
+      "Las carillas son láminas delgadas de porcelana que se adhieren al frente de los dientes. Cubren manchas, fracturas, espacios y bordes disparejos, y se moldean y matizan para verse completamente naturales. Con buen cuidado, pueden durar muchos años.",
   },
   {
     question: "¿Qué puedo hacer con los dientes manchados?",

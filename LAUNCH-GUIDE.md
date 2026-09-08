@@ -3,76 +3,85 @@
 The path from "the site looks right" to "the site is live on the clinic's domain."
 Work top to bottom; each step says who does it and how long it takes.
 
-## 1. Confirm the look with the clinic (Sahib + clinic, 30 minutes)
+## 1. Confirm the site with the clinic (Carbon Quill + clinic, 30 minutes)
 
 Walk the manager through the preview at https://bristol-family-dental.vercel.app:
 
-1. Home page, English: the bright hero, cosmetic dentistry, implants, reviews, FAQ.
-2. Tap the ES button in the top corner: the entire site switches to Spanish, and the
-   EN button brings it back. Show it on a phone too.
-3. Services: the orthodontics band and specialist network.
-4. New Patients: download both real intake forms and confirm they are the right ones.
-5. About: the doctor's name with Training and recognition, and the team names.
-6. Footer: hours show Monday to Friday 9 to 6, weekends closed. Confirm that is right.
+1. Home, English: the typographic opening, the cosmetic and implant sections, the review
+   badges, the FAQ. Every button is a call button; tap one on a phone to show it dials.
+2. Tap ES in the top corner: the entire site switches to Spanish; EN brings it back.
+3. Services, About, New Patients (download both intake forms), Insurance, Contact (map).
+4. Footer: hours, the two dentists' names with license type, the Dental Board notice, and
+   the Privacy, Terms, and Accessibility links.
 
-Get four yeses in writing (a text message is fine):
+Get these yeses in writing (a text message is fine):
 
-- [ ] The four review quotes on the homepage are approved as shown.
-- [ ] Keeping the Google badge at its current 3.8 rating is approved (or ask us to remove it, a one line change).
-- [ ] The staff names on the About page are the current roster.
-- [ ] The privacy, disclaimer, and accessibility pages are approved (an attorney read is recommended; they are careful drafts, not legal advice).
+- [ ] The site is approved as shown, in both languages.
+- [ ] The dentists named on the site (Ruben H. Begino, D.D.S. and Pablo Lazaro, D.D.S.) and the
+      team roster on About are current and correct. (Reviews online also mention Dr. Galvez
+      and Dr. Shalaby; confirm whether they should appear.)
+- [ ] The three review badges may stay, including Google at its current 3.8.
+- [ ] "Most insurance accepted, including Denti-Cal", the PPO "preferred provider" line, the
+      HMO assignment note, CareCredit, and in house financing are all accurate today.
+- [ ] Dr. Begino's education and recognition paragraph is accurate as written.
+- [ ] The practice's attorney has read the Privacy Policy, Terms of Use, and Accessibility
+      Statement (they are careful plain language drafts, not legal advice).
+- [ ] The practice holds a current Fictitious Name Permit from the Dental Board for
+      "Bristol Family Dental Center" (required to practice under that name).
 
-## 2. Turn on booking emails (Sahib, 15 minutes, recommended before launch)
+## 2. Lock the repository (Carbon Quill, 5 minutes)
 
-Today, form submissions log to the Vercel function console. To deliver them to the
-clinic inbox:
+The GitHub repository is public today. Before launch, make it private (GitHub, Settings,
+Danger Zone, Change visibility). Vercel keeps deploying from a private repository without
+any change. Then confirm the Vercel project has only the people who need it.
 
-1. Create a free account at resend.com and copy an API key.
-2. Vercel dashboard, project bristol-family-dental, Settings, Environment Variables:
-   add `RESEND_API_KEY` with that key for Production.
-3. Optional: add `BOOKING_NOTIFY_EMAIL` if the clinic wants a different inbox than
-   info@bristolfamilydentalcenter.com.
-4. Redeploy (Deployments, latest, Redeploy), then send a test booking from /book and
-   confirm it arrives.
-
-## 3. Point the domain (Sahib + whoever holds the DNS login, 20 minutes plus propagation)
+## 3. Point the domain (Carbon Quill + whoever holds the DNS login, 20 minutes plus propagation)
 
 1. Vercel dashboard, project bristol-family-dental, Settings, Domains: add
-   `bristolfamilydentalcenter.com` and `www.bristolfamilydentalcenter.com`. Pick which
-   one is primary (www is the usual choice); Vercel will redirect the other to it.
+   `bristolfamilydentalcenter.com` and `www.bristolfamilydentalcenter.com`. Pick one as
+   primary (www is the usual choice); Vercel redirects the other to it.
 2. At the current DNS host for bristolfamilydentalcenter.com:
    - Apex A record: `76.76.21.21`
    - `www` CNAME: `cname.vercel-dns.com`
+   Leave the MX records exactly as they are so info@bristolfamilydentalcenter.com keeps working.
 3. Wait for Vercel to show the certificate as issued (minutes to an hour).
-4. Back in Vercel, Settings, Environment Variables: change `PUBLIC_SITE_URL` to
-   `https://www.bristolfamilydentalcenter.com` (or the apex if that was chosen) and
-   redeploy, so canonicals, the sitemap, and structured data carry the real domain.
-5. Load the domain over your phone's cellular data and click through both languages.
+4. Vercel, Settings, Environment Variables: set `PUBLIC_SITE_URL` to
+   `https://www.bristolfamilydentalcenter.com` (or the apex if that was chosen) for
+   Production, then Deployments, Redeploy the latest. Canonicals, hreflang, the sitemap,
+   and structured data pick up the real domain.
+5. Load the domain over a phone's cellular data and click through both languages. Confirm
+   `https://www.bristolfamilydentalcenter.com/book` redirects to `/contact` and that the
+   old site is gone.
 
-## 4. Tell Google (Sahib, 20 minutes, the week of launch)
+## 4. Tell Google and the directories (Carbon Quill, 30 minutes, the week of launch)
 
-1. Google Search Console: add the domain property, verify via DNS, and submit
+1. Google Search Console: add the domain property, verify via DNS, submit
    `https://www.bristolfamilydentalcenter.com/sitemap.xml`.
-2. Google Business Profile: update the website link to the new domain, and while
-   there confirm the hours read Monday to Friday 9 to 6.
-3. Yelp: update the website link on the listing.
+2. Google Business Profile: update the website link, confirm hours read Monday to Friday
+   9 to 6, and confirm the category is General Dentist.
+3. Yelp: claim the listing (it shows Unclaimed today) and update the website link.
+4. Birdeye lists the practice as "Pediatric Dentists" and shows "Claim this profile"; claim
+   or correct it. Update any other directory that links to the old site.
 
-## 5. First week after launch (Sahib, an hour total)
+## 5. First week after launch (Carbon Quill, an hour total)
 
 - Run PageSpeed Insights against the live domain for the public performance report.
-- Send one real booking through each language and confirm the clinic received both.
-- Check the Vercel function logs once for any form errors.
-- Ask the front desk whether calls mention the site, and note anything confusing.
+- Check the response headers once on the live domain (`curl -I`) to confirm the CSP, HSTS,
+  and frame rules in `vercel.json` are being served.
+- Ask the front desk whether calls mention the site and note anything confusing.
+- Record the launch date and the PageSpeed numbers in `DEPLOY-LOG.md`.
 
 ## Small print worth remembering
 
-- The interior photographs are representative renderings, and the site's disclaimer
-  says so. When the clinic wants real photography, shoot the actual rooms bright and
-  empty per the brand guide, drop the files into `public/images/` under the same
-  names, and push.
-- The intake form PDFs live at `public/forms/new-patient-en.pdf` and
-  `new-patient-es.pdf`. Replace files, keep names.
-- Review counts were verified September 4, 2026. Refresh the numbers in
-  `src/content/reviews.ts` (and the two labels in `src/i18n/es.ts`) at each redesign.
-- Hours, phone, and address live in `src/content/practice.ts` (English) and the
-  hours labels in `src/i18n/es.ts` (Spanish).
+- The clinical renders are digital illustrations, and the Terms page says so. When the
+  clinic wants real photography, shoot the actual rooms bright and empty per the brand guide,
+  get written permission for anyone who appears, and drop the files into `public/images/`.
+- The intake form PDFs live at `public/forms/new-patient-en.pdf` and `new-patient-es.pdf`.
+  Replace files, keep names.
+- Review counts were verified September 8, 2026. Refresh the numbers in
+  `src/content/reviews.ts` (and the labels in `src/i18n/es.ts`) every quarter and at each
+  redesign, and update `reviewsVerifiedOn`.
+- Hours, phone, and address live in `src/content/practice.ts` (English) and the hours labels
+  in `src/i18n/es.ts` (Spanish).
+- The legal pages carry an effective date in `src/content/legal.ts` and
+  `src/i18n/legal-es.ts`. Change both when the wording changes.

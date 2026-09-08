@@ -1,8 +1,8 @@
-// Copy for the inner pages: about, new patients, insurance, contact, book, and the 404.
+// Copy for the inner pages: about, new patients, insurance, contact, and the 404.
 
 export const about = {
   label: "About Us",
-  heading: "The dentist Santa Ana families trust",
+  heading: "A family dental practice on Bristol Street",
   teamHeading: "The team you will meet",
   volunteerHeading: "Care that travels",
   educationHeading: "Training and recognition",
@@ -33,7 +33,7 @@ export const insurance = {
   label: "Insurance and Payment",
   heading: "We make the money part simple",
   intro:
-    "We accept virtually all insurance plans, and we will help you make sense of yours. Bring your card to your first visit, or tell us your carrier when you book, and we will check your coverage before you sit down.",
+    "We accept most dental insurance plans, and we will help you make sense of yours. Bring your card to your first visit, or tell us your carrier when you call, and we will check your coverage before you sit down.",
   plans: [
     {
       id: "ppo",
@@ -54,7 +54,7 @@ export const insurance = {
       text: "We proudly accept Denti-Cal, California's dental coverage for Medi-Cal members. If you are not sure what your plan covers, ask us and we will help you find out.",
     },
   ],
-  paymentHeading: "No insurance? You are still covered.",
+  paymentHeading: "No insurance? You are still welcome.",
   payment: [
     {
       id: "cash-cards",
@@ -66,7 +66,7 @@ export const insurance = {
       id: "carecredit",
       badge: "CareCredit",
       name: "CareCredit Financing",
-      text: "CareCredit lets qualified patients split treatment into manageable monthly payments. Applying takes a few minutes, and approval is often instant.",
+      text: "CareCredit is a third party healthcare credit card that lets qualified patients split treatment into monthly payments. Applying takes a few minutes, and our front office can help you get started.",
     },
     {
       id: "in-house",
@@ -86,22 +86,14 @@ export const contact = {
   findUsHeading: "How to find us",
   hoursHeading: "Office hours",
   mapTitle: "Map showing Bristol Family Dental Center at 2618 S Bristol St, Santa Ana, CA 92704",
-};
-
-export const book = {
-  label: "Book an Appointment",
-  heading: "Let's find you a time",
-  sub: "Tell us a little about what you need and when works best. We will call you back to confirm your appointment. Prefer to talk to a person right now? Call us during office hours.",
-  formHeading: "Request an appointment",
-  confirmHeading: "Request received!",
-  confirm:
-    "Thank you. Our front office will call you to confirm a time that works. If you need us sooner, call (714) 540-7101 during office hours and we will pick up.",
-  privacyNote: "We only use your information to contact you about your appointment.",
+  mapNote:
+    "The map is provided by Google Maps. Google may set its own cookies when it loads. Details are in our privacy policy.",
+  mapNoteLink: "Privacy policy",
+  mapNoteHref: "/privacy",
 };
 
 export const notFound = {
   heading: "This page moved, or never was.",
   sub: "No problem. The whole practice is just a click away.",
   homeCta: "Back to Home",
-  bookCta: "Book Appointment",
 };

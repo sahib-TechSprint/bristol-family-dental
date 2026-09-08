@@ -7,14 +7,15 @@ import Cta from "../Cta.astro";
 interface Props {
   content?: typeof finalCtaEn;
   ctaLabel?: string;
-  ctaCallLabel?: string;
   ctaHref?: string;
+  secondaryText?: string;
+  secondaryTo?: string;
 }
 
-const { content: finalCta = finalCtaEn, ctaLabel, ctaCallLabel, ctaHref } = Astro.props;
+const { content: finalCta = finalCtaEn, ctaLabel, ctaHref, secondaryText, secondaryTo } = Astro.props;
 ---
 
-<section class="px-3 pb-1.5 pt-1.5 md:px-5 md:pb-2 md:pt-2" aria-label="Book an appointment" data-reveal-group>
+<section class="px-3 pb-1.5 pt-1.5 md:px-5 md:pb-2 md:pt-2" aria-label="Call the office" data-reveal-group>
   <div
     class="flex flex-col items-center rounded-xl bg-sky px-6 py-20 text-center md:rounded-2xl md:px-10 md:py-32"
   >
@@ -28,7 +29,7 @@ const { content: finalCta = finalCtaEn, ctaLabel, ctaCallLabel, ctaHref } = Astr
       {finalCta.sub}
     </p>
     <div class="mt-10 flex justify-center" data-reveal>
-      <Cta size="lg" label={ctaLabel} callLabel={ctaCallLabel} href={ctaHref} />
+      <Cta size="lg" label={ctaLabel} href={ctaHref} secondaryText={secondaryText} secondaryTo={secondaryTo} />
     </div>
   </div>
 </section>

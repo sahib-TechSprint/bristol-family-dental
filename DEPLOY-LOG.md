@@ -189,3 +189,35 @@ Client review round applied in full. Eight commits, pushed to main and auto depl
 4. Have an attorney glance at the privacy, disclaimer, and accessibility pages; they are careful plain language drafts, not legal advice.
 5. Optional but recommended: set RESEND_API_KEY in Vercel so booking requests arrive by email.
 6. When approved, point the domain (steps in the launch guide and in the v1 section above).
+
+## Final draft revision, September 8, 2026
+
+The go live candidate. One coordinated push to main, auto deployed by Vercel.
+
+### What changed and why
+
+- Imagery: every generated interior (hero, gallery lounge, treatment room, consultation room, waiting area, front desk, check in counter) is gone. The practice has no approved photography of its own rooms, and a generated room presented as the clinic would be misleading. Clinical renders stay and six new ones were added in the same blue studio style (veneers and crown, teaching model on an articulator, mirror and explorer, instrument set, braces model, lower jaw model). All renders re-encoded to webp with metadata stripped and checked for watermarks.
+- Home page: the hero is now typographic (sky card, display wordmark, three plain facts, the call button, a faint tooth mark). No image request sits in front of the largest paint. The cosmetic section masks the veneers render behind navy glass panels so contrast never depends on the picture; a portrait crop serves the stacked mobile layout. The implant section uses the teaching model render in the tall card.
+- Booking: the form, its API endpoint, the Resend dependency, and the two booking pages are removed. Every Book button is now a Call button (`tel:` link with the number as its label). `/book` and `/es/book` redirect permanently to the contact pages. The site is now fully static with no server code and collects nothing.
+- Reviews: the four quoted excerpts are removed. The three platform badges stay, re-verified live today (Yelp 4.0, 51 reviews; Google 3.8, 38 reviews; Facebook 29 reviews via Birdeye) and linked out. Review text belongs to its authors and the platforms' terms restrict republishing it.
+- Legal: privacy policy rewritten for a no-form site (hosting logs, session storage flag, Google Maps cookies, CCPA and CalOPPA language, Do Not Track statement, HIPAA and CMIA note for calls and email). New Terms of Use and Disclaimer page in both languages (informational only, imagery notice, reviews notice, no warranties, California law). Accessibility statement updated. Footer now carries the dentists' names, degree, and license type per Business and Professions Code 680.5, plus the Dental Board of California consumer notice.
+- Claims: "virtually all insurance" is now "most insurance"; "trusted dentist" headings replaced with plain descriptions; CareCredit "approval is often instant" removed; "every member of our team is bilingual" softened to "our team is bilingual"; outcome language in services and FAQ softened ("permanent", "never slip", "safely", "works better than", "quick and comfortable"). Spanish mirrors every change.
+- Fonts: Open Sauce One is self hosted (four woff2 files, 14 KB each) under the SIL Open Font License with the license text shipped beside them. The db.onlinewebfonts.com hotlink is gone, which removes the site's only third party script origin and a render blocking request.
+- Hosting: the Vercel adapter is removed (nothing needs a server). `vercel.json` now owns production routing (no trailing slashes, permanent redirects) and security headers (CSP, HSTS, nosniff, frame denial, referrer and permissions policies, cache rules). Canonicals, hreflang, and the sitemap all use one URL form.
+- Map: the Google Maps iframe stays by client decision, with a cookie disclosure beneath it and in the privacy policy, and a `strict-origin-when-cross-origin` referrer policy.
+- Docs: `AGENTS.md` and `CLAUDE.md` added so any person or agent working on the repository inherits the same rules and quality gates.
+
+### QC record for this revision
+
+- `astro check`: 0 errors. Build: clean, 22 HTML pages (19 real pages plus three redirect stubs).
+- axe-core, WCAG 2.1 A/AA plus best practice rules: 0 violations on all 19 pages at 360, 768, 1024, 1440, and 1920 (95 page and width combinations). Zero horizontal overflow anywhere.
+- Contrast: every palette pair used for text verified programmatically (lowest pair in use: ink at 60 percent on sky, 4.53:1; cobalt on mist, 4.67:1). Text over imagery sits on navy glass at 80 to 85 percent, which is 7.5:1 or better even over pure white.
+- Keyboard: skip link is the first Tab stop and becomes visible on focus; every control reachable; menu opens with Enter, traps focus, closes on Escape, returns focus to its trigger (desktop and mobile); FAQ accordions toggle with Enter; 2px focus ring on every control.
+- Links: every internal link and anchor resolves; every page has exactly one h1; every image has alt text and dimensions; JSON-LD parses on every page (25 blocks).
+- Lighthouse mobile, local build: home 92 / 100 / 100 / 100 (LCP 1.8 s, CLS 0, TBT 0 ms), services 97, Spanish home 93, contact 99; accessibility, best practices, and SEO 100 on all four.
+- Integrity greps clean: no dashes, no booking paths, no removed image names, no third party scripts, no price or "free" language, no superlatives.
+- Third party inventory: one iframe (Google Maps, contact pages only, disclosed). No scripts, styles, or fonts from other hosts.
+
+### Awaiting the client before DNS cutover
+
+See `LAUNCH-GUIDE.md`. The short list: approve the preview in both languages, attorney glance at the three legal pages, confirm the roster and the two dentists' names as shown, and the domain login.

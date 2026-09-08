@@ -4,8 +4,8 @@ import Navbar from "../components/Navbar.tsx";
 import Splash from "../components/Splash.tsx";
 import Footer from "../components/Footer.astro";
 import { practice } from "../content/practice";
-import { navLinks, bookHref, bookLabel } from "../content/nav";
-import { navLinksEs, bookHrefEs, bookLabelEs, uiEs, uiEn } from "../i18n/es";
+import { navLinks, callHref, callLabel } from "../content/nav";
+import { navLinksEs, callLabelEs, uiEs, uiEn } from "../i18n/es";
 import { dentistSchema } from "../lib/seo";
 
 interface Props {
@@ -34,8 +34,7 @@ const {
 const isEs = lang === "es";
 const ui = isEs ? uiEs : uiEn;
 const links = isEs ? navLinksEs : navLinks;
-const navBookLabel = isEs ? bookLabelEs : bookLabel;
-const navBookHref = isEs ? bookHrefEs : bookHref;
+const navCtaLabel = isEs ? callLabelEs : callLabel;
 const currentPath = Astro.url.pathname;
 const enUrl = isEs && altPath ? altPath : currentPath;
 const esUrl = isEs ? currentPath : altPath;
@@ -134,14 +133,19 @@ const revealScript = `(function () {
     <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-    <link rel="preconnect" href="https://db.onlinewebfonts.com" crossorigin />
     <link
-      href="https://db.onlinewebfonts.com/c/1cd1e7d71e048159076fd90b39846902?family=Open+Sauce+One"
-      rel="stylesheet"
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/fonts/open-sauce-one-400.woff2"
+      crossorigin
     />
     <link
-      href="https://db.onlinewebfonts.com/c/42acf9aa4a6dc2f2886a3f682e337ead?family=Open+Sauce+One+Bold"
-      rel="stylesheet"
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/fonts/open-sauce-one-700.woff2"
+      crossorigin
     />
 
     {preloadImages.map((src) => <link rel="preload" as="image" href={src} />)}
@@ -176,20 +180,18 @@ const revealScript = `(function () {
     <Navbar
       client:load
       links={links}
-      bookLabel={navBookLabel}
-      bookHref={navBookHref}
-      phoneDisplay={practice.phone.display}
-      phoneTel={practice.phone.tel}
+      ctaLabel={navCtaLabel}
+      ctaHref={callHref}
       tagline={ui.tagline}
       pathname={Astro.url.pathname}
-      langHref={isEs ? enUrl : (altPath ?? "/es/")}
+      langHref={isEs ? enUrl : (altPath ?? "/es")}
       langLabel={ui.langLabel}
       langAria={ui.langAria}
       menuText={ui.menuText}
       openMenuLabel={ui.openMenu}
       closeMenuLabel={ui.closeMenu}
       navAria={ui.navAria}
-      bookShort={isEs ? "Cita" : "Book"}
+      ctaShort={isEs ? "Llamar" : "Call"}
     />
 
     <main id="main" tabindex="-1" class="outline-none">
