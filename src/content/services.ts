@@ -26,7 +26,7 @@ export const serviceGroups: ServiceGroup[] = [
         id: "exams",
         name: "Routine Exams",
         blurb:
-          "A routine exam is how we catch small problems while they are still small. Dr. Begino checks your teeth, gums, and bite, and explains what he sees in plain language. You leave with a clear picture of your dental health and honest advice about what, if anything, comes next.",
+          "A routine exam is how we catch small problems while they are still small. The dentist checks your teeth, gums, and bite, and explains what he sees in plain language. You leave with a clear picture of your dental health and honest advice about what, if anything, comes next.",
         whoFor: "For every member of the family, from kids to grandparents.",
       },
       {
@@ -54,7 +54,7 @@ export const serviceGroups: ServiceGroup[] = [
         id: "extractions",
         name: "Extractions",
         blurb:
-          "Sometimes the healthiest choice is to remove a tooth that cannot be saved. We keep the procedure as gentle as possible and talk you through every replacement option, from bridges to implants. Complex cases, including wisdom teeth, are handled with our trusted oral surgery partners.",
+          "Sometimes the healthiest choice is to remove a tooth that cannot be saved. We keep the procedure as gentle as possible and talk you through every replacement option, from bridges to partial dentures. Complex cases, including wisdom teeth, are handled with our trusted oral surgery partners.",
         whoFor: "For teeth too damaged to repair, or troublesome wisdom teeth.",
       },
     ],
@@ -63,7 +63,7 @@ export const serviceGroups: ServiceGroup[] = [
     id: "restorative",
     name: "Restorative Dentistry",
     intro:
-      "Rebuilding damaged and missing teeth is the heart of Dr. Begino's training, recognized by the American College of Prosthodontics.",
+      "Rebuilding damaged and missing teeth with crowns, bridges, inlays and onlays, and dentures, each one fitted carefully and adjusted until it feels right.",
     services: [
       {
         id: "crowns",
@@ -93,13 +93,6 @@ export const serviceGroups: ServiceGroup[] = [
           "Full and partial dentures replace many missing teeth at once, so you can eat, speak, and smile with confidence again. We fit them carefully and keep adjusting until they feel right.",
         whoFor: "For patients missing several teeth or a full arch.",
       },
-      {
-        id: "implants",
-        name: "Dental Implants",
-        blurb:
-          "A dental implant replaces a missing tooth from the root up. A small titanium post anchors a custom crown that looks, feels, and works like a natural tooth. Implants also help preserve the jawbone and, unlike removable options, stay fixed in place.",
-        whoFor: "For a long term answer to a missing tooth.",
-      },
     ],
   },
   {
@@ -127,20 +120,20 @@ export const serviceGroups: ServiceGroup[] = [
   {
     id: "orthodontics",
     name: "Orthodontics",
-    intro: "Straighter teeth for kids, teens, and adults, in the style that fits your life.",
+    intro: "Straighter teeth for kids, teens, and adults, in the style that fits your life. Orthodontic care at this office is provided by Dr. Efrain Chara, orthodontist, of Chara Orthodontics.",
     services: [
       {
         id: "braces",
         name: "Braces",
         blurb:
-          "Braces straighten teeth and correct bite problems a little at a time, with steady checkups along the way. We treat both kids and adults, and we keep the process simple from the first visit to the last retainer check.",
+          "Braces straighten teeth and correct bite problems a little at a time, with steady adjustment visits along the way. Dr. Chara treats both kids and adults here, and we keep the process simple from the first visit to the last retainer check.",
         whoFor: "For crooked teeth or bite problems at any age.",
       },
       {
         id: "clear-aligners",
         name: "Clear Aligners",
         blurb:
-          "Clear aligners straighten teeth with a series of nearly invisible trays you can remove to eat and brush. Most people will not even notice you are wearing them.",
+          "Clear aligners straighten teeth with a series of nearly invisible trays you can remove to eat and brush. Dr. Chara checks the fit at each visit and hands you the next set. Most people will not even notice you are wearing them.",
         whoFor: "For teens and adults who want straighter teeth without metal.",
       },
     ],
@@ -154,15 +147,37 @@ export const specialistNetwork = {
     "Some cases call for a specialist, and we have spent years building a network we trust. We coordinate endodontics for complicated root canals, periodontics for deep cleanings, pedodontics for children with special needs, and oral surgery for complex extractions such as wisdom teeth. We handle the referral, share your records, and stay involved in your care from start to finish.",
 };
 
+// The orthodontist who provides orthodontic care at the office. Chara
+// Orthodontics lists Bristol Family Dental among its locations; the office
+// confirmed in October 2026 that he is to be named as an orthodontist. The
+// biography states only what his own site states.
+export const orthodontist = {
+  name: "Dr. Efrain Chara",
+  title: "orthodontist",
+  practiceName: "Chara Orthodontics",
+  url: "https://charaorthodontics.com/",
+  linkLabel: "Visit Chara Orthodontics",
+  bio: "Dr. Efrain Chara earned his dental degree at the Pontificia Universidad Javeriana in Bogotá in 1990 and completed his specialty training in orthodontics at the Universidad Militar Nueva Granada in 1995. He has practiced in California since 2000, and his practice, Chara Orthodontics, provides orthodontic care at dental offices across Southern California, including Bristol Family Dental Center.",
+};
+
 // Featured orthodontics band on the services page.
 export const orthoHighlight = {
-  label: "Orthodontics",
+  label: "Orthodontics with Dr. Efrain Chara",
   heading: "Straight teeth, under this roof",
-  body: "Braces and clear aligners are part of everyday care at Bristol Family Dental Center. The same team that handles your cleanings and checkups oversees your orthodontic treatment, so every adjustment happens with people who already know your smile.",
+  body: "Braces and clear aligners are part of everyday care at Bristol Family Dental Center. Dr. Efrain Chara, orthodontist, sees his orthodontic patients right here in our office, and the team that handles your cleanings and checkups books every visit, so treatment and everyday care run on one schedule.",
+  servicesHeading: "What Dr. Chara provides here",
+  services: [
+    { title: "Consultation", text: "An exam of your teeth, bite, and jaw, and a plain answer about whether treatment would help and which option fits." },
+    { title: "Braces", text: "Brackets and wires for kids, teens, and adults, adjusted at regular visits so the teeth move a little at a time. Braces handle the widest range of crowding, spacing, and bite problems." },
+    { title: "Clear aligners", text: "A series of nearly invisible removable trays for teens and adults with mild to moderate crowding or spacing. You change trays on a schedule and come in so the fit can be checked." },
+    { title: "Early evaluation", text: "A first orthodontic check for children around age 7, as the American Association of Orthodontists recommends, to spot growth and bite patterns early. Most children do not need treatment at that age." },
+    { title: "Adult treatment", text: "Teeth that shifted over the years, crowding that makes cleaning difficult, and spaces you have wanted to close. Healthy teeth can be moved at any age." },
+    { title: "Retainers", text: "A retainer after treatment holds the result, and Dr. Chara checks it at follow up visits." },
+  ],
   points: [
     "Traditional braces for kids, teens, and adults",
     "Nearly invisible clear aligners you can remove to eat and brush",
-    "Steady checkups with the same familiar team",
+    "Treatment planned and adjusted by Dr. Chara, orthodontist, in this office",
   ],
 };
 

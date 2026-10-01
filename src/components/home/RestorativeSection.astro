@@ -1,33 +1,35 @@
 ---
-// Implant dentistry section. No masking here: solid cards, real img tags,
-// and a numbered process strip that tells patients what actually happens.
+// Restorative dentistry section: solid cards, real img tags, and a numbered
+// strip that tells patients what actually happens when a tooth is repaired or
+// replaced. It replaced the implant section in October 2026 (implants are not
+// offered until a dentist who places them joins the practice).
 
-import { implantSection } from "../../content/home";
+import { restorativeSection } from "../../content/home";
 import { callHref, callLabel as callLabelEn } from "../../content/nav";
 import ArrowCircle from "../ArrowCircle.astro";
 
 interface Props {
-  content?: typeof implantSection;
+  content?: typeof restorativeSection;
   ctaLabel?: string;
-  alts?: { implant1: string; implant2: string; model: string };
+  alts?: { first: string; second: string; tall: string };
+  ariaLabel?: string;
 }
 
 const {
-  content: c = implantSection,
+  content: c = restorativeSection,
   ctaLabel = callLabelEn,
+  ariaLabel = "Restorative dentistry",
   alts = {
-    implant1:
-      "Cross section render of a dental implant with titanium post, abutment, and crown beside a natural tooth",
-    implant2:
-      "Clear model of a lower jaw showing a dental implant replacing a molar between natural teeth",
-    model: "Clear dental teaching model of the upper and lower jaws on a small articulator",
+    first: restorativeSection.images.first.alt,
+    second: restorativeSection.images.second.alt,
+    tall: restorativeSection.images.tall.alt,
   },
 } = Astro.props;
 ---
 
 <section
   class="grid grid-cols-1 gap-1.5 px-3 pb-1.5 pt-1.5 md:grid-cols-[1.1fr_0.9fr] md:gap-2 md:px-5 md:pb-2 md:pt-2"
-  aria-label="Implant dentistry"
+  aria-label={ariaLabel}
   data-reveal-group
 >
   <div class="flex flex-col gap-1.5 md:gap-2">
@@ -44,20 +46,20 @@ const {
 
     <div class="grid grid-cols-2 gap-1.5 md:gap-2" data-reveal>
       <img
-        src="/images/implant-1.webp"
-        alt={alts.implant1}
-        class="aspect-[4/3] w-full rounded-xl object-cover md:rounded-2xl"
-        width="640"
-        height="480"
+        src={c.images.first.src}
+        alt={alts.first}
+        class="depth-card aspect-[4/3] w-full rounded-xl object-cover md:rounded-2xl"
+        width="1280"
+        height="956"
         loading="lazy"
         decoding="async"
       />
       <img
-        src="/images/implant-2.webp"
-        alt={alts.implant2}
-        class="aspect-[4/3] w-full rounded-xl object-cover md:rounded-2xl"
-        width="640"
-        height="480"
+        src={c.images.second.src}
+        alt={alts.second}
+        class="depth-card aspect-[4/3] w-full rounded-xl object-cover md:rounded-2xl"
+        width="1280"
+        height="956"
         loading="lazy"
         decoding="async"
       />
@@ -94,15 +96,15 @@ const {
   </div>
 
   <div
-    class="relative min-h-[440px] overflow-hidden rounded-xl bg-navy md:min-h-0 md:rounded-2xl"
+    class="depth-card relative min-h-[440px] overflow-hidden rounded-xl bg-navy md:min-h-0 md:rounded-2xl"
     data-reveal
   >
     <img
-      src="/images/restoration-tall.webp"
-      alt={alts.model}
+      src={c.images.tall.src}
+      alt={alts.tall}
       width="1344"
       height="2016"
-      class="absolute inset-0 h-full w-full object-cover object-[center_35%]"
+      class="depth-drift absolute inset-0 h-full w-full object-cover object-[center_35%]"
       loading="lazy"
       decoding="async"
     />

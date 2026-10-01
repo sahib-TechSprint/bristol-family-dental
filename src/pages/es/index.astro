@@ -2,7 +2,7 @@
 import Base from "../../layouts/Base.astro";
 import HeroSection from "../../components/home/HeroSection.astro";
 import GallerySection from "../../components/home/GallerySection.tsx";
-import ImplantSection from "../../components/home/ImplantSection.astro";
+import RestorativeSection from "../../components/home/RestorativeSection.astro";
 import WhyBristol from "../../components/home/WhyBristol.astro";
 import ReviewsSection from "../../components/home/ReviewsSection.astro";
 import HomeFaq from "../../components/home/HomeFaq.astro";
@@ -12,8 +12,8 @@ import {
   heroEs,
   heroSrHeadingEs,
   galleryEs,
-  implantEs,
-  implantAltsEs,
+  restorativeEs,
+  restorativeAltsEs,
   whyEs,
   finalCtaEs,
   reviewsSectionEs,
@@ -28,6 +28,7 @@ import {
   secondaryHrefEs,
 } from "../../i18n/es";
 import { callHref } from "../../content/nav";
+import { hero } from "../../content/home";
 ---
 
 <Base
@@ -35,12 +36,16 @@ import { callHref } from "../../content/nav";
   description={seoEs.home.description}
   lang="es"
   isHome
+  preloadImages={[
+    { href: hero.image.mobileSrc, media: "(max-width: 767px)" },
+    { href: hero.image.src, media: "(min-width: 768px)" },
+  ]}
   altPath="/"
   jsonLd={[faqSchema(homeFaqEs)]}
 >
   <HeroSection content={heroEs} srHeading={heroSrHeadingEs} callLabel={callLabelEs} />
   <GallerySection client:visible content={galleryEs} ctaHref={callHref} ctaLabel={callLabelEs} />
-  <ImplantSection content={implantEs} ctaLabel={callLabelEs} alts={implantAltsEs} />
+  <RestorativeSection content={restorativeEs} ctaLabel={callLabelEs} alts={restorativeAltsEs} ariaLabel="Odontología restauradora" />
   <ReviewsSection
     section={reviewsSectionEs}
     countLabels={reviewCountLabelsEs}

@@ -83,7 +83,7 @@ export const homeFaq: HomeFaqItem[] = [
   {
     question: "Do you see kids and adults?",
     answer:
-      "Yes. We care for kids, parents, and grandparents under one roof, from first cleanings to braces, implants, and dentures, and we coordinate trusted specialists when a case calls for one.",
+      "Yes. We care for kids, parents, and grandparents under one roof, from first cleanings to braces, crowns, and dentures, and we coordinate trusted specialists when a case calls for one.",
     linkLabel: "See all services",
     linkHref: "/services",
   },

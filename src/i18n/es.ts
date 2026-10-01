@@ -53,7 +53,7 @@ export const uiEs = {
   termsHref: "/es/terms",
   accessibilityLabel: "Accesibilidad",
   accessibilityHref: "/es/accessibility",
-  licenseLine: "Ruben H. Begino, D.D.S., y Pablo Lazaro, D.D.S., dentistas con licencia del Dental Board of California.",
+  licenseLine: "Pablo Lazaro, D.D.S., dentista con licencia del Dental Board of California.",
   boardNotice: "Aviso para los consumidores: los dentistas tienen licencia y están regulados por el Dental Board of California,",
   landmarks:
     "Estamos en la esquina de Central y Bristol, entre Segerstrom y Warner, en la plaza comercial donde está el KFC, justo enfrente del hospital Coastal Community.",
@@ -79,7 +79,7 @@ export const uiEn = {
   termsHref: "/terms",
   accessibilityLabel: "Accessibility",
   accessibilityHref: "/accessibility",
-  licenseLine: "Ruben H. Begino, D.D.S., and Pablo Lazaro, D.D.S., dentists licensed by the Dental Board of California.",
+  licenseLine: "Pablo Lazaro, D.D.S., dentist licensed by the Dental Board of California.",
   boardNotice: "Notice to consumers: dentists are licensed and regulated by the Dental Board of California,",
   siteBy: "Site by Carbon Quill Media",
   faxLabel: "Fax",
@@ -92,11 +92,16 @@ export const heroEs = {
   supporting:
     "Cuidado completo para cada sonrisa de la familia, desde la primera limpieza hasta restauraciones completas",
   label: "Dentista Familiar en Santa Ana",
-  displayLines: ["Sonrisas", "Bristol"],
+  displayLines: ["Bristol Family", "Dental Center"],
   corner: "Atención Bilingüe",
   facts: ["Niños, adolescentes y adultos", "Frenos y alineadores transparentes", "La mayoría de los seguros, incluyendo Denti-Cal"],
   secondaryLabel: "Ver servicios",
   secondaryHref: "/es/services",
+  image: {
+    src: "/images/family-brushes.webp",
+    mobileSrc: "/images/family-brushes-mobile.webp",
+    alt: "Ilustración clínica de tres cepillos de dientes de tres tamaños, desde el de un niño hasta el de un adulto, en un vaso esmerilado sobre una superficie azul oscuro",
+  },
 };
 
 export const heroSrHeadingEs =
@@ -112,54 +117,57 @@ export const galleryEs = {
     { number: "01", name: "Carillas Dentales", href: "/es/services#veneers", active: true },
     { number: "02", name: "Coronas Dentales", href: "/es/services#crowns", active: false },
     { number: "03", name: "Blanqueamiento", href: "/es/services#whitening", active: false },
-    { number: "04", name: "Implantes Dentales", href: "/es/services#implants", active: false },
+    { number: "04", name: "Alineadores Transparentes", href: "/es/services#clear-aligners", active: false },
   ],
 };
 
-export const implantEs = {
-  displayLines: ["Implantes", "Dentales"],
-  subtitle: "Recupere Sus Dientes",
-  consultLabel: "Consulta",
-  consultHeading: "Servicios de Restauración Dental",
+export const restorativeEs = {
+  displayLines: ["Odontología", "Restauradora"],
+  subtitle: "Reparar y Reemplazar",
+  consultLabel: "Cómo funciona",
+  consultHeading: "Coronas, Puentes y Dentaduras",
   overlayCards: [
-    { title: "Cómo se colocan los implantes", href: "/es/services#implants", glass: false },
-    { title: "El cuidado de los implantes", href: "/es/services#implants", glass: true },
+    { title: "Coronas y puentes", href: "/es/services#crowns", glass: false },
+    { title: "Dentaduras y parciales", href: "/es/services#dentures", glass: true },
   ],
   processSteps: [
     {
       number: "1",
       title: "Consulta",
-      text: "Un examen y una conversación honesta para confirmar que el implante es adecuado para usted.",
+      text: "Un examen, radiografías si hacen falta y una explicación sencilla de lo que se puede salvar y lo que conviene reemplazar.",
     },
     {
       number: "2",
-      title: "Colocación",
-      text: "El pequeño poste de titanio se coloca y se deja integrar con el hueso.",
+      title: "Preparación",
+      text: "Se da forma al diente o se toman impresiones, y un provisional lo protege mientras el laboratorio hace la pieza final.",
     },
     {
       number: "3",
-      title: "Restauración",
-      text: "Se coloca su corona hecha a la medida y su sonrisa vuelve a estar completa.",
+      title: "Colocación",
+      text: "Su corona, puente o dentadura se prueba, se ajusta y se revisa hasta que la mordida se sienta bien.",
     },
   ],
+  images: {
+    first: { src: "/images/restorative-bridge.webp", alt: "Ilustración clínica de un puente dental de cerámica de tres piezas sobre una superficie azul oscuro" },
+    second: { src: "/images/restorative-denture.webp", alt: "Ilustración clínica de un modelo de dentadura superior completa con base translúcida sobre una superficie azul oscuro" },
+    tall: { src: "/images/restoration-tall.webp", alt: "Modelo dental transparente de enseñanza con las arcadas superior e inferior sobre un pequeño articulador" },
+  },
 };
 
-export const implantAltsEs = {
-  implant1:
-    "Ilustración en corte de un implante dental con poste de titanio, pilar y corona junto a un diente natural",
-  implant2:
-    "Modelo transparente de una mandíbula que muestra un implante dental en lugar de una muela",
-  model: "Modelo dental transparente de enseñanza con las arcadas superior e inferior sobre un pequeño articulador",
+export const restorativeAltsEs = {
+  first: "Ilustración clínica de un puente dental de cerámica de tres piezas sobre una superficie azul oscuro",
+  second: "Ilustración clínica de un modelo de dentadura superior completa con base translúcida sobre una superficie azul oscuro",
+  tall: "Modelo dental transparente de enseñanza con las arcadas superior e inferior sobre un pequeño articulador",
 };
 
 export const whyEs = {
-  label: "Por Qué Bristol",
+  label: "Por qué Bristol Family Dental Center",
   heading: "Cuidado en el que toda su familia puede confiar",
   cards: [
     {
       icon: "tooth",
       title: "Ortodoncia bajo este techo",
-      text: "Frenos y alineadores transparentes para niños, adolescentes y adultos, con el mismo equipo que cuida el resto de su sonrisa. Dientes más derechos sin ir de un consultorio a otro.",
+      text: "Frenos y alineadores transparentes para niños, adolescentes y adultos, con la atención del Dr. Efrain Chara, ortodoncista, aquí mismo en nuestro consultorio. Dientes más derechos sin ir de un consultorio a otro.",
     },
     {
       icon: "globe",
@@ -169,7 +177,7 @@ export const whyEs = {
     {
       icon: "family",
       title: "Un consultorio para toda la familia",
-      text: "Primeras limpiezas, frenos, implantes y dentaduras. Cuidamos a niños, papás y abuelos bajo un mismo techo, y coordinamos especialistas de confianza cuando el caso lo requiere.",
+      text: "Primeras limpiezas, frenos, coronas y dentaduras. Cuidamos a niños, papás y abuelos bajo un mismo techo, y coordinamos especialistas de confianza cuando el caso lo requiere.",
     },
   ],
 };
@@ -224,7 +232,7 @@ export const homeFaqEs = [
   {
     question: "¿Atienden a niños y adultos?",
     answer:
-      "Sí. Cuidamos a niños, papás y abuelos bajo un mismo techo, desde las primeras limpiezas hasta frenos, implantes y dentaduras, y coordinamos especialistas de confianza cuando el caso lo requiere.",
+      "Sí. Cuidamos a niños, papás y abuelos bajo un mismo techo, desde las primeras limpiezas hasta frenos, coronas y dentaduras, y coordinamos especialistas de confianza cuando el caso lo requiere.",
     linkLabel: "Ver todos los servicios",
     linkHref: "/es/services",
   },
@@ -257,7 +265,7 @@ export const serviceGroupsEs = [
         id: "exams",
         name: "Exámenes de Rutina",
         blurb:
-          "Un examen de rutina es la manera de detectar los problemas pequeños mientras siguen siendo pequeños. El Dr. Begino revisa sus dientes, encías y mordida, y le explica lo que ve con palabras sencillas. Usted sale con una idea clara de su salud dental y un consejo honesto sobre lo que sigue, si es que algo sigue.",
+          "Un examen de rutina es la manera de detectar los problemas pequeños mientras siguen siendo pequeños. El dentista revisa sus dientes, encías y mordida, y le explica lo que ve con palabras sencillas. Usted sale con una idea clara de su salud dental y un consejo honesto sobre lo que sigue, si es que algo sigue.",
         whoFor: "Para cada miembro de la familia, desde los niños hasta los abuelos.",
       },
       {
@@ -285,7 +293,7 @@ export const serviceGroupsEs = [
         id: "extractions",
         name: "Extracciones",
         blurb:
-          "A veces lo más sano es retirar un diente que ya no se puede salvar. Hacemos el procedimiento lo más suave posible y le explicamos cada opción de reemplazo, desde puentes hasta implantes. Los casos complejos, incluyendo las muelas del juicio, se atienden con nuestros cirujanos orales de confianza.",
+          "A veces lo más sano es retirar un diente que ya no se puede salvar. Hacemos el procedimiento lo más suave posible y le explicamos cada opción de reemplazo, desde puentes hasta dentaduras parciales. Los casos complejos, incluyendo las muelas del juicio, se atienden con nuestros cirujanos orales de confianza.",
         whoFor: "Para dientes demasiado dañados, o muelas del juicio problemáticas.",
       },
     ],
@@ -294,7 +302,7 @@ export const serviceGroupsEs = [
     id: "restorative",
     name: "Odontología Restauradora",
     intro:
-      "Reconstruir dientes dañados o perdidos es el corazón de la formación del Dr. Begino, reconocida por el American College of Prosthodontics.",
+      "Reconstruir dientes dañados o perdidos con coronas, puentes, incrustaciones y dentaduras, cada una ajustada con cuidado hasta que se sienta bien.",
     services: [
       {
         id: "crowns",
@@ -324,13 +332,6 @@ export const serviceGroupsEs = [
           "Las dentaduras completas y parciales reemplazan varios dientes a la vez, para que pueda comer, hablar y sonreír con confianza otra vez. Las ajustamos con cuidado y seguimos afinándolas hasta que se sientan bien.",
         whoFor: "Para pacientes a los que les faltan varios dientes o una arcada completa.",
       },
-      {
-        id: "implants",
-        name: "Implantes Dentales",
-        blurb:
-          "Un implante dental reemplaza un diente perdido desde la raíz. Un pequeño poste de titanio sostiene una corona a la medida que se ve, se siente y funciona como un diente natural. Los implantes también ayudan a conservar el hueso y, a diferencia de las opciones removibles, quedan fijos en su lugar.",
-        whoFor: "Para una solución a largo plazo a un diente perdido.",
-      },
     ],
   },
   {
@@ -358,20 +359,20 @@ export const serviceGroupsEs = [
   {
     id: "orthodontics",
     name: "Ortodoncia",
-    intro: "Dientes más derechos para niños, adolescentes y adultos, en el estilo que va con su vida.",
+    intro: "Dientes más derechos para niños, adolescentes y adultos, en el estilo que va con su vida. La atención de ortodoncia en este consultorio la brinda el Dr. Efrain Chara, ortodoncista, de Chara Orthodontics.",
     services: [
       {
         id: "braces",
         name: "Frenos",
         blurb:
-          "Los frenos enderezan los dientes y corrigen problemas de mordida poco a poco, con revisiones constantes en el camino. Atendemos a niños y adultos, y mantenemos el proceso sencillo desde la primera visita hasta la última revisión del retenedor.",
+          "Los frenos enderezan los dientes y corrigen problemas de mordida poco a poco, con visitas de ajuste constantes en el camino. El Dr. Chara atiende aquí a niños y adultos, y mantenemos el proceso sencillo desde la primera visita hasta la última revisión del retenedor.",
         whoFor: "Para dientes chuecos o problemas de mordida a cualquier edad.",
       },
       {
         id: "clear-aligners",
         name: "Alineadores Transparentes",
         blurb:
-          "Los alineadores transparentes enderezan los dientes con una serie de guardas casi invisibles que puede quitarse para comer y cepillarse. La mayoría de la gente ni siquiera notará que los trae puestos.",
+          "Los alineadores transparentes enderezan los dientes con una serie de guardas casi invisibles que puede quitarse para comer y cepillarse. El Dr. Chara revisa el ajuste en cada visita y le entrega el siguiente juego. La mayoría de la gente ni siquiera notará que los trae puestos.",
         whoFor: "Para adolescentes y adultos que quieren dientes derechos sin metal.",
       },
     ],
@@ -385,20 +386,39 @@ export const specialistNetworkEs = {
     "Algunos casos necesitan un especialista, y llevamos años construyendo una red en la que confiamos. Coordinamos endodoncia para casos complicados, periodoncia para limpiezas profundas, odontopediatría para niños con necesidades especiales, y cirugía oral para extracciones complejas como las muelas del juicio. Nosotros hacemos la referencia, compartimos su expediente y seguimos pendientes de su cuidado de principio a fin.",
 };
 
+export const orthodontistEs = {
+  name: "Dr. Efrain Chara",
+  title: "ortodoncista",
+  practiceName: "Chara Orthodontics",
+  url: "https://charaorthodontics.com/",
+  linkLabel: "Visite Chara Orthodontics",
+  bio: "El Dr. Efrain Chara obtuvo su título de odontólogo en la Pontificia Universidad Javeriana de Bogotá en 1990 y completó su especialidad en ortodoncia en la Universidad Militar Nueva Granada en 1995. Ejerce en California desde el año 2000, y su consultorio, Chara Orthodontics, brinda atención de ortodoncia en consultorios dentales de todo el sur de California, incluyendo Bristol Family Dental Center.",
+};
+
 export const orthoHighlightEs = {
-  label: "Ortodoncia",
+  label: "Ortodoncia con el Dr. Efrain Chara",
   heading: "Dientes derechos, bajo este techo",
-  body: "Los frenos y los alineadores transparentes son parte del cuidado diario en Bristol Family Dental Center. El mismo equipo que hace sus limpiezas y revisiones supervisa su tratamiento de ortodoncia, así que cada ajuste sucede con gente que ya conoce su sonrisa.",
+  body: "Los frenos y los alineadores transparentes son parte del cuidado diario en Bristol Family Dental Center. El Dr. Efrain Chara, ortodoncista, atiende a sus pacientes de ortodoncia aquí mismo en nuestro consultorio, y el equipo que hace sus limpiezas y revisiones agenda cada visita, así que el tratamiento y el cuidado diario llevan un solo calendario.",
+  servicesHeading: "Lo que el Dr. Chara ofrece aquí",
+  services: [
+    { title: "Consulta", text: "Un examen de sus dientes, su mordida y su mandíbula, y una respuesta clara sobre si el tratamiento le ayudaría y qué opción le conviene." },
+    { title: "Frenos", text: "Brackets y arcos para niños, adolescentes y adultos, ajustados en visitas regulares para que los dientes se muevan poco a poco. Los frenos resuelven la mayor variedad de problemas de apiñamiento, espacios y mordida." },
+    { title: "Alineadores transparentes", text: "Una serie de guardas removibles casi invisibles para adolescentes y adultos con apiñamiento o espacios leves a moderados. Usted cambia de guarda según un calendario y viene para que se revise el ajuste." },
+    { title: "Evaluación temprana", text: "Una primera revisión de ortodoncia para niños alrededor de los 7 años, como recomienda la American Association of Orthodontists, para detectar temprano patrones de crecimiento y de mordida. La mayoría de los niños no necesita tratamiento a esa edad." },
+    { title: "Tratamiento para adultos", text: "Dientes que se movieron con los años, apiñamiento que dificulta la limpieza y espacios que ha querido cerrar. Los dientes sanos se pueden mover a cualquier edad." },
+    { title: "Retenedores", text: "Un retenedor después del tratamiento conserva el resultado, y el Dr. Chara lo revisa en las visitas de seguimiento." },
+  ],
   points: [
     "Frenos tradicionales para niños, adolescentes y adultos",
     "Alineadores casi invisibles que puede quitarse para comer y cepillarse",
-    "Revisiones constantes con el mismo equipo de siempre",
+    "Tratamiento planificado y ajustado por el Dr. Chara, ortodoncista, en este consultorio",
   ],
 };
 
 export const servicesAltsEs = {
   hero: "Instrumentos dentales acomodados en una charola de acero con luz azul",
   aligner: "Ilustración clínica de un alineador dental transparente con luz azul",
+  retainer: "Ilustración clínica de un retenedor de ortodoncia transparente con un alambre delgado sobre una superficie azul oscuro",
   specialists: "Ilustración clínica de un espejo dental y un explorador sobre una superficie azul oscuro",
 };
 
@@ -407,52 +427,30 @@ export const servicesAltsEs = {
 export const aboutEs = {
   label: "Nosotros",
   heading: "Un consultorio dental familiar en Bristol Street",
-  teamHeading: "El equipo que le va a atender",
-  volunteerHeading: "Cuidado que viaja",
-  educationHeading: "Formación y reconocimientos",
   heroAlt: "Ilustración clínica de cinco instrumentos dentales de mano sobre una superficie azul oscuro",
-  teamPhotoAlt: "Ilustración clínica de un modelo dental transparente con frenos de cerámica sobre una superficie azul oscuro",
-};
-
-export const doctorEs = {
-  role: "Dentista Principal, Jefe de Odontología desde 2006",
-  licenseLine: "Dentista con licencia (D.D.S.), Dental Board of California",
   intro:
-    "El Dr. Ruben H. Begino dirige la odontología de Bristol Family Dental Center desde 2006. Sus pacientes lo conocen por sus manos suaves, sus respuestas directas y una práctica construida alrededor de las familias, no de las ventas. Habla español con fluidez y trata a cada paciente como quisiera que trataran a su propia familia.",
-  educationCopy:
-    "El Dr. Begino obtuvo su licenciatura en Biología con honores en UC Irvine en 1996, y su doctorado en cirugía dental en la escuela de odontología de UC San Francisco en 2001. Ese mismo año, su trabajo fue reconocido por el American College of Prosthodontics y por la American Academy of Esthetic Dentistry, dos de las organizaciones más respetadas en odontología restauradora y cosmética. Dirige la odontología de Bristol Family Dental Center desde 2006.",
-  volunteerCopy:
-    "Para el Dr. Begino, la odontología nunca ha terminado en la puerta del consultorio. Ha llevado cuidado dental gratuito a familias en México, Guatemala y Belice, ha servido en iniciativas como Puente a la Salud y La Amistad, ha promovido la odontología pediátrica en todo el condado de Orange, ha atendido a pacientes sin hogar y ha trabajado en ferias de salud locales. La misma convicción que guía todo eso también da forma a esta práctica: el buen cuidado dental es de todos.",
-  volunteerItems: [
-    "Viajes de cuidado dental gratuito a México, Guatemala y Belice",
-    "Servicio con Puente a la Salud y La Amistad",
-    "Promoción de la odontología pediátrica en el condado de Orange",
-    "Atención a pacientes sin hogar y ferias de salud locales",
+    "Bristol Family Dental Center es un consultorio dental familiar en Bristol Street, en Santa Ana. Un solo consultorio para niños, papás y abuelos, con una recepción bilingüe, odontología general y restauradora con el Dr. Pablo Lazaro, y atención de ortodoncia con el Dr. Efrain Chara, ortodoncista, bajo el mismo techo.",
+  dentistHeading: "Su dentista",
+  dentistRole: "Dentista General",
+  licenseLine: "Dentista con licencia (D.D.S.), Dental Board of California",
+  dentistCopy:
+    "El Dr. Pablo Lazaro es dentista general con licencia del Dental Board of California. Brinda la odontología general, restauradora y cosmética en Bristol Family Dental Center: exámenes y limpiezas, resinas y endodoncias, coronas, puentes y dentaduras, carillas y blanqueamiento. Su forma de trabajar es sencilla: revisar con cuidado, explicar lo que ve con palabras que usted pueda usar y recomendar solo lo que sus dientes necesitan.",
+  dentistImageAlt: "Ilustración clínica de una corona de cerámica y un espejo dental sobre una superficie azul oscuro",
+  orthoHeading: "Ortodoncia con el Dr. Efrain Chara",
+  orthoCopy:
+    "Los frenos y los alineadores transparentes en Bristol Family Dental Center los brinda el Dr. Efrain Chara, ortodoncista, que atiende a sus pacientes en nuestro consultorio. Obtuvo su título de odontólogo en Bogotá en 1990, completó su especialidad en ortodoncia en 1995 y ejerce en California desde el año 2000. Sus limpiezas, revisiones y resinas siguen con el Dr. Lazaro, así que el tratamiento de ortodoncia y el cuidado diario llevan un solo calendario en una sola recepción.",
+  orthoLink: "Sobre la ortodoncia en nuestro consultorio",
+  orthoHref: "/es/services#orthodontics",
+  familyHeading: "Un consultorio para toda la familia",
+  familyCopy:
+    "El consultorio está pensado para las familias. Niños, papás y abuelos se atienden en las mismas salas, la recepción lleva una sola agenda para todos y las preguntas reciben respuestas directas en español o en inglés. Cuando un caso requiere un especialista, coordinamos la referencia y seguimos pendientes.",
+  familyPoints: [
+    "Niños, adolescentes, adultos y abuelos bajo un mismo techo",
+    "Limpiezas, resinas, coronas, puentes y dentaduras aquí mismo",
+    "Frenos y alineadores transparentes con el Dr. Chara en el mismo consultorio",
+    "Una recepción bilingüe que responde en el idioma en el que usted piensa",
   ],
 };
-
-export const teamEs = [
-  {
-    name: "Pablo Lazaro, D.D.S.",
-    role: "Dentista con licencia del Dental Board of California",
-    note: "Ofrece toda la gama de cuidado general y restaurador junto al Dr. Begino.",
-  },
-  {
-    name: "Jacquelin Magaña",
-    role: "Gerente de Oficina",
-    note: "Mantiene el consultorio funcionando sin problemas y le ayuda con citas, seguros y planes de pago.",
-  },
-  {
-    name: "Roxana Rojas",
-    role: "Recepción",
-    note: "La voz amable del teléfono. Le encontrará un horario que le funcione y responderá sus preguntas.",
-  },
-  {
-    name: "Elizabeth Camberos",
-    role: "Asistente Dental",
-    note: "Hace que cada visita sea cómoda, puntual y bien preparada, al lado de los doctores.",
-  },
-];
 
 export const bilingualNoteEs =
   "Nuestro equipo es bilingüe. Haga sus preguntas en inglés o en español y reciba las respuestas en el idioma en el que piensa.";
@@ -557,17 +555,17 @@ export const seoEs: Record<string, { title: string; description: string }> = {
   home: {
     title: "Dentista en Santa Ana, CA | Bristol Family Dental Center",
     description:
-      "Dentista familiar en Santa Ana: limpiezas, resinas, implantes, carillas, frenos y alineadores. Equipo bilingüe, la mayoría de los seguros, incluyendo Denti-Cal. Llame al (714) 540-7101.",
+      "Dentista familiar en Santa Ana: limpiezas, resinas, coronas, carillas, frenos y alineadores. Equipo bilingüe, la mayoría de los seguros, incluyendo Denti-Cal. Llame al (714) 540-7101.",
   },
   services: {
     title: "Servicios Dentales en Santa Ana | Bristol Family Dental Center",
     description:
-      "Cuidado dental completo bajo un mismo techo en Santa Ana: exámenes, limpiezas, resinas, endodoncias, coronas, dentaduras, implantes, carillas, blanqueamiento y ortodoncia.",
+      "Cuidado dental completo bajo un mismo techo en Santa Ana: exámenes, limpiezas, resinas, endodoncias, coronas, dentaduras, carillas, blanqueamiento y ortodoncia.",
   },
   about: {
-    title: "Conozca al Dr. Ruben Begino, D.D.S. | Bristol Family Dental Center",
+    title: "Sobre Nuestro Consultorio Familiar | Bristol Family Dental Center",
     description:
-      "El Dr. Ruben Begino, formado en UCSF, dirige Bristol Family Dental Center en Santa Ana desde 2006. Conozca al equipo bilingüe detrás de nuestro cálido cuidado familiar.",
+      "Bristol Family Dental Center en Santa Ana: odontología general y restauradora con el Dr. Pablo Lazaro, ortodoncia con el Dr. Efrain Chara y un equipo bilingüe para toda la familia.",
   },
   newPatients: {
     title: "Pacientes Nuevos y Preguntas | Bristol Family Dental Center",

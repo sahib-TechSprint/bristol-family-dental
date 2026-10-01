@@ -9,17 +9,17 @@ export const seo: Record<string, PageMeta> = {
   home: {
     title: "Dentist in Santa Ana, CA | Bristol Family Dental Center",
     description:
-      "Family dentistry in Santa Ana, from cleanings and fillings to implants, veneers, braces, and clear aligners. Bilingual team, most insurance accepted, including Denti-Cal. Call (714) 540-7101.",
+      "Family dentistry in Santa Ana, from cleanings and fillings to crowns, veneers, braces, and clear aligners. Bilingual team, most insurance accepted, including Denti-Cal. Call (714) 540-7101.",
   },
   services: {
     title: "Dental Services in Santa Ana | Bristol Family Dental Center",
     description:
-      "Complete dental care under one roof in Santa Ana: exams, cleanings, fillings, root canals, crowns, dentures, implants, veneers, whitening, and orthodontics. Se habla español.",
+      "Complete dental care under one roof in Santa Ana: exams, cleanings, fillings, root canals, crowns, dentures, veneers, whitening, and orthodontics. Se habla español.",
   },
   about: {
-    title: "Meet Dr. Ruben Begino, D.D.S. | Bristol Family Dental Center",
+    title: "About Our Family Dental Practice | Bristol Family Dental Center",
     description:
-      "Dr. Ruben Begino, a UCSF trained dentist, has led Bristol Family Dental Center in Santa Ana since 2006. Meet the bilingual team behind our warm family care.",
+      "Bristol Family Dental Center in Santa Ana: general and restorative dentistry from Dr. Pablo Lazaro, orthodontics with Dr. Efrain Chara, and a bilingual team for the whole family.",
   },
   newPatients: {
     title: "New Patients and FAQ | Bristol Family Dental Center",

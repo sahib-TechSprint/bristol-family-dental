@@ -109,7 +109,7 @@ export const termsSections: LegalSection[] = [
   {
     heading: "About the images on this site",
     body: [
-      "The clinical illustrations on this site (teeth, implants, aligners, dental models, and instruments) are digital renderings created for the site's design. They are not photographs of the practice's premises, equipment, staff, or patients, and they do not depict treatment results. Every patient is different, and no image on this site promises a particular outcome.",
+      "The clinical illustrations on this site (teeth, crowns, aligners, dental models, and instruments) are digital renderings created for the site's design. They are not photographs of the practice's premises, equipment, staff, or patients, and they do not depict treatment results. Every patient is different, and no image on this site promises a particular outcome.",
     ],
   },
   {
@@ -157,7 +157,7 @@ export const termsSections: LegalSection[] = [
   {
     heading: "Practice and licensing information",
     body: [
-      "Bristol Family Dental Center is a dental practice in Santa Ana, California. Its dentists are licensed by the Dental Board of California: Ruben H. Begino, D.D.S., and Pablo Lazaro, D.D.S. Dentists are licensed and regulated by the Dental Board of California, 2005 Evergreen Street, Suite 1550, Sacramento, CA 95815, (877) 729-7789.",
+      "Bristol Family Dental Center is a dental practice in Santa Ana, California. Its dentist, Pablo Lazaro, D.D.S., is licensed by the Dental Board of California. Orthodontic care at the office is provided by Dr. Efrain Chara, orthodontist, of Chara Orthodontics. Dentists are licensed and regulated by the Dental Board of California, 2005 Evergreen Street, Suite 1550, Sacramento, CA 95815, (877) 729-7789.",
     ],
     link: { label: "Dental Board of California", href: "https://www.dbc.ca.gov", external: true },
   },

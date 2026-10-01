@@ -3,9 +3,21 @@
 export const about = {
   label: "About Us",
   heading: "A family dental practice on Bristol Street",
-  teamHeading: "The team you will meet",
-  volunteerHeading: "Care that travels",
-  educationHeading: "Training and recognition",
+  dentistHeading: "Your dentist",
+  orthoHeading: "Orthodontics with Dr. Efrain Chara",
+  orthoCopy:
+    "Braces and clear aligners at Bristol Family Dental Center are provided by Dr. Efrain Chara, orthodontist, who sees his patients in our office. He earned his dental degree in Bogotá in 1990, completed his specialty training in orthodontics in 1995, and has practiced in California since 2000. Your cleanings, checkups, and fillings stay with Dr. Lazaro, so orthodontic treatment and everyday care run on one schedule at one front desk.",
+  orthoLink: "About orthodontics at our office",
+  orthoHref: "/services#orthodontics",
+  familyHeading: "One office for the whole family",
+  familyCopy:
+    "The office is built around families. Children, parents, and grandparents are seen in the same rooms, the front desk keeps one schedule for all of them, and questions get straight answers in English or Spanish. When a case calls for a specialist, we coordinate the referral and stay involved.",
+  familyPoints: [
+    "Kids, teens, adults, and grandparents under one roof",
+    "Cleanings, fillings, crowns, bridges, and dentures in house",
+    "Braces and clear aligners with Dr. Chara in the same office",
+    "A bilingual front desk that answers in the language you think in",
+  ],
 };
 
 export const newPatients = {

@@ -12,7 +12,7 @@ interface Props {
 const { content: why = whyEn } = Astro.props;
 ---
 
-<section class="px-3 pb-1.5 pt-1.5 md:px-5 md:pb-2 md:pt-2" aria-label="Why Bristol" data-reveal-group>
+<section class="px-3 pb-1.5 pt-1.5 md:px-5 md:pb-2 md:pt-2" aria-label={why.label} data-reveal-group>
   <div class="rounded-xl bg-sky px-6 py-14 md:rounded-2xl md:px-14 md:py-24">
     <p class="type-eyebrow text-ink/60" data-reveal>{why.label}</p>
     <h2 class="type-h2 mt-4 max-w-2xl" data-reveal>{why.heading}</h2>

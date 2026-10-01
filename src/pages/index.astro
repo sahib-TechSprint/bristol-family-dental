@@ -2,12 +2,12 @@
 import Base from "../layouts/Base.astro";
 import HeroSection from "../components/home/HeroSection.astro";
 import GallerySection from "../components/home/GallerySection.tsx";
-import ImplantSection from "../components/home/ImplantSection.astro";
+import RestorativeSection from "../components/home/RestorativeSection.astro";
 import WhyBristol from "../components/home/WhyBristol.astro";
 import ReviewsSection from "../components/home/ReviewsSection.astro";
 import HomeFaq from "../components/home/HomeFaq.astro";
 import FinalCta from "../components/home/FinalCta.astro";
-import { gallery } from "../content/home";
+import { gallery, hero } from "../content/home";
 import { seo } from "../content/seo";
 import { homeFaq } from "../content/reviews";
 import { faqSchema } from "../lib/seo";
@@ -18,12 +18,16 @@ import { callHref, callLabel } from "../content/nav";
   title={seo.home.title}
   description={seo.home.description}
   isHome
+  preloadImages={[
+    { href: hero.image.mobileSrc, media: "(max-width: 767px)" },
+    { href: hero.image.src, media: "(min-width: 768px)" },
+  ]}
   altPath="/es"
   jsonLd={[faqSchema(homeFaq)]}
 >
   <HeroSection />
   <GallerySection client:visible content={gallery} ctaHref={callHref} ctaLabel={callLabel} />
-  <ImplantSection />
+  <RestorativeSection />
   <ReviewsSection />
   <WhyBristol />
   <HomeFaq />
