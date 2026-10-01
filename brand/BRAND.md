@@ -34,14 +34,18 @@ One family, Open Sauce One, in two weights. A strict seven step scale
 
 The site carries no photography of people or premises. Until the practice
 supplies its own photographs with permission to publish, imagery is limited to
-clinical renders: teeth, veneers, crowns, implants, aligners, teaching models,
-and instruments, rendered in cool white and steel on deep navy with a soft
-floor reflection, so they sit inside the palette instead of fighting it. The
-home page opens without an image at all; type does the work. Interior or
-exterior views of a clinic that were generated rather than photographed are
-not used anywhere, because a room presented as the practice must be the
-practice. Every render ships as webp with metadata stripped and is checked
-for watermarks before it is committed.
+clinical renders: teeth, veneers, crowns, bridges, dentures, aligners, braces,
+retainers, toothbrushes, teaching models, and instruments, rendered in cool
+white and steel on deep navy with a soft floor reflection, so they sit inside
+the palette instead of fighting it. Renders of dental implants are set aside
+while the office does not offer them. The home page opens on the practice's
+full name beside one render (three toothbrushes in three sizes, the family in
+one picture without a face in it); the type never waits for the picture.
+Interior or exterior views of a clinic that were generated rather than
+photographed are not used anywhere, because a room presented as the practice
+must be the practice. Every render ships as webp with metadata stripped and
+is checked for watermarks before it is committed. `brand/renders.md` records
+every render in use with its prompt and generation job id.
 
 Text placed over a render sits on a navy glass panel (80 to 85 percent) or a
 white card, never directly on the picture, so contrast never depends on what
@@ -57,8 +61,9 @@ verified programmatically; the matrix is in `tokens.json`.
 
 1. Google currently shows 3.8 stars (38 reviews), lower than Yelp. Keep the
    Google badge on the homepage, or drop it until the rating recovers?
-2. Recent reviews thank Dr. Jonathan Galvez, Dr. Shalaby, Leslie, and Lino,
-   who are not on the published staff page. Confirm the current roster.
+2. The site names one dentist, Pablo Lazaro, D.D.S., and no other team
+   members, by the office's request in October 2026. Confirm when the roster
+   should be published again.
 3. When the practice is ready, a professional shoot of the real office in
    the brand's bright light, with written permission from anyone who
    appears, would let true photography join the renders.
