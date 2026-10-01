@@ -58,19 +58,11 @@ export function personSchema(siteUrl: string) {
   return {
     "@context": "https://schema.org",
     "@type": "Person",
-    "@id": absolute(siteUrl, "/about#dr-begino"),
-    name: "Ruben H. Begino",
+    "@id": absolute(siteUrl, "/about#dentist"),
+    name: "Pablo Lazaro",
     honorificSuffix: "D.D.S.",
     jobTitle: "Dentist",
     worksFor: { "@id": absolute(siteUrl, "/#practice") },
-    alumniOf: [
-      { "@type": "CollegeOrUniversity", name: "University of California, Irvine" },
-      { "@type": "CollegeOrUniversity", name: "UC San Francisco School of Dentistry" },
-    ],
-    award: [
-      "Recognized by the American College of Prosthodontics (2001)",
-      "Recognized by the American Academy of Esthetic Dentistry (2001)",
-    ],
     knowsLanguage: practice.languages,
     url: absolute(siteUrl, "/about"),
   };
