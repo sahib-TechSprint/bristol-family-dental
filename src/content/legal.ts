@@ -6,7 +6,7 @@
 
 import type { LegalSection } from "../components/LegalPage.astro";
 
-export const legalEffectiveDate = "September 8, 2026";
+export const legalEffectiveDate = "October 1, 2026";
 
 // ------------------------------------------------------------------ privacy
 
