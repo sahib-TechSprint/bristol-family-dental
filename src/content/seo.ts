@@ -19,7 +19,7 @@ export const seo: Record<string, PageMeta> = {
   about: {
     title: "About Our Family Dental Practice | Bristol Family Dental Center",
     description:
-      "Bristol Family Dental Center in Santa Ana: general and restorative dentistry from Dr. Pablo Lazaro, orthodontics with Dr. Efrain Chara, and a bilingual team for the whole family.",
+      "Bristol Family Dental Center in Santa Ana: general and restorative dentistry from Pablo Lazaro, D.D.S., orthodontics with Dr. Efrain Chara, and a bilingual team for the whole family.",
   },
   newPatients: {
     title: "New Patients and FAQ | Bristol Family Dental Center",

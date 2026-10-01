@@ -7,14 +7,14 @@
 
 export const dentist = {
   name: "Pablo Lazaro, D.D.S.",
-  shortName: "Dr. Lazaro",
+  shortName: "Pablo Lazaro, D.D.S.",
   givenName: "Pablo",
   familyName: "Lazaro",
   role: "General Dentist",
   licenseLine: "Licensed dentist (D.D.S.), Dental Board of California",
   intro:
-    "Bristol Family Dental Center is a family dental practice on Bristol Street in Santa Ana. One office for kids, parents, and grandparents, with a bilingual front desk, general and restorative dentistry from Dr. Pablo Lazaro, and orthodontic care from Dr. Efrain Chara, orthodontist, under the same roof.",
-  copy: "Dr. Pablo Lazaro is a general dentist licensed by the Dental Board of California. He provides the general, restorative, and cosmetic dentistry at Bristol Family Dental Center: exams and cleanings, fillings and root canals, crowns, bridges, and dentures, veneers and whitening. His approach is plain: look carefully, explain what he sees in words you can use, and recommend only what your teeth need.",
+    "Bristol Family Dental Center is a family dental practice on Bristol Street in Santa Ana. One office for kids, parents, and grandparents, with a bilingual front desk, general and restorative dentistry from Pablo Lazaro, D.D.S., and orthodontic care from Dr. Efrain Chara, orthodontist, under the same roof.",
+  copy: "Pablo Lazaro, D.D.S., is a general dentist licensed by the Dental Board of California. He provides the general, restorative, and cosmetic dentistry at Bristol Family Dental Center: exams and cleanings, fillings and root canals, crowns, bridges, and dentures, veneers and whitening. His approach is plain: look carefully, explain what he sees in words you can use, and recommend only what your teeth need.",
 };
 
 export const bilingualNote =

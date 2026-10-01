@@ -6,7 +6,7 @@ export const about = {
   dentistHeading: "Your dentist",
   orthoHeading: "Orthodontics with Dr. Efrain Chara",
   orthoCopy:
-    "Braces and clear aligners at Bristol Family Dental Center are provided by Dr. Efrain Chara, orthodontist, who sees his patients in our office. He earned his dental degree in Bogotá in 1990, completed his specialty training in orthodontics in 1995, and has practiced in California since 2000. Your cleanings, checkups, and fillings stay with Dr. Lazaro, so orthodontic treatment and everyday care run on one schedule at one front desk.",
+    "Braces and clear aligners at Bristol Family Dental Center are provided by Dr. Efrain Chara, orthodontist, who sees his patients in our office. He earned his dental degree in Bogotá in 1990, completed his specialty training in orthodontics in 1995, and has practiced in California since 2000. Your cleanings, checkups, and fillings stay with Pablo Lazaro, D.D.S., so orthodontic treatment and everyday care run on one schedule at one front desk.",
   orthoLink: "About orthodontics at our office",
   orthoHref: "/services#orthodontics",
   familyHeading: "One office for the whole family",

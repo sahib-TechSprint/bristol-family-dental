@@ -429,16 +429,16 @@ export const aboutEs = {
   heading: "Un consultorio dental familiar en Bristol Street",
   heroAlt: "Ilustración clínica de cinco instrumentos dentales de mano sobre una superficie azul oscuro",
   intro:
-    "Bristol Family Dental Center es un consultorio dental familiar en Bristol Street, en Santa Ana. Un solo consultorio para niños, papás y abuelos, con una recepción bilingüe, odontología general y restauradora con el Dr. Pablo Lazaro, y atención de ortodoncia con el Dr. Efrain Chara, ortodoncista, bajo el mismo techo.",
+    "Bristol Family Dental Center es un consultorio dental familiar en Bristol Street, en Santa Ana. Un solo consultorio para niños, papás y abuelos, con una recepción bilingüe, odontología general y restauradora con Pablo Lazaro, D.D.S., y atención de ortodoncia con el Dr. Efrain Chara, ortodoncista, bajo el mismo techo.",
   dentistHeading: "Su dentista",
   dentistRole: "Dentista General",
   licenseLine: "Dentista con licencia (D.D.S.), Dental Board of California",
   dentistCopy:
-    "El Dr. Pablo Lazaro es dentista general con licencia del Dental Board of California. Brinda la odontología general, restauradora y cosmética en Bristol Family Dental Center: exámenes y limpiezas, resinas y endodoncias, coronas, puentes y dentaduras, carillas y blanqueamiento. Su forma de trabajar es sencilla: revisar con cuidado, explicar lo que ve con palabras que usted pueda usar y recomendar solo lo que sus dientes necesitan.",
+    "Pablo Lazaro, D.D.S., es dentista general con licencia del Dental Board of California. Brinda la odontología general, restauradora y cosmética en Bristol Family Dental Center: exámenes y limpiezas, resinas y endodoncias, coronas, puentes y dentaduras, carillas y blanqueamiento. Su forma de trabajar es sencilla: revisar con cuidado, explicar lo que ve con palabras que usted pueda usar y recomendar solo lo que sus dientes necesitan.",
   dentistImageAlt: "Ilustración clínica de una corona de cerámica y un espejo dental sobre una superficie azul oscuro",
   orthoHeading: "Ortodoncia con el Dr. Efrain Chara",
   orthoCopy:
-    "Los frenos y los alineadores transparentes en Bristol Family Dental Center los brinda el Dr. Efrain Chara, ortodoncista, que atiende a sus pacientes en nuestro consultorio. Obtuvo su título de odontólogo en Bogotá en 1990, completó su especialidad en ortodoncia en 1995 y ejerce en California desde el año 2000. Sus limpiezas, revisiones y resinas siguen con el Dr. Lazaro, así que el tratamiento de ortodoncia y el cuidado diario llevan un solo calendario en una sola recepción.",
+    "Los frenos y los alineadores transparentes en Bristol Family Dental Center los brinda el Dr. Efrain Chara, ortodoncista, que atiende a sus pacientes en nuestro consultorio. Obtuvo su título de odontólogo en Bogotá en 1990, completó su especialidad en ortodoncia en 1995 y ejerce en California desde el año 2000. Sus limpiezas, revisiones y resinas siguen con Pablo Lazaro, D.D.S., así que el tratamiento de ortodoncia y el cuidado diario llevan un solo calendario en una sola recepción.",
   orthoLink: "Sobre la ortodoncia en nuestro consultorio",
   orthoHref: "/es/services#orthodontics",
   familyHeading: "Un consultorio para toda la familia",
@@ -565,7 +565,7 @@ export const seoEs: Record<string, { title: string; description: string }> = {
   about: {
     title: "Sobre Nuestro Consultorio Familiar | Bristol Family Dental Center",
     description:
-      "Bristol Family Dental Center en Santa Ana: odontología general y restauradora con el Dr. Pablo Lazaro, ortodoncia con el Dr. Efrain Chara y un equipo bilingüe para toda la familia.",
+      "Bristol Family Dental Center en Santa Ana: odontología general y restauradora con Pablo Lazaro, D.D.S., ortodoncia con el Dr. Efrain Chara y un equipo bilingüe para toda la familia.",
   },
   newPatients: {
     title: "Pacientes Nuevos y Preguntas | Bristol Family Dental Center",
