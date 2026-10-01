@@ -221,3 +221,32 @@ The go live candidate. One coordinated push to main, auto deployed by Vercel.
 ### Awaiting the client before DNS cutover
 
 See `LAUNCH-GUIDE.md`. The short list: approve the preview in both languages, attorney glance at the three legal pages, confirm the roster and the two dentists' names as shown, and the domain login.
+
+## Roster and offering update, October 1, 2026
+
+Requested by the agency after the office's changes: the dentist who placed implants has left, no other team members are to be named, and the practice's full name goes wherever the site says who it is. One push to main, auto deployed by Vercel.
+
+### What changed and why
+
+- Dental implants are hidden until the office confirms a dentist who places them. The home page implant section is now a restorative dentistry section (crowns, bridges, and dentures, with the same three step strip), the services page lists no implant item, the "Dental Implants" gallery card is now "Clear Aligners", and the extractions, restorative, FAQ, legal imagery notice, and search descriptions no longer mention implants in either language. The two implant renders stay in `public/images/` unreferenced. There is no `#implants` anchor left; the services page keeps `#restorative`, `#crowns`, `#bridges`, and `#dentures`.
+- Ruben H. Begino, D.D.S. is removed entirely, with the team roster. Pablo Lazaro, D.D.S. is the one dentist named (footer, About, Terms, Person structured data at `/about#dentist`). The About page is rebuilt around three cards: the dentist, orthodontics with Dr. Efrain Chara, and one office for the whole family. `src/content/team.ts` now exports `dentist` and `bilingualNote` only.
+- Orthodontics is presented as provided by Dr. Efrain Chara, orthodontist, of Chara Orthodontics, with a link to https://charaorthodontics.com/ (new tab, `rel="noopener"`, screen reader label). The services page gains a full orthodontics section: a band with the three plain points, his card with the biography stated on his own site, and six service cards (consultation, braces, clear aligners, early evaluation, adult treatment, retainers). The word "orthodontist" appears only beside his name, which keeps the site inside Business and Professions Code 651(h)(5): the practice itself never claims the specialty. The office confirmed the title on October 1, 2026.
+- The practice's full name everywhere: the home hero heading reads "Bristol Family Dental Center" on two lines in both languages (the screen reader heading is unchanged), the "Why Bristol" label is "Why Bristol Family Dental Center", and the page titles and descriptions use the full name.
+- Imagery: the home hero now carries a render (three toothbrushes in three sizes in a frosted cup), preloaded from the head with a phone crop and a wide crop so it is the first paint's largest element without delaying the type. Five more renders in the house style: a three unit bridge and a denture model for the restorative section, a crown beside a mirror on About, and a clear retainer on the services page. Prompts and job ids are in `brand/renders.md`. All six inspected for watermarks, flattened, re-encoded as webp, metadata stripped.
+- Motion: a scroll driven depth layer in pure CSS (`@supports (animation-timeline: view())`): render cards tilt up from the floor as they enter, renders inside overflow hidden cards drift against the scroll, and the hero render eases away as the visitor scrolls past it. The individual transform properties compose with the existing reveal transition. Browsers without scroll timelines and visitors who prefer reduced motion get the static layout; the first paint is unanimated (verified by diffing a motion and a reduced motion capture at scroll 0).
+- Footer: the Privacy, Terms, and Accessibility links are 24 px tall targets (WCAG 2.2 target size, which the earlier audit did not cover).
+- Dependencies: Astro 5.13 to 7.3.5, `@astrojs/react` 4 to 7, `sharp` 0.35, Tailwind 4.3, TypeScript 5.9, plus `npm audit fix` for the transitive advisories. `npm audit` was reporting one critical and five high advisories in the old line, all fixed only by the major upgrade. The site uses no Astro API that changed (no content collections, no view transitions, no SSR), the build output is the same set of 19 pages plus 3 redirect stubs, and both React islands hydrate and behave as before (menu open, focus trap, Escape, focus return). `engines.node` is set to 22.x for the host.
+- Docs: `AGENTS.md` (imagery rule, facts block), `README.md`, `LAUNCH-GUIDE.md` (client checklist), and `brand/BRAND.md` updated to match.
+
+### QC record for this revision
+
+- `astro check`: 0 errors, 0 warnings. Build: clean, 22 HTML files (19 pages plus the three redirect stubs), sitemap and robots present.
+- axe-core, WCAG 2.0/2.1/2.2 A and AA plus best practice rules: 0 violations on all 19 pages at 360, 768, 1024, 1440, and 1920 (95 combinations), motion settled before each run.
+- Lighthouse mobile, local build, median of three: home 97 / 100 / 100 / 100 (LCP 1.86 s, CLS 0, TBT 0 ms); services 97 (LCP 2.41 s); Spanish home 97 (LCP 1.96 s); About 98 (LCP 2.35 s). Accessibility, best practices, and SEO 100 on all four.
+- Islands: Splash, Navbar, and GallerySection hydrate with no console errors on the home page in both languages; the menu opens, traps focus, closes on Escape, and returns focus to its trigger.
+- Integrity greps clean on the built HTML: no "implant" in any language, no "Begino", no dashes, no tool names, no price or "free" language, no superlatives; every "orthodontist" and "ortodoncista" sits beside Dr. Chara's name; every image path on every page resolves; "Bristol Family" appears alone only as the first line of the two line wordmark.
+- `npm audit`: 0 vulnerabilities.
+
+### Awaiting the client
+
+See the updated checklist in `LAUNCH-GUIDE.md`: approve the preview in both languages, confirm Pablo Lazaro, D.D.S. as the dentist of record, confirm that the orthodontics presentation of Dr. Chara is as the office wants it, and tell the agency when a dentist who places implants joins so the implant content can return.

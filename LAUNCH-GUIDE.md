@@ -7,23 +7,26 @@ Work top to bottom; each step says who does it and how long it takes.
 
 Walk the manager through the preview at https://bristol-family-dental.vercel.app:
 
-1. Home, English: the typographic opening, the cosmetic and implant sections, the review
-   badges, the FAQ. Every button is a call button; tap one on a phone to show it dials.
+1. Home, English: the opening card with the full practice name and the toothbrush render,
+   the cosmetic and restorative sections, the review badges, the FAQ. Every button is a call button; tap one on a phone to show it dials.
 2. Tap ES in the top corner: the entire site switches to Spanish; EN brings it back.
 3. Services, About, New Patients (download both intake forms), Insurance, Contact (map).
-4. Footer: hours, the two dentists' names with license type, the Dental Board notice, and
-   the Privacy, Terms, and Accessibility links.
+4. Footer: hours, the dentist's name with license type, the Dental Board notice, and the
+   Privacy, Terms, and Accessibility links.
 
 Get these yeses in writing (a text message is fine):
 
 - [ ] The site is approved as shown, in both languages.
-- [ ] The dentists named on the site (Ruben H. Begino, D.D.S. and Pablo Lazaro, D.D.S.) and the
-      team roster on About are current and correct. (Reviews online also mention Dr. Galvez
-      and Dr. Shalaby; confirm whether they should appear.)
+- [ ] Pablo Lazaro, D.D.S. is the dentist of record named on the site (footer, About, Terms,
+      structured data). No other dentist or team member is named, by the office's request,
+      and dental implants are not mentioned anywhere until the office confirms a dentist who
+      places them.
+- [ ] Orthodontic care is presented as provided by Dr. Efrain Chara, orthodontist, of Chara
+      Orthodontics (linked to https://charaorthodontics.com/), on the home, services, About,
+      and Terms pages. The office confirmed the title "orthodontist" on October 1, 2026.
 - [ ] The three review badges may stay, including Google at its current 3.8.
 - [ ] "Most insurance accepted, including Denti-Cal", the PPO "preferred provider" line, the
       HMO assignment note, CareCredit, and in house financing are all accurate today.
-- [ ] Dr. Begino's education and recognition paragraph is accurate as written.
 - [ ] The practice's attorney has read the Privacy Policy, Terms of Use, and Accessibility
       Statement (they are careful plain language drafts, not legal advice).
 - [ ] The practice holds a current Fictitious Name Permit from the Dental Board for

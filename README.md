@@ -10,7 +10,7 @@ A fully static, bilingual (English and Spanish) marketing site with no forms, no
 
 ## Stack
 
-Astro 5, Tailwind CSS 4, TypeScript (strict), and two small React islands (the navbar menu and the masked card cosmetic section on the home page). Fonts are self hosted (Open Sauce One, SIL Open Font License, see `public/fonts/OFL.txt`). Hosting is Vercel, deploying from the `main` branch of this repository; production routing and security headers live in `vercel.json`.
+Astro 7, Tailwind CSS 4, TypeScript (strict), and two small React islands (the navbar menu and the masked card cosmetic section on the home page). Fonts are self hosted (Open Sauce One, SIL Open Font License, see `public/fonts/OFL.txt`). Hosting is Vercel, deploying from the `main` branch of this repository; production routing and security headers live in `vercel.json`.
 
 ## Getting started
 
@@ -19,7 +19,7 @@ npm install
 npm run dev
 ```
 
-The site runs at `http://localhost:4321`. Node 20 or newer.
+The site runs at `http://localhost:4321`. Node 22 or newer (Astro 7 requires it).
 
 | Command | Purpose |
 | --- | --- |
@@ -39,7 +39,7 @@ All practice content lives in typed modules under `src/content/` (English) and `
 | `src/content/nav.ts` | Navigation labels and the one primary action (the call button). |
 | `src/content/home.ts` | Home page copy, section by section. |
 | `src/content/services.ts` | Every service, grouped, with anchor ids. |
-| `src/content/team.ts` | The doctor's bio and the team roster, with license lines. |
+| `src/content/team.ts` | The dentist's name, role, license line, and About page copy. No other team members are named. |
 | `src/content/faq.ts` | The new patient FAQ. |
 | `src/content/reviews.ts` | Review platform badges with the date they were verified, plus the home page FAQ. |
 | `src/content/pages.ts` | About, new patients, insurance, contact, and 404 copy. |
