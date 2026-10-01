@@ -178,6 +178,71 @@ html.splash-hold body::before {
   }
 }
 
+/* Scroll driven depth for the renders. Pure CSS (no script, no dependency):
+   a card tagged .depth-card tilts up from the floor as it enters the
+   viewport, a render tagged .depth-drift inside an overflow hidden card
+   slides slowly against the scroll, and the home hero render eases away as
+   the visitor scrolls past it. The individual transform properties
+   (rotate, scale, translate) are used so these compose with the reveal
+   transition's transform instead of overriding it. Browsers without
+   scroll timelines, and visitors who prefer reduced motion, get the static
+   layout; the first paint is never animated because every keyframe range
+   starts with the element at rest where it sits on load. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    :has(> .depth-card) {
+      perspective: 1400px;
+    }
+    .depth-card {
+      transform-origin: 50% 100%;
+      animation: depth-tilt linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 100%;
+    }
+    @keyframes depth-tilt {
+      from {
+        rotate: x 12deg;
+        scale: 0.94;
+        translate: 0 40px;
+      }
+      to {
+        rotate: x 0deg;
+        scale: 1;
+        translate: 0 0;
+      }
+    }
+    .depth-drift {
+      scale: 1.12;
+      animation: depth-drift linear both;
+      animation-timeline: view();
+      animation-range: cover 0% cover 100%;
+    }
+    @keyframes depth-drift {
+      from {
+        translate: 0 -5%;
+      }
+      to {
+        translate: 0 5%;
+      }
+    }
+    .hero-render-image {
+      animation: hero-drift linear both;
+      animation-timeline: view();
+      animation-range: exit 0% exit 100%;
+    }
+    @keyframes hero-drift {
+      from {
+        translate: 0 0;
+        scale: 1;
+      }
+      to {
+        translate: 0 5%;
+        scale: 1.12;
+      }
+    }
+  }
+}
+
 /* FAQ accordion built on native details/summary. */
 details.faq-item summary {
   list-style: none;

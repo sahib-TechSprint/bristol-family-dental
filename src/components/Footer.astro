@@ -98,13 +98,13 @@ const year = new Date().getFullYear();
     >
       <p>&copy; {year} {practice.name}. {ui.rights}</p>
       <p class="flex flex-wrap gap-x-5 gap-y-1">
-        <a href={ui.privacyHref} class="underline-offset-4 transition-colors hover:text-white hover:underline">
+        <a href={ui.privacyHref} class="inline-flex min-h-6 items-center underline-offset-4 transition-colors hover:text-white hover:underline">
           {ui.privacyLabel}
         </a>
-        <a href={ui.termsHref} class="underline-offset-4 transition-colors hover:text-white hover:underline">
+        <a href={ui.termsHref} class="inline-flex min-h-6 items-center underline-offset-4 transition-colors hover:text-white hover:underline">
           {ui.termsLabel}
         </a>
-        <a href={ui.accessibilityHref} class="underline-offset-4 transition-colors hover:text-white hover:underline">
+        <a href={ui.accessibilityHref} class="inline-flex min-h-6 items-center underline-offset-4 transition-colors hover:text-white hover:underline">
           {ui.accessibilityLabel}
         </a>
       </p>

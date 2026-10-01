@@ -17,7 +17,8 @@ interface Props {
   /** Path of this page's counterpart in the other language, e.g. "/es/services". */
   altPath?: string;
   noindex?: boolean;
-  preloadImages?: string[];
+  /** Images to preload from the head; an object limits the preload to a media query. */
+  preloadImages?: (string | { href: string; media?: string })[];
 }
 
 const {
@@ -148,7 +149,15 @@ const revealScript = `(function () {
       crossorigin
     />
 
-    {preloadImages.map((src) => <link rel="preload" as="image" href={src} />)}
+    {
+      preloadImages.map((item) =>
+        typeof item === "string" ? (
+          <link rel="preload" as="image" href={item} />
+        ) : (
+          <link rel="preload" as="image" href={item.href} media={item.media} />
+        )
+      )
+    }
 
     {isHome && <script is:inline set:html={splashScript} />}
 
