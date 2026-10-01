@@ -193,11 +193,40 @@ html.splash-hold body::before {
     :has(> .depth-card) {
       perspective: 1400px;
     }
+    /* An overflow hidden card is itself a scroll container, so a render
+       inside one cannot read its own view() progress; the card declares a
+       named timeline and the render follows that. The hero section does the
+       same for the hero render, which sits inside two clipped boxes. */
+    .hero-scope {
+      view-timeline-name: --hero;
+    }
     .depth-card {
       transform-origin: 50% 100%;
+      view-timeline-name: --depth-card;
       animation: depth-tilt linear both;
+    }
+    .depth-drift {
+      scale: 1.12;
+      animation: depth-drift linear both;
+    }
+    .hero-render-image {
+      animation: hero-drift linear both;
+    }
+    /* The timelines live in their own rules, with a higher specificity than
+       the shorthand rules above. Kept in the same rule, the build's CSS
+       minifier folds animation-timeline into the animation shorthand, and
+       browsers reject that shorthand, so nothing would move. */
+    .depth-card[class] {
       animation-timeline: view();
       animation-range: entry 0% entry 100%;
+    }
+    .depth-drift[class] {
+      animation-timeline: --depth-card;
+      animation-range: cover 0% cover 100%;
+    }
+    .hero-render-image[class] {
+      animation-timeline: --hero;
+      animation-range: exit 0% exit 100%;
     }
     @keyframes depth-tilt {
       from {
@@ -211,12 +240,6 @@ html.splash-hold body::before {
         translate: 0 0;
       }
     }
-    .depth-drift {
-      scale: 1.12;
-      animation: depth-drift linear both;
-      animation-timeline: view();
-      animation-range: cover 0% cover 100%;
-    }
     @keyframes depth-drift {
       from {
         translate: 0 -5%;
@@ -224,11 +247,6 @@ html.splash-hold body::before {
       to {
         translate: 0 5%;
       }
-    }
-    .hero-render-image {
-      animation: hero-drift linear both;
-      animation-timeline: view();
-      animation-range: exit 0% exit 100%;
     }
     @keyframes hero-drift {
       from {
