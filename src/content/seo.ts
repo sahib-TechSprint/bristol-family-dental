@@ -9,37 +9,37 @@ export const seo: Record<string, PageMeta> = {
   home: {
     title: "Dentist in Santa Ana, CA | Bristol Family Dental Center",
     description:
-      "Family dentistry in Santa Ana, from cleanings and fillings to crowns, veneers, braces, and clear aligners. Bilingual team, most insurance accepted, including Denti-Cal. Call (714) 540-7101.",
+      "Family dentist in Santa Ana: cleanings, fillings, crowns, veneers, braces, and clear aligners. Bilingual team, most insurance taken. Call (714) 540-7101.",
   },
   services: {
     title: "Dental Services in Santa Ana | Bristol Family Dental Center",
     description:
-      "Complete dental care under one roof in Santa Ana: exams, cleanings, fillings, root canals, crowns, dentures, veneers, whitening, and orthodontics. Se habla español.",
+      "Complete dental care in Santa Ana: exams, cleanings, fillings, root canals, crowns, dentures, veneers, whitening, and orthodontics. Se habla español.",
   },
   about: {
-    title: "About Our Family Dental Practice | Bristol Family Dental Center",
+    title: "About Our Dental Practice | Bristol Family Dental Center",
     description:
-      "Bristol Family Dental Center in Santa Ana: general and restorative dentistry from Pablo Lazaro, D.D.S., orthodontics with Dr. Efrain Chara, and a bilingual team for the whole family.",
+      "Bristol Family Dental Center, Santa Ana: general dentistry with Pablo Lazaro, D.D.S., orthodontics with Dr. Efrain Chara, and a bilingual team.",
   },
   newPatients: {
     title: "New Patients and FAQ | Bristol Family Dental Center",
     description:
-      "New to Bristol Family Dental Center in Santa Ana? See what to expect at your first visit, download new patient forms in English or Spanish, and get answers to common questions.",
+      "New to Bristol Family Dental Center in Santa Ana? What to expect at your first visit, forms in English and Spanish, and answers to common questions.",
   },
   insurance: {
     title: "Insurance and Payment Options | Bristol Family Dental Center",
     description:
-      "Bristol Family Dental Center in Santa Ana accepts most dental insurance, including PPO, HMO, and Denti-Cal, plus CareCredit, cash, check, or card. Coverage explained before treatment.",
+      "Bristol Family Dental Center in Santa Ana accepts most dental insurance, including PPO and HMO plans, plus CareCredit, cash, check, or card.",
   },
   contact: {
     title: "Contact Us in Santa Ana | Bristol Family Dental Center",
     description:
-      "Find Bristol Family Dental Center at 2618 S. Bristol St., Santa Ana, at Central and Bristol. Hours, directions, phone, and fax for our family dental office.",
+      "Find Bristol Family Dental Center at 2618 S. Bristol St., Santa Ana, at Central and Bristol. Hours, directions, phone, and fax for our office.",
   },
   privacy: {
     title: "Privacy Policy | Bristol Family Dental Center",
     description:
-      "How the Bristol Family Dental Center website handles information: no forms, no tracking, what the Google map and our host collect, and your California privacy rights.",
+      "How the Bristol Family Dental Center website handles information: no forms, no tracking, what the map and host collect, and your California rights.",
   },
   terms: {
     title: "Terms of Use and Disclaimer | Bristol Family Dental Center",
@@ -49,7 +49,7 @@ export const seo: Record<string, PageMeta> = {
   accessibility: {
     title: "Accessibility Statement | Bristol Family Dental Center",
     description:
-      "Bristol Family Dental Center wants a website everyone can use. Read what we do to meet WCAG 2.1 AA, current limitations, and how to reach us if something is hard to use.",
+      "Bristol Family Dental Center wants a website everyone can use: how we meet WCAG 2.1 AA, current limitations, and how to reach us if something is hard.",
   },
   notFound: {
     title: "Page Not Found | Bristol Family Dental Center",

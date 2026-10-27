@@ -10,7 +10,7 @@ export const faq: FaqItem[] = [
   {
     question: "How often should I brush and floss?",
     answer:
-      "Brush at least twice a day with a soft brush and fluoride toothpaste, and floss once a day. Brushing cleans the surfaces of your teeth, and floss reaches the plaque hiding between them. Together they take about five minutes a day, and they are the cheapest dental care you will ever get.",
+      "Brush at least twice a day with a soft brush and fluoride toothpaste, and floss once a day. Brushing cleans the surfaces of your teeth, and floss reaches the plaque hiding between them. Together they take about five minutes a day, and they are the simplest dental care there is.",
   },
   {
     question: "Are silver (amalgam) fillings safe?",

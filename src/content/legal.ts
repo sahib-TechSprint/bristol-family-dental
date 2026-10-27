@@ -6,7 +6,7 @@
 
 import type { LegalSection } from "../components/LegalPage.astro";
 
-export const legalEffectiveDate = "October 1, 2026";
+export const legalEffectiveDate = "October 26, 2026";
 
 // ------------------------------------------------------------------ privacy
 
@@ -35,7 +35,7 @@ export const privacySections: LegalSection[] = [
     heading: "Cookies and similar technologies",
     body: [
       "This site does not set cookies of its own, and it does not use analytics, advertising, or social media trackers. The site stores one small flag in your browser's session storage to remember that the opening animation has already played; it contains no personal information and is cleared when you close the tab.",
-      "The contact page embeds a map from Google Maps. When that map loads, Google receives your IP address and may set its own cookies under Google's privacy policy, which the practice does not control. If you would rather not load Google's map, use the Get Directions link instead, or block third party cookies in your browser; every other part of the site works without it.",
+      "The contact page embeds a map from Google Maps. When that map loads, Google receives your IP address and may set its own cookies under Google's privacy policy, which the practice does not control. If you would rather not load Google's map, use the Get Directions link instead, or block third-party cookies in your browser; every other part of the site works without it.",
       "Because the site does not track visitors, it does not respond to browser Do Not Track signals; there is nothing to turn off.",
     ],
     link: { label: "Google privacy policy", href: "https://policies.google.com/privacy", external: true },
@@ -127,7 +127,7 @@ export const termsSections: LegalSection[] = [
   {
     heading: "Intellectual property",
     body: [
-      "The text, layout, wordmark, and illustrations on this site belong to Bristol Family Dental Center or are used with permission, and the site design is the work of Carbon Quill Media. You may view, print, and download pages for personal, non commercial use. The site's typeface, Open Sauce One, is used under the SIL Open Font License. Third party names such as Yelp, Google, Facebook, Birdeye, CareCredit, and Denti-Cal belong to their owners and are used only to identify those services.",
+      "The text, layout, wordmark, and illustrations on this site belong to Bristol Family Dental Center or are used with permission, and the site design is the work of Carbon Quill Media. You may view, print, and download pages for personal, non commercial use. The site's typeface, Open Sauce One, is used under the SIL Open Font License. Third-party names such as Yelp, Google, Facebook, Birdeye, and CareCredit belong to their owners and are used only to identify those services.",
     ],
   },
   {
@@ -137,7 +137,7 @@ export const termsSections: LegalSection[] = [
     ],
   },
   {
-    heading: "Third party websites",
+    heading: "Third-party websites",
     body: [
       "Links to other websites are provided for convenience. The practice does not control those sites and is not responsible for their content, their privacy practices, or their availability.",
     ],
@@ -145,7 +145,7 @@ export const termsSections: LegalSection[] = [
   {
     heading: "No warranties and limitation of liability",
     body: [
-      "This website is provided as is and as available, without warranties of any kind, express or implied, including that it will be accurate, uninterrupted, or error free. To the fullest extent permitted by law, Bristol Family Dental Center and Carbon Quill Media are not liable for any damages arising from your use of, or inability to use, this website or any website it links to. Nothing in these terms limits the practice's obligations to its patients under the laws that govern dental care.",
+      "This website is provided as is and as available, without warranties of any kind, express or implied, including that it will be accurate, uninterrupted, or error-free. To the fullest extent permitted by law, Bristol Family Dental Center and Carbon Quill Media are not liable for any damages arising from your use of, or inability to use, this website or any website it links to. Nothing in these terms limits the practice's obligations to its patients under the laws that govern dental care.",
     ],
   },
   {

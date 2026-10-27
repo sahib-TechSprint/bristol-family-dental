@@ -27,6 +27,7 @@ The site runs at `http://localhost:4321`. Node 22 or newer (Astro 7 requires it)
 | `npm run build` | Production build into `dist/` |
 | `npm run preview` | Preview the production build |
 | `npm run check` | Type checking and Astro diagnostics |
+| `npm run audit` | After a build: accessibility, links, SEO, image, and integrity gates on every page at five widths, with screenshots |
 | `npm run generate:og` | Regenerate the Open Graph image and raster favicons |
 
 ## Where things live
@@ -53,9 +54,9 @@ All practice content lives in typed modules under `src/content/` (English) and `
 
 ## Working on the site
 
-Read `AGENTS.md` before making changes. It holds the rules that keep the site compliant and on brand, the quality gates every change has to pass, and the deploy procedure. `CLAUDE.md` points there too.
+New to the site? Read `HANDOFF.md` first: it explains the stack, the build pipeline, how to get access, and how to plug in on a new computer. Then read `AGENTS.md` before making changes. It holds the rules that keep the site compliant and on brand, the quality gates every change has to pass, and the deploy procedure. `CLAUDE.md` points there too.
 
-Short version: edit content in the files above, run `npm run check` and `npm run build`, open the preview in both languages, then commit on `main` and push. Vercel builds and deploys in about a minute.
+Short version: edit content in the files above, run `npm run check`, `npm run build`, and `npm run audit`, open the preview in both languages, then commit on `main` and push. Vercel builds and deploys in about a minute.
 
 ## Environment variables
 
@@ -63,9 +64,10 @@ One variable, set in Vercel (Settings, Environment Variables) and in `.env` for 
 
 | Variable | Purpose |
 | --- | --- |
-| `PUBLIC_SITE_URL` | Canonical URL for links, sitemap, hreflang, and structured data. Change it when the practice domain goes live. |
+| `PUBLIC_SITE_URL` | Canonical URL for links, sitemap, hreflang, and structured data. While it is unset or points at a vercel.app host the site is in review: every page is noindex and robots.txt disallows crawling. Set it to the practice domain and redeploy to open the site to search. |
 
 ## Records
 
+- `HANDOFF.md` is the map for the next maintainer: stack, back end, access, setup, the change loop, parked content.
 - `DEPLOY-LOG.md` is the build record: what shipped in each revision and the QC results.
 - `LAUNCH-GUIDE.md` is the path from approved preview to the practice domain.

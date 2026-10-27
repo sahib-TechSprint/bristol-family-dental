@@ -1,6 +1,6 @@
 # Working agreement for this repository
 
-This file is for every person and every coding agent (Claude, Codex, Copilot, Cursor, or anything else) that touches this repository. Read it fully before changing anything. `CLAUDE.md` points here; there is one set of rules.
+This file is for every person and every coding agent (Claude, Codex, Copilot, Cursor, or anything else) that touches this repository. Read it fully before changing anything. `CLAUDE.md` points here; there is one set of rules. `HANDOFF.md` explains how the site is built and how to get access; read it first if you are new.
 
 ## What you are working on
 
@@ -32,6 +32,8 @@ These facts live in `src/content/practice.ts` and `src/i18n/es.ts` and are mirro
 - Hours Monday to Friday 9:00 a.m. to 6:00 p.m., Saturday and Sunday closed
 - Dentist: Pablo Lazaro, D.D.S. (the only dentist named on the site; no other team members are named). Orthodontic care at the office is provided by Dr. Efrain Chara, orthodontist, of Chara Orthodontics (https://charaorthodontics.com/). The word "orthodontist" is used only for Dr. Chara and only in a sentence that names him.
 - Dental implants are not offered and are not mentioned anywhere on the site until the office confirms a dentist who places them. The two implant renders in `public/images/` are kept for that day and are not referenced.
+- Denti-Cal is not mentioned anywhere on the site until the office confirms its enrollment with the provider is complete (removed October 26, 2026). The insurance pages describe PPO and HMO plans, CareCredit, cash, check, and card. `HANDOFF.md` section 11 lists the files to restore.
+- "X-ray" is not written anywhere; say "images" (client request, September 2026).
 - Review counts and ratings in `src/content/reviews.ts` (with `reviewsVerifiedOn`) and the matching labels in `src/i18n/es.ts`
 
 ## Quality gates (every change, no exceptions)
@@ -41,9 +43,9 @@ Run these before committing. A change that fails any gate does not ship.
 1. `npm run check` passes with zero errors.
 2. `npm run build` succeeds.
 3. Open the built site (`npm run preview`) in both languages at 360 and 1440 wide and look at what you changed.
-4. Accessibility: axe-core (WCAG 2.1 A and AA rule set) reports zero violations on every page you touched, at 360, 768, 1024, 1440, and 1920 wide. Text placed over an image sits on a navy or white panel so contrast does not depend on the picture behind it. Keyboard: Tab reaches everything, the skip link is first, Escape closes the menu, focus returns to the trigger.
+4. Accessibility: `npm run audit` (after `npm run build`) reports zero axe-core violations (WCAG 2.0, 2.1, and 2.2 A and AA plus best practice rules) on every page at 360, 768, 1024, 1440, and 1920 wide, and zero findings from the other gates it runs (overflow, links, JSON-LD, headings, titles and descriptions, images, integrity greps). Text placed over an image sits on a navy or white panel so contrast does not depend on the picture behind it. Keyboard: Tab reaches everything, the skip link is first, Escape closes the menu, focus returns to the trigger.
 5. Every internal link and anchor resolves. Every image has a meaningful `alt` (or `alt=""` if purely decorative) and `width` and `height`.
-6. Integrity greps are clean: no em or en dash characters (U+2014, U+2013), no `/book`, no "X-ray", no price or "free" language, no removed image names, no references to AI tools.
+6. Integrity greps are clean (the audit runs them): no em or en dash characters (U+2014, U+2013), no `/book`, no "X-ray", no "Denti-Cal", no "implant", no price or "free" language, no removed image names, no references to AI tools.
 7. JSON-LD on every page parses and the practice facts in it match `practice.ts`.
 8. Lighthouse mobile (local or PageSpeed Insights) stays at or above 90 performance and 100 accessibility, best practices, and SEO on the home page.
 9. Commit message says what changed and why in plain language. Scope each commit to one topic.
@@ -63,7 +65,7 @@ Rollback: in Vercel, Deployments, pick the previous deployment, Promote to Produ
 
 - `public/forms/*.pdf` (the practice's real intake forms)
 - `brand/bristol-brand-guide.pdf`
-- `vercel.json` (routing and security headers; changes need a header check on production)
+- `vercel.json` (routing, security headers, and the review mode noindex header for vercel.app hosts; changes need a header check on production)
 - `src/content/legal.ts` and `src/i18n/legal-es.ts` (attorney reviewed drafts)
 
 ## When in doubt

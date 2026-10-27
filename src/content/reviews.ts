@@ -62,7 +62,7 @@ export const homeFaq: HomeFaqItem[] = [
   {
     question: "Do you take my insurance?",
     answer:
-      "We accept most insurance plans, including most PPO plans, HMO plans, and Denti-Cal. Tell us your carrier when you call and we will check your coverage before you sit down.",
+      "We accept most dental insurance plans, including most PPO and HMO plans. Tell us your carrier when you call and we will check your coverage before you sit down.",
     linkLabel: "Insurance and payment options",
     linkHref: "/insurance",
   },

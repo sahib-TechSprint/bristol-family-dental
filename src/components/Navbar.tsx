@@ -129,7 +129,7 @@ export default function Navbar({
             Bristol Family
             <span className="block">Dental Center</span>
           </span>
-          <span className="mt-1 block text-[8px] md:text-[9px] font-semibold uppercase tracking-[0.22em] text-ink/60">
+          <span className="mt-1 hidden text-[8px] md:text-[9px] font-semibold uppercase tracking-[0.22em] text-ink/60 min-[400px]:block">
             {tagline}
           </span>
         </a>

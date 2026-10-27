@@ -33,7 +33,7 @@ export const practice = {
     { label: "Monday to Friday", value: "9:00 a.m. to 6:00 p.m." },
     { label: "Saturday and Sunday", value: "Closed" },
   ],
-  hoursNote: "Same day visits are often available on weekdays. Call and we will do our best to fit you in.",
+  hoursNote: "Same-day visits are often available on weekdays. Call and we will do our best to fit you in.",
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",

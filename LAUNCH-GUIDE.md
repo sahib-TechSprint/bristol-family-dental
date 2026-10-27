@@ -25,7 +25,9 @@ Get these yeses in writing (a text message is fine):
       Orthodontics (linked to https://charaorthodontics.com/), on the home, services, About,
       and Terms pages. The office confirmed the title "orthodontist" on October 1, 2026.
 - [ ] The three review badges may stay, including Google at its current 3.8.
-- [ ] "Most insurance accepted, including Denti-Cal", the PPO "preferred provider" line, the
+- [ ] Denti-Cal stays off the site until the office confirms its enrollment is complete
+      (removed October 26, 2026; `HANDOFF.md` section 11 lists the files to restore).
+- [ ] "Most dental insurance accepted", the PPO "preferred provider" line, the
       HMO assignment note, CareCredit, and in house financing are all accurate today.
 - [ ] The practice's attorney has read the Privacy Policy, Terms of Use, and Accessibility
       Statement (they are careful plain language drafts, not legal advice).
@@ -51,7 +53,10 @@ any change. Then confirm the Vercel project has only the people who need it.
 4. Vercel, Settings, Environment Variables: set `PUBLIC_SITE_URL` to
    `https://www.bristolfamilydentalcenter.com` (or the apex if that was chosen) for
    Production, then Deployments, Redeploy the latest. Canonicals, hreflang, the sitemap,
-   and structured data pick up the real domain.
+   and structured data pick up the real domain, the `noindex` tag disappears, and
+   `robots.txt` switches from `Disallow: /` to `Allow: /`. The vercel.app review URL stays
+   noindex on its own. Confirm by viewing the source of the home page on the domain and
+   loading `/robots.txt`.
 5. Load the domain over a phone's cellular data and click through both languages. Confirm
    `https://www.bristolfamilydentalcenter.com/book` redirects to `/contact` and that the
    old site is gone.

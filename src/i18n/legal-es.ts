@@ -4,7 +4,7 @@
 
 import type { LegalSection } from "../components/LegalPage.astro";
 
-export const legalEffectiveDateEs = "1 de octubre de 2026";
+export const legalEffectiveDateEs = "26 de octubre de 2026";
 
 // ------------------------------------------------------------------ privacy
 
@@ -126,7 +126,7 @@ export const termsSectionsEs: LegalSection[] = [
   {
     heading: "Propiedad intelectual",
     body: [
-      "El texto, el diseño, la marca tipográfica y las ilustraciones de este sitio pertenecen a Bristol Family Dental Center o se usan con permiso, y el diseño del sitio es obra de Carbon Quill Media. Usted puede ver, imprimir y descargar páginas para uso personal y no comercial. La tipografía del sitio, Open Sauce One, se usa bajo la SIL Open Font License. Los nombres de terceros como Yelp, Google, Facebook, Birdeye, CareCredit y Denti-Cal pertenecen a sus dueños y se usan solo para identificar esos servicios.",
+      "El texto, el diseño, la marca tipográfica y las ilustraciones de este sitio pertenecen a Bristol Family Dental Center o se usan con permiso, y el diseño del sitio es obra de Carbon Quill Media. Usted puede ver, imprimir y descargar páginas para uso personal y no comercial. La tipografía del sitio, Open Sauce One, se usa bajo la SIL Open Font License. Los nombres de terceros como Yelp, Google, Facebook, Birdeye y CareCredit pertenecen a sus dueños y se usan solo para identificar esos servicios.",
     ],
   },
   {

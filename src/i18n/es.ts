@@ -56,7 +56,7 @@ export const uiEs = {
   licenseLine: "Pablo Lazaro, D.D.S., dentista con licencia del Dental Board of California.",
   boardNotice: "Aviso para los consumidores: los dentistas tienen licencia y están regulados por el Dental Board of California,",
   landmarks:
-    "Estamos en la esquina de Central y Bristol, entre Segerstrom y Warner, en la plaza comercial donde está el KFC, justo enfrente del hospital Coastal Community.",
+    "Estamos en la esquina de Central y Bristol, entre Segerstrom y Warner, en la plaza comercial donde está el KFC, justo enfrente de Coastal Community Hospital.",
 };
 
 export const uiEn = {
@@ -94,7 +94,7 @@ export const heroEs = {
   label: "Dentista Familiar en Santa Ana",
   displayLines: ["Bristol Family", "Dental Center"],
   corner: "Atención Bilingüe",
-  facts: ["Niños, adolescentes y adultos", "Frenos y alineadores transparentes", "La mayoría de los seguros, incluyendo Denti-Cal"],
+  facts: ["Niños, adolescentes y adultos", "Frenos y alineadores transparentes", "Aceptamos casi todos los seguros"],
   secondaryLabel: "Ver servicios",
   secondaryHref: "/es/services",
   image: {
@@ -134,7 +134,7 @@ export const restorativeEs = {
     {
       number: "1",
       title: "Consulta",
-      text: "Un examen, radiografías si hacen falta y una explicación sencilla de lo que se puede salvar y lo que conviene reemplazar.",
+      text: "Un examen, las imágenes que hagan falta y una explicación sencilla de lo que se puede salvar y lo que conviene reemplazar.",
     },
     {
       number: "2",
@@ -211,7 +211,7 @@ export const homeFaqEs = [
   {
     question: "¿Aceptan mi seguro dental?",
     answer:
-      "Aceptamos la mayoría de los planes de seguro dental, incluyendo la mayoría de los planes PPO, planes HMO y Denti-Cal. Díganos su aseguradora al llamar y revisamos su cobertura antes de que se siente en el sillón.",
+      "Aceptamos la mayoría de los planes de seguro dental, incluyendo la mayoría de los planes PPO y HMO. Díganos su aseguradora al llamar y revisamos su cobertura antes de que se siente en el sillón.",
     linkLabel: "Seguro y formas de pago",
     linkHref: "/es/insurance",
   },
@@ -338,7 +338,7 @@ export const serviceGroupsEs = [
     id: "cosmetic",
     name: "Odontología Cosmética",
     intro:
-      "Un cambio pequeño en una sonrisa puede cambiar cuántas veces la usa. Estos son los tratamientos detrás de nuestros cambios de sonrisa.",
+      "Un cambio pequeño en una sonrisa puede cambiar cuánto la muestra. Estos son los tratamientos detrás de nuestros cambios de sonrisa.",
     services: [
       {
         id: "veneers",
@@ -436,7 +436,7 @@ export const aboutEs = {
   dentistCopy:
     "Pablo Lazaro, D.D.S., es dentista general con licencia del Dental Board of California. Brinda la odontología general, restauradora y cosmética en Bristol Family Dental Center: exámenes y limpiezas, resinas y endodoncias, coronas, puentes y dentaduras, carillas y blanqueamiento. Su forma de trabajar es sencilla: revisar con cuidado, explicar lo que ve con palabras que usted pueda usar y recomendar solo lo que sus dientes necesitan.",
   dentistImageAlt: "Ilustración clínica de una corona de cerámica y un espejo dental sobre una superficie azul oscuro",
-  orthoHeading: "Ortodoncia con el Dr. Efrain Chara",
+  orthoHeading: "Ortodoncia con el Dr. Efrain Chara",
   orthoCopy:
     "Los frenos y los alineadores transparentes en Bristol Family Dental Center los brinda el Dr. Efrain Chara, ortodoncista, que atiende a sus pacientes en nuestro consultorio. Obtuvo su título de odontólogo en Bogotá en 1990, completó su especialidad en ortodoncia en 1995 y ejerce en California desde el año 2000. Sus limpiezas, revisiones y resinas siguen con Pablo Lazaro, D.D.S., así que el tratamiento de ortodoncia y el cuidado diario llevan un solo calendario en una sola recepción.",
   orthoLink: "Sobre la ortodoncia en nuestro consultorio",
@@ -478,7 +478,7 @@ export const newPatientsEs = {
 
 export const insuranceEs = {
   label: "Seguro y Formas de Pago",
-  heading: "Hacemos simple la parte del dinero",
+  heading: "Le simplificamos la parte del pago",
   intro:
     "Aceptamos la mayoría de los planes de seguro dental, y le ayudamos a entender el suyo. Traiga su tarjeta a su primera visita, o díganos su aseguradora al llamar, y revisamos su cobertura antes de que se siente en el sillón.",
   plans: [
@@ -495,10 +495,10 @@ export const insuranceEs = {
       text: "Recibimos con gusto a pacientes con HMO, con un detalle importante: su plan debe asignarlo o transferirlo a nuestro consultorio antes de su visita. Una llamada rápida al número de su tarjeta de seguro normalmente lo resuelve, y nuestra recepción le guía paso a paso.",
     },
     {
-      id: "denti-cal",
-      badge: "Denti-Cal",
-      name: "Denti-Cal",
-      text: "Aceptamos con orgullo Denti-Cal, la cobertura dental de California para miembros de Medi-Cal. Si no está seguro de lo que cubre su plan, pregúntenos y le ayudamos a averiguarlo.",
+      id: "coverage-check",
+      badge: "Revisión de Cobertura",
+      name: "Dudas de Cobertura",
+      text: "¿No sabe qué cubre su plan? Traiga su tarjeta a su primera visita, o léanos el nombre que aparece en ella al llamar. Nuestra recepción revisa sus beneficios antes de su cita y le explica qué está cubierto, con palabras sencillas, antes de comenzar cualquier tratamiento.",
     },
   ],
   paymentHeading: "¿Sin seguro? Igual le atendemos.",
@@ -555,47 +555,47 @@ export const seoEs: Record<string, { title: string; description: string }> = {
   home: {
     title: "Dentista en Santa Ana, CA | Bristol Family Dental Center",
     description:
-      "Dentista familiar en Santa Ana: limpiezas, resinas, coronas, carillas, frenos y alineadores. Equipo bilingüe, la mayoría de los seguros, incluyendo Denti-Cal. Llame al (714) 540-7101.",
+      "Dentista familiar en Santa Ana: limpiezas, resinas, coronas, carillas, frenos y alineadores. Equipo bilingüe, casi todos los seguros. Tel. (714) 540-7101.",
   },
   services: {
-    title: "Servicios Dentales en Santa Ana | Bristol Family Dental Center",
+    title: "Servicios Dentales, Santa Ana | Bristol Family Dental Center",
     description:
-      "Cuidado dental completo bajo un mismo techo en Santa Ana: exámenes, limpiezas, resinas, endodoncias, coronas, dentaduras, carillas, blanqueamiento y ortodoncia.",
+      "Cuidado dental completo en Santa Ana: exámenes, limpiezas, resinas, endodoncias, coronas, dentaduras, carillas, blanqueamiento y ortodoncia.",
   },
   about: {
-    title: "Sobre Nuestro Consultorio Familiar | Bristol Family Dental Center",
+    title: "Sobre Nuestro Consultorio | Bristol Family Dental Center",
     description:
-      "Bristol Family Dental Center en Santa Ana: odontología general y restauradora con Pablo Lazaro, D.D.S., ortodoncia con el Dr. Efrain Chara y un equipo bilingüe para toda la familia.",
+      "Bristol Family Dental Center, Santa Ana: odontología general con Pablo Lazaro, D.D.S., ortodoncia con el Dr. Efrain Chara y un equipo bilingüe.",
   },
   newPatients: {
     title: "Pacientes Nuevos y Preguntas | Bristol Family Dental Center",
     description:
-      "¿Nuevo en Bristol Family Dental Center en Santa Ana? Vea qué esperar en su primera visita, descargue los formularios en español o inglés y encuentre respuestas a preguntas comunes.",
+      "¿Nuevo en Bristol Family Dental Center en Santa Ana? Qué esperar en su primera visita, formularios en español e inglés y respuestas a preguntas comunes.",
   },
   insurance: {
-    title: "Seguro Dental y Formas de Pago | Bristol Family Dental Center",
+    title: "Seguro y Formas de Pago | Bristol Family Dental Center",
     description:
-      "Bristol Family Dental Center en Santa Ana acepta la mayoría de los seguros dentales: PPO, HMO y Denti-Cal, además de CareCredit, efectivo, cheque o tarjeta. Su cobertura explicada antes del tratamiento.",
+      "Bristol Family Dental Center en Santa Ana acepta la mayoría de los seguros dentales, planes PPO y HMO, además de CareCredit, efectivo, cheque o tarjeta.",
   },
   contact: {
     title: "Contacto en Santa Ana | Bristol Family Dental Center",
     description:
-      "Encuentre Bristol Family Dental Center en 2618 S. Bristol St., Santa Ana, en la esquina de Central y Bristol. Horario, cómo llegar, teléfono y fax de nuestro consultorio dental familiar.",
+      "Bristol Family Dental Center está en 2618 S. Bristol St., Santa Ana, en Central y Bristol. Horario, cómo llegar, teléfono y fax del consultorio.",
   },
   privacy: {
     title: "Aviso de Privacidad | Bristol Family Dental Center",
     description:
-      "Cómo maneja la información el sitio web de Bristol Family Dental Center: sin formularios ni rastreo, qué recopilan el mapa de Google y el hosting, y sus derechos en California.",
+      "Cómo maneja la información el sitio de Bristol Family Dental Center: sin formularios ni rastreo, qué recopilan el mapa y el hosting, y sus derechos.",
   },
   terms: {
     title: "Términos de Uso y Deslinde | Bristol Family Dental Center",
     description:
-      "Los términos que aplican cuando usa el sitio web de Bristol Family Dental Center, incluyendo el deslinde médico, el aviso sobre las imágenes y la limitación de responsabilidad.",
+      "Términos de uso del sitio web de Bristol Family Dental Center: el deslinde médico, el aviso sobre las imágenes y la limitación de responsabilidad.",
   },
   accessibility: {
     title: "Declaración de Accesibilidad | Bristol Family Dental Center",
     description:
-      "Bristol Family Dental Center quiere un sitio web que todos puedan usar. Lea qué hacemos para cumplir con WCAG 2.1 AA, las limitaciones actuales y cómo avisarnos si algo es difícil de usar.",
+      "Bristol Family Dental Center quiere un sitio que todos puedan usar: cómo cumplimos con WCAG 2.1 AA, sus límites actuales y cómo avisarnos de un problema.",
   },
 };
 
@@ -605,10 +605,10 @@ export const faqEs = [
   {
     question: "¿Con qué frecuencia debo cepillarme y usar hilo dental?",
     answer:
-      "Cepíllese por lo menos dos veces al día con un cepillo suave y pasta con flúor, y use hilo dental una vez al día. El cepillo limpia las superficies de los dientes, y el hilo alcanza la placa que se esconde entre ellos. Juntos toman unos cinco minutos al día, y son el cuidado dental más barato que va a encontrar.",
+      "Cepíllese por lo menos dos veces al día con un cepillo suave y pasta con flúor, y use hilo dental una vez al día. El cepillo limpia las superficies de los dientes, y el hilo alcanza la placa que se esconde entre ellos. Juntos toman unos cinco minutos al día, y son el cuidado dental más sencillo que existe.",
   },
   {
-    question: "¿Son seguras las amalgamas (rellenos plateados)?",
+    question: "¿Son seguras las amalgamas (empastes plateados)?",
     answer:
       "Las amalgamas se han usado por más de un siglo, y las principales organizaciones de salud, incluyendo la American Dental Association, las consideran seguras para la mayoría de las personas. Aun así, muchos de nuestros pacientes prefieren las resinas blancas, que no contienen metal y se confunden con el diente natural. Si quiere que revisemos o cambiemos una amalgama vieja, con gusto le explicamos sus opciones.",
   },

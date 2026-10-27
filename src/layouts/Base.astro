@@ -41,6 +41,11 @@ const enUrl = isEs && altPath ? altPath : currentPath;
 const esUrl = isEs ? currentPath : altPath;
 
 const site = Astro.site ?? new URL("https://bristol-family-dental.vercel.app");
+// Review switch: while PUBLIC_SITE_URL is unset or points at a vercel.app
+// host, every page is noindex and robots.txt disallows crawling. Setting
+// PUBLIC_SITE_URL to the practice domain and redeploying opens the site to
+// search (see LAUNCH-GUIDE.md).
+const staging = site.hostname.endsWith(".vercel.app") || site.hostname === "localhost";
 const canonical = new URL(Astro.url.pathname, site);
 const ogImage = new URL("/og/og-default.png", site);
 const ogLocale = lang === "es" ? "es_MX" : "en_US";
@@ -103,8 +108,8 @@ const revealScript = `(function () {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
-    {noindex && <meta name="robots" content="noindex, follow" />}
+    {!noindex && <link rel="canonical" href={canonical} />}
+    {staging ? <meta name="robots" content="noindex, nofollow" /> : noindex && <meta name="robots" content="noindex, follow" />}
     {
       altPath && esUrl && (
         <>

@@ -9,7 +9,7 @@ interface Props {
   label: string;
   heading: string;
   intro?: string;
-  image?: { src: string; alt: string };
+  image?: { src: string; alt: string; width: number; height: number };
 }
 
 const { label, heading, intro, image } = Astro.props;
@@ -30,8 +30,11 @@ const { label, heading, intro, image } = Astro.props;
             <img
               src={image.src}
               alt={image.alt}
+              width={image.width}
+              height={image.height}
               class="absolute inset-0 h-full w-full object-cover"
               decoding="async"
+              fetchpriority="high"
             />
           </div>
         </div>

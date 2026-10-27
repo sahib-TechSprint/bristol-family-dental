@@ -76,7 +76,7 @@ export const serviceGroups: ServiceGroup[] = [
         id: "bridges",
         name: "Bridges",
         blurb:
-          "A bridge fills the gap left by a missing tooth with a natural looking replacement anchored to its neighbors. It restores your bite and keeps the surrounding teeth from shifting out of place.",
+          "A bridge fills the gap left by a missing tooth with a natural-looking replacement anchored to its neighbors. It restores your bite and keeps the surrounding teeth from shifting out of place.",
         whoFor: "For one or more missing teeth in a row.",
       },
       {
@@ -144,7 +144,7 @@ export const specialistNetwork = {
   id: "specialists",
   name: "Our Specialist Network",
   blurb:
-    "Some cases call for a specialist, and we have spent years building a network we trust. We coordinate endodontics for complicated root canals, periodontics for deep cleanings, pedodontics for children with special needs, and oral surgery for complex extractions such as wisdom teeth. We handle the referral, share your records, and stay involved in your care from start to finish.",
+    "Some cases call for a specialist, and we have spent years building a network we trust. We coordinate endodontics for complicated root canals, periodontics for deep cleanings, pediatric dentistry for children with special needs, and oral surgery for complex extractions such as wisdom teeth. We handle the referral, share your records, and stay involved in your care from start to finish.",
 };
 
 // The orthodontist who provides orthodontic care at the office. Chara
@@ -172,7 +172,7 @@ export const orthoHighlight = {
     { title: "Clear aligners", text: "A series of nearly invisible removable trays for teens and adults with mild to moderate crowding or spacing. You change trays on a schedule and come in so the fit can be checked." },
     { title: "Early evaluation", text: "A first orthodontic check for children around age 7, as the American Association of Orthodontists recommends, to spot growth and bite patterns early. Most children do not need treatment at that age." },
     { title: "Adult treatment", text: "Teeth that shifted over the years, crowding that makes cleaning difficult, and spaces you have wanted to close. Healthy teeth can be moved at any age." },
-    { title: "Retainers", text: "A retainer after treatment holds the result, and Dr. Chara checks it at follow up visits." },
+    { title: "Retainers", text: "A retainer after treatment holds the result, and Dr. Chara checks it at follow-up visits." },
   ],
   points: [
     "Traditional braces for kids, teens, and adults",

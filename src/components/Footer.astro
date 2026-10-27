@@ -69,8 +69,7 @@ const year = new Date().getFullYear();
         <address class="mt-4 space-y-2.5 text-sm not-italic text-white/85">
           <p>
             {practice.address.street}<br />
-            {practice.address.city}, {practice.address.state}
-            {practice.address.zip}
+            {practice.address.city}, {practice.address.state} {practice.address.zip}
           </p>
           <p>
             <a href={`tel:${practice.phone.tel}`} class="transition-colors hover:text-white">

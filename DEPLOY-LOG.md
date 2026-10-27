@@ -251,3 +251,28 @@ Requested by the agency after the office's changes: the dentist who placed impla
 ### Awaiting the client
 
 See the updated checklist in `LAUNCH-GUIDE.md`: approve the preview in both languages, confirm Pablo Lazaro, D.D.S. as the dentist of record, confirm that the orthodontics presentation of Dr. Chara is as the office wants it, and tell the agency when a dentist who places implants joins so the implant content can return.
+
+## Launch candidate revision, October 26, 2026
+
+Requested by the agency as the final draft before the walkthrough with the client. One push to main, auto deployed by Vercel.
+
+### What changed and why
+
+- Denti-Cal is off the site until the office finishes its enrollment with the provider. Removed from the home hero facts, the home FAQ answer, the Insurance page (badge strip and the third plan card), the home and Insurance search descriptions, and the third party names line in the Terms, in both languages. The third plan card is now "Coverage Questions" / "Dudas de Cobertura": the office checks benefits before the visit and explains what is covered, which restates what the page intro and the promise block already say, so no new claim is made. The badge strip reads PPO, HMO, CareCredit, Cash and Cards. The exact files to restore when the office is cleared are listed in `HANDOFF.md`, section 11, and the audit script greps for the word so it cannot slip back in by accident.
+- Review mode. The site now behaves like the Lazaro site while it is served from a vercel.app host: every page carries `noindex, nofollow`, `robots.txt` disallows crawling, and `vercel.json` sends `X-Robots-Tag: noindex, nofollow` on vercel.app hosts only. Setting `PUBLIC_SITE_URL` to the practice domain in Vercel and redeploying opens the site to search with the right canonicals; nothing else changes. Verified with a production style build: no robots tag, `Allow: /`, canonicals and sitemap on the practice domain.
+- Copy. The restorative strip said "X-rays if they are needed" (the client asked for every X-ray mention to go in September); it now says "any images that are needed" in both languages. The brushing FAQ no longer calls brushing "the cheapest dental care you will ever get" (a cost superlative on a site that avoids price claims). Compound modifiers are hyphenated (third-party, in-house, same-day, follow-up, natural-looking, plain-language, error-free). "Pedodontics" is now "pediatric dentistry". Spanish: "Le damos la bienvenida" instead of the masculine "Bienvenido", "Le simplificamos la parte del pago", "empastes plateados", "Coastal Community Hospital" as a proper noun, "cuánto la muestra", and a shorter hero chip so the three chips sit on one line at desktop width.
+- Search metadata. Every meta description is now 155 characters or fewer (several ran to 180 and the Spanish Insurance one to 209, which Google truncates) and every title 62 or fewer. The 404 page no longer declares a canonical.
+- Layout. The footer and the Contact page rendered "Santa Ana, CA92704" because a line break between two expressions collapsed; the city, state, and zip now sit on one line. The Spanish "Odontología Restauradora" display heading overflowed its card at 360 wide; the minimum size came down from 48 to 40 pixels. Headings use `text-wrap: balance` so a single word no longer sits alone on the last line at desktop width. The navbar tagline is hidden below 400 pixels, where it wrapped under the wordmark and crowded the language pill. "Dr. Efrain Chara" no longer breaks across lines in the About headings. The two page hero images (About, Services) carry `width`, `height`, and `fetchpriority="high"`.
+- Tooling. `npm run audit` (`scripts/audit.mjs`, with axe-core and Playwright as dev dependencies) serves the build and runs the gates from `AGENTS.md` on every page at five widths: axe, overflow, links and anchors, JSON-LD, headings, titles and descriptions, images, and the integrity greps, then writes screenshots to `scripts/audit-out/`. The internal QA harness no longer has to be copied around.
+- Docs. `HANDOFF.md` added: the plain language map of the site for the next maintainer or agent (stack, back end, access, setup, the change loop, parked content). `README.md`, `AGENTS.md`, and `LAUNCH-GUIDE.md` updated to match. Legal effective dates moved to October 26, 2026 for the Terms wording change; the attorney read is still pending.
+
+### QC record for this revision
+
+- `astro check`: 0 errors, 0 warnings. Build: 19 pages plus the three redirect stubs.
+- `npm run audit`: 95 axe page loads (19 routes at 360, 768, 1024, 1440, 1920) with 0 violations, 0 horizontal overflow, every link and anchor resolving, every JSON-LD block parsing, one h1 per page, every description 155 characters or fewer, every image with alt text and dimensions, integrity greps clean (no dashes, no Denti-Cal, no X-ray, no implant, no Begino, no price language, no tool names).
+- Visual review of every page at 360 and 1440 in both languages from the audit screenshots.
+- `npm audit`: 0 vulnerabilities.
+
+### Awaiting the client
+
+The checklist in `LAUNCH-GUIDE.md`: approve both languages, confirm the dentist of record and the orthodontics presentation, attorney read of the three legal pages, the domain login, and word from the office when Denti-Cal enrollment is complete so it can return.

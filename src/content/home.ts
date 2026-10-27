@@ -8,7 +8,7 @@ export const hero = {
   // every width; the display size in HeroSection is tuned to this length.
   displayLines: ["Bristol Family", "Dental Center"],
   corner: "Se Habla Español",
-  facts: ["Kids, teens, and adults", "Braces and clear aligners", "Most insurance, including Denti-Cal"],
+  facts: ["Kids, teens, and adults", "Braces and clear aligners", "Most dental insurance accepted"],
   secondaryLabel: "Explore services",
   secondaryHref: "/services",
   image: {
@@ -45,7 +45,7 @@ export const restorativeSection = {
     { title: "Dentures and partials", href: "/services#dentures", glass: true },
   ],
   processSteps: [
-    { number: "1", title: "Consultation", text: "An exam, X-rays if they are needed, and a plain explanation of what can be saved and what should be replaced." },
+    { number: "1", title: "Consultation", text: "An exam, any images that are needed, and a plain explanation of what can be saved and what should be replaced." },
     { number: "2", title: "Preparation", text: "The tooth is shaped or impressions are taken, and a temporary protects it while the lab makes the final piece." },
     { number: "3", title: "Fitting", text: "Your crown, bridge, or denture is tried in, adjusted, and checked until the bite feels right." },
   ],
